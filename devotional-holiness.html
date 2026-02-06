@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A New Year's Eve devotional on God's holiness from Isaiah 6">
+    <title>Holiness Given for All Eternity | Devotional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css?v=20260206">
+    <link rel="stylesheet" href="css/base.css?v=20260206">
+    <link rel="stylesheet" href="css/layout.css?v=20260206">
+    <link rel="stylesheet" href="css/components.css?v=20260206">
+    <link rel="stylesheet" href="css/animations.css?v=20260206">
+    <link rel="stylesheet" href="css/pages.css?v=20260206">
+    <style>
+        .devotional {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: var(--space-16) var(--space-6);
+        }
+
+        .devotional__header {
+            text-align: center;
+            margin-bottom: var(--space-12);
+        }
+
+        .devotional__meta {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-4);
+            margin-bottom: var(--space-6);
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+        }
+
+        .devotional__title {
+            font-size: var(--text-4xl);
+            line-height: 1.2;
+            margin-bottom: var(--space-4);
+        }
+
+        .devotional__subtitle {
+            font-size: var(--text-lg);
+            color: var(--color-text-muted);
+            font-style: italic;
+        }
+
+        .devotional__content {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.25rem;
+            line-height: 1.9;
+            color: var(--color-text-secondary);
+        }
+
+        .devotional__content p {
+            margin-bottom: var(--space-6);
+        }
+
+        .devotional__content strong {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        .devotional__scripture {
+            background: var(--color-surface);
+            border-left: 3px solid var(--color-accent);
+            padding: var(--space-6) var(--space-8);
+            margin: var(--space-8) 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            font-style: italic;
+        }
+
+        .devotional__scripture-ref {
+            display: block;
+            margin-top: var(--space-4);
+            font-style: normal;
+            font-weight: 600;
+            color: var(--color-accent);
+            font-size: var(--text-sm);
+        }
+
+        .devotional__section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: var(--text-xl);
+            color: var(--color-text);
+            margin-top: var(--space-12);
+            margin-bottom: var(--space-6);
+            padding-bottom: var(--space-2);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .devotional__highlight {
+            background: linear-gradient(135deg, rgba(201, 162, 39, 0.1), rgba(201, 162, 39, 0.05));
+            padding: var(--space-6) var(--space-8);
+            border-radius: var(--radius-lg);
+            margin: var(--space-8) 0;
+            border: 1px solid rgba(201, 162, 39, 0.2);
+        }
+
+        .devotional__highlight p {
+            margin: 0;
+            color: var(--color-text);
+            font-weight: 500;
+        }
+
+        .devotional__poem {
+            background: var(--color-surface);
+            padding: var(--space-8);
+            border-radius: var(--radius-lg);
+            margin: var(--space-10) 0;
+            font-style: italic;
+            text-align: center;
+            line-height: 2;
+        }
+
+        .devotional__poem p {
+            margin-bottom: var(--space-2);
+        }
+
+        .devotional__closing {
+            text-align: center;
+            margin-top: var(--space-12);
+            padding: var(--space-8);
+            background: linear-gradient(135deg, rgba(201, 162, 39, 0.08), transparent);
+            border-radius: var(--radius-lg);
+            font-style: italic;
+        }
+
+        .devotional__back {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            margin-bottom: var(--space-8);
+            color: var(--color-text-muted);
+            font-size: var(--text-sm);
+            transition: color var(--transition-fast);
+        }
+
+        .devotional__back:hover {
+            color: var(--color-accent);
+        }
+
+        .devotional__quote {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+            padding: var(--space-6);
+            margin: var(--space-6) 0;
+            background: var(--color-surface);
+            border-radius: var(--radius-md);
+        }
+
+        .devotional__quote cite {
+            display: block;
+            margin-top: var(--space-3);
+            font-size: var(--text-sm);
+            color: var(--color-accent);
+        }
+
+        hr.devotional__divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+            margin: var(--space-12) 0;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .devotional {
+                padding: var(--space-8) var(--space-4);
+            }
+
+            .devotional__title {
+                font-size: var(--text-2xl);
+            }
+
+            .devotional__subtitle {
+                font-size: var(--text-base);
+            }
+
+            .devotional__content {
+                font-size: 1.1rem;
+            }
+
+            .devotional__scripture {
+                padding: var(--space-4) var(--space-5);
+                margin: var(--space-6) 0;
+            }
+
+            .devotional__highlight {
+                padding: var(--space-4) var(--space-5);
+            }
+
+            .devotional__poem {
+                padding: var(--space-5);
+            }
+
+            .devotional__quote {
+                padding: var(--space-4);
+                font-size: 1rem;
+            }
+
+            .devotional__section-title {
+                font-size: var(--text-lg);
+                margin-top: var(--space-8);
+            }
+
+            .devotional__closing {
+                padding: var(--space-5);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-wrapper page-transition">
+        <header class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <a href="index.html" class="logo">pol<span>.</span></a>
+                    <nav class="nav">
+                        <button class="nav__toggle"
+                            aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+                        <ul class="nav__list">
+                            <li><a href="index.html" class="nav__link">Home</a></li>
+                            <li><a href="about.html" class="nav__link">About</a></li>
+                            <li><a href="cv.html" class="nav__link">CV</a></li>
+                            <li><a href="blog.html" class="nav__link active">Blog</a></li>
+                            <li><a href="contact.html" class="nav__link">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <article class="devotional reveal">
+                <a href="blog.html" class="devotional__back">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    Back to Blog
+                </a>
+
+                <header class="devotional__header">
+                    <div class="devotional__meta">
+                        <span class="tag"
+                            style="background: rgba(201, 162, 39, 0.2); color: var(--color-accent);">English</span>
+                        <span>•</span>
+                        <span>New Year's Eve 2025</span>
+                    </div>
+                    <h1 class="devotional__title">Holiness Given for All Eternity</h1>
+                    <hr class="divider">
+                    <p class="devotional__subtitle">A meditation on Isaiah 6 and what God's holiness means for us</p>
+                </header>
+
+                <div class="devotional__content">
+                    <p>Before you read, I want you to think shortly on these things:</p>
+
+                    <p>What are your first thoughts when you bring to mind the infant Jesus? Perhaps you picture the
+                        setting: the stable, the star, the quiet night. How do you imagine Him? What words would you use
+                        to describe that fragile, newborn life?</p>
+
+                    <p>Now, let your mind traverse thirty years. Jesus has begun His ministry. How do you see Him now?
+                        Imagine you are there in the crowd, watching Him preach with authority and heal with a touch.
+                        What comes to your mind? What words describe this man?</p>
+
+                    <p>Move forward another three years. Christ is crucified. What are your first thoughts now? Imagine
+                        He is right in front of you, nailed to a rough beam of wood, hanging publicly in agony. How
+                        would you describe Him in this moment of suffering?</p>
+
+                    <p>Finally, move forward three days. The stone is rolled away. He is risen. His life declares total
+                        victory over sin and death. What takes hold of your thoughts now? What words are sufficient to
+                        describe Him?</p>
+
+                    <p>As we stand at the threshold of a new year, we naturally look back. What were the major events
+                        that shook the world this past year? What were the personal experiences that left their mark on
+                        you?</p>
+
+                    <p>And as you look forward, do you have resolutions? If not, pause for a moment. <strong>What is the
+                            one thing your soul truly needs this year?</strong></p>
+
+                    <hr class="devotional__divider">
+
+                    <div class="devotional__scripture">
+                        <p>[1] In the year that King Uzziah died I saw the Lord sitting upon a throne, high and lifted
+                            up; and the train of his robe filled the temple. [2] Above him stood the seraphim. Each had
+                            six wings: with two he covered his face, and with two he covered his feet, and with two he
+                            flew. [3] And one called to another and said:</p>
+                        <p><em>"Holy, holy, holy is the LORD of hosts; the whole earth is full of his glory!"</em></p>
+                        <p>[4] And the foundations of the thresholds shook at the voice of him who called, and the house
+                            was filled with smoke. [5] And I said: "Woe is me! For I am lost; for I am a man of unclean
+                            lips, and I dwell in the midst of a people of unclean lips; for my eyes have seen the King,
+                            the LORD of hosts!"</p>
+                        <p>[6] Then one of the seraphim flew to me, having in his hand a burning coal that he had taken
+                            with tongs from the altar. [7] And he touched my mouth and said: "Behold, this has touched
+                            your lips; your guilt is taken away, and your sin atoned for."</p>
+                        <p>[8] And I heard the voice of the Lord saying, "Whom shall I send, and who will go for us?"
+                            Then I said, "Here I am! Send me."</p>
+                        <span class="devotional__scripture-ref">Isaiah 6:1–8 (ESV)</span>
+                    </div>
+
+                    <p>The passage begins with a tragic marker: the death of a great king. In a time of profound
+                        political instability and personal grief, Isaiah goes to the only place where peace and guidance
+                        can be found — the temple.</p>
+
+                    <p>There, he is confronted with a reality that confronts us today: <strong>Throughout the reign of
+                            every man on earth, there is one God who rules over everything.</strong> His reign knows no
+                        beginning and no end. No political shift is above His sovereignty.</p>
+
+                    <p>This past year may have been filled with conflicts, both in our nation and across the globe. We
+                        must accept that this turmoil will not cease so long as sin remains in the world. So, what are
+                        we to do? We follow Isaiah's lead. He chose to seek God, and God responded, providing an answer
+                        far deeper than Isaiah expected.</p>
+
+                    <h3 class="devotional__section-title">The Holiness of God</h3>
+
+                    <p>We see the Seraphim in glorious worship, repeating a single word: <strong>"Holy."</strong> What
+                        does this truly mean? In Hebrew, it means "sacred" or "set apart." If you were to ask a
+                        theologian about God's attributes, they would likely tell you that holiness is central. It is
+                        the attribute from which all others — His love, His justice, His wrath — derive. Holiness is
+                        what makes Him God.</p>
+
+                    <p>Yet, despite its paramount importance, we spend far too little time meditating on it. Perhaps
+                        this is because we cannot fully comprehend it. There is nothing physical in this world "holy"
+                        enough to serve as a perfect analogy. It is an attribute we find only in Scripture, understood
+                        only through the Holy Spirit.</p>
+
+                    <div class="devotional__quote">
+                        <p>"The real test of being in the presence of God is that you either forget about yourself
+                            altogether or see yourself as a small, dirty object. It is far better to forget about
+                            yourself altogether."</p>
+                        <cite>— C.S. Lewis</cite>
+                    </div>
+
+                    <p>In verse 5, Isaiah cries out, "I am lost!" Other translations say he is "ruined" or "undone."
+                        R.C. Sproul describes this scene with chilling precision:</p>
+
+                    <div class="devotional__quote">
+                        <p>"To be undone means to come apart at the seams, to be unraveled. What Isaiah was expressing
+                            is what modern psychologists describe as the experience of personal disintegration... If
+                            ever there was a man of integrity, it was Isaiah ben Amoz... Then he caught one sudden
+                            glimpse of a holy God. In that single moment, all of his self-esteem was shattered. In a
+                            brief second he was exposed, made naked beneath the gaze of the absolute standard of
+                            holiness... The instant he measured himself by the ultimate standard, he was destroyed —
+                            morally and spiritually annihilated. He was undone."</p>
+                        <cite>— R.C. Sproul</cite>
+                    </div>
+
+                    <h3 class="devotional__section-title">What Does This Have to Do with the New Year?</h3>
+
+                    <p>You may wonder: <em>What does this have to do with the New Year?</em> We often hear messages like
+                        this, focus on them for a week, and then forget them as life rushes back in.</p>
+
+                    <div class="devotional__highlight">
+                        <p>But I tell you, <strong>God's holiness has everything to do with your year.</strong>
+                            Everything.</p>
+                    </div>
+
+                    <p>When Isaiah stood before God, something drastic had to happen. God's standard of morality is
+                        perfect; every sin is a direct attack on His nature. Because He is just, He must correct
+                        everything that does not measure up to His standard.</p>
+
+                    <p>By rights, Isaiah should have died. He confessed his uncleanness; the verdict was clear.</p>
+
+                    <p>But the God who is Holy is also full of grace. As Isaiah was being torn apart by his own guilt,
+                        God decided not to annihilate him, but to recreate him. <strong>God made Isaiah holy.</strong>
+                    </p>
+
+                    <p>This is the heartbeat of our lives. The desire of the Holy God is for us to be holy, just as He
+                        is holy (Leviticus 19:2; 1 Peter 1:16). In His mercy, God did not leave us "undone." He chose to
+                        make us born again.</p>
+
+                    <p>Isaiah was cleansed by a coal, but that was merely a shadow of the true cleansing to come.</p>
+
+                    <h3 class="devotional__section-title">Holiness Made Flesh</h3>
+
+                    <p>There was a time when Holiness became palpable among us. The same God, whose grandeur is
+                        infinite, left the chorus of heavenly hosts to walk on our dusty earth. Yet, He was not stripped
+                        of His holiness here. If we needed Jesus to show us anything, it was what it looks like to be
+                        holy in human flesh.</p>
+
+                    <p>We could never become holy through our own methods. So, the Holy God came to live beside His
+                        sinful creation. We needed Jesus's holy life. We have hope in His sacrifice and faith in His
+                        resurrection specifically <strong>because He was holy.</strong> He lived the life we could never
+                        live. He died the death we should have died. It is only through His holy, living sacrifice that
+                        we now have access to the Father. Because of Jesus, we can stand in the presence of the Holy God
+                        and be filled with praise instead of woe.</p>
+
+                    <div class="devotional__poem">
+                        <p><strong>Holy, Holy, Holy</strong></p>
+                        <br>
+                        <p>Holy, when all time began,</p>
+                        <p>Holy God became a Man.</p>
+                        <p>Holy Savior of the nations,</p>
+                        <p>Holy One within creation.</p>
+                        <br>
+                        <p>Holy, lying in the manger,</p>
+                        <p>Holy, gasping for the air,</p>
+                        <p>Holy, struggling just to breathe,</p>
+                        <p>Holy, born to suffer here.</p>
+                        <br>
+                        <p>Holy, walking on the street,</p>
+                        <p>Holy, eye to children's feet.</p>
+                        <p>Holy One, a child at play,</p>
+                        <p>Holy, learning day by day.</p>
+                        <br>
+                        <p>Holy God among His people,</p>
+                        <p>Holy Preacher on the mountain.</p>
+                        <p>Holy healing for the sick,</p>
+                        <p>Holy mercy, flowing quick.</p>
+                        <br>
+                        <p>Holy, by a kiss betrayed,</p>
+                        <p>Holy, to the cross conveyed.</p>
+                        <p>Holy, hanging on the Cross,</p>
+                        <p>Holy, bearing every loss.</p>
+                        <br>
+                        <p>Holy, He is choosing me,</p>
+                        <p>Holy, He is cleansing me.</p>
+                        <p>Holy, He is loving me,</p>
+                        <p>Holy, He is saving me.</p>
+                        <br>
+                        <p>Holy Sacrifice for sin,</p>
+                        <p>Holy verdict: innocent.</p>
+                        <p>All the glory to the Son,</p>
+                        <p>Through whom holy I become!</p>
+                    </div>
+
+                    <h3 class="devotional__section-title">Living Holy</h3>
+
+                    <p>Do you fear that holiness will mean boredom? Do you worry that in becoming holy, you will lose
+                        your personality or your ability to enjoy life?</p>
+
+                    <div class="devotional__quote">
+                        <p>"The second important thing we learn from this event is that God's work of grace on Isaiah's
+                            soul did not annihilate his personal identity. Isaiah said, 'Here am I.' Isaiah could still
+                            speak in terms of 'I.' He still had an identity... Far from God seeking to destroy the
+                            'self,' as many distortions of Christianity would claim, God redeems the self. He heals the
+                            self so that it may be useful and fulfilled... Isaiah's personality was overhauled but not
+                            annihilated. He was still Isaiah ben Amoz when he left the temple... but his mouth was
+                            clean."</p>
+                        <cite>— R.C. Sproul</cite>
+                    </div>
+
+                    <p>The undeniable reality is that you were created <em>for</em> the Holy God. To "be holy" does not
+                        mean to be superior to others; it means to surrender your human aspirations to the superior will
+                        of the Father.</p>
+
+                    <p>I recently reflected on the changes I need to make in the coming year. When I asked myself, "Why
+                        change this?" my initial answer was, "To build character."</p>
+
+                    <p>What a shallow answer! It was as fragile as my own willpower because I did not place God at the
+                        beginning, the end, and every point in between.</p>
+
+                    <div class="devotional__highlight">
+                        <p>Let every plan we make for 2026 be filtered through a single thought: <strong>To be
+                                holy.</strong></p>
+                    </div>
+
+                    <p>This is not a catchphrase. It is not something we apply only to our "spiritual" activities. There
+                        is no separation between "work life" and "spiritual life" — there is only one life, and the
+                        entirety of it must be set apart. To do this, we must know Jesus better, for holiness comes only
+                        through the knowledge of the Holy Son of God.</p>
+
+                    <p>We will live our most satisfied lives only when we live as we were created and redeemed to live.
+                        As John Piper famously said, <em>"God is most glorified in us when we are most satisfied in
+                            Him."</em></p>
+
+                    <p>Paul Tripp wrote, <em>"Every day of your life, you preach some kind of gospel to yourself."</em>
+                    </p>
+
+                    <p>My final question to you is this: <strong>Will the gospel you preach to yourself this year make
+                            you holy?</strong> And not just for a year — for what good is a "set apart" year if our
+                        whole existence is not set apart for Him?</p>
+
+                    <p>May we bring all our plans for 2026 before His holy altar. May His holy flame burn away
+                        everything that is not God-centered, that we may find this coming year to be a joy more
+                        fulfilling and holy than any we have known before.</p>
+
+                    <p><em>May our Holy Savior give us grace through it all.</em></p>
+
+                    <div class="devotional__closing">
+                        <p>May all your expectations be frustrated.</p>
+                        <p>May all your plans be thwarted.</p>
+                        <p>May all your desires be withered into nothingness.</p>
+                        <p><strong>That you may experience the powerlessness and the poverty of a child and sing and
+                                dance in the love of God the Father, the Son, and the Spirit.</strong></p>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__inner">
+                    <div class="footer__social">
+                        <a href="https://github.com/3nachePaul" class="footer__social-link" aria-label="GitHub"><svg
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg></a>
+                        <a href="https://www.linkedin.com/in/paul-enache-/" class="footer__social-link"
+                            aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg></a>
+                    </div>
+                    <p class="footer__copyright">© 2026 Paul Enache. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="js/main.js?v=20260206"></script>
+    <script src="js/animations.js?v=20260206"></script>
+    <script src="js/navigation.js?v=20260206"></script>
+</body>
+
+</html>

@@ -1,0 +1,851 @@
+/* ==========================================================================
+   Animations - Premium Keyframes, Cinematic Transitions, Scroll Reveals
+   ========================================================================== */
+
+/* ==========================================================================
+   Keyframe Animations
+   ========================================================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Cinematic reveal with subtle blur */
+@keyframes cinematicReveal {
+    from {
+        opacity: 0;
+        transform: translateY(60px) scale(0.95);
+        filter: blur(8px);
+    }
+
+    40% {
+        filter: blur(2px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+/* Elegant rise animation for cards */
+@keyframes riseUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Gold accent line animation */
+@keyframes lineExpand {
+    from {
+        transform: scaleX(0);
+        transform-origin: left center;
+    }
+
+    to {
+        transform: scaleX(1);
+        transform-origin: left center;
+    }
+}
+
+@keyframes lineExpandCenter {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* Subtle pulse for timeline dots */
+@keyframes dotPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 var(--color-accent-glow);
+    }
+
+    50% {
+        box-shadow: 0 0 0 8px transparent;
+    }
+}
+
+/* Button glow pulse */
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        box-shadow: var(--shadow-glow-soft);
+    }
+
+    50% {
+        box-shadow: var(--shadow-glow);
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes scrollBounce {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(12px);
+        opacity: 0.4;
+    }
+}
+
+/* Pop in animation for skill tags */
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ==========================================================================
+   Page Load Animation
+   ========================================================================== */
+
+/* Page entrance — cinematic fade + rise + blur clear */
+@keyframes pageEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        filter: blur(6px);
+    }
+
+    60% {
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+.page-transition {
+    animation: pageEntrance 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ==========================================================================
+   Scroll Reveal System
+   ========================================================================== */
+
+/* Base reveal class - smooth and modern */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    filter: blur(4px);
+    transition:
+        opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+}
+
+/* Rise variant - more pronounced vertical movement */
+.reveal--rise {
+    transform: translateY(60px);
+}
+
+.reveal--rise.revealed {
+    transform: translateY(0);
+}
+
+/* Fade variant - opacity only */
+.reveal--fade {
+    transform: none;
+}
+
+.reveal--fade.revealed {
+    transform: none;
+}
+
+/* Scale variant */
+.reveal--scale {
+    transform: scale(0.92);
+}
+
+.reveal--scale.revealed {
+    transform: scale(1);
+}
+
+/* Left slide variant */
+.reveal--left {
+    transform: translateX(-50px);
+}
+
+.reveal--left.revealed {
+    transform: translateX(0);
+}
+
+/* Right slide variant */
+.reveal--right {
+    transform: translateX(50px);
+}
+
+.reveal--right.revealed {
+    transform: translateX(0);
+}
+
+/* Cinematic variant with blur - premium effect */
+.reveal--cinematic {
+    transform: translateY(50px) scale(0.94);
+    filter: blur(8px);
+    transition:
+        opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal--cinematic.revealed {
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+}
+
+/* Staggered Delays for groups */
+.reveal-delay-1 {
+    transition-delay: 100ms;
+}
+
+.reveal-delay-2 {
+    transition-delay: 200ms;
+}
+
+.reveal-delay-3 {
+    transition-delay: 300ms;
+}
+
+.reveal-delay-4 {
+    transition-delay: 400ms;
+}
+
+.reveal-delay-5 {
+    transition-delay: 500ms;
+}
+
+.reveal-delay-6 {
+    transition-delay: 600ms;
+}
+
+/* Extended delays for hero sequences */
+.hero-delay-1 {
+    animation-delay: 0.1s;
+}
+
+.hero-delay-2 {
+    animation-delay: 0.2s;
+}
+
+.hero-delay-3 {
+    animation-delay: 0.3s;
+}
+
+.hero-delay-4 {
+    animation-delay: 0.4s;
+}
+
+.hero-delay-5 {
+    animation-delay: 0.5s;
+}
+
+.hero-delay-6 {
+    animation-delay: 0.6s;
+}
+
+.hero-delay-7 {
+    animation-delay: 0.7s;
+}
+
+.hero-delay-8 {
+    animation-delay: 0.8s;
+}
+
+/* ==========================================================================
+   Hero Animations - Premium Cinematic Sequence
+   ========================================================================== */
+
+/* Cinematic hero entrance with scale and blur */
+@keyframes heroReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.96);
+        filter: blur(8px);
+    }
+
+    60% {
+        filter: blur(2px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes heroPortraitReveal {
+    0% {
+        opacity: 0;
+        transform: translateX(50px) scale(0.9);
+        filter: blur(12px);
+    }
+
+    50% {
+        filter: blur(4px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+.hero__greeting {
+    animation: heroReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards;
+}
+
+.hero__title {
+    animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
+}
+
+.hero__title .text-accent {
+    display: inline-block;
+    animation: heroReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.35s backwards;
+}
+
+.hero__subtitle {
+    animation: heroReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.45s backwards;
+}
+
+.hero__description {
+    animation: heroReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.6s backwards;
+}
+
+.hero__actions {
+    animation: heroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.75s backwards;
+}
+
+.hero__actions .btn:nth-child(1) {
+    animation: heroReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.85s backwards;
+}
+
+.hero__actions .btn:nth-child(2) {
+    animation: heroReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.95s backwards;
+}
+
+.hero__portrait {
+    animation: heroPortraitReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards;
+}
+
+/* Contact page — stagger the link items */
+.contact__link {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity var(--duration-slower) var(--ease-out-expo),
+        transform var(--duration-slower) var(--ease-out-expo),
+        border-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+.contact__link.revealed,
+.contact__info.revealed .contact__link {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.contact__info.revealed .contact__link:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.contact__info.revealed .contact__link:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.contact__info.revealed .contact__link:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.hero__scroll {
+    animation: fadeIn var(--duration-cinematic) var(--ease-out-expo) 1.2s backwards;
+}
+
+/* ==========================================================================
+   About Page Animations
+   ========================================================================== */
+
+.about__image {
+    animation: fadeInLeft var(--duration-slower) var(--ease-out-expo) 0.2s backwards;
+}
+
+.about__bio h1 {
+    animation: fadeInUp var(--duration-slower) var(--ease-out-expo) 0.35s backwards;
+}
+
+.about__bio .divider {
+    animation: lineExpandCenter var(--duration-slower) var(--ease-out-expo) 0.5s backwards;
+    transform-origin: center;
+}
+
+.about__bio p {
+    animation: fadeInUp var(--duration-slower) var(--ease-out-expo) 0.6s backwards;
+}
+
+/* Gold accent divider animation */
+.divider {
+    animation: lineExpandCenter var(--duration-slower) var(--ease-out-expo) 0.5s backwards;
+    transform-origin: center;
+}
+
+.hero .divider,
+.cv__header .divider,
+.blog__header .divider {
+    animation: lineExpandCenter var(--duration-slower) var(--ease-out-expo) 0.5s backwards;
+}
+
+/* ==========================================================================
+   Navigation Animations
+   ========================================================================== */
+
+/* Animated underline with elastic feel */
+.nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: width var(--duration-base) var(--ease-out-expo);
+}
+
+.nav__link:hover::after,
+.nav__link.active::after {
+    width: 100%;
+}
+
+/* Active link glow effect */
+.nav__link.active {
+    text-shadow: 0 0 20px var(--color-accent-glow);
+}
+
+/* ==========================================================================
+   Button Effects
+   ========================================================================== */
+
+/* Enhanced shine effect */
+.btn-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-shine::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.15),
+            transparent);
+    transition: left var(--duration-slow) var(--ease-out-expo);
+}
+
+.btn-shine:hover::before {
+    left: 100%;
+}
+
+/* Primary button glow on hover */
+.btn--primary {
+    transition:
+        all var(--transition-base),
+        box-shadow var(--duration-base) var(--ease-out-expo);
+}
+
+.btn--primary:hover {
+    box-shadow: var(--shadow-glow);
+}
+
+/* Subtle glow pulse for CTA buttons */
+.btn--glow {
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+.btn--glow:hover {
+    animation: none;
+    box-shadow: var(--shadow-glow-strong);
+}
+
+/* ==========================================================================
+   Card Effects
+   ========================================================================== */
+
+/* Premium depth on cards */
+.card {
+    box-shadow: var(--shadow-depth);
+    transition:
+        transform var(--duration-base) var(--ease-out-expo),
+        box-shadow var(--duration-base) var(--ease-out-expo),
+        border-color var(--duration-base) var(--ease-out-expo);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-depth-hover);
+}
+
+/* Gold border reveal on hover */
+.card--accent-border {
+    position: relative;
+}
+
+.card--accent-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(135deg,
+            var(--color-accent),
+            transparent 50%,
+            var(--color-accent));
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity var(--duration-base) var(--ease-out-expo);
+}
+
+.card--accent-border:hover::before {
+    opacity: 1;
+}
+
+/* Blog card specific enhancements */
+.blog-card {
+    overflow: hidden;
+}
+
+.blog-card__image img {
+    transition: transform var(--duration-slow) var(--ease-out-expo);
+}
+
+.blog-card:hover .blog-card__image img {
+    transform: scale(1.08);
+}
+
+/* ==========================================================================
+   Timeline Animations
+   ========================================================================== */
+
+/* Timeline dot pulse */
+.timeline__item::before {
+    animation: dotPulse 2.5s ease-in-out infinite;
+    animation-delay: calc(var(--item-index, 0) * 0.3s);
+}
+
+/* Timeline line draw effect */
+.timeline::before {
+    transform-origin: top;
+    animation: lineGrow var(--duration-cinematic) var(--ease-out-expo) forwards;
+}
+
+@keyframes lineGrow {
+    from {
+        transform: scaleY(0);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+}
+
+/* Timeline items stagger */
+.timeline__item {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition:
+        opacity var(--duration-slower) var(--ease-out-expo),
+        transform var(--duration-slower) var(--ease-out-expo);
+}
+
+.timeline__item.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ==========================================================================
+   Skill Tag Animations
+   ========================================================================== */
+
+.skill-item {
+    opacity: 0;
+    transform: scale(0.85);
+    transition:
+        opacity var(--duration-base) var(--ease-spring),
+        transform var(--duration-base) var(--ease-spring),
+        border-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+.skill-item.revealed {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Stagger animation for skill items */
+.skill-list .skill-item:nth-child(1) {
+    transition-delay: 0ms;
+}
+
+.skill-list .skill-item:nth-child(2) {
+    transition-delay: 50ms;
+}
+
+.skill-list .skill-item:nth-child(3) {
+    transition-delay: 100ms;
+}
+
+.skill-list .skill-item:nth-child(4) {
+    transition-delay: 150ms;
+}
+
+.skill-list .skill-item:nth-child(5) {
+    transition-delay: 200ms;
+}
+
+.skill-list .skill-item:nth-child(6) {
+    transition-delay: 250ms;
+}
+
+.skill-list .skill-item:nth-child(7) {
+    transition-delay: 300ms;
+}
+
+.skill-list .skill-item:nth-child(8) {
+    transition-delay: 350ms;
+}
+
+/* ==========================================================================
+   Loading States & Utilities
+   ========================================================================== */
+
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            transparent,
+            var(--color-surface-alt),
+            transparent);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Link underline animation */
+.link-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.link-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: currentColor;
+    transition: width var(--duration-base) var(--ease-out-expo);
+}
+
+.link-underline:hover::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   Page Overlay Transition
+   ========================================================================== */
+
+.page-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: var(--color-bg);
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.page-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* ==========================================================================
+   Reduced Motion - Accessibility
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+        filter: none;
+    }
+
+    .timeline__item {
+        opacity: 1;
+        transform: none;
+    }
+
+    .skill-item {
+        opacity: 1;
+        transform: none;
+    }
+}

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Un studiu în Exod 32 despre poporul lui Dumnezeu, idolatria inimii și harul nemeritat">
+    <title>Har pentru inima idolatră | Devotional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css?v=20260206">
+    <link rel="stylesheet" href="css/base.css?v=20260206">
+    <link rel="stylesheet" href="css/layout.css?v=20260206">
+    <link rel="stylesheet" href="css/components.css?v=20260206">
+    <link rel="stylesheet" href="css/animations.css?v=20260206">
+    <link rel="stylesheet" href="css/pages.css?v=20260206">
+    <style>
+        .devotional {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: var(--space-16) var(--space-6);
+        }
+
+        .devotional__header {
+            text-align: center;
+            margin-bottom: var(--space-12);
+        }
+
+        .devotional__meta {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-4);
+            margin-bottom: var(--space-6);
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+        }
+
+        .devotional__title {
+            font-size: var(--text-4xl);
+            line-height: 1.2;
+            margin-bottom: var(--space-4);
+        }
+
+        .devotional__subtitle {
+            font-size: var(--text-lg);
+            color: var(--color-text-muted);
+            font-style: italic;
+        }
+
+        .devotional__content {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.25rem;
+            line-height: 1.9;
+            color: var(--color-text-secondary);
+        }
+
+        .devotional__content p {
+            margin-bottom: var(--space-6);
+        }
+
+        .devotional__content strong {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        .devotional__scripture {
+            background: var(--color-surface);
+            border-left: 3px solid var(--color-accent);
+            padding: var(--space-6) var(--space-8);
+            margin: var(--space-8) 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            font-style: italic;
+        }
+
+        .devotional__scripture-ref {
+            display: block;
+            margin-top: var(--space-4);
+            font-style: normal;
+            font-weight: 600;
+            color: var(--color-accent);
+            font-size: var(--text-sm);
+        }
+
+        .devotional__section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: var(--text-xl);
+            color: var(--color-text);
+            margin-top: var(--space-12);
+            margin-bottom: var(--space-6);
+            padding-bottom: var(--space-2);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .devotional__highlight {
+            background: linear-gradient(135deg, rgba(201, 162, 39, 0.1), rgba(201, 162, 39, 0.05));
+            padding: var(--space-6) var(--space-8);
+            border-radius: var(--radius-lg);
+            margin: var(--space-8) 0;
+            border: 1px solid rgba(201, 162, 39, 0.2);
+        }
+
+        .devotional__highlight p {
+            margin: 0;
+            color: var(--color-text);
+            font-weight: 500;
+        }
+
+        .devotional__back {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            margin-bottom: var(--space-8);
+            color: var(--color-text-muted);
+            font-size: var(--text-sm);
+            transition: color var(--transition-fast);
+        }
+
+        .devotional__back:hover {
+            color: var(--color-accent);
+        }
+
+        .devotional__quote {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+            padding: var(--space-6);
+            margin: var(--space-6) 0;
+            background: var(--color-surface);
+            border-radius: var(--radius-md);
+        }
+
+        .devotional__quote cite {
+            display: block;
+            margin-top: var(--space-3);
+            font-size: var(--text-sm);
+            color: var(--color-accent);
+        }
+
+        hr.devotional__divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+            margin: var(--space-12) 0;
+        }
+
+        .devotional__closing {
+            text-align: center;
+            margin-top: var(--space-12);
+            padding: var(--space-8);
+            background: linear-gradient(135deg, rgba(201, 162, 39, 0.08), transparent);
+            border-radius: var(--radius-lg);
+            font-style: italic;
+        }
+
+        .devotional__list {
+            margin: var(--space-6) 0;
+            padding-left: var(--space-6);
+        }
+
+        .devotional__list li {
+            margin-bottom: var(--space-3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-wrapper page-transition">
+        <header class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <a href="index.html" class="logo">pol<span>.</span></a>
+                    <nav class="nav">
+                        <button class="nav__toggle"
+                            aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+                        <ul class="nav__list">
+                            <li><a href="index.html" class="nav__link">Home</a></li>
+                            <li><a href="about.html" class="nav__link">About</a></li>
+                            <li><a href="cv.html" class="nav__link">CV</a></li>
+                            <li><a href="blog.html" class="nav__link active">Blog</a></li>
+                            <li><a href="contact.html" class="nav__link">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <article class="devotional reveal">
+                <a href="blog.html" class="devotional__back">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    Înapoi la Blog
+                </a>
+
+                <header class="devotional__header">
+                    <div class="devotional__meta">
+                        <span class="tag"
+                            style="background: rgba(201, 162, 39, 0.2); color: var(--color-accent);">Română</span>
+                        <span>•</span>
+                        <span>Exod 32</span>
+                    </div>
+                    <h1 class="devotional__title">Har pentru inima idolatră</h1>
+                    <hr class="divider">
+                    <p class="devotional__subtitle">Un studiu despre poporul lui Dumnezeu, vițelul de aur și harul
+                        scandalos al lui Dumnezeu</p>
+                </header>
+
+                <div class="devotional__content">
+                    <h3 class="devotional__section-title">Context</h3>
+
+                    <p>Ne vom uita la câteva pasaje din cartea Exod. Pentru context, cartea Exod este a doua carte din
+                        Pentateuh, iar ea relatează cum, după moartea lui Iosif, poporul evreu devine sclav egiptenilor,
+                        cum este salvat din robie de către Dumnezeu prin Moise — cel care a scris cartea — și ce se
+                        întâmplă cu poporul în pustie, acolo unde este adus la scoaterea din Egipt.</p>
+
+                    <p>Vom citi Exod 32:1-10, dar înainte de asta aș vrea să facem o recapitulare a ce s-a întâmplat
+                        până acum în cartea Exod. Dumnezeu alege un om, Moise, pe care-l folosește pentru a scoate
+                        poporul ales de El din robia Egiptului. După o serie de 10 urgii, poporul primește aprobarea lui
+                        Faraon de a părăsi țara, fuge de armata egipteană și Dumnezeu desparte marea roșie pentru a
+                        permite poporului evreu să treacă, în timp ce egiptenii au fost înghițiți de ape. După aceea,
+                        poporul ajunge în deșert unde este condus de către Dumnezeu printr-un stâlp de nor pe timp de zi
+                        și un stâlp de foc pe timp de noapte.</p>
+
+                    <p>Până acum putem să vedem foarte clar că poporul știa foarte bine de ce este capabil Dumnezeul
+                        lor. Totuși, vedem cum, odată ajunși în pustie, poporul începe să se îngrijoreze și să se plângă
+                        de faptul că nu aveau mâncare și apă, și ei spun că în Egipt le era mai bine, pentru că, deși
+                        acolo trăiau ca niște sclavi, măcar trăiau.</p>
+
+                    <div class="devotional__highlight">
+                        <p>Vedem un lucru esențial despre poporul evreu în acest moment: <strong>Ei nu-și cunosc
+                                Dumnezeul lor.</strong> Ei știu foarte bine capabilitățile lui Dumnezeu, dar nu îi
+                            cunosc caracterul lui Dumnezeu.</p>
+                    </div>
+
+                    <p>Erau atât de îngrijorați de nevoia lor temporară după hrană fizică, încât nu realizează nevoia
+                        lor mai urgentă de hrană spirituală. Ei zic practic: <strong>„Mai bine rămân în Egipt unde am
+                            stomacul plin și sufletul gol."</strong></p>
+
+                    <p>Însă problema lor și mai mare era că ei nu erau conștienți de nevoia lor spirituală, iar aici
+                        intervine Dumnezeu în capitolele care urmează. În mod evident, El se îngrijește și de nevoile
+                        lor fizice și le dă mâncare, apă și îi protejează în lupta cu alt popor, și într-un final ei
+                        ajung la locul în care Dumnezeu vrea să le arate lucrul de care <strong>ei nu au avut niciodată
+                            parte: libertate — și nu una doar fizică și psihologică, ci în profunzime
+                            spirituală.</strong></p>
+
+                    <h3 class="devotional__section-title">Cele șase ascensiuni ale lui Moise</h3>
+
+                    <p>Din capitolul 19 până în capitolul 32, vedem o serie de ascensiuni ale lui Moise:</p>
+
+                    <p><strong>Prima ascensiune:</strong> Dumnezeu îi spune lui Moise că oferă poporului Israel un
+                        legământ: dacă îl vor păzi, Dumnezeu îi va face „comoara Lui", „o împărăție de preoți și un neam
+                        sfânt" (vers. 5–6). Moise duce acest mesaj poporului, iar poporul răspunde: „Vom face tot ce a
+                        zis Domnul" (Exod 19:8).</p>
+
+                    <p><strong>A doua ascensiune:</strong> Dumnezeu îi spune lui Moise că va coborî într-un nor gros, ca
+                        tot poporul să audă și să-l creadă.</p>
+
+                    <p><strong>A treia ascensiune:</strong> Moise pregătește poporul pentru coborârea lui Dumnezeu pe
+                        munte. „Au fost tunete, fulgere, un nor gros pe munte și un sunet foarte puternic de trâmbiță"
+                        (Exod 19:16). „Muntele Sinai era acoperit de fum, pentru că Domnul Se coborâse pe el în mijlocul
+                        focului. Fumul se ridica din el ca fumul unui cuptor, și tot muntele se cutremura puternic.
+                        Sunetul trâmbiței devenea tot mai tare și mai tare" (vers. 18–19).</p>
+
+                    <p><strong>A patra ascensiune:</strong> Dumnezeu vorbește direct poporului, însă „tot poporul vedea
+                        tunetele și fulgerele, auzea sunetul trâmbiței și vedea muntele fumegând. Când poporul a văzut,
+                        a tremurat de frică și a stat la depărtare". Așa că poporul îl roagă pe Moise să devină
+                        mijlocitorul dintre ei și Dumnezeu.</p>
+
+                    <p><strong>A cincea ascensiune:</strong> Dumnezeu îi dă lui Moise o mulțime de legi pentru popor:
+                        legi civile (Exod 21), legi morale și etice (Exod 22) și legi ceremoniale și sociale (Exod 23).
+                    </p>
+
+                    <div class="devotional__scripture">
+                        <p>Apoi a luat Cartea Legământului și a citit-o în auzul poporului. Ei au zis: „Vom face tot ce
+                            a spus Domnul și-L vom asculta!". Atunci Moise a luat sângele și a stropit poporul, zicând:
+                            „Iată sângele legământului pe care l-a încheiat Domnul cu voi pe baza tuturor acestor
+                            cuvinte".</p>
+                        <span class="devotional__scripture-ref">Exod 24:7-8</span>
+                    </div>
+
+                    <p><strong>A șasea ascensiune:</strong> Moise urcă cu Iosua, Aaron și fiii lui și 70 de bătrâni, și
+                        ei toți văd o parte din slava lui Dumnezeu. După care pe munte rămân doar Moise și Iosua, și un
+                        nor acoperă muntele timp de 6 zile. A 7-a zi, Moise intră în nor și ajunge să stea 40 de zile pe
+                        munte, ca Dumnezeu să-i dea tablele cu cele 10 porunci și instrucțiunile pentru pregătirea
+                        locului în care preotul urma să intre în prezența lui Dumnezeu.</p>
+
+                    <h3 class="devotional__section-title">Perspectiva poporului</h3>
+
+                    <p>Hai să ne punem puțin în pielea persoanelor de atunci: am fost un sclav până de curând, iar
+                        cultura stăpânilor mei a devenit cultura mea. Nu mă mai închin unui singur dumnezeu, ci am o
+                        mulțime de dumnezei cărora mă închin pentru lucruri specifice și diferite.</p>
+
+                    <p>Și într-o zi vine un om numit Moise — un ucigaș — și spune că dumnezeul strămoșilor noștri ne va
+                        elibera din robie. Cu siguranță la început am crezut că e nebun, dar apoi <strong>au urmat
+                            semnele: urgie după urgie lovește într-un zeu al stăpânilor mei și în stăpânii mei, iar eu
+                            sunt tefăr.</strong></p>
+
+                    <p>Într-un final ne strângem toți și plecăm în pustiu, total dezorientați și îngrijorați de armata
+                        care ne urmărește. Văd cum acest Dumnezeu al strămoșilor mei e mai puternic decât ceilalți
+                        dumnezei, dar rezultatul la care ne duce nu pare să fie bun — pare un Dumnezeu puternic, dar
+                        neînțelept.</p>
+
+                    <p>Îl văd cum se află atât de aproape de mine, e în vârful acelui munte, dar îmi este mult prea
+                        frică să mă apropii de munte — sunt convins că nu voi fi în siguranță dacă mă apropii prea mult.
+                        <em>Moise, mijlocește tu între noi și Dumnezeu.</em>
+                    </p>
+
+                    <p>Văd cum Moise și restul liderilor urcă pe munte, dar la întoarcere Moise și Iosua nu sunt. După,
+                        văd cum muntele e acoperit de un nor și aștept... Și aștept... Și tot aștept și Moise nu se mai
+                        întoarce.</p>
+
+                    <p><strong>E clar, Moise a murit. Acest Dumnezeu care ne-a chemat până aici a renunțat la
+                            noi!</strong> Și acum... suntem singuri în pustie și nu știm ce să facem... Niciodată nu am
+                        fost lipsiți de autoritate peste noi, fie ea umană sau divină. Nu mă simt bine, nu pot rămâne
+                        așa, am nevoie de ceva. Știu! Vom merge la fratele lui Moise și îi vom spune că avem nevoie să
+                        ne închinăm la dumnezei!</p>
+
+                    <h3 class="devotional__section-title">Textul: Exod 32:1-10</h3>
+
+                    <p>Acțiunea pasajului la care ne vom uita se întâmplă în timpul celor 40 de zile în care Moise e pe
+                        munte:</p>
+
+                    <div class="devotional__scripture">
+                        <p>[1] Când poporul a văzut că Moise întârzie să coboare de pe munte, s-a strâns în jurul lui
+                            Aaron și i-a zis: — Ridică-te! Fă-ne niște dumnezei care să meargă înaintea noastră, căci nu
+                            știm ce s-a întâmplat cu acest Moise, bărbatul care ne-a scos din țara Egiptului.</p>
+                        <p>[2] Aaron le-a răspuns: — Scoateți cerceii de aur din urechile soțiilor voastre, ale fiilor
+                            voștri și ale fiicelor voastre și aduceți-i la mine!</p>
+                        <p>[3] Și toți și-au scos cerceii de aur din urechi și i-au adus la Aaron. [4] El a luat aurul
+                            din mâna lor, l-a bătut cu o unealtă și a făcut din el un vițel turnat. Ei au zis: „Israel,
+                            aceștia sunt dumnezeii tăi care te-au scos din țara Egiptului!". [5] Când a văzut Aaron
+                            lucrul acesta, a construit un altar înaintea lui și a zis: „Mâine va fi o sărbătoare în
+                            cinstea Domnului". [6] A doua zi s-au sculat dis-de-dimineață și au adus arderi-de-tot și
+                            jertfe de pace. Poporul s-a așezat să mănânce și să bea, apoi s-a ridicat să se distreze.
+                        </p>
+                        <p>[7] Domnul i-a zis lui Moise: — Du-te, coboară de pe munte, căci poporul tău, pe care l-ai
+                            scos din țara Egiptului, s-a pervertit. [8] S-au abătut repede de la calea pe care le-am
+                            poruncit-o. Și-au făcut un vițel turnat, s-au închinat înaintea lui, i-au adus jertfe și au
+                            zis: „Israel, aceștia sunt dumnezeii tăi care te-au scos din țara Egiptului!".</p>
+                        <p>[9] Domnul i-a zis lui Moise: — M-am uitat la acest popor și iată că este un popor
+                            încăpățânat. [10] Acum, lasă-Mă! Mânia Mea se va aprinde împotriva lor și-i voi nimici, iar
+                            din tine voi face o națiune mare.</p>
+                        <span class="devotional__scripture-ref">Exod 32:1-10</span>
+                    </div>
+
+                    <h3 class="devotional__section-title">De ce Aaron?</h3>
+
+                    <p>De ce merg la Aaron? Deși Moise este mijlocitorul curent între Dumnezeu și popor, Aaron este cel
+                        care a vorbit poporului și înaintea lui Faraon în locul lui Moise, Moise fiind bâlbâit.</p>
+
+                    <p>Fără niciun dubiu, următoarea persoană după Moise care a fost expusă cel mai mult la Dumnezeu a
+                        fost Aaron — cel care va fi mare preot. În timp ce Moise e pe munte și Dumnezeu îi spune cum
+                        Aaron va fi marele preot, cel care urma să intre în cel mai sfânt loc de pe fața pământului,
+                        acesta <strong>preia conducerea poporului în rebeliunea lor de a face un idol căruia să i se
+                            închine și să-i atribuie gloria faptelor lui Dumnezeu.</strong></p>
+
+                    <p>Vedem cum poporul spune că acest idol este unul dintre dumnezei — „Israel, aceștia sunt dumnezeii
+                        tăi" — iar Aaron folosește cuvântul „Yahve" când spune „mâine va fi o sărbătoare în cinstea
+                        Domnului".</p>
+
+                    <div class="devotional__highlight">
+                        <p>Acest lucru definitivează starea actuală de credință a poporului: <strong>Dumnezeu, Yahve,
+                                Cel care i-a ajutat până acum, nu este cu nimic mai bun decât ceilalți dumnezei, nu este
+                                cu nimic mai bun decât dumnezeul făcut de ei.</strong></p>
+                    </div>
+
+                    <h3 class="devotional__section-title">Semnificația jertfelor</h3>
+
+                    <p>După care poporul aduce arderi-de-tot și jertfe de pace noului lor dumnezeu. Sunt exact tipul de
+                        jertfe pe care ei le aduc ca și popor când îi spun lui Dumnezeu că îi vor păzi legământul.</p>
+
+                    <p><strong>Jertfa de pace arată mulțumire și pace cu Dumnezeu.</strong> Aducând o astfel de jertfă
+                        pentru idol arată iar că ei nu mai atribuie nimic din cele întâmplate lui Dumnezeu și chiar mai
+                        mult, arată cum ei sunt împăcați în a nu-i mai atribui lui Dumnezeu nimic din ce i se cuvine.
+                    </p>
+
+                    <p>Arderea de tot simboliza două lucruri. <strong>Primul este ispășirea</strong>, care nu are nimic
+                        de-a face cu ce face poporul acum. Al doilea lucru pe care-l simbolizează este dedicarea totală
+                        față de Dumnezeu.</p>
+
+                    <p>Ceea ce ei fac acum nu este nimic mai mult decât <strong>o simbolizare fizică exterioară a ceea
+                            ce se întâmplă în inimile lor</strong> — și ce ni se întâmplă și nouă de multe ori astăzi:
+                        ei pun creația în locul cuvenit Creatorului.</p>
+
+                    <h3 class="devotional__section-title">Asemănarea inimii idolatre</h3>
+
+                    <p>Și citim aceste versete și parcă suntem cuprinși de oftică și de mânie și suntem convinși că avem
+                        tot dreptul să fim așa — până la urmă, cum pot acești oameni să se comporte așa față de
+                        Dumnezeu? Față de Dumnezeul pe care și eu îl urmez și slujesc azi.</p>
+
+                    <p>Și ne este atât de ușor să ne pierdem în emoțiile cauzate de citirea acestor întâmplări și de
+                        judecata noastră față de ei, <strong>încât uităm un lucru esențial: noi suntem la fel.</strong>
+                    </p>
+
+                    <div class="devotional__highlight">
+                        <p>Dacă am sta să ne uităm sinceri la viața noastră de până acum, de câte ori nu am ajuns să dăm
+                            gloria inimii noastre unor idoli în timp ce eram convinși că trăiam de parcă îl slăvim pe
+                            Dumnezeul cel adevărat. <strong>Brusc găsim în text un lucru comun între noi și poporul
+                                evreu de atunci: avem o inimă idolatră.</strong></p>
+                    </div>
+
+                    <h3 class="devotional__section-title">Dumnezeu simte, dar acționează conform caracterului Său</h3>
+
+                    <p>Vedem după cum, în timp ce Dumnezeu îi dădea lui Moise legile care aveau ca scop să-i arate
+                        poporului caracterul Său, Dumnezeu este conștient de ce se întâmplă la poalele muntelui.</p>
+
+                    <p>Mai mult, versetele 9 și 10 nu au scopul de a ne face să credem că Dumnezeu este la fel de
+                        limitat ca noi și că El acționează din reacții sau impulsuri. <strong>Versetele au un rol
+                            profund teologic când le conectăm cu ceea ce urmează: ne arată că Dumnezeu simte, dar nu
+                            acționează pe baza unor simțuri, ci pe baza caracterului Său și a voii Lui.</strong></p>
+
+                    <p>În versetele următoare și capitolele care urmează, vedem cum Dumnezeu nu îi nimicește și cum le
+                        arată milă, și aș vrea să vedem de ce acționează Dumnezeu așa. Pentru asta, o să citim versetul
+                        care este esența coborârii pe munte.</p>
+
+                    <h3 class="devotional__section-title">Cheia: Exod 25:8</h3>
+
+                    <p>Este în capitolul 25, deci Domnul spune asta cândva în timpul celor 40 de zile, deplin conștient
+                        de lucrul pe care poporul avea să-l facă atunci.</p>
+
+                    <div class="devotional__scripture" style="text-align: center; font-size: 1.3rem;">
+                        <p><strong>„Să-Mi facă un Lăcaș sfânt, și Eu voi locui în mijlocul lor."</strong></p>
+                        <span class="devotional__scripture-ref">Exodul 25:8</span>
+                    </div>
+
+                    <p style="text-align: center; font-size: 1.3rem; margin: var(--space-8) 0;"><em>„Eu voi locui în
+                            mijlocul lor."</em></p>
+
+                    <p>Dumnezeu, care în esența Sa este sfânt, își dorește să locuiască în mijlocul oamenilor păcătoși.
+                        Dumnezeu, care nu are nevoie de oameni, îi alege pe oamenii care îl resping pe Dumnezeu fără să
+                        știe nevoia lor disperată după El.</p>
+
+                    <div class="devotional__highlight">
+                        <p><strong>Dumnezeu, care ar putea să șteargă tot poporul înainte ca ei să-și dea seama, alege
+                                să arate un lucru pe care nu-l putem înțelege pe deplin, dar pentru care nu putem ajunge
+                                la un apogeu de recunoștință: har.</strong></p>
+                    </div>
+
+                    <p>Și asta nu se întâmplă datorită inimii poporului, nu. Se întâmplă datorită inimii lui Dumnezeu și
+                        a dorinței Sale. Tot ceea ce Dumnezeu le-a dat poporului până acum are scopul de a arăta
+                        caracterul Lui și dorința Lui: ca El să locuiască în mijlocul lor și ei să fie asemenea Lui:
+                        sfinți.</p>
+
+                    <p><strong>Și asta nu înseamnă o cunoaștere superficială a lui Dumnezeu, înseamnă restaurarea
+                            relației din Eden: omul umblând cu Dumnezeu.</strong></p>
+
+                    <h3 class="devotional__section-title">Imaginea scandalosă a harului</h3>
+
+                    <p>Pentru că poporul nu poate să urce și să stea în prezența lui Dumnezeu, Dumnezeu alege să se
+                        coboare în mijlocul lor. Sfințenia imposibil de apropiat a lui Dumnezeu și mila iertării sale au
+                        să se întâlnească în locul pe care Domnul îl descrie lui Moise pe munte: cortul întâlnirii.</p>
+
+                    <p>Iar Dumnezeu îi spune asta lui Moise în timp ce poporul își făcea un idol căruia îi dădea toată
+                        gloria cuvenită lui Dumnezeu.</p>
+
+                    <div class="devotional__highlight">
+                        <p><strong>Nu este nimic mai mult sau mai puțin decât o imagine scandaloasă, o imagine
+                                scandaloasă a harului. Una care pălește în comparație cu momentul pe care-l profețește:
+                                scandalul crucii.</strong></p>
+                    </div>
+
+                    <p>Locul în care Dumnezeu, care s-a coborât ca om, devine arderea de tot, jertfa de pace, mare preot
+                        și mijlocitor pentru oricine crede în sacrificiul Său.</p>
+
+                    <p><strong>Crucea lui Isus Cristos este locul în care relația dintre om și Dumnezeu este restaurată,
+                            iar reamintirea și încrederea noastră în această realitate este singurul mod în care putem
+                            să fim iertați pentru idolii cărora ne-am închinat și putem găsi libertate din robia
+                            păcatului.</strong></p>
+
+                    <div class="devotional__closing">
+                        <p><strong>Mielul sfânt și perfect moare ca noi să devenim copii ai lui Dumnezeu și ca El să
+                                vină să locuiască printre noi.</strong></p>
+                        <br>
+                        <p>Ce milă extraordinară ni s-a arătat, ca prin har noi să devenim casa Domnului.</p>
+                    </div>
+
+                    <hr class="devotional__divider">
+
+                    <div class="devotional__quote">
+                        <p>Cum să te dau, Efraime? Cum să te predau, Israele? ... Inima Mi se zbate în Mine; tot
+                            lăuntrul Mi se mișcă de milă. ... Căci Eu sunt Dumnezeu, nu om; Eu sunt Sfântul în mijlocul
+                            tău.</p>
+                        <cite>— Osea 11:8–9</cite>
+                    </div>
+
+                    <p>Dumnezeu suferă pentru poporul Său. Ceea ce Îi rănește inima, mai mult decât păcatele lor
+                        împotriva Lui, este gândul de a nu-i mai avea ca popor al Său. „Cum să te dau?" este felul Său
+                        de a spune: „Nu aș putea niciodată să te dau!" Pentru Dumnezeu, ruperea legământului cu noi este
+                        de neconceput, chiar și atunci când Îl rănim. Și El simte o compasiune atât de tandră, nu pentru
+                        că Își îndoaie regulile, ci tocmai pentru că este Dumnezeu: „Căci Eu sunt Dumnezeu, nu om."</p>
+                </div>
+            </article>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__inner">
+                    <div class="footer__social">
+                        <a href="https://github.com/3nachePaul" class="footer__social-link" aria-label="GitHub"><svg
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg></a>
+                        <a href="https://www.linkedin.com/in/paul-enache-/" class="footer__social-link"
+                            aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg></a>
+                    </div>
+                    <p class="footer__copyright">© 2026 Paul Enache. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="js/main.js?v=20260206"></script>
+    <script src="js/animations.js?v=20260206"></script>
+    <script src="js/navigation.js?v=20260206"></script>
+</body>
+
+</html>

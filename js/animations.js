@@ -8,6 +8,20 @@ document.addEventListener('DOMContentLoaded', () => {
     initCVSequentialReveal();
     initTimelineAnimation();
     initSkillTagAnimation();
+
+    // Safety fallback — force all hidden elements visible after 3s
+    // (guards against IntersectionObserver or animation glitches on CDN-hosted pages)
+    setTimeout(() => {
+        document.querySelectorAll('.reveal:not(.revealed)').forEach(el => {
+            el.classList.add('revealed');
+        });
+        document.querySelectorAll('.timeline__item:not(.revealed)').forEach(el => {
+            el.classList.add('revealed');
+        });
+        document.querySelectorAll('.skill-item:not(.revealed)').forEach(el => {
+            el.classList.add('revealed');
+        });
+    }, 3000);
 });
 
 /* -----------------------------------------------------------------------
@@ -168,11 +182,19 @@ function initPageTransitions() {
     // Reveal above-fold content immediately on load
     window.addEventListener('load', () => {
         document.body.classList.add('page-loaded');
+        // Dismiss any lingering overlay (safety net for GitHub Pages / CDN caching)
+        if (overlay) overlay.classList.remove('active');
         document.querySelectorAll('.reveal').forEach(el => {
             if (el.getBoundingClientRect().top < window.innerHeight * 0.85) {
                 el.classList.add('revealed');
             }
         });
+    });
+
+    // Extra safety: if 'load' never fires (bfcache), clear overlay on pageshow
+    window.addEventListener('pageshow', () => {
+        if (overlay) overlay.classList.remove('active');
+        document.body.classList.add('page-loaded');
     });
 }
 

@@ -244,7 +244,14 @@
 }
 
 .page-transition {
-    animation: pageEntrance 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: pageEntrance 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Guarantee content is visible even if animation is blocked */
+.page-loaded .page-transition {
+    opacity: 1;
+    transform: none;
+    filter: none;
 }
 
 /* ==========================================================================

@@ -835,24 +835,45 @@
     *,
     *::before,
     *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+        animation: none !important;
+        transition: none !important;
+    }
+
+    /* Ensure ALL animated elements are immediately visible */
+    .page-transition,
+    .hero__greeting,
+    .hero__title,
+    .hero__title .text-accent,
+    .hero__subtitle,
+    .hero__description,
+    .hero__actions,
+    .hero__actions .btn,
+    .hero__portrait,
+    .hero__scroll,
+    .about__image,
+    .about__bio h1,
+    .about__bio .divider,
+    .about__bio p,
+    .divider,
+    .contact__link {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
     }
 
     .reveal {
-        opacity: 1;
-        transform: none;
-        filter: none;
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
     }
 
     .timeline__item {
-        opacity: 1;
-        transform: none;
+        opacity: 1 !important;
+        transform: none !important;
     }
 
     .skill-item {
-        opacity: 1;
-        transform: none;
+        opacity: 1 !important;
+        transform: none !important;
     }
 }

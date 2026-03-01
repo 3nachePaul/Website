@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Un studiu din Ioan 11 despre suferință, credincioșie și inima lui Dumnezeu">
+    <title>Răspunsul inimii credincioase față de suferință | Devotional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css?v=20260207">
+    <link rel="stylesheet" href="css/base.css?v=20260207">
+    <link rel="stylesheet" href="css/layout.css?v=20260207">
+    <link rel="stylesheet" href="css/components.css?v=20260207">
+    <link rel="stylesheet" href="css/animations.css?v=20260207">
+    <link rel="stylesheet" href="css/pages.css?v=20260207">
+    <style>
+        .devotional {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: var(--space-16) var(--space-6);
+        }
+
+        .devotional__header {
+            text-align: center;
+            margin-bottom: var(--space-12);
+        }
+
+        .devotional__meta {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-4);
+            margin-bottom: var(--space-6);
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+        }
+
+        .devotional__title {
+            font-size: var(--text-4xl);
+            line-height: 1.2;
+            margin-bottom: var(--space-4);
+        }
+
+        .devotional__subtitle {
+            font-size: var(--text-lg);
+            color: var(--color-text-muted);
+            font-style: italic;
+        }
+
+        .devotional__content {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.25rem;
+            line-height: 1.9;
+            color: var(--color-text-secondary);
+        }
+
+        .devotional__content p {
+            margin-bottom: var(--space-6);
+        }
+
+        .devotional__content strong {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        .devotional__scripture {
+            background: var(--color-surface);
+            border-left: 3px solid var(--color-accent);
+            padding: var(--space-6) var(--space-8);
+            margin: var(--space-8) 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            font-style: italic;
+        }
+
+        .devotional__scripture-ref {
+            display: block;
+            margin-top: var(--space-4);
+            font-style: normal;
+            font-weight: 600;
+            color: var(--color-accent);
+            font-size: var(--text-sm);
+        }
+
+        .devotional__section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: var(--text-xl);
+            color: var(--color-text);
+            margin-top: var(--space-12);
+            margin-bottom: var(--space-6);
+            padding-bottom: var(--space-2);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .devotional__highlight {
+            background: linear-gradient(135deg, rgba(201, 162, 39, 0.1), rgba(201, 162, 39, 0.05));
+            padding: var(--space-6) var(--space-8);
+            border-radius: var(--radius-lg);
+            margin: var(--space-8) 0;
+            border: 1px solid rgba(201, 162, 39, 0.2);
+        }
+
+        .devotional__highlight p {
+            margin: 0;
+            color: var(--color-text);
+            font-weight: 500;
+        }
+
+        .devotional__back {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            margin-bottom: var(--space-8);
+            color: var(--color-text-muted);
+            font-size: var(--text-sm);
+            transition: color var(--transition-fast);
+        }
+
+        .devotional__back:hover {
+            color: var(--color-accent);
+        }
+
+        .devotional__quote {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+            padding: var(--space-6);
+            margin: var(--space-6) 0;
+            background: var(--color-surface);
+            border-radius: var(--radius-md);
+        }
+
+        .devotional__quote cite {
+            display: block;
+            margin-top: var(--space-3);
+            font-size: var(--text-sm);
+            color: var(--color-accent);
+        }
+
+        hr.devotional__divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+            margin: var(--space-12) 0;
+        }
+
+        .devotional__closing {
+            text-align: center;
+            margin-top: var(--space-12);
+            padding: var(--space-8);
+            background: linear-gradient(135deg, rgba(201, 162, 39, 0.08), transparent);
+            border-radius: var(--radius-lg);
+            font-style: italic;
+        }
+
+        .devotional__poem {
+            background: var(--color-surface);
+            padding: var(--space-8);
+            border-radius: var(--radius-lg);
+            margin: var(--space-10) 0;
+            font-style: italic;
+            text-align: center;
+            line-height: 2;
+        }
+
+        .devotional__poem p {
+            margin-bottom: var(--space-2);
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .devotional {
+                padding: var(--space-8) var(--space-4);
+            }
+
+            .devotional__title {
+                font-size: var(--text-2xl);
+            }
+
+            .devotional__subtitle {
+                font-size: var(--text-base);
+            }
+
+            .devotional__content {
+                font-size: 1.1rem;
+            }
+
+            .devotional__scripture {
+                padding: var(--space-4) var(--space-5);
+                margin: var(--space-6) 0;
+            }
+
+            .devotional__highlight {
+                padding: var(--space-4) var(--space-5);
+            }
+
+            .devotional__poem {
+                padding: var(--space-5);
+            }
+
+            .devotional__quote {
+                padding: var(--space-4);
+                font-size: 1rem;
+            }
+
+            .devotional__section-title {
+                font-size: var(--text-lg);
+                margin-top: var(--space-8);
+            }
+
+            .devotional__closing {
+                padding: var(--space-5);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-wrapper page-transition">
+        <header class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <a href="index.html" class="logo">pol<span>.</span></a>
+                    <nav class="nav">
+                        <button class="nav__toggle"
+                            aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+                        <ul class="nav__list">
+                            <li><a href="index.html" class="nav__link">Home</a></li>
+                            <li><a href="about.html" class="nav__link">About</a></li>
+                            <li><a href="cv.html" class="nav__link">CV</a></li>
+                            <li><a href="blog.html" class="nav__link active">Blog</a></li>
+                            <li><a href="contact.html" class="nav__link">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <article class="devotional reveal">
+                <a href="blog.html" class="devotional__back">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    Înapoi la Blog
+                </a>
+
+                <header class="devotional__header">
+                    <div class="devotional__meta">
+                        <span class="tag"
+                            style="background: rgba(201, 162, 39, 0.2); color: var(--color-accent);">Română</span>
+                        <span>•</span>
+                        <span>Ioan 11:1-46</span>
+                    </div>
+                    <h1 class="devotional__title">Răspunsul inimii credincioase față de suferință</h1>
+                    <hr class="divider">
+                    <p class="devotional__subtitle">Un studiu despre suferință, credincioșie și inima lui Dumnezeu</p>
+                </header>
+
+                <div class="devotional__content">
+
+                    <p>El era un adolescent, abia ce făcuse tranziția de la școala duminicală la studiul biblic personal,
+                        când o situație medicală care avea să-i schimbe întreaga viață l-a forțat să stea față în față cu
+                        realizarea că în această lume căzută, nu există garanția unei vieți ușoare.</p>
+
+                    <p>Amândoi conduceau un grup de casă, fiecare bărbat din grup se uita la el ca la un exemplu și
+                        fiecare femeie își dorea să semene mai mult cu ea. Nimeni nu putea să vadă durerea din spatele
+                        slujirii lor credincioase, o durere pe care încercau să o suprime când vedeau cum familiile vin
+                        cu copiii la grupul de casă, în timp ce ei nu pot avea unul. O durere care ducea la momente
+                        nespuse de disperare, în care doar se întrebau dacă mai pot continua să slujească astfel.</p>
+
+                    <p>Ea se apropia de pensie când soțul ei a murit. În niciun aspect nu era slabă din punct de vedere
+                        spiritual, chiar dacă soțul ei era pastor, ea nu își neglija propriile responsabilități spirituale
+                        și propria relație cu Dumnezeu. Deși se vedea aproape zilnic cu oameni din biserică și copiii ei
+                        o vizitau lunar, fără soțul ei totul era diferit. Cum ar fi putut ea să le vorbească fetelor
+                        tinere despre Dumnezeu când i se părea că prezența Lui a dispărut odată cu soțul ei?</p>
+
+                    <h3 class="devotional__section-title">Suferința și revolta</h3>
+
+                    <p>Suferința în această viață este garantată. Este una din scuzele noastre principale pentru revolta
+                        noastră împotriva lui Dumnezeu. Da, ai citit bine. Aceasta poate să fie o scuză a revoltei
+                        noastre, însă nu este niciodată un motiv. Dacă ar fi fost un motiv, asta ar însemna că orice
+                        persoană care suferă ar fi îndreptățită în revolta ei față de Dumnezeu. Însă revolta este un
+                        răspuns față de suferință care ne arată starea inimii noastre.</p>
+
+                    <p>Revolta în urma suferinței declară că noi aveam un anumit plan care a fost ruinat de lucruri din
+                        afara controlului nostru, așa că mergem instinctiv să aruncăm vina asupra Celui care este în
+                        control, sau care cel puțin este în control când acest lucru ne permite să lovim în El cu
+                        frustrările noastre, trăind în rest de parcă acest lucru nu este adevărat când nu suferim.</p>
+
+                    <p>Ba mai mult, auto-îndreptățirea noastră merge atât de adânc încât ne face să atribuim atribute
+                        false caracterului lui Dumnezeu, ca la urmă să-L putem critica. Facem acest lucru cu o ușurință
+                        extraordinară, ceea ce ar trebui să ne înspăimânte groaznic, având în vedere că noi ne amintim de
+                        suferință doar când noi avem parte de ea și, în rest, ne trăim viețile de parcă acest lucru nici
+                        nu există.</p>
+
+                    <div class="devotional__highlight">
+                        <p>Putem fi cu toții de acord că suferim de un ego prea mare.</p>
+                    </div>
+
+                    <h3 class="devotional__section-title">Suferința în viața credincioșilor</h3>
+
+                    <p>Pentru a vedea că prezența suferinței nu este același lucru cu prezența revoltei, ne vom uita la
+                        un exemplu din Cuvânt. <strong>Ioan 11:1-46</strong></p>
+
+                    <p>Textul începe prin a ne prezenta realitatea suferinței în viața credincioșilor. Nu putem spune că
+                        doar oamenii pedepsiți de Dumnezeu suferă, vedem clar cum cei 3 frați „iubiți de Isus" suferă.
+                        Ba chiar mai mult, tragedia se întâmplă Mariei, cea care a prevăzut suferința Domnului Isus.</p>
+
+                    <p>Poate noi ne gândim că celor care sunt credincioși nu li se întâmplă rău, sau dacă li se
+                        întâmplă, acesta are o anumită măsură care nu depășește așteptările noastre despre cantitatea
+                        suferinței de care ar trebui credincioșii să aibă parte. Vedem totuși în Scriptură că acest
+                        lucru nu e adevărat.</p>
+
+                    <p>Și ei, la fel ca noi astăzi, aleg ca în suferința lor să-I ceară ajutor Celui care ei credeau că
+                        îi poate ajuta și va dori să facă asta. Vedem de la început că dorința lui Isus nu este ca
+                        suferința doar să înceteze în viața celor pe care El îi iubește, El dorește ca această suferință
+                        să lucreze ceva. Așa că Isus alege să aștepte.</p>
+
+                    <p>Deși El ajunge a 4-a zi, El nu întârzie, pentru că niciodată nu a fost scopul Său să ajungă mai
+                        devreme, aceasta era dorința surorilor.</p>
+
+                    <div class="devotional__highlight">
+                        <p>Potrivit planului lor, Isus întârzie; potrivit planului lui Dumnezeu, Isus ajunge la momentul
+                            potrivit.</p>
+                    </div>
+
+                    <h3 class="devotional__section-title">Marta</h3>
+
+                    <p>Ajuns în Betania, Isus este confruntat cu suferința Martei. Suferința Martei nu a produs revoltă
+                        totuși. Sigur, versetul 21, care este prima ei frază când Îl vede pe Isus, pare a fi răspunsul
+                        unei persoane care e gata să Îl învinuiască pe Isus pentru suferința prin care trece. Însă a 2-a
+                        frază, versetul 22, ne arată inima din spatele versetului 21.</p>
+
+                    <p>Ea nu a venit înaintea lui Isus pentru a-și expune „dreptul" ei de a-L trage la răspundere pentru
+                        cele întâmplate. Prima ei frază arată teologia ei despre Isus, iar a 2-a arată cum această
+                        teologie produce în inima ei credință.</p>
+
+                    <p>Ea nu-I spune lui Dumnezeu cum ar trebui să procedeze, ea Îi declară lui Isus credința ei față de
+                        puterea și inima Lui. Are credința că Dumnezeu nu este doar atotputernic, ci și iubitor și plin
+                        de milă.</p>
+
+                    <p>Această femeie, care era mai preocupată de tradiție decât de prezența lui Isus, își lasă sora,
+                        invitații și toată tradiția și vine înaintea lui Isus, pentru că omul nu are nevoie de un ritual
+                        religios, ci de Dumnezeu personal.</p>
+
+                    <p>Însă percepția Martei despre măreția lui Isus încă nu era completă; când El îi spune că fratele
+                        ei va învia, ea răspunde conform teologiei escatologice pe care o avea. Marta răspunde conform
+                        răspunsului pe care ea îl anticipa că Isus avea să i-l dea. Ea se așteaptă la un răspuns care
+                        să se potrivească cutiei în care ea L-a pus pe Dumnezeu.</p>
+
+                    <div class="devotional__highlight">
+                        <p>Așa că, în harul Său, Isus decide să-i arate Martei și mai bine cine este și de ce este
+                            capabil.</p>
+                    </div>
+
+                    <h3 class="devotional__section-title">Maria</h3>
+
+                    <p>Marta nu este singura care refuză să se revolte. Imediat ce Isus trimite după Maria, ea vine, nu
+                        așteaptă, nu refuză și nu se scuză, chiar și în suferință. Maria este obișnuită să aducă la
+                        picioarele Domnului Isus inima ei.</p>
+
+                    <p>Dacă în trecut ea a venit și, alături de inima ei slujitoare, a jertfit la picioarele lui Isus ce
+                        avea mai bun, vedem acum cum în suferință alege să aducă ce are mai respingător. Vedem din
+                        vorbele ei (v. 32) că inima sa nu era pregătită să Îl tragă la răspundere pe Domnul Isus că nu a
+                        lucrat cum a vrut ea, inima ei dorea să-I exprime lui Isus toată durerea prin care trece, în
+                        ciuda credinței, și atât.</p>
+
+                    <p>Maria nu intervine peste rolul Domnului Isus pentru a-I spune cum trebuie să acționeze, ea doar
+                        face în totalitate ce ține de ea: vine la Isus așa cum este.</p>
+
+                    <div class="devotional__highlight">
+                        <p>Iar această jertfă a unei inimi nefiltrate este singura jertfă dorită de Isus, mai prețios în
+                            ochii Săi decât orice alabastru.</p>
+                    </div>
+
+                    <h3 class="devotional__section-title">Credincioșia</h3>
+
+                    <p>Credincioșia nu este o ușă de scăpare din suferință, ea este scopul suferinței: generarea unei
+                        credințe care stă statornică și îndură în ciuda oricărei încercări. Dar acest scop nu reprezintă
+                        un punct care trebuie atins, după care toată problema este rezolvată.</p>
+
+                    <p>Credincioșia este un mod de trai, nu un moment din viață în care ne „predăm" viața pentru a ieși
+                        din sezonul secetos în care ne aflăm. Cele 2 surori nu vin cu o credință pe care o joacă ca un
+                        monopol care ar trebui să forțeze mâna lui Dumnezeu ca El să lucreze așa cum vor ele.</p>
+
+                    <h3 class="devotional__section-title">Inima lui Isus</h3>
+
+                    <p>Dacă până acum am văzut inimile surorilor în suferința lor, versetele 33 și 35 ne arată inima lui
+                        Isus față de credincioșii care suferă. Trebuie să știm înainte că acest lucru nu e o
+                        caracteristică atribuită doar lui Isus, ci tuturor persoanelor din Trinitate, până la urmă este
+                        un singur Dumnezeu.</p>
+
+                    <p>Trebuie să înțelegem că Dumnezeu nu S-a schimbat odată cu întruparea lui Isus, tot ce a făcut
+                        întruparea Lui a fost să schimbe pentru o perioadă limitată modul în care El își exprimă emoțiile
+                        (v. 35). Exemplul lui Isus arată că durerea profundă în fața morții nu indică o lipsă de
+                        credință, ci o tristețe sinceră față de realitatea suferinței și a morții.</p>
+
+                    <p>Emoțiile nu sunt ceva rău, ele nu au apărut după cădere, ca orice lucru care era bun, ele au fost
+                        alterate de cădere. Isus a fost omul perfect, deci a avut inteligență emoțională perfectă. Isus
+                        nu e insensibil sau lipsit de sentimente, aceste versete ne arată cum sentimentele și situațiile
+                        noastre stârnesc sentimente în Isus.</p>
+
+                    <p>Aceasta este inima Dumnezeului care a ales să moară pentru creația Sa rebelă și este o insultă la
+                        adresa Sa să spunem că a mers la cruce fără să simtă ceva. Nu este durere mai mare decât atunci
+                        când dragostea noastră nu este reciprocă și nu există iubire mai mare decât să te sacrifici
+                        știind că urmează să suferi prin acea durere.</p>
+
+                    <div class="devotional__highlight">
+                        <p>Spunând că Isus nu a avut emoții, minimalizăm sacrificiul Lui. El a mers la cruce conștient
+                            de durerea care-L aștepta și acea durere a fost și emoțională.</p>
+                    </div>
+
+                    <div class="devotional__poem">
+                        <p><strong>Din inima lui Dumnezeu</strong></p>
+                        <br>
+                        <p>Există-n cosmos vreo durere</p>
+                        <p>asemeni cu durerea Lui?</p>
+                        <p>Bam-Bum, Bam-Bum, ce sfâșiere!</p>
+                        <p>Să fie pe pământ tăcere!</p>
+                        <p>Bam-Bum, Bam-Bum, cu ce putere</p>
+                        <p>răsună bolta cerului.</p>
+                        <br>
+                        <p>Când singure se-ntorc acasă,</p>
+                        <p>în poartă vitele se-opresc.</p>
+                        <p>Doar fiii Mei seduși se lasă,</p>
+                        <p>nu Mă cunosc și nu le pasă,</p>
+                        <p>că inima de dor Mi-e arsă,</p>
+                        <p>că plâng când ei se răzvrătesc.</p>
+                        <br>
+                        <p>Să faci în mintea ta tăcere!</p>
+                        <p>S-auzi, Bam-Bum, Bam-Bum mereu.</p>
+                        <p>Chiar iadu-i strigăt de durere!</p>
+                        <p>Cu ce adâncă sfâșiere,</p>
+                        <p>e smuls pe veci acel ce piere</p>
+                        <p>din inima lui Dumnezeu.</p>
+                        <br>
+                        <p>— Vasile Al. Taloș</p>
+                    </div>
+
+                    <h3 class="devotional__section-title">Învierea lui Lazăr și crucea</h3>
+
+                    <p>Fiul Suferinței, care este judecat de ai Săi chiar și în suferința Sa (v. 37), a venit să aducă
+                        sfârșitul ei și începutul eternității fără durere. Vedem cum Isus merge la mormânt pentru a
+                        împlini planul lui Dumnezeu, care nu era doar să îl învie pe Lazăr.</p>
+
+                    <p>Evreii credeau că după sfârșitul celei de-a 3-a zi un om nu mai poate învia, iar trupul lui Lazăr
+                        deja începuse să se descompună. Isus a venit a 4-a zi pentru a Se revela pe Sine mai bine și
+                        pentru a primi gloria pe care o merită.</p>
+
+                    <div class="devotional__highlight">
+                        <p>Singura speranță în suferința noastră este să știm că ea nu este inutilă, pentru că există un
+                            Dumnezeu care ne iubește și o orchestrează în așa fel încât ea să producă ceva bun. Nu ceva
+                            ce ne dorim, ceva bun.</p>
+                    </div>
+
+                    <p>Fiul lui Dumnezeu arată o privire a ce urma să facă în câteva săptămâni, cum El urma să ne scape
+                        de cea mai mare suferință din lumea aceasta: moartea. Așa că El Însuși gustă din moarte pentru a
+                        o înfrânge și pentru ca noi să căpătăm viață.</p>
+
+                    <p>Isus a suferit și El a vrut să nu fi suferit așa dacă ar fi fost altă cale. Cu toate acestea, a
+                        mers credincios la cruce, știind că planul Tatălui este cel mai bun rezultat.</p>
+
+                    <p>La cruce, Dumnezeu transformă cel mai tragic și îngrozitor moment de suferință din istorie în cea
+                        mai bună, puternică și glorioasă veste: <strong>Evanghelia.</strong></p>
+
+                    <p>Lazăr învie și aduce bucurie și alungă suferința familiei și a prietenilor, dar învierea lui Isus
+                        alină suferința oricui crede în El, știind că suferința noastră este efemeră, însă urmează o
+                        eternitate plină de bucurie și pace alături de El.</p>
+
+                    <h3 class="devotional__section-title">Două opțiuni</h3>
+
+                    <p>Dacă suferi astăzi, ai în fața ta 2 opțiuni.</p>
+
+                    <p>Poți să alegi să te revolți împotriva lui Dumnezeu din cauza suferinței tale și această revoltă
+                        poate avea manifestări diferite: I-ai putea nega existența, I-ai putea contrazice caracterul, Îi
+                        poți submina înțelepciunea și inteligența, Îl poți defăima ca un tiran sau Îl poți ignora
+                        complet, spunând că nu Îi pasă.</p>
+
+                    <p>Sau poți să jelești din toată inima cu credință. Această jelire poate avea și ea manifestările
+                        sale: ai putea să strigi, ai putea să plângi atât de amarnic încât să nu ți se audă vocea, ai
+                        putea să pierzi ore întregi în întrebări și gânduri sau doar să stai în tăcere.</p>
+
+                    <p>Cât timp te încrezi în El, nu contează cu ce e inima ta plină, Tatăl Și-a întors fața la cruce ca
+                        tu să nu ai vreun moment în care strigi către El și El să nu răspundă.</p>
+
+                    <p>Însă unele răspunsuri le vom afla doar în Cer, de aceea este înțelept să știm că refuzul urmăririi
+                        unui răspuns care nu ne va schimba obiectul credinței noastre, dar care ne va scădea din
+                        credință, nu este un semn al unei lașități intelectuale, ci al unei maturități spirituale.</p>
+
+                    <div class="devotional__closing">
+                        <p><strong>Știind că-I viu, putem trece prin orice suferință, fiind siguri că acolo unde noi nu
+                                am fost credincioși, El a fost.</strong></p>
+                        <br>
+                        <p>Glorie lui Dumnezeu!</p>
+                    </div>
+
+                    <hr class="devotional__divider">
+
+                    <div class="devotional__scripture">
+                        <p>„Rudele mele m-au părăsit, și cei mai de aproape ai mei m-au uitat. Casnicii mei și slugile
+                            mele mă privesc ca pe un străin, în ochii lor sunt un necunoscut. Chem pe robul meu, și nu
+                            răspunde; îl rog cu gura mea, și degeaba. Suflarea mea a ajuns nesuferită nevestei mele și
+                            duhoarea mea a ajuns nesuferită fiilor mamei mele. Până și copiii mă disprețuiesc: dacă mă
+                            scol, ei mă ocărăsc. Aceia în care mă încredeam mă urăsc, aceia pe care îi iubeam s-au
+                            întors împotriva mea. Oasele mi se țin de piele și de carne; nu mi-a mai rămas decât pielea
+                            de pe dinți. [...]</p>
+                        <p>Dar știu că Răscumpărătorul meu este viu și că Se va ridica la urmă pe pământ. Chiar dacă mi
+                            se va nimici pielea și chiar dacă nu voi mai avea carne, voi vedea totuși pe Dumnezeu."</p>
+                        <span class="devotional__scripture-ref">Iov 19:14-20, 25-26</span>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__inner">
+                    <div class="footer__social">
+                        <a href="https://github.com/3nachePaul" class="footer__social-link" aria-label="GitHub"><svg
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg></a>
+                        <a href="https://www.linkedin.com/in/paul-enache-/" class="footer__social-link"
+                            aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg></a>
+                    </div>
+                    <p class="footer__copyright">© 2026 Paul Enache. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="js/main.js?v=20260207" defer></script>
+    <script src="js/animations.js?v=20260207" defer></script>
+    <script src="js/navigation.js?v=20260207" defer></script>
+</body>
+
+</html>

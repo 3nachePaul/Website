@@ -1,0 +1,92 @@
+name: Daily cybernews briefing
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    # A few minutes after 08:00 avoids GitHub's busiest scheduling boundary.
+    - cron: '7 8 * * *'
+      timezone: Europe/Bucharest
+
+permissions: {}
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: write
+      pages: write
+
+    steps:
+      - name: Check out the site
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+
+      - name: Refresh the scheduled briefing
+        if: github.event_name == 'schedule'
+        run: python scripts/update-cybernews.py --scheduled
+
+      - name: Refresh a pushed or manually requested briefing
+        if: github.event_name != 'schedule'
+        run: python scripts/update-cybernews.py
+
+      - name: Validate the briefing snapshot
+        run: python scripts/update-cybernews.py --validate
+
+      - name: Save the latest valid snapshot
+        if: github.event_name != 'push'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/cybernews.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(cybernews): refresh daily briefing"
+            git push origin HEAD:main || echo "::warning::The briefing was deployed but its snapshot could not be committed."
+          fi
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+
+      - name: Assemble the static site
+        shell: bash
+        run: |
+          mkdir _site
+          rsync -a \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='scripts/' \
+            --exclude='_site/' \
+            ./ _site/
+
+      - name: Upload the Pages artifact
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4

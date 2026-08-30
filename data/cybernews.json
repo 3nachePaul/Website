@@ -1,24 +1,24 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-29T11:37:20.496276Z",
-  "generated_at_local": "2026-08-29T14:37+03:00",
+  "generated_at": "2026-08-30T10:26:52.205062Z",
+  "generated_at_local": "2026-08-30T13:26+03:00",
   "timezone": "Europe/Bucharest",
   "schedule": "Daily at 08:00 Europe/Bucharest",
   "stats": {
-    "total": 36,
+    "total": 37,
     "critical": 12,
     "high": 0,
-    "watch": 7,
-    "context": 17,
+    "watch": 6,
+    "context": 19,
     "categories": {
-      "vulnerability": 19,
-      "threat-intel": 7,
-      "data-breach": 3,
+      "vulnerability": 18,
+      "threat-intel": 9,
       "phishing": 2,
+      "endpoint": 2,
       "malware": 2,
+      "data-breach": 2,
       "ransomware": 1,
-      "identity": 1,
-      "endpoint": 1
+      "identity": 1
     },
     "sources_ok": 8,
     "sources_total": 9
@@ -71,7 +71,7 @@
       "name": "SANS Internet Storm Center",
       "url": "https://isc.sans.edu/rssfeed_full.xml",
       "status": "ok",
-      "items": 5
+      "items": 6
     },
     {
       "name": "UK NCSC Threat Reports",
@@ -82,6 +82,43 @@
   ],
   "articles": [
     {
+      "id": "2a8c98de1448",
+      "title": "CVE-2019-1068: Microsoft SQL Server Remote Code Execution Vulnerability",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2019-1068",
+      "summary": "Microsoft SQL Server. CISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or…",
+      "source": "CISA Known Exploited Vulnerabilities",
+      "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "source_kind": "kev",
+      "published_at": "2026-08-26T00:00:00Z",
+      "age_hours": 106,
+      "category": "vulnerability",
+      "priority": "critical",
+      "priority_score": 100,
+      "tags": [
+        "vulnerability",
+        "active-exploitation",
+        "patch"
+      ],
+      "evidence": [
+        "kev",
+        "observed-in-wild"
+      ],
+      "cves": [
+        "CVE-2019-1068"
+      ],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": true,
+      "product": "Microsoft SQL Server",
+      "due_date": "2026-08-29",
+      "known_ransomware_use": "Unknown"
+    },
+    {
       "id": "535d4d01b5d3",
       "title": "CVE-2023-49105: ownCloud Improper Authentication Vulnerability",
       "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2023-49105",
@@ -90,10 +127,10 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-08-27T00:00:00Z",
-      "age_hours": 60,
+      "age_hours": 82,
       "category": "vulnerability",
       "priority": "critical",
-      "priority_score": 100,
+      "priority_score": 96,
       "tags": [
         "vulnerability",
         "active-exploitation",
@@ -127,10 +164,10 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-08-27T00:00:00Z",
-      "age_hours": 60,
+      "age_hours": 82,
       "category": "vulnerability",
       "priority": "critical",
-      "priority_score": 100,
+      "priority_score": 96,
       "tags": [
         "vulnerability",
         "active-exploitation",
@@ -165,10 +202,10 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-08-27T00:00:00Z",
-      "age_hours": 60,
+      "age_hours": 82,
       "category": "vulnerability",
       "priority": "critical",
-      "priority_score": 100,
+      "priority_score": 96,
       "tags": [
         "vulnerability",
         "active-exploitation",
@@ -194,43 +231,6 @@
       "known_ransomware_use": "Unknown"
     },
     {
-      "id": "2a8c98de1448",
-      "title": "CVE-2019-1068: Microsoft SQL Server Remote Code Execution Vulnerability",
-      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2019-1068",
-      "summary": "Microsoft SQL Server. CISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or…",
-      "source": "CISA Known Exploited Vulnerabilities",
-      "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
-      "source_kind": "kev",
-      "published_at": "2026-08-26T00:00:00Z",
-      "age_hours": 84,
-      "category": "vulnerability",
-      "priority": "critical",
-      "priority_score": 100,
-      "tags": [
-        "vulnerability",
-        "active-exploitation",
-        "patch"
-      ],
-      "evidence": [
-        "kev",
-        "observed-in-wild"
-      ],
-      "cves": [
-        "CVE-2019-1068"
-      ],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": true,
-      "product": "Microsoft SQL Server",
-      "due_date": "2026-08-29",
-      "known_ransomware_use": "Unknown"
-    },
-    {
       "id": "3b741c968fe4",
       "title": "CVE-2021-23758: Ajax.NET Professional Deserialization of Untrusted Data Vulnerability",
       "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2021-23758",
@@ -239,7 +239,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-08-26T00:00:00Z",
-      "age_hours": 84,
+      "age_hours": 106,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -276,7 +276,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-08-26T00:00:00Z",
-      "age_hours": 84,
+      "age_hours": 106,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -314,7 +314,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-08-26T00:00:00Z",
-      "age_hours": 84,
+      "age_hours": 106,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -352,7 +352,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-08-26T00:00:00Z",
-      "age_hours": 84,
+      "age_hours": 106,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -390,7 +390,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-08-26T00:00:00Z",
-      "age_hours": 84,
+      "age_hours": 106,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -427,7 +427,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-08-25T00:00:00Z",
-      "age_hours": 108,
+      "age_hours": 130,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -464,7 +464,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-08-24T00:00:00Z",
-      "age_hours": 132,
+      "age_hours": 154,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -501,7 +501,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-08-21T00:00:00Z",
-      "age_hours": 204,
+      "age_hours": 226,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -538,10 +538,10 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-08-28T19:08:26Z",
-      "age_hours": 16,
+      "age_hours": 39,
       "category": "vulnerability",
       "priority": "watch",
-      "priority_score": 52,
+      "priority_score": 48,
       "tags": [
         "vulnerability",
         "active-exploitation",
@@ -561,34 +561,6 @@
       "is_kev": false
     },
     {
-      "id": "5688b35d7747",
-      "title": "Over 8,300 Gitea servers vulnerable to code execution attacks",
-      "url": "https://www.bleepingcomputer.com/news/security/over-8-300-gitea-servers-vulnerable-to-code-execution-attacks/",
-      "summary": "Over 8,300 Internet-exposed Gitea instances are still unpatched against a critical security flaw exploited in ongoing remote code execution attacks, according to cybersecurity watchdog Shadowserver.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-08-28T12:58:43Z",
-      "age_hours": 23,
-      "category": "vulnerability",
-      "priority": "watch",
-      "priority_score": 46,
-      "tags": [
-        "vulnerability",
-        "patch"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": false
-    },
-    {
       "id": "39b99b914663",
       "title": "2026-010: Critical Vulnerabilities in Citrix NetScaler ADC and NetScaler Gateway",
       "url": "https://cert.europa.eu/publications/security-advisories/2026-010/",
@@ -597,7 +569,7 @@
       "source_url": "https://cert.europa.eu/publications/security-advisories-rss",
       "source_kind": "advisory",
       "published_at": "2026-08-19T18:13:47Z",
-      "age_hours": 233,
+      "age_hours": 256,
       "category": "threat-intel",
       "priority": "watch",
       "priority_score": 45,
@@ -605,36 +577,6 @@
         "threat-intel"
       ],
       "evidence": [],
-      "cves": [],
-      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
-      "first_checks": [
-        "Extract only indicators and behaviors supported by the source.",
-        "Compare them with recent SIEM, EDR, identity and network alerts.",
-        "Record relevant findings without blocking on unverified indicators alone."
-      ],
-      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
-      "is_kev": false
-    },
-    {
-      "id": "3a4096e5ddae",
-      "title": "TerminalFix campaign deploys a reverse tunnel through multistage intrusion",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/08/28/terminalfix-campaign-deploys-reverse-tunnel-through-multistage-intrusion/",
-      "summary": "Microsoft Threat Intelligence provides analysis of a ClickFix campaign that uses fake CAPTCHA prompts, DLL sideloading, and a reverse tunnel, with detections and hunting guidance.",
-      "source": "Microsoft Threat Intelligence",
-      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
-      "source_kind": "research",
-      "published_at": "2026-08-29T03:43:27Z",
-      "age_hours": 8,
-      "category": "threat-intel",
-      "priority": "watch",
-      "priority_score": 44,
-      "tags": [
-        "threat-intel",
-        "detect-hunt"
-      ],
-      "evidence": [
-        "detection-guidance"
-      ],
       "cves": [],
       "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
       "first_checks": [
@@ -654,7 +596,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-08-10T15:00:00Z",
-      "age_hours": 453,
+      "age_hours": 475,
       "category": "ransomware",
       "priority": "watch",
       "priority_score": 43,
@@ -673,31 +615,61 @@
       "is_kev": false
     },
     {
-      "id": "92a21705a63b",
-      "title": "Who Has Admin Rights in your Entra ID Directory?, (Wed, Aug 26th)",
-      "url": "https://isc.sans.edu/diary/rss/33284",
-      "summary": "A common thing that folks should \"worry\" about in Entra (or any platform really) is \"who has rights to administer\"&#;x26;#;x3f;&#;x26;#;xc2;&#;x26;#;xa0; Who can delete or change key things, or modify them in ways that might not be obvious (accidentally or on purpose).&#;x26;#;xc2;&#;x26;#;xa0; Yes, we trust our people, but if they&#;x26;#;39;ve moved on to other roles or to other organizations, they change from \"our…",
-      "source": "SANS Internet Storm Center",
-      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
-      "source_kind": "operations",
-      "published_at": "2026-08-26T15:58:15Z",
-      "age_hours": 68,
-      "category": "identity",
+      "id": "5688b35d7747",
+      "title": "Over 8,300 Gitea servers vulnerable to code execution attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/over-8-300-gitea-servers-vulnerable-to-code-execution-attacks/",
+      "summary": "Over 8,300 Internet-exposed Gitea instances are still unpatched against a critical security flaw exploited in ongoing remote code execution attacks, according to cybersecurity watchdog Shadowserver.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-08-28T12:58:43Z",
+      "age_hours": 45,
+      "category": "vulnerability",
       "priority": "watch",
-      "priority_score": 36,
+      "priority_score": 42,
       "tags": [
-        "identity",
-        "m365-entra"
+        "vulnerability",
+        "patch"
       ],
       "evidence": [],
       "cves": [],
-      "why_l1_cares": "Identity activity often becomes the first visible signal before mailbox, cloud or endpoint impact.",
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
       "first_checks": [
-        "Review risky sign-ins, impossible travel and unfamiliar devices.",
-        "Check MFA, password and app-consent changes around the event.",
-        "Correlate the account with mailbox, endpoint and token activity."
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
       ],
-      "escalate_when": "Escalate on successful anomalous sign-in, MFA reset, suspicious consent or token reuse.",
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": false
+    },
+    {
+      "id": "3a4096e5ddae",
+      "title": "TerminalFix campaign deploys a reverse tunnel through multistage intrusion",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/08/28/terminalfix-campaign-deploys-reverse-tunnel-through-multistage-intrusion/",
+      "summary": "Microsoft Threat Intelligence provides analysis of a ClickFix campaign that uses fake CAPTCHA prompts, DLL sideloading, and a reverse tunnel, with detections and hunting guidance.",
+      "source": "Microsoft Threat Intelligence",
+      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
+      "source_kind": "research",
+      "published_at": "2026-08-29T03:43:27Z",
+      "age_hours": 31,
+      "category": "threat-intel",
+      "priority": "watch",
+      "priority_score": 40,
+      "tags": [
+        "threat-intel",
+        "detect-hunt"
+      ],
+      "evidence": [
+        "detection-guidance"
+      ],
+      "cves": [],
+      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
+      "first_checks": [
+        "Extract only indicators and behaviors supported by the source.",
+        "Compare them with recent SIEM, EDR, identity and network alerts.",
+        "Record relevant findings without blocking on unverified indicators alone."
+      ],
+      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
       "is_kev": false
     },
     {
@@ -709,7 +681,7 @@
       "source_url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
       "source_kind": "research",
       "published_at": "2026-08-18T14:00:00Z",
-      "age_hours": 262,
+      "age_hours": 284,
       "category": "phishing",
       "priority": "watch",
       "priority_score": 36,
@@ -729,30 +701,61 @@
       "is_kev": false
     },
     {
-      "id": "ad39520079f7",
-      "title": "PaperCut warns of NG, MF flaw exploited in zero-day attacks",
-      "url": "https://www.bleepingcomputer.com/news/security/papercut-warns-of-ng-mf-flaw-exploited-in-zero-day-attacks/",
-      "summary": "PaperCut is warning that hackers are actively exploiting a vulnerability in all versions of its PaperCut NG and PaperCut MF print management software in zero-day attacks.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-08-27T16:31:53Z",
-      "age_hours": 43,
-      "category": "vulnerability",
+      "id": "c061647e3fd9",
+      "title": "YARA-X 1.20.0 Release, (Sun, Aug 30th)",
+      "url": "https://isc.sans.edu/diary/rss/33288",
+      "summary": "YARA-X&#;x26;#;39;s 1.20.0 release brings 14 improvements and 13 bugfixes.",
+      "source": "SANS Internet Storm Center",
+      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
+      "source_kind": "operations",
+      "published_at": "2026-08-30T07:14:49Z",
+      "age_hours": 3,
+      "category": "threat-intel",
       "priority": "context",
       "priority_score": 34,
       "tags": [
-        "vulnerability"
+        "threat-intel",
+        "detect-hunt"
+      ],
+      "evidence": [
+        "detection-guidance"
+      ],
+      "cves": [],
+      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
+      "first_checks": [
+        "Extract only indicators and behaviors supported by the source.",
+        "Compare them with recent SIEM, EDR, identity and network alerts.",
+        "Record relevant findings without blocking on unverified indicators alone."
+      ],
+      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
+      "is_kev": false
+    },
+    {
+      "id": "84be4ab213dc",
+      "title": "Brave browser adds email aliases to help users evade tracking",
+      "url": "https://www.bleepingcomputer.com/news/security/brave-browser-adds-email-aliases-to-help-users-evade-tracking/",
+      "summary": "The latest version of the Brave browser, 1.94, introduces a feature called 'Email Aliases' that allows users to generate disposable email addresses when signing up to a new service.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-08-29T14:19:23Z",
+      "age_hours": 20,
+      "category": "endpoint",
+      "priority": "context",
+      "priority_score": 32,
+      "tags": [
+        "endpoint",
+        "browser"
       ],
       "evidence": [],
       "cves": [],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "why_l1_cares": "Endpoint telemetry can confirm whether a public report is relevant to real activity in your estate.",
       "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
+        "Review process tree, signer, command line and parent-child relationships.",
+        "Correlate file, registry, persistence and outbound network events.",
+        "Search for the behavior across peer endpoints."
       ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "escalate_when": "Escalate on suspicious execution, persistence, defense evasion or confirmed user impact.",
       "is_kev": false
     },
     {
@@ -764,7 +767,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/security-operations/feed/",
       "source_kind": "research",
       "published_at": "2026-08-27T16:00:00Z",
-      "age_hours": 44,
+      "age_hours": 66,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 32,
@@ -784,6 +787,34 @@
       "is_kev": false
     },
     {
+      "id": "92a21705a63b",
+      "title": "Who Has Admin Rights in your Entra ID Directory?, (Wed, Aug 26th)",
+      "url": "https://isc.sans.edu/diary/rss/33284",
+      "summary": "A common thing that folks should \"worry\" about in Entra (or any platform really) is \"who has rights to administer\"&#;x26;#;x3f;&#;x26;#;xc2;&#;x26;#;xa0; Who can delete or change key things, or modify them in ways that might not be obvious (accidentally or on purpose).&#;x26;#;xc2;&#;x26;#;xa0; Yes, we trust our people, but if they&#;x26;#;39;ve moved on to other roles or to other organizations, they change from \"our…",
+      "source": "SANS Internet Storm Center",
+      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
+      "source_kind": "operations",
+      "published_at": "2026-08-26T15:58:15Z",
+      "age_hours": 90,
+      "category": "identity",
+      "priority": "context",
+      "priority_score": 32,
+      "tags": [
+        "identity",
+        "m365-entra"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "Identity activity often becomes the first visible signal before mailbox, cloud or endpoint impact.",
+      "first_checks": [
+        "Review risky sign-ins, impossible travel and unfamiliar devices.",
+        "Check MFA, password and app-consent changes around the event.",
+        "Correlate the account with mailbox, endpoint and token activity."
+      ],
+      "escalate_when": "Escalate on successful anomalous sign-in, MFA reset, suspicious consent or token reuse.",
+      "is_kev": false
+    },
+    {
       "id": "082c3335f8d3",
       "title": "Obfuscating IP Addresses as Hostnames, (Tue, Aug 25th)",
       "url": "https://isc.sans.edu/diary/rss/33280",
@@ -792,7 +823,7 @@
       "source_url": "https://isc.sans.edu/rssfeed_full.xml",
       "source_kind": "operations",
       "published_at": "2026-08-25T15:03:33Z",
-      "age_hours": 93,
+      "age_hours": 115,
       "category": "vulnerability",
       "priority": "context",
       "priority_score": 32,
@@ -820,7 +851,7 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-08-28T10:29:42Z",
-      "age_hours": 25,
+      "age_hours": 48,
       "category": "vulnerability",
       "priority": "context",
       "priority_score": 30,
@@ -848,7 +879,7 @@
       "source_url": "https://isc.sans.edu/rssfeed_full.xml",
       "source_kind": "operations",
       "published_at": "2026-08-28T07:04:13Z",
-      "age_hours": 29,
+      "age_hours": 51,
       "category": "malware",
       "priority": "context",
       "priority_score": 30,
@@ -867,33 +898,6 @@
       "is_kev": false
     },
     {
-      "id": "d9ef3991b5f6",
-      "title": "A polymorphic phishing page (that occasionally breaks itself), (Thu, Aug 27th)",
-      "url": "https://isc.sans.edu/diary/rss/33290",
-      "summary": "As I've mentioned before in some of my diaries, from time to time, I like to go over phishing messages that get caught in my various spam traps or sent to us here at the Internet Storm Center.",
-      "source": "SANS Internet Storm Center",
-      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
-      "source_kind": "operations",
-      "published_at": "2026-08-27T09:57:28Z",
-      "age_hours": 50,
-      "category": "phishing",
-      "priority": "context",
-      "priority_score": 30,
-      "tags": [
-        "phishing"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "This may surface first as a mail alert, user report, malicious click or suspicious sign-in.",
-      "first_checks": [
-        "Inspect sender, reply-to, URLs, attachments and authentication results.",
-        "Search for other recipients and confirm whether anyone clicked.",
-        "Correlate clicks with sign-ins, downloads and endpoint events."
-      ],
-      "escalate_when": "Escalate when a user clicked, entered credentials, opened a payload or similar mail reached others.",
-      "is_kev": false
-    },
-    {
       "id": "8ac0be59f1f3",
       "title": "Windows 11 KB5120998 update released with 35 changes and fixes",
       "url": "https://www.bleepingcomputer.com/news/security/windows-11-kb5120998-update-released-with-35-changes-and-fixes/",
@@ -902,7 +906,7 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-08-28T09:10:13Z",
-      "age_hours": 26,
+      "age_hours": 49,
       "category": "endpoint",
       "priority": "context",
       "priority_score": 28,
@@ -931,7 +935,7 @@
       "source_url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
       "source_kind": "research",
       "published_at": "2026-08-20T14:00:00Z",
-      "age_hours": 214,
+      "age_hours": 236,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 28,
@@ -958,7 +962,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/security-operations/feed/",
       "source_kind": "research",
       "published_at": "2026-08-10T16:00:00Z",
-      "age_hours": 452,
+      "age_hours": 474,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 28,
@@ -978,6 +982,87 @@
       "is_kev": false
     },
     {
+      "id": "9a78235c4a4b",
+      "title": "Anthropic is cutting Claude Code's current weekly limits by 17%",
+      "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-is-cutting-claude-codes-current-weekly-limits-by-17-percent/",
+      "summary": "Anthropic is permanently increasing Claude Code's standard weekly usage limits by 25% for Pro, Max, Team, and seat-based Enterprise plans, but it's not as good as it sounds.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-08-29T23:11:51Z",
+      "age_hours": 11,
+      "category": "threat-intel",
+      "priority": "context",
+      "priority_score": 26,
+      "tags": [
+        "threat-intel"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
+      "first_checks": [
+        "Extract only indicators and behaviors supported by the source.",
+        "Compare them with recent SIEM, EDR, identity and network alerts.",
+        "Record relevant findings without blocking on unverified indicators alone."
+      ],
+      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
+      "is_kev": false
+    },
+    {
+      "id": "d9ef3991b5f6",
+      "title": "A polymorphic phishing page (that occasionally breaks itself), (Thu, Aug 27th)",
+      "url": "https://isc.sans.edu/diary/rss/33290",
+      "summary": "As I've mentioned before in some of my diaries, from time to time, I like to go over phishing messages that get caught in my various spam traps or sent to us here at the Internet Storm Center.",
+      "source": "SANS Internet Storm Center",
+      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
+      "source_kind": "operations",
+      "published_at": "2026-08-27T09:57:28Z",
+      "age_hours": 72,
+      "category": "phishing",
+      "priority": "context",
+      "priority_score": 26,
+      "tags": [
+        "phishing"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "This may surface first as a mail alert, user report, malicious click or suspicious sign-in.",
+      "first_checks": [
+        "Inspect sender, reply-to, URLs, attachments and authentication results.",
+        "Search for other recipients and confirm whether anyone clicked.",
+        "Correlate clicks with sign-ins, downloads and endpoint events."
+      ],
+      "escalate_when": "Escalate when a user clicked, entered credentials, opened a payload or similar mail reached others.",
+      "is_kev": false
+    },
+    {
+      "id": "49e937cf32ef",
+      "title": "DOUBLECUP's PNG Payload, (Mon, Aug 24th)",
+      "url": "https://isc.sans.edu/diary/rss/33274",
+      "summary": "New malware that uses steganography always gets my attention, but I was disappointed when I looked at the latest DOUBLECUP write-up . It doesn&#;x26;#;39;t use real steganography:",
+      "source": "SANS Internet Storm Center",
+      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
+      "source_kind": "operations",
+      "published_at": "2026-08-24T07:23:16Z",
+      "age_hours": 147,
+      "category": "malware",
+      "priority": "context",
+      "priority_score": 26,
+      "tags": [
+        "malware"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "Named malware gives you a starting point for validating endpoint, network and identity telemetry.",
+      "first_checks": [
+        "Validate detections against process, file, persistence and network context.",
+        "Search for the same behavior or indicators across other hosts.",
+        "Identify the likely entry point and affected user account."
+      ],
+      "escalate_when": "Escalate on execution, persistence, credential access, command-and-control or spread to another host.",
+      "is_kev": false
+    },
+    {
       "id": "890fcf73be2f",
       "title": "McKesson discloses breach after ShinyHunters claims patient data theft",
       "url": "https://www.bleepingcomputer.com/news/security/mckesson-discloses-breach-after-shinyhunters-claims-patient-data-theft/",
@@ -986,10 +1071,10 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-08-28T22:40:17Z",
-      "age_hours": 13,
+      "age_hours": 36,
       "category": "data-breach",
       "priority": "context",
-      "priority_score": 26,
+      "priority_score": 22,
       "tags": [
         "data-breach",
         "detect-hunt"
@@ -1016,10 +1101,10 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-08-28T18:18:55Z",
-      "age_hours": 17,
+      "age_hours": 40,
       "category": "vulnerability",
       "priority": "context",
-      "priority_score": 26,
+      "priority_score": 22,
       "tags": [
         "vulnerability"
       ],
@@ -1043,10 +1128,10 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-08-28T16:36:47Z",
-      "age_hours": 19,
+      "age_hours": 42,
       "category": "threat-intel",
       "priority": "context",
-      "priority_score": 26,
+      "priority_score": 22,
       "tags": [
         "threat-intel"
       ],
@@ -1070,10 +1155,10 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-08-28T14:00:10Z",
-      "age_hours": 22,
+      "age_hours": 44,
       "category": "vulnerability",
       "priority": "context",
-      "priority_score": 26,
+      "priority_score": 22,
       "tags": [
         "vulnerability"
       ],
@@ -1097,10 +1182,10 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-08-28T11:46:57Z",
-      "age_hours": 24,
+      "age_hours": 47,
       "category": "data-breach",
       "priority": "context",
-      "priority_score": 26,
+      "priority_score": 22,
       "tags": [
         "data-breach"
       ],
@@ -1116,33 +1201,6 @@
       "is_kev": false
     },
     {
-      "id": "49e937cf32ef",
-      "title": "DOUBLECUP's PNG Payload, (Mon, Aug 24th)",
-      "url": "https://isc.sans.edu/diary/rss/33274",
-      "summary": "New malware that uses steganography always gets my attention, but I was disappointed when I looked at the latest DOUBLECUP write-up . It doesn&#;x26;#;39;t use real steganography:",
-      "source": "SANS Internet Storm Center",
-      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
-      "source_kind": "operations",
-      "published_at": "2026-08-24T07:23:16Z",
-      "age_hours": 124,
-      "category": "malware",
-      "priority": "context",
-      "priority_score": 26,
-      "tags": [
-        "malware"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "Named malware gives you a starting point for validating endpoint, network and identity telemetry.",
-      "first_checks": [
-        "Validate detections against process, file, persistence and network context.",
-        "Search for the same behavior or indicators across other hosts.",
-        "Identify the likely entry point and affected user account."
-      ],
-      "escalate_when": "Escalate on execution, persistence, credential access, command-and-control or spread to another host.",
-      "is_kev": false
-    },
-    {
       "id": "96dd7b00fdd9",
       "title": "Nearly 700 rogue AI agents coordinated in the Hugging Face attack",
       "url": "https://www.bleepingcomputer.com/news/security/nearly-700-rogue-ai-agents-coordinated-in-the-hugging-face-attack/",
@@ -1151,7 +1209,7 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-08-27T21:38:53Z",
-      "age_hours": 38,
+      "age_hours": 61,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 22,
@@ -1167,33 +1225,6 @@
         "Record relevant findings without blocking on unverified indicators alone."
       ],
       "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
-      "is_kev": false
-    },
-    {
-      "id": "4599be345f06",
-      "title": "Manchester Airports Group says hackers stole travelers' data",
-      "url": "https://www.bleepingcomputer.com/news/security/manchester-airports-group-says-hackers-stole-travelers-data/",
-      "summary": "The Manchester Airports Group (MAG) disclosed that hackers breached its systems and stole customer data, including Wi-Fi sign-ups from Manchester, Stansted, and East Midlands airports.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-08-27T16:12:26Z",
-      "age_hours": 43,
-      "category": "data-breach",
-      "priority": "context",
-      "priority_score": 22,
-      "tags": [
-        "data-breach"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "Breach reporting can reveal exposed credentials, third-party risk or activity relevant to current alerts.",
-      "first_checks": [
-        "Confirm whether your organization, supplier or technology stack is affected.",
-        "Monitor for related credential abuse, phishing and data access.",
-        "Capture confirmed scope and primary-source statements before escalating."
-      ],
-      "escalate_when": "Escalate on organizational exposure, credential compromise or matching suspicious activity.",
       "is_kev": false
     }
   ]

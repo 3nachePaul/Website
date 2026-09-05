@@ -124,7 +124,8 @@ pre,
 }
 
 .tab {
-  padding: 0.45rem 0.9rem;
+  padding: 0.45rem 0.7rem;
+  font-size: 0.9rem;
   font: inherit;
   color: var(--text-slab);
   background: none;
@@ -143,6 +144,82 @@ pre,
   background: var(--accent-slab);
   border-color: #c3d2ee;
   font-weight: 500;
+}
+
+/* ---------- tabel de valori ---------- */
+
+.fisa__titlu.mono {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.98rem;
+}
+
+.valori {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+  border-top: 1px solid var(--linie-slaba);
+}
+
+.valori th {
+  padding: 0.45rem 1.1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-slab);
+  text-align: left;
+  background: var(--fundal);
+  border-bottom: 1px solid var(--linie-slaba);
+}
+
+.valori td {
+  padding: 0.55rem 1.1rem;
+  vertical-align: top;
+  border-bottom: 1px solid var(--linie-slaba);
+}
+
+.valori tr:last-child td {
+  border-bottom: none;
+}
+
+.valori td:first-child {
+  width: 12rem;
+  white-space: nowrap;
+}
+
+.valori td:last-child {
+  width: 32%;
+  color: var(--text-slab);
+}
+
+.valori code {
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+
+.valori tbody tr:hover {
+  background: var(--fundal);
+}
+
+@media (max-width: 800px) {
+  .valori, .valori thead, .valori tbody, .valori tr, .valori td {
+    display: block;
+    width: auto;
+  }
+
+  .valori thead { display: none; }
+
+  .valori tr {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--linie-slaba);
+  }
+
+  .valori td {
+    padding: 0.15rem 1.1rem;
+    border: none;
+    white-space: normal;
+  }
+
+  .valori td:first-child { width: auto; }
+  .valori td:last-child { width: auto; font-style: italic; }
 }
 
 /* ---------- structura ---------- */
@@ -223,7 +300,7 @@ pre,
 
 .fise {
   display: grid;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .fisa {
@@ -234,12 +311,18 @@ pre,
 }
 
 .fisa__antet {
-  padding: 0.9rem 1.1rem 0.75rem;
+  padding: 0.95rem 1.1rem 0.85rem;
+}
+
+.fisa__tip {
+  margin-bottom: 0.3rem;
+  font-size: 0.75rem;
+  color: var(--accent);
 }
 
 .fisa__titlu {
   margin: 0;
-  font-size: 1rem;
+  font-size: 1.02rem;
   font-weight: 600;
   letter-spacing: -0.01em;
 }
@@ -250,11 +333,20 @@ pre,
   color: var(--text-slab);
 }
 
+.cerinta {
+  margin: 0.6rem 0 0;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.9rem;
+  background: var(--fundal);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 4px 4px 0;
+}
+
 .fisa__etichete {
   display: flex;
   flex-wrap: wrap;
   gap: 0.3rem;
-  margin-top: 0.6rem;
+  margin-top: 0.65rem;
 }
 
 .eticheta {
@@ -267,18 +359,40 @@ pre,
   border-radius: 4px;
 }
 
-.cod {
-  position: relative;
+/* ---------- pasi si cod ---------- */
+
+.pas {
   border-top: 1px solid var(--linie-slaba);
 }
 
-.cod__nume {
-  padding: 0.4rem 1.1rem;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.75rem;
-  color: var(--text-slab);
+.cod__fisier {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.45rem;
+  padding: 0.45rem 1.1rem;
   background: var(--fundal);
-  border-bottom: 1px solid var(--linie-slaba);
+}
+
+.cod__eticheta {
+  font-size: 0.72rem;
+  color: var(--text-slab);
+}
+
+.cod__fisier code {
+  font-size: 0.78rem;
+  color: var(--accent);
+}
+
+.cod__explicatie {
+  margin: 0;
+  padding: 0.6rem 1.1rem 0.5rem;
+  font-size: 0.86rem;
+  color: var(--text-slab);
+}
+
+.cod {
+  position: relative;
 }
 
 .cod pre {
@@ -329,10 +443,6 @@ pre,
   border-color: #2f6b47;
 }
 
-.cod:has(.cod__nume) .copiaza {
-  top: 2.4rem;
-}
-
 .fisa__nota {
   padding: 0.6rem 1.1rem 0.6rem 1.6rem;
   font-size: 0.85rem;
@@ -342,10 +452,120 @@ pre,
   box-shadow: inset 3px 0 0 var(--marcaj);
 }
 
-/* ---------- sabloane ---------- */
+/* ---------- tabel de valori ---------- */
 
-.sablon .cod + .cod {
+.fisa__titlu.mono {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.98rem;
+}
+
+.valori {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
   border-top: 1px solid var(--linie-slaba);
+}
+
+.valori th {
+  padding: 0.45rem 1.1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-slab);
+  text-align: left;
+  background: var(--fundal);
+  border-bottom: 1px solid var(--linie-slaba);
+}
+
+.valori td {
+  padding: 0.55rem 1.1rem;
+  vertical-align: top;
+  border-bottom: 1px solid var(--linie-slaba);
+}
+
+.valori tr:last-child td {
+  border-bottom: none;
+}
+
+.valori td:first-child {
+  width: 12rem;
+  white-space: nowrap;
+}
+
+.valori td:last-child {
+  width: 32%;
+  color: var(--text-slab);
+}
+
+.valori code {
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+
+.valori tbody tr:hover {
+  background: var(--fundal);
+}
+
+@media (max-width: 800px) {
+  .valori, .valori thead, .valori tbody, .valori tr, .valori td {
+    display: block;
+    width: auto;
+  }
+
+  .valori thead { display: none; }
+
+  .valori tr {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--linie-slaba);
+  }
+
+  .valori td {
+    padding: 0.15rem 1.1rem;
+    border: none;
+    white-space: normal;
+  }
+
+  .valori td:first-child { width: auto; }
+  .valori td:last-child { width: auto; font-style: italic; }
+}
+
+/* ---------- structura ---------- */
+
+.arbore pre {
+  max-height: none;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.unde {
+  margin: 0;
+  border-top: 1px solid var(--linie-slaba);
+}
+
+.unde dt {
+  padding: 0.7rem 1.1rem 0.15rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.unde dt code {
+  padding: 0.1rem 0.4rem;
+  font-size: 0.82rem;
+  color: var(--accent);
+  background: var(--fundal);
+  border: 1px solid var(--linie-slaba);
+  border-radius: 4px;
+}
+
+.unde dd {
+  margin: 0;
+  padding: 0 1.1rem 0.7rem;
+  font-size: 0.87rem;
+  color: var(--text-slab);
+  border-bottom: 1px solid var(--linie-slaba);
+}
+
+.unde dd:last-child {
+  border-bottom: none;
 }
 
 /* ---------- diverse ---------- */

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ro">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fragmente web — CSS, JavaScript, Express, EJS</title>
+  <meta name="description"
+    content="Bibliotecă personală de fragmente de cod pentru dezvoltare web: selectori CSS, animații, DOM, localStorage, rute Express, template-uri EJS.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="antet">
+    <div class="antet__interior">
+      <div class="marca">
+        Fragmente web
+        <span>referință de lucru</span>
+      </div>
+
+      <div class="cautare">
+        <svg class="cautare__lupa" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+          stroke-width="1.6" aria-hidden="true">
+          <circle cx="7" cy="7" r="4.5" />
+          <path d="M10.5 10.5L14 14" stroke-linecap="round" />
+        </svg>
+        <input type="search" id="cautare" placeholder="Caută: tbody, .sort(), nth-child, req.params…"
+          autocomplete="off" aria-label="Caută în fragmente">
+        <kbd class="cautare__tasta">/</kbd>
+      </div>
+
+      <div class="taburi" role="tablist">
+        <button class="tab" id="tab-fragmente" role="tab" aria-selected="true">Fragmente</button>
+        <button class="tab" id="tab-sabloane" role="tab" aria-selected="false">Șabloane</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="corp">
+    <aside class="bara">
+      <p class="bara__titlu">Categorii</p>
+      <ul class="bara__lista" id="lista-categorii"></ul>
+    </aside>
+
+    <main>
+      <p class="rezumat" id="rezumat"></p>
+      <div class="fise" id="fise"></div>
+    </main>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="snippets.js"></script>
+  <script src="templates.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

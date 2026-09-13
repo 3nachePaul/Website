@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-12T09:13:48.858386Z",
-  "generated_at_local": "2026-09-12T12:13+03:00",
+  "generated_at": "2026-09-13T10:10:34.203374Z",
+  "generated_at_local": "2026-09-13T13:10+03:00",
   "timezone": "Europe/Bucharest",
   "schedule": "Daily at 08:00 Europe/Bucharest",
   "stats": {
     "total": 42,
     "critical": 12,
-    "high": 3,
-    "watch": 7,
+    "high": 2,
+    "watch": 8,
     "context": 20,
     "categories": {
-      "vulnerability": 19,
+      "vulnerability": 20,
       "threat-intel": 7,
       "phishing": 6,
       "malware": 3,
-      "network": 2,
       "ransomware": 2,
+      "network": 1,
       "identity": 1,
       "supply-chain": 1,
       "data-breach": 1
@@ -91,7 +91,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-09-11T00:00:00Z",
-      "age_hours": 33,
+      "age_hours": 58,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -128,7 +128,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-09-11T00:00:00Z",
-      "age_hours": 33,
+      "age_hours": 58,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -165,7 +165,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-09-11T00:00:00Z",
-      "age_hours": 33,
+      "age_hours": 58,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -202,7 +202,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-09-11T00:00:00Z",
-      "age_hours": 33,
+      "age_hours": 58,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -231,43 +231,6 @@
       "known_ransomware_use": "Unknown"
     },
     {
-      "id": "714e64ff7b66",
-      "title": "CVE-2026-86060: MikroTik RouterOS Improper Neutralization of Argument Delimiters in a Command Vulnerability",
-      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-86060",
-      "summary": "MikroTik RouterOS. CISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or…",
-      "source": "CISA Known Exploited Vulnerabilities",
-      "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
-      "source_kind": "kev",
-      "published_at": "2026-09-10T00:00:00Z",
-      "age_hours": 57,
-      "category": "vulnerability",
-      "priority": "critical",
-      "priority_score": 100,
-      "tags": [
-        "vulnerability",
-        "active-exploitation",
-        "patch"
-      ],
-      "evidence": [
-        "kev",
-        "observed-in-wild"
-      ],
-      "cves": [
-        "CVE-2026-86060"
-      ],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": true,
-      "product": "MikroTik RouterOS",
-      "due_date": "2026-09-13",
-      "known_ransomware_use": "Unknown"
-    },
-    {
       "id": "31a7e3913be4",
       "title": "CVE-2026-67277: MikroTik RouterOS Missing Authentication for Critical Function Vulnerability",
       "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-67277",
@@ -276,7 +239,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-09-10T00:00:00Z",
-      "age_hours": 57,
+      "age_hours": 82,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -313,7 +276,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-09-09T00:00:00Z",
-      "age_hours": 81,
+      "age_hours": 106,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -350,7 +313,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-09-09T00:00:00Z",
-      "age_hours": 81,
+      "age_hours": 106,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -381,6 +344,43 @@
       "known_ransomware_use": "Unknown"
     },
     {
+      "id": "714e64ff7b66",
+      "title": "CVE-2026-86060: MikroTik RouterOS Improper Neutralization of Argument Delimiters in a Command Vulnerability",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-86060",
+      "summary": "MikroTik RouterOS. CISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or…",
+      "source": "CISA Known Exploited Vulnerabilities",
+      "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "source_kind": "kev",
+      "published_at": "2026-09-10T00:00:00Z",
+      "age_hours": 82,
+      "category": "vulnerability",
+      "priority": "critical",
+      "priority_score": 96,
+      "tags": [
+        "vulnerability",
+        "active-exploitation",
+        "patch"
+      ],
+      "evidence": [
+        "kev",
+        "observed-in-wild"
+      ],
+      "cves": [
+        "CVE-2026-86060"
+      ],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": true,
+      "product": "MikroTik RouterOS",
+      "due_date": "2026-09-13",
+      "known_ransomware_use": "Unknown"
+    },
+    {
       "id": "71fbf8f7296e",
       "title": "CVE-2025-25249: Fortinet Multiple Products Heap-based Buffer Overflow Vulnerability",
       "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2025-25249",
@@ -389,7 +389,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-09-09T00:00:00Z",
-      "age_hours": 81,
+      "age_hours": 106,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -427,7 +427,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-09-09T00:00:00Z",
-      "age_hours": 81,
+      "age_hours": 106,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -464,7 +464,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-09-08T00:00:00Z",
-      "age_hours": 105,
+      "age_hours": 130,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -501,7 +501,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-09-08T00:00:00Z",
-      "age_hours": 105,
+      "age_hours": 130,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -539,7 +539,7 @@
       "source_url": "https://isc.sans.edu/rssfeed_full.xml",
       "source_kind": "operations",
       "published_at": "2026-09-08T19:20:30Z",
-      "age_hours": 86,
+      "age_hours": 111,
       "category": "vulnerability",
       "priority": "high",
       "priority_score": 70,
@@ -563,36 +563,6 @@
       "is_kev": false
     },
     {
-      "id": "51e05f44e8c3",
-      "title": "2026-011: Critical Vulnerabilities in SAP Kernel and NetWeaver Message Server",
-      "url": "https://cert.europa.eu/publications/security-advisories/2026-011/",
-      "summary": "On 8 September 2026, as part of its September Security Patch Day, SAP released Security Notes addressing two critical vulnerabilities affecting a broad range of SAP products[3]. The most severe, CVE-2026-44756 (CVSS 10.0), is a memory corruption vulnerability in SAP Extended Passport (EPP) processing, nicknamed \"OVERPASS\" by the Onapsis Research Labs (ORL), which discovered and responsibly disclosed it[3]. The…",
-      "source": "CERT-EU",
-      "source_url": "https://cert.europa.eu/publications/security-advisories-rss",
-      "source_kind": "advisory",
-      "published_at": "2026-09-09T15:07:59Z",
-      "age_hours": 66,
-      "category": "vulnerability",
-      "priority": "high",
-      "priority_score": 57,
-      "tags": [
-        "vulnerability",
-        "patch"
-      ],
-      "evidence": [],
-      "cves": [
-        "CVE-2026-44756"
-      ],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": false
-    },
-    {
       "id": "75307c000384",
       "title": "2026-012: Critical Vulnerabilities in Check Point Products",
       "url": "https://cert.europa.eu/publications/security-advisories/2026-012/",
@@ -601,7 +571,7 @@
       "source_url": "https://cert.europa.eu/publications/security-advisories-rss",
       "source_kind": "advisory",
       "published_at": "2026-09-10T10:20:06Z",
-      "age_hours": 47,
+      "age_hours": 72,
       "category": "network",
       "priority": "high",
       "priority_score": 55,
@@ -622,6 +592,95 @@
       "is_kev": false
     },
     {
+      "id": "51e05f44e8c3",
+      "title": "2026-011: Critical Vulnerabilities in SAP Kernel and NetWeaver Message Server",
+      "url": "https://cert.europa.eu/publications/security-advisories/2026-011/",
+      "summary": "On 8 September 2026, as part of its September Security Patch Day, SAP released Security Notes addressing two critical vulnerabilities affecting a broad range of SAP products[3]. The most severe, CVE-2026-44756 (CVSS 10.0), is a memory corruption vulnerability in SAP Extended Passport (EPP) processing, nicknamed \"OVERPASS\" by the Onapsis Research Labs (ORL), which discovered and responsibly disclosed it[3]. The…",
+      "source": "CERT-EU",
+      "source_url": "https://cert.europa.eu/publications/security-advisories-rss",
+      "source_kind": "advisory",
+      "published_at": "2026-09-09T15:07:59Z",
+      "age_hours": 91,
+      "category": "vulnerability",
+      "priority": "watch",
+      "priority_score": 53,
+      "tags": [
+        "vulnerability",
+        "patch"
+      ],
+      "evidence": [],
+      "cves": [
+        "CVE-2026-44756"
+      ],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": false
+    },
+    {
+      "id": "80e02f7db4bf",
+      "title": "Critical MikroTik Vulnerability - Patch Now, (Sun, Sep 6th)",
+      "url": "https://isc.sans.edu/diary/rss/33314",
+      "summary": "Mikrotik released a patch late last week for an already-exploited vulnerability. The vulnerability allows an SSH authentication bypass and is already being exploited. At this point, assume compromise. Attackers have been adding new accounts to affected devices to maintain access after a patch is installed.",
+      "source": "SANS Internet Storm Center",
+      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
+      "source_kind": "operations",
+      "published_at": "2026-09-06T21:43:17Z",
+      "age_hours": 156,
+      "category": "vulnerability",
+      "priority": "watch",
+      "priority_score": 46,
+      "tags": [
+        "vulnerability",
+        "patch"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": false
+    },
+    {
+      "id": "59b3d76728f8",
+      "title": "Dutch NCSC: Critical Check Point VPN flaws exploitation is imminent",
+      "url": "https://www.bleepingcomputer.com/news/security/dutch-ncsc-critical-check-point-vpn-flaws-exploitation-is-imminent/",
+      "summary": "The Dutch Nationaal Cyber Security Centrum (NCSC) is warning of imminent exploitation of two critical flaws in Check Point VPN tracked as CVE-2026-85102 and CVE-2026-85103.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-09-12T14:14:32Z",
+      "age_hours": 20,
+      "category": "vulnerability",
+      "priority": "watch",
+      "priority_score": 44,
+      "tags": [
+        "vulnerability",
+        "network-appliance"
+      ],
+      "evidence": [],
+      "cves": [
+        "CVE-2026-85102",
+        "CVE-2026-85103"
+      ],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": false
+    },
+    {
       "id": "7f0d096051dc",
       "title": "Passkey-themed social engineering leads to identity and cloud compromise",
       "url": "https://www.microsoft.com/en-us/security/blog/2026/09/09/passkey-themed-social-engineering-leads-identity-cloud-compromise/",
@@ -630,10 +689,10 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-09-09T17:41:18Z",
-      "age_hours": 64,
+      "age_hours": 88,
       "category": "identity",
       "priority": "watch",
-      "priority_score": 46,
+      "priority_score": 42,
       "tags": [
         "identity",
         "detect-hunt",
@@ -654,34 +713,6 @@
       "is_kev": false
     },
     {
-      "id": "80e02f7db4bf",
-      "title": "Critical MikroTik Vulnerability - Patch Now, (Sun, Sep 6th)",
-      "url": "https://isc.sans.edu/diary/rss/33314",
-      "summary": "Mikrotik released a patch late last week for an already-exploited vulnerability. The vulnerability allows an SSH authentication bypass and is already being exploited. At this point, assume compromise. Attackers have been adding new accounts to affected devices to maintain access after a patch is installed.",
-      "source": "SANS Internet Storm Center",
-      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
-      "source_kind": "operations",
-      "published_at": "2026-09-06T21:43:17Z",
-      "age_hours": 132,
-      "category": "vulnerability",
-      "priority": "watch",
-      "priority_score": 46,
-      "tags": [
-        "vulnerability",
-        "patch"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": false
-    },
-    {
       "id": "df611a2dd38a",
       "title": "The Self-Expanding Stolen Inference Supply Chain: An AI Agent Harvesting and Re-Serving LLM Access, (Fri, Sep 11th)",
       "url": "https://isc.sans.edu/diary/rss/33332",
@@ -690,10 +721,10 @@
       "source_url": "https://isc.sans.edu/rssfeed_full.xml",
       "source_kind": "operations",
       "published_at": "2026-09-11T14:40:32Z",
-      "age_hours": 19,
+      "age_hours": 44,
       "category": "supply-chain",
       "priority": "watch",
-      "priority_score": 43,
+      "priority_score": 39,
       "tags": [
         "supply-chain"
       ],
@@ -717,10 +748,10 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-09-11T09:39:37Z",
-      "age_hours": 24,
+      "age_hours": 49,
       "category": "vulnerability",
       "priority": "watch",
-      "priority_score": 40,
+      "priority_score": 36,
       "tags": [
         "vulnerability",
         "patch",
@@ -739,33 +770,6 @@
       "is_kev": false
     },
     {
-      "id": "a9e03aba59c7",
-      "title": "Artifactory flaws chained in attacks deploying backdoor malware",
-      "url": "https://www.bleepingcomputer.com/news/security/artifactory-flaws-chained-in-attacks-deploying-backdoor-malware/",
-      "summary": "Threat actors are exploiting critical and high-severity vulnerabilities in JFrog Artifactory to bypass authentication, gain administrative privileges, and deploy a Rust backdoor on vulnerable self-hosted servers.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-09-11T16:29:44Z",
-      "age_hours": 17,
-      "category": "malware",
-      "priority": "watch",
-      "priority_score": 38,
-      "tags": [
-        "malware"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "Named malware gives you a starting point for validating endpoint, network and identity telemetry.",
-      "first_checks": [
-        "Validate detections against process, file, persistence and network context.",
-        "Search for the same behavior or indicators across other hosts.",
-        "Identify the likely entry point and affected user account."
-      ],
-      "escalate_when": "Escalate on execution, persistence, credential access, command-and-control or spread to another host.",
-      "is_kev": false
-    },
-    {
       "id": "7d2c7d56417c",
       "title": "Counterfeit installers to system compromise: Tracking a deceptive software download campaign",
       "url": "https://www.microsoft.com/en-us/security/blog/2026/09/01/counterfeit-installers-system-compromise-tracking-deceptive-software-download-campaign/",
@@ -774,7 +778,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-09-01T22:48:28Z",
-      "age_hours": 250,
+      "age_hours": 275,
       "category": "malware",
       "priority": "watch",
       "priority_score": 36,
@@ -806,7 +810,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-08-29T03:43:27Z",
-      "age_hours": 342,
+      "age_hours": 366,
       "category": "threat-intel",
       "priority": "watch",
       "priority_score": 36,
@@ -828,33 +832,30 @@
       "is_kev": false
     },
     {
-      "id": "3b1ca1686e68",
-      "title": "GitLab urges users to patch max severity path traversal flaw",
-      "url": "https://www.bleepingcomputer.com/news/security/gitlab-urges-users-to-patch-max-severity-path-traversal-flaw/",
-      "summary": "GitLab urged users on Thursday to patch their servers immediately against a maximum-severity path traversal vulnerability tracked as CVE-2026-85706.…",
+      "id": "a9e03aba59c7",
+      "title": "Artifactory flaws chained in attacks deploying backdoor malware",
+      "url": "https://www.bleepingcomputer.com/news/security/artifactory-flaws-chained-in-attacks-deploying-backdoor-malware/",
+      "summary": "Threat actors are exploiting critical and high-severity vulnerabilities in JFrog Artifactory to bypass authentication, gain administrative privileges, and deploy a Rust backdoor on vulnerable self-hosted servers.…",
       "source": "BleepingComputer",
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
-      "published_at": "2026-09-11T11:15:22Z",
-      "age_hours": 22,
-      "category": "vulnerability",
+      "published_at": "2026-09-11T16:29:44Z",
+      "age_hours": 42,
+      "category": "malware",
       "priority": "context",
       "priority_score": 34,
       "tags": [
-        "vulnerability",
-        "patch"
+        "malware"
       ],
       "evidence": [],
-      "cves": [
-        "CVE-2026-85706"
-      ],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "cves": [],
+      "why_l1_cares": "Named malware gives you a starting point for validating endpoint, network and identity telemetry.",
       "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
+        "Validate detections against process, file, persistence and network context.",
+        "Search for the same behavior or indicators across other hosts.",
+        "Identify the likely entry point and affected user account."
       ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "escalate_when": "Escalate on execution, persistence, credential access, command-and-control or spread to another host.",
       "is_kev": false
     },
     {
@@ -866,7 +867,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-09-10T17:23:05Z",
-      "age_hours": 40,
+      "age_hours": 65,
       "category": "phishing",
       "priority": "context",
       "priority_score": 32,
@@ -893,7 +894,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/security-operations/feed/",
       "source_kind": "research",
       "published_at": "2026-09-10T16:00:00Z",
-      "age_hours": 41,
+      "age_hours": 66,
       "category": "phishing",
       "priority": "context",
       "priority_score": 32,
@@ -921,7 +922,7 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-09-11T06:48:37Z",
-      "age_hours": 26,
+      "age_hours": 51,
       "category": "ransomware",
       "priority": "context",
       "priority_score": 31,
@@ -948,7 +949,7 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-09-10T21:40:43Z",
-      "age_hours": 36,
+      "age_hours": 60,
       "category": "ransomware",
       "priority": "context",
       "priority_score": 31,
@@ -967,6 +968,36 @@
       "is_kev": false
     },
     {
+      "id": "3b1ca1686e68",
+      "title": "GitLab urges users to patch max severity path traversal flaw",
+      "url": "https://www.bleepingcomputer.com/news/security/gitlab-urges-users-to-patch-max-severity-path-traversal-flaw/",
+      "summary": "GitLab urged users on Thursday to patch their servers immediately against a maximum-severity path traversal vulnerability tracked as CVE-2026-85706.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-09-11T11:15:22Z",
+      "age_hours": 47,
+      "category": "vulnerability",
+      "priority": "context",
+      "priority_score": 30,
+      "tags": [
+        "vulnerability",
+        "patch"
+      ],
+      "evidence": [],
+      "cves": [
+        "CVE-2026-85706"
+      ],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": false
+    },
+    {
       "id": "7bcb1548735b",
       "title": "Redtail Payload Analysis [Guest Diary], (Wed, Sep 9th)",
       "url": "https://isc.sans.edu/diary/rss/33326",
@@ -975,7 +1006,7 @@
       "source_url": "https://isc.sans.edu/rssfeed_full.xml",
       "source_kind": "operations",
       "published_at": "2026-09-10T12:58:10Z",
-      "age_hours": 44,
+      "age_hours": 69,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 30,
@@ -994,33 +1025,6 @@
       "is_kev": false
     },
     {
-      "id": "2bca4c7e6278",
-      "title": "Scans for Proxmox Servers, (Wed, Sep 9th)",
-      "url": "https://isc.sans.edu/diary/rss/33324",
-      "summary": "About a week ago, Proxmox published an advisory revealing a vulnerability in older versions of Proxmox VE, its flagship Virtual Environment product. The vulnerability only affects version 7, which has not been supported for a couple of years now.",
-      "source": "SANS Internet Storm Center",
-      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
-      "source_kind": "operations",
-      "published_at": "2026-09-09T17:46:24Z",
-      "age_hours": 63,
-      "category": "vulnerability",
-      "priority": "context",
-      "priority_score": 30,
-      "tags": [
-        "vulnerability"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": false
-    },
-    {
       "id": "5125040d57bf",
       "title": "September Windows Server updates break Remote Desktop Services",
       "url": "https://www.bleepingcomputer.com/news/microsoft/september-windows-server-updates-break-remote-desktop-services/",
@@ -1029,7 +1033,7 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-09-10T20:34:37Z",
-      "age_hours": 37,
+      "age_hours": 62,
       "category": "vulnerability",
       "priority": "context",
       "priority_score": 28,
@@ -1050,34 +1054,6 @@
       "is_kev": false
     },
     {
-      "id": "1b1eebcbc6b8",
-      "title": "Surfshark VPN says hackers breached internal testing, proxy servers",
-      "url": "https://www.bleepingcomputer.com/news/security/surfshark-vpn-says-hackers-breached-internal-testing-proxy-servers/",
-      "summary": "Surfshark disclosed that hackers accessed one of its internal test servers after a configuration error exposed it to the internet.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-09-10T19:15:07Z",
-      "age_hours": 38,
-      "category": "network",
-      "priority": "context",
-      "priority_score": 28,
-      "tags": [
-        "network",
-        "network-appliance"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "Edge devices are frequently internet-exposed and may provide the first evidence of scanning or access.",
-      "first_checks": [
-        "Identify affected models, versions and internet-facing assets.",
-        "Review authentication, configuration and traffic anomalies.",
-        "Search for source IPs and paths cited by the advisory."
-      ],
-      "escalate_when": "Escalate on successful access, configuration change, persistence or an exposed unmitigated device.",
-      "is_kev": false
-    },
-    {
       "id": "21e856b24560",
       "title": "GTIG AI Threat Tracker: From Prompting to Autonomy – The Evolution of Adversarial AI",
       "url": "https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai/",
@@ -1086,7 +1062,7 @@
       "source_url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
       "source_kind": "research",
       "published_at": "2026-09-08T14:00:00Z",
-      "age_hours": 91,
+      "age_hours": 116,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 28,
@@ -1113,7 +1089,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-09-03T16:00:00Z",
-      "age_hours": 209,
+      "age_hours": 234,
       "category": "phishing",
       "priority": "context",
       "priority_score": 28,
@@ -1140,7 +1116,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-09-02T22:51:18Z",
-      "age_hours": 226,
+      "age_hours": 251,
       "category": "phishing",
       "priority": "context",
       "priority_score": 28,
@@ -1168,7 +1144,7 @@
       "source_url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
       "source_kind": "research",
       "published_at": "2026-09-01T14:00:00Z",
-      "age_hours": 259,
+      "age_hours": 284,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 28,
@@ -1195,13 +1171,67 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/security-operations/feed/",
       "source_kind": "research",
       "published_at": "2026-08-27T16:00:00Z",
-      "age_hours": 377,
+      "age_hours": 402,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 28,
       "tags": [
         "threat-intel",
         "patch"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
+      "first_checks": [
+        "Extract only indicators and behaviors supported by the source.",
+        "Compare them with recent SIEM, EDR, identity and network alerts.",
+        "Record relevant findings without blocking on unverified indicators alone."
+      ],
+      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
+      "is_kev": false
+    },
+    {
+      "id": "2bca4c7e6278",
+      "title": "Scans for Proxmox Servers, (Wed, Sep 9th)",
+      "url": "https://isc.sans.edu/diary/rss/33324",
+      "summary": "About a week ago, Proxmox published an advisory revealing a vulnerability in older versions of Proxmox VE, its flagship Virtual Environment product. The vulnerability only affects version 7, which has not been supported for a couple of years now.",
+      "source": "SANS Internet Storm Center",
+      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
+      "source_kind": "operations",
+      "published_at": "2026-09-09T17:46:24Z",
+      "age_hours": 88,
+      "category": "vulnerability",
+      "priority": "context",
+      "priority_score": 26,
+      "tags": [
+        "vulnerability"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": false
+    },
+    {
+      "id": "318ce268e931",
+      "title": "numbat - AI agent observability, (Fri, Sep 4th)",
+      "url": "https://isc.sans.edu/diary/rss/33312",
+      "summary": "Open the primary source for the full technical context.",
+      "source": "SANS Internet Storm Center",
+      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
+      "source_kind": "operations",
+      "published_at": "2026-09-05T03:39:52Z",
+      "age_hours": 199,
+      "category": "threat-intel",
+      "priority": "context",
+      "priority_score": 26,
+      "tags": [
+        "threat-intel"
       ],
       "evidence": [],
       "cves": [],
@@ -1223,10 +1253,10 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-09-11T20:19:09Z",
-      "age_hours": 13,
+      "age_hours": 38,
       "category": "threat-intel",
       "priority": "context",
-      "priority_score": 26,
+      "priority_score": 22,
       "tags": [
         "threat-intel"
       ],
@@ -1250,10 +1280,10 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-09-11T19:00:29Z",
-      "age_hours": 14,
+      "age_hours": 39,
       "category": "data-breach",
       "priority": "context",
-      "priority_score": 26,
+      "priority_score": 22,
       "tags": [
         "data-breach"
       ],
@@ -1277,10 +1307,10 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-09-11T17:26:50Z",
-      "age_hours": 16,
+      "age_hours": 41,
       "category": "phishing",
       "priority": "context",
-      "priority_score": 26,
+      "priority_score": 22,
       "tags": [
         "phishing",
         "detect-hunt"
@@ -1307,10 +1337,10 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-09-11T14:01:11Z",
-      "age_hours": 19,
+      "age_hours": 44,
       "category": "malware",
       "priority": "context",
-      "priority_score": 26,
+      "priority_score": 22,
       "tags": [
         "malware",
         "detect-hunt"
@@ -1329,33 +1359,6 @@
       "is_kev": false
     },
     {
-      "id": "318ce268e931",
-      "title": "numbat - AI agent observability, (Fri, Sep 4th)",
-      "url": "https://isc.sans.edu/diary/rss/33312",
-      "summary": "Open the primary source for the full technical context.",
-      "source": "SANS Internet Storm Center",
-      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
-      "source_kind": "operations",
-      "published_at": "2026-09-05T03:39:52Z",
-      "age_hours": 174,
-      "category": "threat-intel",
-      "priority": "context",
-      "priority_score": 26,
-      "tags": [
-        "threat-intel"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
-      "first_checks": [
-        "Extract only indicators and behaviors supported by the source.",
-        "Compare them with recent SIEM, EDR, identity and network alerts.",
-        "Record relevant findings without blocking on unverified indicators alone."
-      ],
-      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
-      "is_kev": false
-    },
-    {
       "id": "42df196f2b73",
       "title": "Trezor: 347,000 users targeted in phishing attacks after Brevo breach",
       "url": "https://www.bleepingcomputer.com/news/security/trezor-347-000-users-targeted-in-phishing-attacks-after-brevo-breach/",
@@ -1364,7 +1367,7 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-09-11T07:55:15Z",
-      "age_hours": 25,
+      "age_hours": 50,
       "category": "phishing",
       "priority": "context",
       "priority_score": 22,

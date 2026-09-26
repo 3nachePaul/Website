@@ -1,25 +1,25 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-25T10:08:37.704751Z",
-  "generated_at_local": "2026-09-25T13:08+03:00",
+  "generated_at": "2026-09-26T09:49:32.162102Z",
+  "generated_at_local": "2026-09-26T12:49+03:00",
   "timezone": "Europe/Bucharest",
   "schedule": "Daily at 08:00 Europe/Bucharest",
   "stats": {
-    "total": 44,
+    "total": 46,
     "critical": 12,
-    "high": 3,
-    "watch": 6,
+    "high": 1,
+    "watch": 10,
     "context": 23,
     "categories": {
       "vulnerability": 18,
-      "threat-intel": 10,
-      "malware": 6,
+      "threat-intel": 9,
+      "identity": 4,
+      "malware": 4,
       "phishing": 4,
+      "ransomware": 2,
+      "endpoint": 2,
       "network": 1,
-      "ransomware": 1,
       "supply-chain": 1,
-      "identity": 1,
-      "endpoint": 1,
       "cloud": 1
     },
     "sources_ok": 8,
@@ -84,6 +84,117 @@
   ],
   "articles": [
     {
+      "id": "e7714cf5232b",
+      "title": "CVE-2026-67279: Mikrotik RouterOS Improper Enforcement of Behavioral Workflow Vulnerability",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-67279",
+      "summary": "MikroTik RouterOS. CISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or…",
+      "source": "CISA Known Exploited Vulnerabilities",
+      "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "source_kind": "kev",
+      "published_at": "2026-09-25T00:00:00Z",
+      "age_hours": 34,
+      "category": "vulnerability",
+      "priority": "critical",
+      "priority_score": 100,
+      "tags": [
+        "vulnerability",
+        "active-exploitation",
+        "patch"
+      ],
+      "evidence": [
+        "kev",
+        "observed-in-wild"
+      ],
+      "cves": [
+        "CVE-2026-67279"
+      ],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": true,
+      "product": "MikroTik RouterOS",
+      "due_date": "2026-09-28",
+      "known_ransomware_use": "Unknown"
+    },
+    {
+      "id": "1730a980a894",
+      "title": "CVE-2026-65660: Microsoft SharePoint Code Injection Vulnerability",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-65660",
+      "summary": "Microsoft SharePoint. CISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or…",
+      "source": "CISA Known Exploited Vulnerabilities",
+      "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "source_kind": "kev",
+      "published_at": "2026-09-25T00:00:00Z",
+      "age_hours": 34,
+      "category": "vulnerability",
+      "priority": "critical",
+      "priority_score": 100,
+      "tags": [
+        "vulnerability",
+        "active-exploitation",
+        "patch"
+      ],
+      "evidence": [
+        "kev",
+        "observed-in-wild"
+      ],
+      "cves": [
+        "CVE-2026-65660"
+      ],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": true,
+      "product": "Microsoft SharePoint",
+      "due_date": "2026-09-28",
+      "known_ransomware_use": "Unknown"
+    },
+    {
+      "id": "6993944b45b0",
+      "title": "CVE-2026-87902: WordPress Core Remote File Inclusion Vulnerability",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-87902",
+      "summary": "WordPress Core. CISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or…",
+      "source": "CISA Known Exploited Vulnerabilities",
+      "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "source_kind": "kev",
+      "published_at": "2026-09-25T00:00:00Z",
+      "age_hours": 34,
+      "category": "vulnerability",
+      "priority": "critical",
+      "priority_score": 100,
+      "tags": [
+        "vulnerability",
+        "active-exploitation",
+        "patch"
+      ],
+      "evidence": [
+        "kev",
+        "observed-in-wild"
+      ],
+      "cves": [
+        "CVE-2026-87902"
+      ],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": true,
+      "product": "WordPress Core",
+      "due_date": "2026-09-28",
+      "known_ransomware_use": "Unknown"
+    },
+    {
       "id": "6e21473e1971",
       "title": "CVE-2026-5430: WSO2 Multiple Products Path Traversal Vulnerability",
       "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-5430",
@@ -92,7 +203,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-09-24T00:00:00Z",
-      "age_hours": 34,
+      "age_hours": 58,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -129,7 +240,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-09-24T00:00:00Z",
-      "age_hours": 34,
+      "age_hours": 58,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -166,7 +277,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-09-22T00:00:00Z",
-      "age_hours": 82,
+      "age_hours": 106,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -203,7 +314,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-09-22T00:00:00Z",
-      "age_hours": 82,
+      "age_hours": 106,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -240,7 +351,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-09-22T00:00:00Z",
-      "age_hours": 82,
+      "age_hours": 106,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -277,7 +388,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-09-22T00:00:00Z",
-      "age_hours": 82,
+      "age_hours": 106,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -314,7 +425,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-09-21T00:00:00Z",
-      "age_hours": 106,
+      "age_hours": 130,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -351,7 +462,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-09-18T00:00:00Z",
-      "age_hours": 178,
+      "age_hours": 202,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -389,7 +500,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-09-18T00:00:00Z",
-      "age_hours": 178,
+      "age_hours": 202,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -419,119 +530,6 @@
       "known_ransomware_use": "Unknown"
     },
     {
-      "id": "647dc9f11442",
-      "title": "CVE-2025-39682: Linux Kernel Improper Check for Unusual or Exceptional Conditions Vulnerability",
-      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2025-39682",
-      "summary": "Linux Kernel. CISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or…",
-      "source": "CISA Known Exploited Vulnerabilities",
-      "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
-      "source_kind": "kev",
-      "published_at": "2026-09-18T00:00:00Z",
-      "age_hours": 178,
-      "category": "vulnerability",
-      "priority": "critical",
-      "priority_score": 96,
-      "tags": [
-        "vulnerability",
-        "active-exploitation",
-        "patch",
-        "linux"
-      ],
-      "evidence": [
-        "kev",
-        "observed-in-wild"
-      ],
-      "cves": [
-        "CVE-2025-39682"
-      ],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": true,
-      "product": "Linux Kernel",
-      "due_date": "2026-09-21",
-      "known_ransomware_use": "Unknown"
-    },
-    {
-      "id": "18b30da44c56",
-      "title": "CVE-2026-58704: Google Pixel Improper Authorization Vulnerability",
-      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-58704",
-      "summary": "Google Pixel. CISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or…",
-      "source": "CISA Known Exploited Vulnerabilities",
-      "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
-      "source_kind": "kev",
-      "published_at": "2026-09-16T00:00:00Z",
-      "age_hours": 226,
-      "category": "vulnerability",
-      "priority": "critical",
-      "priority_score": 96,
-      "tags": [
-        "vulnerability",
-        "active-exploitation",
-        "patch"
-      ],
-      "evidence": [
-        "kev",
-        "observed-in-wild"
-      ],
-      "cves": [
-        "CVE-2026-58704"
-      ],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": true,
-      "product": "Google Pixel",
-      "due_date": "2026-09-19",
-      "known_ransomware_use": "Unknown"
-    },
-    {
-      "id": "15fe0eb48963",
-      "title": "CVE-2026-76460: Cisco Identity Services Engine Incorrect Use of Privileged APIs Vulnerability",
-      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-76460",
-      "summary": "Cisco Identity Services Engine. CISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or…",
-      "source": "CISA Known Exploited Vulnerabilities",
-      "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
-      "source_kind": "kev",
-      "published_at": "2026-09-16T00:00:00Z",
-      "age_hours": 226,
-      "category": "vulnerability",
-      "priority": "critical",
-      "priority_score": 96,
-      "tags": [
-        "vulnerability",
-        "active-exploitation",
-        "patch",
-        "network-appliance"
-      ],
-      "evidence": [
-        "kev",
-        "observed-in-wild"
-      ],
-      "cves": [
-        "CVE-2026-76460"
-      ],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": true,
-      "product": "Cisco Identity Services Engine",
-      "due_date": "2026-09-19",
-      "known_ransomware_use": "Unknown"
-    },
-    {
       "id": "499e743ace4c",
       "title": "2026-013: Critical Vulnerability in F5 BIG-IP APM",
       "url": "https://cert.europa.eu/publications/security-advisories/2026-013/",
@@ -540,10 +538,10 @@
       "source_url": "https://cert.europa.eu/publications/security-advisories-rss",
       "source_kind": "advisory",
       "published_at": "2026-09-22T18:52:36Z",
-      "age_hours": 63,
+      "age_hours": 87,
       "category": "vulnerability",
       "priority": "high",
-      "priority_score": 67,
+      "priority_score": 63,
       "tags": [
         "vulnerability",
         "active-exploitation"
@@ -551,65 +549,6 @@
       "evidence": [
         "observed-in-wild"
       ],
-      "cves": [],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": false
-    },
-    {
-      "id": "d7761a75ee2f",
-      "title": "Hackers now exploit critical Roundcube flaw in code injection attacks",
-      "url": "https://www.bleepingcomputer.com/news/security/critical-roundcube-flaw-now-actively-exploited-in-code-injection-attacks/",
-      "summary": "A high-severity Roundcube Webmail vulnerability patched in May is now being actively exploited in attacks, according to the Canadian Centre for Cyber Security.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-09-24T13:27:57Z",
-      "age_hours": 21,
-      "category": "vulnerability",
-      "priority": "high",
-      "priority_score": 64,
-      "tags": [
-        "vulnerability",
-        "active-exploitation",
-        "patch"
-      ],
-      "evidence": [
-        "observed-in-wild"
-      ],
-      "cves": [],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": false
-    },
-    {
-      "id": "f5dd20ff54d8",
-      "title": "CISA: Ransomware gangs now exploiting critical TeamCity flaw",
-      "url": "https://www.bleepingcomputer.com/news/security/cisa-ransomware-gangs-now-exploiting-critical-teamcity-flaw/",
-      "summary": "​The U.S. Cybersecurity and Infrastructure Security Agency (CISA) warned federal agencies on Wednesday that ransomware gangs are now also exploiting a critical JetBrains TeamCity vulnerability patched in July.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-09-24T10:42:37Z",
-      "age_hours": 23,
-      "category": "vulnerability",
-      "priority": "high",
-      "priority_score": 55,
-      "tags": [
-        "vulnerability",
-        "patch"
-      ],
-      "evidence": [],
       "cves": [],
       "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
       "first_checks": [
@@ -629,7 +568,7 @@
       "source_url": "https://cert.europa.eu/publications/security-advisories-rss",
       "source_kind": "advisory",
       "published_at": "2026-09-09T15:07:59Z",
-      "age_hours": 379,
+      "age_hours": 403,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 53,
@@ -659,7 +598,7 @@
       "source_url": "https://cert.europa.eu/publications/security-advisories-rss",
       "source_kind": "advisory",
       "published_at": "2026-09-10T10:20:06Z",
-      "age_hours": 360,
+      "age_hours": 383,
       "category": "network",
       "priority": "watch",
       "priority_score": 51,
@@ -680,22 +619,59 @@
       "is_kev": false
     },
     {
-      "id": "c7a3d4c3889b",
-      "title": "Beyond the ransomware: Tracking Storm-2570’s consistent tradecraft across deployments",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/09/24/beyond-ransomware-tracking-storm-2570-consistent-tradecraft-across-deployments/",
-      "summary": "Storm-2570 is a ransomware affiliate that uses consistent post-compromise tools and techniques across deployments involving Qilin, DragonForce, Anubis, and BERT ransomware, and provides guidance to help defenders detect and disrupt this activity before ransomware deployment.",
-      "source": "Microsoft Threat Intelligence",
-      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
+      "id": "0d4d5cdcaf33",
+      "title": "ShinyHunters Renewed Mass Exploitation Campaign Targeting Oracle PeopleSoft",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/shinyhunters-renewed-mass-exploitation-campaign-targeting-oracle-peoplesoft/",
+      "summary": "Introduction As an update to the June 2026 post, ShinyHunters Targets Education Sector with Oracle PeopleSoft Exploit , Mandiant and Google Threat Intelligence Group (GTIG) have identified renewed mass exploitation of CVE-2026-35273 by UNC6240 (ShinyHunters), along with expanded global targeting across multiple sectors. In June, the threat actor exploited this vulnerability as a zero-day predominantly against…",
+      "source": "Google Threat Intelligence",
+      "source_url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
       "source_kind": "research",
-      "published_at": "2026-09-24T16:00:00Z",
-      "age_hours": 18,
+      "published_at": "2026-09-25T14:00:00Z",
+      "age_hours": 20,
+      "category": "vulnerability",
+      "priority": "watch",
+      "priority_score": 48,
+      "tags": [
+        "vulnerability",
+        "detect-hunt",
+        "patch"
+      ],
+      "evidence": [
+        "detection-guidance"
+      ],
+      "cves": [
+        "CVE-2026-35273"
+      ],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": false
+    },
+    {
+      "id": "6e342a8a97cf",
+      "title": "ShinyHunters hacked Clop leak site using Grav CMS path traversal flaw",
+      "url": "https://www.bleepingcomputer.com/news/security/shinyhunters-hacked-clop-leak-site-using-grav-cms-path-traversal-flaw/",
+      "summary": "The Clop ransomware gang has moved its data leak site to a new Tor address after confirming its previous server was compromised and defaced through an unpatched Grav CMS flaw that BleepingComputer has learned is an unauthenticated path traversal vulnerability.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-09-25T20:57:55Z",
+      "age_hours": 13,
       "category": "ransomware",
       "priority": "watch",
-      "priority_score": 45,
+      "priority_score": 43,
       "tags": [
-        "ransomware"
+        "ransomware",
+        "detect-hunt",
+        "patch"
       ],
-      "evidence": [],
+      "evidence": [
+        "detection-guidance"
+      ],
       "cves": [],
       "why_l1_cares": "Early containment matters; precursor activity can appear before encryption or extortion becomes visible.",
       "first_checks": [
@@ -707,30 +683,31 @@
       "is_kev": false
     },
     {
-      "id": "00b0cb7d2267",
-      "title": "Proactive Defense: Hardening Code Pipelines and CI/CD Infrastructure",
-      "url": "https://cloud.google.com/blog/topics/threat-intelligence/hardening-code-pipelines-and-ci-cd-infrastructure/",
-      "summary": "Introduction The landscape of software supply chain security has undergone a significant shift. Recent campaigns demonstrate that sophisticated threat actors are systematically targeting the engineering lifecycle by compromising trusted security and programming tools. These intrusions reveal three key tactics: Attackers target trusted security scanners, utility libraries, and AI developer tools to exploit the…",
-      "source": "Google Threat Intelligence",
-      "source_url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
+      "id": "8f643c181c35",
+      "title": "Storm-3168: Agentic-driven cloud attacks using compromised service principals",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/09/25/storm-3168-agentic-driven-cloud-attacks-using-compromised-service-principals/",
+      "summary": "Microsoft details JADEPUFFER-linked Azure reconnaissance, resource deletion, and credential access using compromised service principals, identifying the activity as associated with Storm-3168 and providing guidance for defenders.",
+      "source": "Microsoft Threat Intelligence",
+      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
-      "published_at": "2026-09-24T14:00:00Z",
-      "age_hours": 20,
-      "category": "supply-chain",
+      "published_at": "2026-09-25T15:35:08Z",
+      "age_hours": 18,
+      "category": "identity",
       "priority": "watch",
-      "priority_score": 45,
+      "priority_score": 42,
       "tags": [
-        "supply-chain"
+        "identity",
+        "cloud"
       ],
       "evidence": [],
       "cves": [],
-      "why_l1_cares": "A compromised package or update can create alerts across developer endpoints, build systems and production workloads.",
+      "why_l1_cares": "Identity activity often becomes the first visible signal before mailbox, cloud or endpoint impact.",
       "first_checks": [
-        "Confirm whether the named package, extension or version exists internally.",
-        "Review install time, parent process, outbound traffic and exposed credentials.",
-        "Search build logs and peer systems for the same dependency or behavior."
+        "Review risky sign-ins, impossible travel and unfamiliar devices.",
+        "Check MFA, password and app-consent changes around the event.",
+        "Correlate the account with mailbox, endpoint and token activity."
       ],
-      "escalate_when": "Escalate on confirmed installation, suspicious execution, credential access or a tainted production build.",
+      "escalate_when": "Escalate on successful anomalous sign-in, MFA reset, suspicious consent or token reuse.",
       "is_kev": false
     },
     {
@@ -742,7 +719,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-09-09T17:41:18Z",
-      "age_hours": 376,
+      "age_hours": 400,
       "category": "identity",
       "priority": "watch",
       "priority_score": 42,
@@ -766,31 +743,113 @@
       "is_kev": false
     },
     {
-      "id": "f9fa63921858",
-      "title": "​​​​​​​​What’s new in Microsoft Security: September 2026​​",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/09/24/whats-new-in-microsoft-security-september-2026/",
-      "summary": "This month's updates help you discover and control local AI agents, extend Zero Trust to agent traffic, and strengthen SOC foundations.",
-      "source": "Microsoft Security Operations",
-      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/security-operations/feed/",
+      "id": "c7a3d4c3889b",
+      "title": "Beyond the ransomware: Tracking Storm-2570’s consistent tradecraft across deployments",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/09/24/beyond-ransomware-tracking-storm-2570-consistent-tradecraft-across-deployments/",
+      "summary": "Storm-2570 is a ransomware affiliate that uses consistent post-compromise tools and techniques across deployments involving Qilin, DragonForce, Anubis, and BERT ransomware, and provides guidance to help defenders detect and disrupt this activity before ransomware deployment.",
+      "source": "Microsoft Threat Intelligence",
+      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-09-24T16:00:00Z",
-      "age_hours": 18,
-      "category": "threat-intel",
+      "age_hours": 42,
+      "category": "ransomware",
       "priority": "watch",
-      "priority_score": 36,
+      "priority_score": 41,
       "tags": [
-        "threat-intel",
-        "patch"
+        "ransomware"
       ],
       "evidence": [],
       "cves": [],
-      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
+      "why_l1_cares": "Early containment matters; precursor activity can appear before encryption or extortion becomes visible.",
       "first_checks": [
-        "Extract only indicators and behaviors supported by the source.",
-        "Compare them with recent SIEM, EDR, identity and network alerts.",
-        "Record relevant findings without blocking on unverified indicators alone."
+        "Validate the alert and identify the first affected host and user.",
+        "Look for lateral movement, credential access and mass file changes.",
+        "Preserve evidence and follow the isolation playbook if impact is confirmed."
       ],
-      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
+      "escalate_when": "Escalate immediately on encryption, lateral movement, disabled controls or confirmed data theft.",
+      "is_kev": false
+    },
+    {
+      "id": "00b0cb7d2267",
+      "title": "Proactive Defense: Hardening Code Pipelines and CI/CD Infrastructure",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/hardening-code-pipelines-and-ci-cd-infrastructure/",
+      "summary": "Introduction The landscape of software supply chain security has undergone a significant shift. Recent campaigns demonstrate that sophisticated threat actors are systematically targeting the engineering lifecycle by compromising trusted security and programming tools. These intrusions reveal three key tactics: Attackers target trusted security scanners, utility libraries, and AI developer tools to exploit the…",
+      "source": "Google Threat Intelligence",
+      "source_url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
+      "source_kind": "research",
+      "published_at": "2026-09-24T14:00:00Z",
+      "age_hours": 44,
+      "category": "supply-chain",
+      "priority": "watch",
+      "priority_score": 41,
+      "tags": [
+        "supply-chain"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "A compromised package or update can create alerts across developer endpoints, build systems and production workloads.",
+      "first_checks": [
+        "Confirm whether the named package, extension or version exists internally.",
+        "Review install time, parent process, outbound traffic and exposed credentials.",
+        "Search build logs and peer systems for the same dependency or behavior."
+      ],
+      "escalate_when": "Escalate on confirmed installation, suspicious execution, credential access or a tainted production build.",
+      "is_kev": false
+    },
+    {
+      "id": "3e6437721d93",
+      "title": "Kiteworks urges 6-hour server shutdown over potential zero-day attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/kiteworks-urges-6-hour-server-shutdown-over-potential-zero-day-attacks/",
+      "summary": "Secure file-sharing software company Kiteworks is urging customers worldwide to temporarily shut down their servers on Saturday for a six-hour window after receiving threat intelligence warning of a potentially imminent cyberattack.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-09-25T21:41:07Z",
+      "age_hours": 12,
+      "category": "vulnerability",
+      "priority": "watch",
+      "priority_score": 38,
+      "tags": [
+        "vulnerability"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": false
+    },
+    {
+      "id": "2e9b76e63d00",
+      "title": "CISA warns of Sharepoint, WSO2, Adobe Commerce flaws exploited in attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-sharepoint-wso2-adobe-commerce-flaws-exploited-in-attacks/",
+      "summary": "The Cybersecurity and Infrastructure Security Agency (CISA) warns that hackers are exploiting a critical authentication bypass vulnerability (CVE-2026-5430) affecting multiple products from enterprise software provider WSO2.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-09-25T17:24:20Z",
+      "age_hours": 16,
+      "category": "vulnerability",
+      "priority": "watch",
+      "priority_score": 38,
+      "tags": [
+        "vulnerability"
+      ],
+      "evidence": [],
+      "cves": [
+        "CVE-2026-5430"
+      ],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
       "is_kev": false
     },
     {
@@ -801,8 +860,8 @@
       "source": "SANS Internet Storm Center",
       "source_url": "https://isc.sans.edu/rssfeed_full.xml",
       "source_kind": "operations",
-      "published_at": "2026-09-25T06:45:47Z",
-      "age_hours": 3,
+      "published_at": "2026-09-25T12:45:19Z",
+      "age_hours": 21,
       "category": "malware",
       "priority": "context",
       "priority_score": 34,
@@ -829,7 +888,7 @@
       "source_url": "https://isc.sans.edu/rssfeed_full.xml",
       "source_kind": "operations",
       "published_at": "2026-09-21T10:33:53Z",
-      "age_hours": 96,
+      "age_hours": 119,
       "category": "malware",
       "priority": "context",
       "priority_score": 34,
@@ -851,42 +910,70 @@
       "is_kev": false
     },
     {
-      "id": "7265697f416b",
-      "title": "MacSync malware uses public iCloud calendars to deliver new payloads",
-      "url": "https://www.bleepingcomputer.com/news/security/macsync-malware-uses-public-icloud-calendars-to-deliver-new-payloads/",
-      "summary": "A new variant of the MacSync malware targeting macOS systems now uses public iCloud calendar events to deliver new native payloads.…",
+      "id": "5324567d954d",
+      "title": "Anthropic rolls out up to $250 in free Claude Code credits, but only for cloud sessions",
+      "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-rolls-out-up-to-250-in-free-claude-code-credits-but-only-for-cloud-sessions/",
+      "summary": "Anthropic now allows you to run Claude Code via cloud sessions without signing up for the research preview, and it's offering up to $250 in free usage credits, so more users can give it a try.…",
       "source": "BleepingComputer",
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
-      "published_at": "2026-09-24T20:53:35Z",
-      "age_hours": 13,
-      "category": "malware",
+      "published_at": "2026-09-25T16:00:00Z",
+      "age_hours": 18,
+      "category": "cloud",
       "priority": "context",
       "priority_score": 32,
       "tags": [
-        "malware"
+        "cloud"
       ],
       "evidence": [],
       "cves": [],
-      "why_l1_cares": "Named malware gives you a starting point for validating endpoint, network and identity telemetry.",
+      "why_l1_cares": "Cloud incidents often cross identity, control-plane and workload logs, so isolated alerts can hide scope.",
       "first_checks": [
-        "Validate detections against process, file, persistence and network context.",
-        "Search for the same behavior or indicators across other hosts.",
-        "Identify the likely entry point and affected user account."
+        "Review control-plane changes, sign-ins and newly created credentials.",
+        "Check public exposure, unusual data access and workload activity.",
+        "Correlate the actor, source IP and time across cloud services."
       ],
-      "escalate_when": "Escalate on execution, persistence, credential access, command-and-control or spread to another host.",
+      "escalate_when": "Escalate on unauthorized configuration change, exposed data, new credential or suspicious workload execution.",
       "is_kev": false
     },
     {
-      "id": "1f4ae2ff4c87",
-      "title": "Windows 11 KB5124010 update released with 46 changes and fixes",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/windows-11-kb5124010-update-released-with-46-changes-and-fixes/",
-      "summary": "Microsoft released the KB5124010 September 2026 non-security preview update for Windows 11 24H2 and 25H2, with 46 changes including Bluetooth improvements and the ability to remap the Copilot key.…",
+      "id": "b77adcfbe2b6",
+      "title": "Microsoft plans to deprecate Windows Deployment Services",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-to-deprecate-windows-deployment-services-after-windows-server-2025/",
+      "summary": "Microsoft announced it will deprecate the Windows Deployment Services (WDS) server role starting with the next Windows Server release.…",
       "source": "BleepingComputer",
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
-      "published_at": "2026-09-24T12:16:32Z",
-      "age_hours": 22,
+      "published_at": "2026-09-25T12:40:59Z",
+      "age_hours": 21,
+      "category": "endpoint",
+      "priority": "context",
+      "priority_score": 32,
+      "tags": [
+        "endpoint",
+        "windows"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "Endpoint telemetry can confirm whether a public report is relevant to real activity in your estate.",
+      "first_checks": [
+        "Review process tree, signer, command line and parent-child relationships.",
+        "Correlate file, registry, persistence and outbound network events.",
+        "Search for the behavior across peer endpoints."
+      ],
+      "escalate_when": "Escalate on suspicious execution, persistence, defense evasion or confirmed user impact.",
+      "is_kev": false
+    },
+    {
+      "id": "a32e62f50e70",
+      "title": "Microsoft: Recent Windows updates cause desktop loading issues",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-recent-windows-updates-cause-desktop-loading-issues/",
+      "summary": "Microsoft has confirmed that some users may experience desktop loading issues, including black screens, after installing the August 2026 preview updates and subsequent updates.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-09-25T10:30:38Z",
+      "age_hours": 23,
       "category": "endpoint",
       "priority": "context",
       "priority_score": 32,
@@ -907,6 +994,34 @@
       "is_kev": false
     },
     {
+      "id": "f9fa63921858",
+      "title": "​​​​​​​​What’s new in Microsoft Security: September 2026​​",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/09/24/whats-new-in-microsoft-security-september-2026/",
+      "summary": "This month's updates help you discover and control local AI agents, extend Zero Trust to agent traffic, and strengthen SOC foundations.",
+      "source": "Microsoft Security Operations",
+      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/security-operations/feed/",
+      "source_kind": "research",
+      "published_at": "2026-09-24T16:00:00Z",
+      "age_hours": 42,
+      "category": "threat-intel",
+      "priority": "context",
+      "priority_score": 32,
+      "tags": [
+        "threat-intel",
+        "patch"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
+      "first_checks": [
+        "Extract only indicators and behaviors supported by the source.",
+        "Compare them with recent SIEM, EDR, identity and network alerts.",
+        "Record relevant findings without blocking on unverified indicators alone."
+      ],
+      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
+      "is_kev": false
+    },
+    {
       "id": "50f29e11a44c",
       "title": "Reimagining the SOC for the agentic era in Microsoft Defender",
       "url": "https://www.microsoft.com/en-us/security/blog/2026/09/23/reimagining-the-soc-for-the-agentic-era-in-microsoft-defender/",
@@ -915,7 +1030,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/security-operations/feed/",
       "source_kind": "research",
       "published_at": "2026-09-23T16:00:00Z",
-      "age_hours": 42,
+      "age_hours": 66,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 32,
@@ -935,33 +1050,6 @@
       "is_kev": false
     },
     {
-      "id": "6072e1b4b7e2",
-      "title": "Unmasking EvilTokens: Getting to the root of device code phishing",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/09/22/unmasking-eviltokens-getting-to-the-root-of-device-code-phishing/",
-      "summary": "EvilTokens has quickly become one of the top PhaaS platforms, enabling device code phishing attacks through AI-assisted lures, automated infrastructure, and token theft. In collaboration with partners, Microsoft Digital Crimes Unit (DCU) facilitated a disruption of EvilTokens infrastructure and operations.",
-      "source": "Microsoft Threat Intelligence",
-      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
-      "source_kind": "research",
-      "published_at": "2026-09-22T15:00:00Z",
-      "age_hours": 67,
-      "category": "phishing",
-      "priority": "context",
-      "priority_score": 32,
-      "tags": [
-        "phishing"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "This may surface first as a mail alert, user report, malicious click or suspicious sign-in.",
-      "first_checks": [
-        "Inspect sender, reply-to, URLs, attachments and authentication results.",
-        "Search for other recipients and confirm whether anyone clicked.",
-        "Correlate clicks with sign-ins, downloads and endpoint events."
-      ],
-      "escalate_when": "Escalate when a user clicked, entered credentials, opened a payload or similar mail reached others.",
-      "is_kev": false
-    },
-    {
       "id": "3a25ac1d245c",
       "title": "One URL, Three Different Tricks, (Thu, Sep 24th)",
       "url": "https://isc.sans.edu/diary/rss/33366",
@@ -970,7 +1058,7 @@
       "source_url": "https://isc.sans.edu/rssfeed_full.xml",
       "source_kind": "operations",
       "published_at": "2026-09-24T06:25:06Z",
-      "age_hours": 28,
+      "age_hours": 51,
       "category": "phishing",
       "priority": "context",
       "priority_score": 30,
@@ -997,7 +1085,7 @@
       "source_url": "https://isc.sans.edu/rssfeed_full.xml",
       "source_kind": "operations",
       "published_at": "2026-09-23T16:14:37Z",
-      "age_hours": 42,
+      "age_hours": 66,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 30,
@@ -1016,45 +1104,18 @@
       "is_kev": false
     },
     {
-      "id": "35be19f206f9",
-      "title": "The Truth about GET and HTTP Standards, (Tue, Sep 22nd)",
-      "url": "https://isc.sans.edu/diary/rss/33358",
-      "summary": "On Friday, Xavier talked about the newly introduced HTTP Query method. This new method was introduced to allow \"GET\" requests that include a body. The main reason for this was that GET requests typically do not contain a body. But what if they do?",
-      "source": "SANS Internet Storm Center",
-      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
-      "source_kind": "operations",
-      "published_at": "2026-09-22T19:06:15Z",
-      "age_hours": 63,
-      "category": "threat-intel",
-      "priority": "context",
-      "priority_score": 30,
-      "tags": [
-        "threat-intel"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
-      "first_checks": [
-        "Extract only indicators and behaviors supported by the source.",
-        "Compare them with recent SIEM, EDR, identity and network alerts.",
-        "Record relevant findings without blocking on unverified indicators alone."
-      ],
-      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
-      "is_kev": false
-    },
-    {
-      "id": "23378716c23d",
-      "title": "LausivLoader analysis, or how to pass data between malware stages, (Thu, Sep 17th)",
-      "url": "https://isc.sans.edu/diary/rss/33348",
-      "summary": "At the end of August, a malspam message was caught in the quarantine of a mail gateway operated by one of my customers. The message was not especially remarkable â€“ it asked the recipient to review some attached requirements and provide a price quotation for a fiber optic system and appeared to impersonate an employee of a legitimate company.",
-      "source": "SANS Internet Storm Center",
-      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
-      "source_kind": "operations",
-      "published_at": "2026-09-22T13:10:20Z",
-      "age_hours": 69,
+      "id": "7265697f416b",
+      "title": "MacSync malware uses public iCloud calendars to deliver new payloads",
+      "url": "https://www.bleepingcomputer.com/news/security/macsync-malware-uses-public-icloud-calendars-to-deliver-new-payloads/",
+      "summary": "A new variant of the MacSync malware targeting macOS systems now uses public iCloud calendar events to deliver new native payloads.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-09-24T20:53:35Z",
+      "age_hours": 37,
       "category": "malware",
       "priority": "context",
-      "priority_score": 30,
+      "priority_score": 28,
       "tags": [
         "malware"
       ],
@@ -1070,60 +1131,30 @@
       "is_kev": false
     },
     {
-      "id": "97c422976cf7",
-      "title": "Microsoft fixes bug that broke Windows File History backup feature",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-windows-backup-feature-broken-by-september-updates/",
-      "summary": "Microsoft has fixed a known issue that breaks the built-in File History backup feature on some Windows systems after installing the September 2026 security updates.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-09-24T08:14:47Z",
-      "age_hours": 26,
-      "category": "vulnerability",
+      "id": "6072e1b4b7e2",
+      "title": "Unmasking EvilTokens: Getting to the root of device code phishing",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/09/22/unmasking-eviltokens-getting-to-the-root-of-device-code-phishing/",
+      "summary": "EvilTokens has quickly become one of the top PhaaS platforms, enabling device code phishing attacks through AI-assisted lures, automated infrastructure, and token theft. In collaboration with partners, Microsoft Digital Crimes Unit (DCU) facilitated a disruption of EvilTokens infrastructure and operations.",
+      "source": "Microsoft Threat Intelligence",
+      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
+      "source_kind": "research",
+      "published_at": "2026-09-22T15:00:00Z",
+      "age_hours": 91,
+      "category": "phishing",
       "priority": "context",
       "priority_score": 28,
       "tags": [
-        "vulnerability",
-        "patch",
-        "windows"
+        "phishing"
       ],
       "evidence": [],
       "cves": [],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "why_l1_cares": "This may surface first as a mail alert, user report, malicious click or suspicious sign-in.",
       "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
+        "Inspect sender, reply-to, URLs, attachments and authentication results.",
+        "Search for other recipients and confirm whether anyone clicked.",
+        "Correlate clicks with sign-ins, downloads and endpoint events."
       ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": false
-    },
-    {
-      "id": "3c5d9756b70d",
-      "title": "Placeholder domain used in dev docs now serves ClickFix attacks",
-      "url": "https://www.bleepingcomputer.com/news/security/placeholder-domain-used-in-dev-docs-now-serves-clickfix-attacks/",
-      "summary": "The \"third-party.com\" domain, commonly used as a placeholder in developer documentation and code examples, is serving a fake Cloudflare verification page that attempts to trick Windows users into executing PowerShell commands.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-09-23T22:46:01Z",
-      "age_hours": 35,
-      "category": "cloud",
-      "priority": "context",
-      "priority_score": 28,
-      "tags": [
-        "cloud",
-        "windows"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "Cloud incidents often cross identity, control-plane and workload logs, so isolated alerts can hide scope.",
-      "first_checks": [
-        "Review control-plane changes, sign-ins and newly created credentials.",
-        "Check public exposure, unusual data access and workload activity.",
-        "Correlate the actor, source IP and time across cloud services."
-      ],
-      "escalate_when": "Escalate on unauthorized configuration change, exposed data, new credential or suspicious workload execution.",
+      "escalate_when": "Escalate when a user clicked, entered credentials, opened a payload or similar mail reached others.",
       "is_kev": false
     },
     {
@@ -1135,7 +1166,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/security-operations/feed/",
       "source_kind": "research",
       "published_at": "2026-09-17T17:00:00Z",
-      "age_hours": 185,
+      "age_hours": 209,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 28,
@@ -1162,7 +1193,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/security-operations/feed/",
       "source_kind": "research",
       "published_at": "2026-09-17T16:00:00Z",
-      "age_hours": 186,
+      "age_hours": 210,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 28,
@@ -1190,7 +1221,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-09-10T17:23:05Z",
-      "age_hours": 353,
+      "age_hours": 376,
       "category": "phishing",
       "priority": "context",
       "priority_score": 28,
@@ -1217,7 +1248,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/security-operations/feed/",
       "source_kind": "research",
       "published_at": "2026-09-10T16:00:00Z",
-      "age_hours": 354,
+      "age_hours": 378,
       "category": "phishing",
       "priority": "context",
       "priority_score": 28,
@@ -1245,7 +1276,7 @@
       "source_url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
       "source_kind": "research",
       "published_at": "2026-09-08T14:00:00Z",
-      "age_hours": 404,
+      "age_hours": 428,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 28,
@@ -1264,96 +1295,15 @@
       "is_kev": false
     },
     {
-      "id": "4ef5d17c6103",
-      "title": "Hackers steal $351.6 million in Bitget crypto exchange hack",
-      "url": "https://www.bleepingcomputer.com/news/security/hackers-steal-3516-million-in-bitget-crypto-exchange-hack/",
-      "summary": "​Cryptocurrency exchange Bitget disclosed today that suspected North Korean hackers have stolen $351.6 million from its hot and warm wallets.…",
+      "id": "53c3f861257c",
+      "title": "Elementor WordPress flaw lets attackers create admin accounts",
+      "url": "https://www.bleepingcomputer.com/news/security/elementor-wordpress-flaw-lets-attackers-create-admin-accounts/",
+      "summary": "A cross-site request forgery (CSRF) vulnerability in the Elementor plugin for WordPress could allow an unauthenticated attacker to create administrator accounts.…",
       "source": "BleepingComputer",
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
-      "published_at": "2026-09-25T08:33:44Z",
-      "age_hours": 2,
-      "category": "threat-intel",
-      "priority": "context",
-      "priority_score": 26,
-      "tags": [
-        "threat-intel"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
-      "first_checks": [
-        "Extract only indicators and behaviors supported by the source.",
-        "Compare them with recent SIEM, EDR, identity and network alerts.",
-        "Record relevant findings without blocking on unverified indicators alone."
-      ],
-      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
-      "is_kev": false
-    },
-    {
-      "id": "8692e38436e8",
-      "title": "New Carbonato malware uses AI agents to hijack exposed Docker hosts",
-      "url": "https://www.bleepingcomputer.com/news/security/new-carbonato-malware-uses-ai-agents-to-hijack-exposed-docker-hosts/",
-      "summary": "A new botnet malware called Carbonato is targeting insecure hosts running Docker daemons to install the Hermes Agent AI framework and take control.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-09-24T20:10:48Z",
-      "age_hours": 14,
-      "category": "malware",
-      "priority": "context",
-      "priority_score": 26,
-      "tags": [
-        "malware"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "Named malware gives you a starting point for validating endpoint, network and identity telemetry.",
-      "first_checks": [
-        "Validate detections against process, file, persistence and network context.",
-        "Search for the same behavior or indicators across other hosts.",
-        "Identify the likely entry point and affected user account."
-      ],
-      "escalate_when": "Escalate on execution, persistence, credential access, command-and-control or spread to another host.",
-      "is_kev": false
-    },
-    {
-      "id": "d8d3bf9e01bc",
-      "title": "Exposed GitLab project email addresses let attackers push code",
-      "url": "https://www.bleepingcomputer.com/news/security/exposed-gitlab-project-email-addresses-let-attackers-push-code/",
-      "summary": "Private GitLab email addresses that allow developers to push issues or tasks to a project are being deliberately exposed in READMEs, contributing guides, and support pages used to collect bug reports.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-09-24T17:47:44Z",
+      "published_at": "2026-09-25T18:13:33Z",
       "age_hours": 16,
-      "category": "threat-intel",
-      "priority": "context",
-      "priority_score": 26,
-      "tags": [
-        "threat-intel"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
-      "first_checks": [
-        "Extract only indicators and behaviors supported by the source.",
-        "Compare them with recent SIEM, EDR, identity and network alerts.",
-        "Record relevant findings without blocking on unverified indicators alone."
-      ],
-      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
-      "is_kev": false
-    },
-    {
-      "id": "1c3c43c41079",
-      "title": "FedRAMP VDR & VER: Daily Scans Are Only the Beginning",
-      "url": "https://www.bleepingcomputer.com/news/security/fedramp-vdr-and-ver-daily-scans-are-only-the-beginning/",
-      "summary": "FedRAMP's new VDR and VER requirements make vulnerability management more continuous, with faster scanning, tighter remediation deadlines, and stronger evidence requirements. Anecdotes explains why the December 7 deadline is just the beginning of a broader shift toward continuous, automated compliance validation.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-09-24T14:02:12Z",
-      "age_hours": 20,
       "category": "vulnerability",
       "priority": "context",
       "priority_score": 26,
@@ -1372,18 +1322,18 @@
       "is_kev": false
     },
     {
-      "id": "7e0f816f375f",
-      "title": "OpenAI hacked Australian Medicare govt site, probed data providers",
-      "url": "https://www.bleepingcomputer.com/news/security/openai-hacked-australian-medicare-govt-site-probed-data-providers/",
-      "summary": "OpenAI agents targeted public data providers in multiple countries, probing some for vulnerabilities and exploiting a security weakness in an Australian government portal while performing information-retrieval tasks as part of a research project.…",
+      "id": "9c3f4fd62157",
+      "title": "OpenAI is preparing a $500 ChatGPT Pro Max plan with faster Codex",
+      "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-is-preparing-a-500-chatgpt-pro-max-plan-with-faster-codex/",
+      "summary": "OpenAI appears to be preparing a new ChatGPT Pro Max subscription that could cost $500 per month, but it's unclear when it'll begin rolling out.…",
       "source": "BleepingComputer",
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
-      "published_at": "2026-09-24T09:38:53Z",
-      "age_hours": 24,
+      "published_at": "2026-09-25T14:54:33Z",
+      "age_hours": 19,
       "category": "threat-intel",
       "priority": "context",
-      "priority_score": 22,
+      "priority_score": 26,
       "tags": [
         "threat-intel"
       ],
@@ -1399,18 +1349,99 @@
       "is_kev": false
     },
     {
-      "id": "ab9e6d2169bc",
-      "title": "New RemControl Android banking malware targets users in Europe and Canada",
-      "url": "https://www.bleepingcomputer.com/news/security/new-remcontrol-android-banking-malware-targets-users-in-europe-and-canada/",
-      "summary": "A new Android malware-as-a-service (MaaS) platform called RemControl is targeting users through malvertising campaigns that impersonate the TVTap IPTV application.…",
+      "id": "d6c9977600d4",
+      "title": "With the Rise of AI Agents, SOC 2 Should Adapt or Risk Irrelevance",
+      "url": "https://www.bleepingcomputer.com/news/security/with-the-rise-of-ai-agents-soc-2-should-adapt-or-risk-irrelevance/",
+      "summary": "AI agents can operate through human credentials and take actions that existing SOC 2 controls may not distinguish from human activity. Token Security explains why SOC 2 needs to adapt to address the security gaps created by agent identities.…",
       "source": "BleepingComputer",
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
-      "published_at": "2026-09-23T21:25:13Z",
-      "age_hours": 37,
+      "published_at": "2026-09-25T14:51:10Z",
+      "age_hours": 19,
+      "category": "identity",
+      "priority": "context",
+      "priority_score": 26,
+      "tags": [
+        "identity"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "Identity activity often becomes the first visible signal before mailbox, cloud or endpoint impact.",
+      "first_checks": [
+        "Review risky sign-ins, impossible travel and unfamiliar devices.",
+        "Check MFA, password and app-consent changes around the event.",
+        "Correlate the account with mailbox, endpoint and token activity."
+      ],
+      "escalate_when": "Escalate on successful anomalous sign-in, MFA reset, suspicious consent or token reuse.",
+      "is_kev": false
+    },
+    {
+      "id": "e20c79b40799",
+      "title": "Rydox marketplace admin pleads guilty, faces 22 years in prison",
+      "url": "https://www.bleepingcomputer.com/news/security/rydox-marketplace-admin-pleads-guilty-faces-22-years-in-prison/",
+      "summary": "A Kosovar national has pleaded guilty to operating Rydox, a large illegal online marketplace that sold stolen personal information, login credentials, credit card details, and cybercrime tools.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-09-25T11:35:14Z",
+      "age_hours": 22,
+      "category": "identity",
+      "priority": "context",
+      "priority_score": 26,
+      "tags": [
+        "identity"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "Identity activity often becomes the first visible signal before mailbox, cloud or endpoint impact.",
+      "first_checks": [
+        "Review risky sign-ins, impossible travel and unfamiliar devices.",
+        "Check MFA, password and app-consent changes around the event.",
+        "Correlate the account with mailbox, endpoint and token activity."
+      ],
+      "escalate_when": "Escalate on successful anomalous sign-in, MFA reset, suspicious consent or token reuse.",
+      "is_kev": false
+    },
+    {
+      "id": "35be19f206f9",
+      "title": "The Truth about GET and HTTP Standards, (Tue, Sep 22nd)",
+      "url": "https://isc.sans.edu/diary/rss/33358",
+      "summary": "On Friday, Xavier talked about the newly introduced HTTP Query method. This new method was introduced to allow \"GET\" requests that include a body. The main reason for this was that GET requests typically do not contain a body. But what if they do?",
+      "source": "SANS Internet Storm Center",
+      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
+      "source_kind": "operations",
+      "published_at": "2026-09-22T19:06:15Z",
+      "age_hours": 87,
+      "category": "threat-intel",
+      "priority": "context",
+      "priority_score": 26,
+      "tags": [
+        "threat-intel"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
+      "first_checks": [
+        "Extract only indicators and behaviors supported by the source.",
+        "Compare them with recent SIEM, EDR, identity and network alerts.",
+        "Record relevant findings without blocking on unverified indicators alone."
+      ],
+      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
+      "is_kev": false
+    },
+    {
+      "id": "23378716c23d",
+      "title": "LausivLoader analysis, or how to pass data between malware stages, (Thu, Sep 17th)",
+      "url": "https://isc.sans.edu/diary/rss/33348",
+      "summary": "At the end of August, a malspam message was caught in the quarantine of a mail gateway operated by one of my customers. The message was not especially remarkable â€“ it asked the recipient to review some attached requirements and provide a price quotation for a fiber optic system and appeared to impersonate an employee of a legitimate company.",
+      "source": "SANS Internet Storm Center",
+      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
+      "source_kind": "operations",
+      "published_at": "2026-09-22T13:10:20Z",
+      "age_hours": 93,
       "category": "malware",
       "priority": "context",
-      "priority_score": 22,
+      "priority_score": 26,
       "tags": [
         "malware"
       ],
@@ -1423,6 +1454,33 @@
         "Identify the likely entry point and affected user account."
       ],
       "escalate_when": "Escalate on execution, persistence, credential access, command-and-control or spread to another host.",
+      "is_kev": false
+    },
+    {
+      "id": "4ef5d17c6103",
+      "title": "Hackers steal $351.6 million in Bitget crypto exchange hack",
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-steal-3516-million-in-bitget-crypto-exchange-hack/",
+      "summary": "​Cryptocurrency exchange Bitget disclosed today that suspected North Korean hackers have stolen $351.6 million from its hot and warm wallets.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-09-25T08:33:44Z",
+      "age_hours": 25,
+      "category": "threat-intel",
+      "priority": "context",
+      "priority_score": 22,
+      "tags": [
+        "threat-intel"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
+      "first_checks": [
+        "Extract only indicators and behaviors supported by the source.",
+        "Compare them with recent SIEM, EDR, identity and network alerts.",
+        "Record relevant findings without blocking on unverified indicators alone."
+      ],
+      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
       "is_kev": false
     }
   ]

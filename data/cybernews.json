@@ -1,23 +1,25 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-28T12:42:02.509778Z",
-  "generated_at_local": "2026-10-28T14:42+02:00",
+  "generated_at": "2026-10-29T12:51:54.579321Z",
+  "generated_at_local": "2026-10-29T14:51+02:00",
   "timezone": "Europe/Bucharest",
   "schedule": "Daily at 08:00 Europe/Bucharest",
   "stats": {
-    "total": 37,
+    "total": 38,
     "critical": 12,
     "high": 1,
     "watch": 12,
-    "context": 12,
+    "context": 13,
     "categories": {
       "vulnerability": 22,
       "threat-intel": 5,
-      "ransomware": 3,
+      "phishing": 3,
       "supply-chain": 2,
-      "phishing": 2,
+      "malware": 1,
       "identity": 1,
-      "endpoint": 1,
+      "network": 1,
+      "cloud": 1,
+      "ransomware": 1,
       "data-breach": 1
     },
     "sources_ok": 8,
@@ -71,7 +73,7 @@
       "name": "SANS Internet Storm Center",
       "url": "https://isc.sans.edu/rssfeed_full.xml",
       "status": "ok",
-      "items": 5
+      "items": 6
     },
     {
       "name": "UK NCSC Threat Reports",
@@ -82,6 +84,81 @@
   ],
   "articles": [
     {
+      "id": "935e8d49b7b6",
+      "title": "CVE-2026-41709: Broadcom VMWare ESX Insufficient Logging Vulnerability",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-41709",
+      "summary": "Broadcom VMware ESX. CISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or…",
+      "source": "CISA Known Exploited Vulnerabilities",
+      "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "source_kind": "kev",
+      "published_at": "2026-10-28T00:00:00Z",
+      "age_hours": 37,
+      "category": "vulnerability",
+      "priority": "critical",
+      "priority_score": 100,
+      "tags": [
+        "vulnerability",
+        "active-exploitation",
+        "patch"
+      ],
+      "evidence": [
+        "kev",
+        "observed-in-wild"
+      ],
+      "cves": [
+        "CVE-2026-41709"
+      ],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": true,
+      "product": "Broadcom VMware ESX",
+      "due_date": "2026-11-11",
+      "known_ransomware_use": "Unknown"
+    },
+    {
+      "id": "67ec4ca63ce1",
+      "title": "CVE-2026-46300: Linux Kernel Missing Initialization of a Variable Vulnerability",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-46300",
+      "summary": "Linux Kernel. CISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or…",
+      "source": "CISA Known Exploited Vulnerabilities",
+      "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "source_kind": "kev",
+      "published_at": "2026-10-28T00:00:00Z",
+      "age_hours": 37,
+      "category": "vulnerability",
+      "priority": "critical",
+      "priority_score": 100,
+      "tags": [
+        "vulnerability",
+        "active-exploitation",
+        "patch",
+        "linux"
+      ],
+      "evidence": [
+        "kev",
+        "observed-in-wild"
+      ],
+      "cves": [
+        "CVE-2026-46300"
+      ],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": true,
+      "product": "Linux Kernel",
+      "due_date": "2026-10-31",
+      "known_ransomware_use": "Unknown"
+    },
+    {
       "id": "1639508f97b3",
       "title": "CVE-2026-48356: Adobe Commerce and Magento Unrestricted Upload of File with Dangerous Type Vulnerability",
       "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-48356",
@@ -90,7 +167,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-10-27T00:00:00Z",
-      "age_hours": 37,
+      "age_hours": 61,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -127,7 +204,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-10-27T00:00:00Z",
-      "age_hours": 37,
+      "age_hours": 61,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -164,10 +241,10 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-10-26T00:00:00Z",
-      "age_hours": 61,
+      "age_hours": 85,
       "category": "vulnerability",
       "priority": "critical",
-      "priority_score": 100,
+      "priority_score": 96,
       "tags": [
         "vulnerability",
         "active-exploitation",
@@ -201,10 +278,10 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-10-26T00:00:00Z",
-      "age_hours": 61,
+      "age_hours": 85,
       "category": "vulnerability",
       "priority": "critical",
-      "priority_score": 100,
+      "priority_score": 96,
       "tags": [
         "vulnerability",
         "active-exploitation",
@@ -238,7 +315,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-10-23T00:00:00Z",
-      "age_hours": 133,
+      "age_hours": 157,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -275,7 +352,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-10-23T00:00:00Z",
-      "age_hours": 133,
+      "age_hours": 157,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -312,7 +389,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-10-20T00:00:00Z",
-      "age_hours": 205,
+      "age_hours": 229,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -349,7 +426,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-10-20T00:00:00Z",
-      "age_hours": 205,
+      "age_hours": 229,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -386,7 +463,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-10-20T00:00:00Z",
-      "age_hours": 205,
+      "age_hours": 229,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -423,7 +500,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-10-20T00:00:00Z",
-      "age_hours": 205,
+      "age_hours": 229,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -452,80 +529,6 @@
       "known_ransomware_use": "Unknown"
     },
     {
-      "id": "6a0a5f6cc164",
-      "title": "CVE-2026-96652: Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
-      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-96652",
-      "summary": "Plex Media Server. CISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or…",
-      "source": "CISA Known Exploited Vulnerabilities",
-      "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
-      "source_kind": "kev",
-      "published_at": "2026-10-20T00:00:00Z",
-      "age_hours": 205,
-      "category": "vulnerability",
-      "priority": "critical",
-      "priority_score": 96,
-      "tags": [
-        "vulnerability",
-        "active-exploitation",
-        "patch"
-      ],
-      "evidence": [
-        "kev",
-        "observed-in-wild"
-      ],
-      "cves": [
-        "CVE-2026-96652"
-      ],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": true,
-      "product": "Plex Media Server",
-      "due_date": "2026-11-03",
-      "known_ransomware_use": "Unknown"
-    },
-    {
-      "id": "02aef19a76f3",
-      "title": "CVE-2026-110936: Siemens Software Center Uncontrolled Search Path Element Vulnerability",
-      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-110936",
-      "summary": "Siemens Software Center. CISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or…",
-      "source": "CISA Known Exploited Vulnerabilities",
-      "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
-      "source_kind": "kev",
-      "published_at": "2026-10-20T00:00:00Z",
-      "age_hours": 205,
-      "category": "vulnerability",
-      "priority": "critical",
-      "priority_score": 96,
-      "tags": [
-        "vulnerability",
-        "active-exploitation",
-        "patch"
-      ],
-      "evidence": [
-        "kev",
-        "observed-in-wild"
-      ],
-      "cves": [
-        "CVE-2026-110936"
-      ],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": true,
-      "product": "Siemens Software Center",
-      "due_date": "2026-11-03",
-      "known_ransomware_use": "Unknown"
-    },
-    {
       "id": "6d31b5085e4a",
       "title": "2026-017: Critical Vulnerability in Cisco Secure Email Gateway",
       "url": "https://cert.europa.eu/publications/security-advisories/2026-017/",
@@ -534,7 +537,7 @@
       "source_url": "https://cert.europa.eu/publications/security-advisories-rss",
       "source_kind": "advisory",
       "published_at": "2026-10-15T11:38:20Z",
-      "age_hours": 313,
+      "age_hours": 337,
       "category": "vulnerability",
       "priority": "high",
       "priority_score": 63,
@@ -557,21 +560,22 @@
       "is_kev": false
     },
     {
-      "id": "cc84d8476e5f",
-      "title": "Hackers now scanning systems for recently-patched Oracle flaw",
-      "url": "https://www.bleepingcomputer.com/news/security/hackers-now-scanning-systems-for-recently-patched-oracle-flaw/",
-      "summary": "Attackers have begun probing the Internet for systems unpatched against a recently disclosed critical Oracle E-Business Suite (EBS) vulnerability.…",
+      "id": "4665f17a8f06",
+      "title": "New Cisco firewall zero-day exploited to crash SSL VPN devices",
+      "url": "https://www.bleepingcomputer.com/news/security/cisco-warns-of-firewall-zero-day-exploited-to-crash-ssl-vpn-devices/",
+      "summary": "Cisco released security updates to patch a denial-of-service zero-day in Adaptive Security Appliance (ASA) and Threat Defense (FTD) software that attackers are exploiting to remotely crash vulnerable firewall devices.…",
       "source": "BleepingComputer",
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
-      "published_at": "2026-10-28T12:19:57Z",
-      "age_hours": 0,
+      "published_at": "2026-10-29T11:10:13Z",
+      "age_hours": 2,
       "category": "vulnerability",
       "priority": "watch",
-      "priority_score": 46,
+      "priority_score": 52,
       "tags": [
         "vulnerability",
-        "patch"
+        "patch",
+        "network-appliance"
       ],
       "evidence": [],
       "cves": [],
@@ -585,6 +589,61 @@
       "is_kev": false
     },
     {
+      "id": "9cc4b6c5e4fb",
+      "title": "Deploying a Local Ghidra Server for Your Malware Analysis Lab, (Thu, Oct 29th)",
+      "url": "https://isc.sans.edu/diary/rss/33470",
+      "summary": "Building your malware analysis lab is a key point before playing with malware. Today, thanks to virtualization, it&#;x26;#;39;s convenient to play with snapshots in your lab. Start a new investigation from a clean snapshot and take some more when you reached a critical step. But, if you need to revert to a previous snapshot, all changes applied to the VM are... lost! Therefore, it&#;x26;#;39;s important to store…",
+      "source": "SANS Internet Storm Center",
+      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
+      "source_kind": "operations",
+      "published_at": "2026-10-29T06:17:41Z",
+      "age_hours": 7,
+      "category": "malware",
+      "priority": "watch",
+      "priority_score": 46,
+      "tags": [
+        "malware"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "Named malware gives you a starting point for validating endpoint, network and identity telemetry.",
+      "first_checks": [
+        "Validate detections against process, file, persistence and network context.",
+        "Search for the same behavior or indicators across other hosts.",
+        "Identify the likely entry point and affected user account."
+      ],
+      "escalate_when": "Escalate on execution, persistence, credential access, command-and-control or spread to another host.",
+      "is_kev": false
+    },
+    {
+      "id": "d79cee61ecb2",
+      "title": "Even after PHP2Shell, blast radius matters more than a CVSS score",
+      "url": "https://www.bleepingcomputer.com/news/security/even-after-php2shell-blast-radius-matters-more-than-a-cvss-score/",
+      "summary": "PHP2Shell shows how quickly attackers can exploit critical vulnerabilities, often before organizations have time to patch. Token Security explains why limiting the access of service accounts, API keys, and AI agents is just as important as fixing vulnerabilities to reduce the damage from a breach.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-10-28T13:50:59Z",
+      "age_hours": 23,
+      "category": "identity",
+      "priority": "watch",
+      "priority_score": 46,
+      "tags": [
+        "identity",
+        "patch"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "Identity activity often becomes the first visible signal before mailbox, cloud or endpoint impact.",
+      "first_checks": [
+        "Review risky sign-ins, impossible travel and unfamiliar devices.",
+        "Check MFA, password and app-consent changes around the event.",
+        "Correlate the account with mailbox, endpoint and token activity."
+      ],
+      "escalate_when": "Escalate on successful anomalous sign-in, MFA reset, suspicious consent or token reuse.",
+      "is_kev": false
+    },
+    {
       "id": "8fde712f1841",
       "title": "2026-018: Critical Vulnerabilities in PHP",
       "url": "https://cert.europa.eu/publications/security-advisories/2026-018/",
@@ -593,7 +652,7 @@
       "source_url": "https://cert.europa.eu/publications/security-advisories-rss",
       "source_kind": "advisory",
       "published_at": "2026-10-23T16:36:26Z",
-      "age_hours": 116,
+      "age_hours": 140,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 45,
@@ -620,7 +679,7 @@
       "source_url": "https://cert.europa.eu/publications/security-advisories-rss",
       "source_kind": "advisory",
       "published_at": "2026-10-22T11:14:22Z",
-      "age_hours": 145,
+      "age_hours": 170,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 45,
@@ -648,7 +707,7 @@
       "source_url": "https://cert.europa.eu/publications/security-advisories-rss",
       "source_kind": "advisory",
       "published_at": "2026-10-12T14:57:02Z",
-      "age_hours": 382,
+      "age_hours": 406,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 45,
@@ -667,15 +726,42 @@
       "is_kev": false
     },
     {
-      "id": "a40721cff07a",
-      "title": "Apple backports CoreGraphics zero-day patches to older iPhones",
-      "url": "https://www.bleepingcomputer.com/news/apple/apple-backports-coregraphics-zero-day-patches-to-older-iphones/",
-      "summary": "​Apple has backported security patches released last month to older iPhones and iPads, addressing a zero-day bug exploited in \"extremely sophisticated\" targeted attacks on iOS devices.…",
+      "id": "f2c961bbdd37",
+      "title": "InfraTrust report warns of exploited flaws in critical network infrastructure",
+      "url": "https://www.bleepingcomputer.com/news/security/infratrust-report-warns-of-exploited-flaws-in-critical-network-infrastructure/",
+      "summary": "Attackers are actively exploiting vulnerabilities across critical network infrastructure, and PHP flaws known as \"PHP2Shell\" put the web management interfaces of firewalls, VPNs, application delivery controllers, and other appliances at risk.…",
       "source": "BleepingComputer",
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
-      "published_at": "2026-10-27T10:36:12Z",
-      "age_hours": 26,
+      "published_at": "2026-10-28T14:00:00Z",
+      "age_hours": 23,
+      "category": "network",
+      "priority": "watch",
+      "priority_score": 44,
+      "tags": [
+        "network"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "Edge devices are frequently internet-exposed and may provide the first evidence of scanning or access.",
+      "first_checks": [
+        "Identify affected models, versions and internet-facing assets.",
+        "Review authentication, configuration and traffic anomalies.",
+        "Search for source IPs and paths cited by the advisory."
+      ],
+      "escalate_when": "Escalate on successful access, configuration change, persistence or an exposed unmitigated device.",
+      "is_kev": false
+    },
+    {
+      "id": "cc84d8476e5f",
+      "title": "Hackers now scanning systems for recently-patched Oracle flaw",
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-now-scanning-systems-for-recently-patched-oracle-flaw/",
+      "summary": "Attackers have begun probing the Internet for systems unpatched against a recently disclosed critical Oracle E-Business Suite (EBS) vulnerability.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-10-28T12:19:57Z",
+      "age_hours": 25,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 42,
@@ -695,43 +781,15 @@
       "is_kev": false
     },
     {
-      "id": "ebe6130a3b49",
-      "title": "Japan's GMO urges customers to shut down PCs amid ransomware threat",
-      "url": "https://www.bleepingcomputer.com/news/security/japans-gmo-urges-customers-to-shut-down-pcs-amid-ransomware-threat/",
-      "summary": "The GMO Group has urged customers to disconnect their systems from the internet and shut down computers after a threat actor who breached the company's Onamae Desktop Cloud threatened to launch a ransomware attack today.…",
+      "id": "0b33a76a486a",
+      "title": "Volt Typhoon hides zero-day attacks using 'Silent Train' framework",
+      "url": "https://www.bleepingcomputer.com/news/security/volt-typhoon-hides-zero-day-attacks-using-silent-train-framework/",
+      "summary": "Chinese state-sponsored hacking group Volt Typhoon has been using a framework that relies on rotating chains of connected devices compromised on demand, including for zero-day attacks targeting high-value systems.…",
       "source": "BleepingComputer",
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
-      "published_at": "2026-10-27T23:35:51Z",
-      "age_hours": 13,
-      "category": "ransomware",
-      "priority": "watch",
-      "priority_score": 41,
-      "tags": [
-        "ransomware",
-        "cloud"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "Early containment matters; precursor activity can appear before encryption or extortion becomes visible.",
-      "first_checks": [
-        "Validate the alert and identify the first affected host and user.",
-        "Look for lateral movement, credential access and mass file changes.",
-        "Preserve evidence and follow the isolation playbook if impact is confirmed."
-      ],
-      "escalate_when": "Escalate immediately on encryption, lateral movement, disabled controls or confirmed data theft.",
-      "is_kev": false
-    },
-    {
-      "id": "dfcccddd5281",
-      "title": "CISA warns of hackers now exploiting critical Node2Shell flaw",
-      "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-now-exploiting-critical-node2shell-flaw/",
-      "summary": "On Tuesday, the US Cybersecurity and Infrastructure Security Agency (CISA) confirmed that hackers have begun exploiting a critical Brotli vulnerability known as Node2Shell, Broccoli2Shell, and HTTP2Shell.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-10-28T10:46:23Z",
-      "age_hours": 2,
+      "published_at": "2026-10-28T16:00:00Z",
+      "age_hours": 21,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 38,
@@ -758,7 +816,7 @@
       "source_url": "https://isc.sans.edu/rssfeed_full.xml",
       "source_kind": "operations",
       "published_at": "2026-10-27T02:09:55Z",
-      "age_hours": 35,
+      "age_hours": 59,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 38,
@@ -786,7 +844,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-10-21T18:23:55Z",
-      "age_hours": 162,
+      "age_hours": 186,
       "category": "supply-chain",
       "priority": "watch",
       "priority_score": 37,
@@ -813,7 +871,7 @@
       "source_url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
       "source_kind": "research",
       "published_at": "2026-10-15T11:00:00Z",
-      "age_hours": 314,
+      "age_hours": 338,
       "category": "supply-chain",
       "priority": "watch",
       "priority_score": 37,
@@ -833,129 +891,18 @@
       "is_kev": false
     },
     {
-      "id": "62af280b86d2",
-      "title": "Nefilim and Hive ransomware affiliate gets 70 months in prison",
-      "url": "https://www.bleepingcomputer.com/news/security/nefilim-and-hive-ransomware-affiliate-gets-70-months-in-prison/",
-      "summary": "A Ukrainian national was sentenced to 70 months in prison for his role in ransomware attacks targeting hospitals, government entities, and high-revenue businesses worldwide between 2018 and 2021.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-10-28T09:43:15Z",
-      "age_hours": 3,
-      "category": "ransomware",
-      "priority": "watch",
-      "priority_score": 35,
-      "tags": [
-        "ransomware"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "Early containment matters; precursor activity can appear before encryption or extortion becomes visible.",
-      "first_checks": [
-        "Validate the alert and identify the first affected host and user.",
-        "Look for lateral movement, credential access and mass file changes.",
-        "Preserve evidence and follow the isolation playbook if impact is confirmed."
-      ],
-      "escalate_when": "Escalate immediately on encryption, lateral movement, disabled controls or confirmed data theft.",
-      "is_kev": false
-    },
-    {
-      "id": "7858f058b71e",
-      "title": "UNM Health ransomware attack disrupts patient care, surgeries",
-      "url": "https://www.bleepingcomputer.com/news/security/unm-health-ransomware-attack-disrupts-patient-care-surgeries/",
-      "summary": "The University of New Mexico Health Sciences Center disclosed a cyberattack that caused system outages and disrupted patient care and academic activities.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-10-27T22:07:34Z",
-      "age_hours": 15,
-      "category": "ransomware",
-      "priority": "watch",
-      "priority_score": 35,
-      "tags": [
-        "ransomware"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "Early containment matters; precursor activity can appear before encryption or extortion becomes visible.",
-      "first_checks": [
-        "Validate the alert and identify the first affected host and user.",
-        "Look for lateral movement, credential access and mass file changes.",
-        "Preserve evidence and follow the isolation playbook if impact is confirmed."
-      ],
-      "escalate_when": "Escalate immediately on encryption, lateral movement, disabled controls or confirmed data theft.",
-      "is_kev": false
-    },
-    {
-      "id": "3fbb6d8c3278",
-      "title": "Tailscale warns of SSH flaws allowing root privilege escalation",
-      "url": "https://www.bleepingcomputer.com/news/security/tailscale-warns-of-serious-ssh-flaws-allowing-root-privilege-escalation/",
-      "summary": "The Tailscale security team is working to patch almost a dozen security vulnerabilities that could be exploited to steal credentials, crash servers, gain root privileges, and more.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-10-27T14:09:46Z",
-      "age_hours": 23,
-      "category": "identity",
-      "priority": "context",
-      "priority_score": 34,
-      "tags": [
-        "identity",
-        "patch"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "Identity activity often becomes the first visible signal before mailbox, cloud or endpoint impact.",
-      "first_checks": [
-        "Review risky sign-ins, impossible travel and unfamiliar devices.",
-        "Check MFA, password and app-consent changes around the event.",
-        "Correlate the account with mailbox, endpoint and token activity."
-      ],
-      "escalate_when": "Escalate on successful anomalous sign-in, MFA reset, suspicious consent or token reuse.",
-      "is_kev": false
-    },
-    {
-      "id": "536e322981d1",
-      "title": "Microsoft releases Windows OOB updates to distrust eMudhra certificates",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-releases-windows-oob-updates-to-distrust-emudhra-certificates/",
-      "summary": "Microsoft has released out-of-band (OOB) Windows updates to remove trust in certificates tied to compromised eMudhra certificate authority keys, protecting systems that do not receive automatic certificate trust updates.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-10-27T18:20:28Z",
-      "age_hours": 18,
-      "category": "endpoint",
-      "priority": "context",
-      "priority_score": 32,
-      "tags": [
-        "endpoint",
-        "patch",
-        "windows"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "Endpoint telemetry can confirm whether a public report is relevant to real activity in your estate.",
-      "first_checks": [
-        "Review process tree, signer, command line and parent-child relationships.",
-        "Correlate file, registry, persistence and outbound network events.",
-        "Search for the behavior across peer endpoints."
-      ],
-      "escalate_when": "Escalate on suspicious execution, persistence, defense evasion or confirmed user impact.",
-      "is_kev": false
-    },
-    {
-      "id": "3752165e9c29",
-      "title": "Looking for a Language [Guest Diary], (Wed, Oct 21st)",
-      "url": "https://isc.sans.edu/diary/rss/33442",
-      "summary": "[This is a Guest Diary by Jeffray Spence, an ISC intern as part of the SANS.edu BACS program]",
+      "id": "241b0a1b5675",
+      "title": "Yet Another ClickFix Campaign, (Wed, Oct 28th)",
+      "url": "https://isc.sans.edu/diary/rss/33466",
+      "summary": "Introduction",
       "source": "SANS Internet Storm Center",
       "source_url": "https://isc.sans.edu/rssfeed_full.xml",
       "source_kind": "operations",
-      "published_at": "2026-10-26T09:38:03Z",
-      "age_hours": 51,
+      "published_at": "2026-10-29T00:42:15Z",
+      "age_hours": 12,
       "category": "threat-intel",
       "priority": "context",
-      "priority_score": 30,
+      "priority_score": 34,
       "tags": [
         "threat-intel"
       ],
@@ -971,33 +918,114 @@
       "is_kev": false
     },
     {
-      "id": "cbc6b5f311de",
-      "title": "YARA-X 1.22.0 Release, (Sun, Oct 25th)",
-      "url": "https://isc.sans.edu/diary/rss/33454",
-      "summary": "YARA-X&#;x26;#;39;s 1.22.0 release brings 11 improvements and 9 bugfixes.",
-      "source": "SANS Internet Storm Center",
-      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
-      "source_kind": "operations",
-      "published_at": "2026-10-25T19:57:53Z",
-      "age_hours": 65,
-      "category": "threat-intel",
+      "id": "dfcccddd5281",
+      "title": "CISA warns of hackers now exploiting critical Node2Shell flaw",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-now-exploiting-critical-node2shell-flaw/",
+      "summary": "On Tuesday, the US Cybersecurity and Infrastructure Security Agency (CISA) confirmed that hackers have begun exploiting a critical Brotli vulnerability known as Node2Shell, Broccoli2Shell, and HTTP2Shell.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-10-28T10:46:23Z",
+      "age_hours": 26,
+      "category": "vulnerability",
       "priority": "context",
-      "priority_score": 30,
+      "priority_score": 34,
       "tags": [
-        "threat-intel",
-        "detect-hunt"
+        "vulnerability"
       ],
-      "evidence": [
-        "detection-guidance"
-      ],
+      "evidence": [],
       "cves": [],
-      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
       "first_checks": [
-        "Extract only indicators and behaviors supported by the source.",
-        "Compare them with recent SIEM, EDR, identity and network alerts.",
-        "Record relevant findings without blocking on unverified indicators alone."
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
       ],
-      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": false
+    },
+    {
+      "id": "07b5b3ef9223",
+      "title": "Windows 11 KB5127936 update released with 41 changes and fixes",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/windows-11-kb5127936-update-released-with-41-changes-and-fixes/",
+      "summary": "Microsoft released the KB5127936 preview cumulative update for Windows 11 versions 25H2 and 26H2, with 41 changes, including File Explorer and Cloud rebuild improvements.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-10-29T12:00:07Z",
+      "age_hours": 1,
+      "category": "cloud",
+      "priority": "context",
+      "priority_score": 32,
+      "tags": [
+        "cloud",
+        "patch",
+        "windows"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "Cloud incidents often cross identity, control-plane and workload logs, so isolated alerts can hide scope.",
+      "first_checks": [
+        "Review control-plane changes, sign-ins and newly created credentials.",
+        "Check public exposure, unusual data access and workload activity.",
+        "Correlate the actor, source IP and time across cloud services."
+      ],
+      "escalate_when": "Escalate on unauthorized configuration change, exposed data, new credential or suspicious workload execution.",
+      "is_kev": false
+    },
+    {
+      "id": "a7b8cf39a163",
+      "title": "Microsoft urges Entra ID admins to migrate users to passkeys",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-reminds-entra-id-admins-to-migrate-users-to-passkeys/",
+      "summary": "Microsoft again asked Entra ID administrators to migrate users to phishing-resistant methods to avoid sign-in disruptions before it retires SMS and voice authentication in February 2027.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-10-28T14:48:32Z",
+      "age_hours": 22,
+      "category": "phishing",
+      "priority": "context",
+      "priority_score": 32,
+      "tags": [
+        "phishing",
+        "m365-entra"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "This may surface first as a mail alert, user report, malicious click or suspicious sign-in.",
+      "first_checks": [
+        "Inspect sender, reply-to, URLs, attachments and authentication results.",
+        "Search for other recipients and confirm whether anyone clicked.",
+        "Correlate clicks with sign-ins, downloads and endpoint events."
+      ],
+      "escalate_when": "Escalate when a user clicked, entered credentials, opened a payload or similar mail reached others.",
+      "is_kev": false
+    },
+    {
+      "id": "62af280b86d2",
+      "title": "Nefilim and Hive ransomware affiliate gets 70 months in prison",
+      "url": "https://www.bleepingcomputer.com/news/security/nefilim-and-hive-ransomware-affiliate-gets-70-months-in-prison/",
+      "summary": "A Ukrainian national was sentenced to 70 months in prison for his role in ransomware attacks targeting hospitals, government entities, and high-revenue businesses worldwide between 2018 and 2021.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-10-28T09:43:15Z",
+      "age_hours": 27,
+      "category": "ransomware",
+      "priority": "context",
+      "priority_score": 31,
+      "tags": [
+        "ransomware"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "Early containment matters; precursor activity can appear before encryption or extortion becomes visible.",
+      "first_checks": [
+        "Validate the alert and identify the first affected host and user.",
+        "Look for lateral movement, credential access and mass file changes.",
+        "Preserve evidence and follow the isolation playbook if impact is confirmed."
+      ],
+      "escalate_when": "Escalate immediately on encryption, lateral movement, disabled controls or confirmed data theft.",
       "is_kev": false
     },
     {
@@ -1009,7 +1037,7 @@
       "source_url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
       "source_kind": "research",
       "published_at": "2026-10-15T14:00:00Z",
-      "age_hours": 311,
+      "age_hours": 335,
       "category": "vulnerability",
       "priority": "context",
       "priority_score": 28,
@@ -1038,7 +1066,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-10-14T13:00:00Z",
-      "age_hours": 336,
+      "age_hours": 360,
       "category": "phishing",
       "priority": "context",
       "priority_score": 28,
@@ -1057,41 +1085,14 @@
       "is_kev": false
     },
     {
-      "id": "0c53a2da68d7",
-      "title": "OpenAI's GPT-6.1 Terra is safer overall, but shows more destructive-action flags in tests",
-      "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openais-gpt-61-terra-is-safer-overall-but-shows-more-destructive-action-flags-in-tests/",
-      "summary": "OpenAI confirmed GPT-6.1 Terra is safer overall than some of its older models, but its safety testing also found other problems.…",
+      "id": "bce6775540c2",
+      "title": "Police seize Virtualine bulletproof service tied to ransowmare, cybercrime",
+      "url": "https://www.bleepingcomputer.com/news/security/police-seize-virtualine-bulletproof-service-tied-to-ransowmare-cybercrime/",
+      "summary": "U.S. law enforcement has seized the primary domain of Virtualine, a bulletproof hosting service advertised on cybercrime forums for facilitating illegal activities.…",
       "source": "BleepingComputer",
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
-      "published_at": "2026-10-27T22:43:27Z",
-      "age_hours": 14,
-      "category": "threat-intel",
-      "priority": "context",
-      "priority_score": 26,
-      "tags": [
-        "threat-intel"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
-      "first_checks": [
-        "Extract only indicators and behaviors supported by the source.",
-        "Compare them with recent SIEM, EDR, identity and network alerts.",
-        "Record relevant findings without blocking on unverified indicators alone."
-      ],
-      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
-      "is_kev": false
-    },
-    {
-      "id": "02aa5589116e",
-      "title": "Hackers hijack Convertr analytics script to steal payment card data",
-      "url": "https://www.bleepingcomputer.com/news/security/hackers-hijack-convertr-analytics-script-to-steal-payment-card-data/",
-      "summary": "A credit card skimming group reportedly compromised a shared analytics script used by e-commerce platform Convertr to steal shoppers' payment data during checkout.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-10-27T20:57:25Z",
+      "published_at": "2026-10-28T20:47:22Z",
       "age_hours": 16,
       "category": "threat-intel",
       "priority": "context",
@@ -1111,14 +1112,41 @@
       "is_kev": false
     },
     {
-      "id": "7c53fd735d31",
-      "title": "Warp discloses breach exposing AI agent logs, user telemetry data",
-      "url": "https://www.bleepingcomputer.com/news/security/warp-discloses-breach-exposing-ai-agent-logs-user-telemetry-data/",
-      "summary": "Agent decision logs and telemetry data belonging to Warp agentic development environment users were exposed in an attack on a third-party vendor in the project's infrastructure.…",
+      "id": "aae0c135c0f5",
+      "title": "Discord to let search engines index public server messages",
+      "url": "https://www.bleepingcomputer.com/news/security/discord-to-let-search-engines-index-public-server-messages/",
+      "summary": "Discord will allow search engines to index discussions in Discoverable Servers and make them accessible on the web to users outside the platform without an account or invitation.…",
       "source": "BleepingComputer",
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
-      "published_at": "2026-10-27T16:15:39Z",
+      "published_at": "2026-10-28T18:44:16Z",
+      "age_hours": 18,
+      "category": "threat-intel",
+      "priority": "context",
+      "priority_score": 26,
+      "tags": [
+        "threat-intel"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
+      "first_checks": [
+        "Extract only indicators and behaviors supported by the source.",
+        "Compare them with recent SIEM, EDR, identity and network alerts.",
+        "Record relevant findings without blocking on unverified indicators alone."
+      ],
+      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
+      "is_kev": false
+    },
+    {
+      "id": "cfdef39189ea",
+      "title": "Sony ISP subsidiary data breach exposes 2.5 million customer records",
+      "url": "https://www.bleepingcomputer.com/news/security/sony-isp-subsidiary-data-breach-exposes-25-million-customer-records/",
+      "summary": "Sony Network Communications has confirmed a data breach that compromised approximately 2.5 million records containing current and former customers' personal information.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-10-28T16:45:47Z",
       "age_hours": 20,
       "category": "data-breach",
       "priority": "context",
@@ -1138,15 +1166,42 @@
       "is_kev": false
     },
     {
-      "id": "11f0e618d025",
-      "title": "The Huntress Tragic Quadrant: Ranking Threats Hitting Businesses Hardest",
-      "url": "https://www.bleepingcomputer.com/news/security/the-huntress-tragic-quadrant-ranking-threats-hitting-businesses-hardest/",
-      "summary": "Attackers are increasingly abusing legitimate IT tools, Microsoft 365 sessions, and everyday workflows to compromise businesses without triggering traditional defenses. Huntress Labs ranks the threats hitting organizations hardest, highlighting which attack techniques deserve immediate attention and which remain emerging risks.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-10-27T14:01:11Z",
-      "age_hours": 23,
+      "id": "3752165e9c29",
+      "title": "Looking for a Language [Guest Diary], (Wed, Oct 21st)",
+      "url": "https://isc.sans.edu/diary/rss/33442",
+      "summary": "[This is a Guest Diary by Jeffray Spence, an ISC intern as part of the SANS.edu BACS program]",
+      "source": "SANS Internet Storm Center",
+      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
+      "source_kind": "operations",
+      "published_at": "2026-10-26T09:38:03Z",
+      "age_hours": 75,
+      "category": "threat-intel",
+      "priority": "context",
+      "priority_score": 26,
+      "tags": [
+        "threat-intel"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
+      "first_checks": [
+        "Extract only indicators and behaviors supported by the source.",
+        "Compare them with recent SIEM, EDR, identity and network alerts.",
+        "Record relevant findings without blocking on unverified indicators alone."
+      ],
+      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
+      "is_kev": false
+    },
+    {
+      "id": "cbc6b5f311de",
+      "title": "YARA-X 1.22.0 Release, (Sun, Oct 25th)",
+      "url": "https://isc.sans.edu/diary/rss/33454",
+      "summary": "YARA-X&#;x26;#;39;s 1.22.0 release brings 11 improvements and 9 bugfixes.",
+      "source": "SANS Internet Storm Center",
+      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
+      "source_kind": "operations",
+      "published_at": "2026-10-25T19:57:53Z",
+      "age_hours": 89,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 26,
@@ -1176,7 +1231,7 @@
       "source_url": "https://isc.sans.edu/rssfeed_full.xml",
       "source_kind": "operations",
       "published_at": "2026-10-23T20:04:47Z",
-      "age_hours": 113,
+      "age_hours": 137,
       "category": "phishing",
       "priority": "context",
       "priority_score": 26,
@@ -1192,33 +1247,6 @@
         "Correlate clicks with sign-ins, downloads and endpoint events."
       ],
       "escalate_when": "Escalate when a user clicked, entered credentials, opened a payload or similar mail reached others.",
-      "is_kev": false
-    },
-    {
-      "id": "cadd6afddac3",
-      "title": "PHP Vulnerability Wrap-Up, (Fri, Oct 23rd)",
-      "url": "https://isc.sans.edu/diary/rss/33450",
-      "summary": "This morning, we returned to Infocon Green. As usual, we are raising the Infocon to alert you to emerging situations requiring immediate attention. PHP fit that description. By now, you either know about it, or you probably never will, so it is time to go back to \"business as usual\".",
-      "source": "SANS Internet Storm Center",
-      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
-      "source_kind": "operations",
-      "published_at": "2026-10-23T13:43:20Z",
-      "age_hours": 119,
-      "category": "vulnerability",
-      "priority": "context",
-      "priority_score": 26,
-      "tags": [
-        "vulnerability"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
       "is_kev": false
     }
   ]

@@ -1,24 +1,25 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-02T15:38:24.469854Z",
-  "generated_at_local": "2026-11-02T17:38+02:00",
+  "generated_at": "2026-11-03T14:02:06.998202Z",
+  "generated_at_local": "2026-11-03T16:02+02:00",
   "timezone": "Europe/Bucharest",
   "schedule": "Daily at 08:00 Europe/Bucharest",
   "stats": {
-    "total": 43,
+    "total": 45,
     "critical": 12,
     "high": 2,
-    "watch": 10,
-    "context": 19,
+    "watch": 9,
+    "context": 22,
     "categories": {
-      "vulnerability": 21,
-      "threat-intel": 11,
-      "identity": 3,
-      "malware": 3,
+      "vulnerability": 19,
+      "threat-intel": 12,
+      "malware": 4,
+      "identity": 2,
+      "cloud": 2,
       "supply-chain": 2,
+      "data-breach": 2,
       "ransomware": 1,
-      "phishing": 1,
-      "data-breach": 1
+      "phishing": 1
     },
     "sources_ok": 8,
     "sources_total": 9
@@ -71,7 +72,7 @@
       "name": "SANS Internet Storm Center",
       "url": "https://isc.sans.edu/rssfeed_full.xml",
       "status": "ok",
-      "items": 7
+      "items": 6
     },
     {
       "name": "UK NCSC Threat Reports",
@@ -90,7 +91,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-10-30T00:00:00Z",
-      "age_hours": 88,
+      "age_hours": 110,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -128,7 +129,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-10-30T00:00:00Z",
-      "age_hours": 88,
+      "age_hours": 110,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -166,7 +167,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-10-29T00:00:00Z",
-      "age_hours": 112,
+      "age_hours": 134,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -203,7 +204,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-10-29T00:00:00Z",
-      "age_hours": 112,
+      "age_hours": 134,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -241,7 +242,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-10-28T00:00:00Z",
-      "age_hours": 136,
+      "age_hours": 158,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -278,7 +279,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-10-28T00:00:00Z",
-      "age_hours": 136,
+      "age_hours": 158,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -316,7 +317,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-10-27T00:00:00Z",
-      "age_hours": 160,
+      "age_hours": 182,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -353,7 +354,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-10-27T00:00:00Z",
-      "age_hours": 160,
+      "age_hours": 182,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -390,7 +391,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-10-26T00:00:00Z",
-      "age_hours": 184,
+      "age_hours": 206,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -427,7 +428,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-10-26T00:00:00Z",
-      "age_hours": 184,
+      "age_hours": 206,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -464,7 +465,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-10-23T00:00:00Z",
-      "age_hours": 256,
+      "age_hours": 278,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -501,7 +502,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-10-23T00:00:00Z",
-      "age_hours": 256,
+      "age_hours": 278,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -530,22 +531,22 @@
       "known_ransomware_use": "Unknown"
     },
     {
-      "id": "ce0102be3fc9",
-      "title": "Over 1,000 GitLab servers vulnerable to ongoing RCE attacks",
-      "url": "https://www.bleepingcomputer.com/news/security/over-1-000-gitlab-servers-vulnerable-to-code-execution-attacks/",
-      "summary": "Over 1,000 Internet-exposed GitLab servers are still unpatched against a maximum-severity flaw actively exploited in remote code execution attacks.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-11-02T12:47:00Z",
-      "age_hours": 3,
+      "id": "6d31b5085e4a",
+      "title": "2026-017: Critical Vulnerability in Cisco Secure Email Gateway",
+      "url": "https://cert.europa.eu/publications/security-advisories/2026-017/",
+      "summary": "On 14 October 2026, Cisco published a security advisory addressing a critical vulnerability affecting the Advanced Malware Protection (AMP) feature of Cisco Secure Email Gateway. This vulnerability could allow an unauthenticated, remote attacker to write arbitrary files and execute commands with root privileges on the underlying operating system. The Cisco PSIRT is aware of active exploitation of this vulnerability.…",
+      "source": "CERT-EU",
+      "source_url": "https://cert.europa.eu/publications/security-advisories-rss",
+      "source_kind": "advisory",
+      "published_at": "2026-10-15T11:38:20Z",
+      "age_hours": 458,
       "category": "vulnerability",
       "priority": "high",
-      "priority_score": 64,
+      "priority_score": 63,
       "tags": [
         "vulnerability",
         "active-exploitation",
-        "patch"
+        "network-appliance"
       ],
       "evidence": [
         "observed-in-wild"
@@ -561,22 +562,22 @@
       "is_kev": false
     },
     {
-      "id": "6d31b5085e4a",
-      "title": "2026-017: Critical Vulnerability in Cisco Secure Email Gateway",
-      "url": "https://cert.europa.eu/publications/security-advisories/2026-017/",
-      "summary": "On 14 October 2026, Cisco published a security advisory addressing a critical vulnerability affecting the Advanced Malware Protection (AMP) feature of Cisco Secure Email Gateway. This vulnerability could allow an unauthenticated, remote attacker to write arbitrary files and execute commands with root privileges on the underlying operating system. The Cisco PSIRT is aware of active exploitation of this vulnerability.…",
-      "source": "CERT-EU",
-      "source_url": "https://cert.europa.eu/publications/security-advisories-rss",
-      "source_kind": "advisory",
-      "published_at": "2026-10-15T11:38:20Z",
-      "age_hours": 436,
+      "id": "ce0102be3fc9",
+      "title": "Over 1,000 GitLab servers vulnerable to ongoing RCE attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/over-1-000-gitlab-servers-vulnerable-to-code-execution-attacks/",
+      "summary": "Over 1,000 Internet-exposed GitLab servers are still unpatched against a maximum-severity flaw actively exploited in remote code execution attacks.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-11-02T12:47:00Z",
+      "age_hours": 25,
       "category": "vulnerability",
       "priority": "high",
-      "priority_score": 63,
+      "priority_score": 60,
       "tags": [
         "vulnerability",
         "active-exploitation",
-        "network-appliance"
+        "patch"
       ],
       "evidence": [
         "observed-in-wild"
@@ -600,7 +601,7 @@
       "source_url": "https://isc.sans.edu/rssfeed_full.xml",
       "source_kind": "operations",
       "published_at": "2026-11-02T14:52:05Z",
-      "age_hours": 1,
+      "age_hours": 23,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 48,
@@ -625,36 +626,6 @@
       "is_kev": false
     },
     {
-      "id": "5ff3e4930a95",
-      "title": "Ivanti patches two more Connect Secure zero-days chained in attacks",
-      "url": "https://www.bleepingcomputer.com/news/security/ivanti-patches-two-more-connect-secure-zero-days-chained-in-attacks/",
-      "summary": "Ivanti released security updates to patch two more Connect Secure (ICS) remote access gateway flaws that have been chained in zero-day attacks since at least October 1.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-11-02T09:33:26Z",
-      "age_hours": 6,
-      "category": "vulnerability",
-      "priority": "watch",
-      "priority_score": 46,
-      "tags": [
-        "vulnerability",
-        "patch",
-        "network-appliance",
-        "ot-ics"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": false
-    },
-    {
       "id": "8fde712f1841",
       "title": "2026-018: Critical Vulnerabilities in PHP",
       "url": "https://cert.europa.eu/publications/security-advisories/2026-018/",
@@ -663,7 +634,7 @@
       "source_url": "https://cert.europa.eu/publications/security-advisories-rss",
       "source_kind": "advisory",
       "published_at": "2026-10-23T16:36:26Z",
-      "age_hours": 239,
+      "age_hours": 261,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 45,
@@ -690,7 +661,7 @@
       "source_url": "https://cert.europa.eu/publications/security-advisories-rss",
       "source_kind": "advisory",
       "published_at": "2026-10-22T11:14:22Z",
-      "age_hours": 268,
+      "age_hours": 291,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 45,
@@ -710,21 +681,20 @@
       "is_kev": false
     },
     {
-      "id": "d6448e6ee754",
-      "title": "Alpine Linux rebuilds GitLab after attempted RCE attack",
-      "url": "https://www.bleepingcomputer.com/news/security/alpine-linux-rebuilds-gitlab-after-attempted-rce-attack/",
-      "summary": "Hackers attempted to exploit a critical GitLab vulnerability in Alpine Linux's development infrastructure on October 20-21, prompting the open-source project to rebuild its GitLab server and reset all passwords over concerns of a possible compromise.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-11-01T15:11:21Z",
-      "age_hours": 24,
+      "id": "d4a79711cc12",
+      "title": "What exploited vulnerabilities have in common: A data-driven analysis of real-world attacks",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/02/exploited-vulnerabilities-common-data-driven-analysis-real-world-attacks/",
+      "summary": "Real-world exploitation concentrates in a small, high-impact subset of CVEs. Learn how defenders can prioritize vulnerabilities based on exploitation likelihood, exposure, and potential blast radius.",
+      "source": "Microsoft Threat Intelligence",
+      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
+      "source_kind": "research",
+      "published_at": "2026-11-02T20:20:59Z",
+      "age_hours": 18,
       "category": "identity",
       "priority": "watch",
-      "priority_score": 40,
+      "priority_score": 42,
       "tags": [
-        "identity",
-        "linux"
+        "identity"
       ],
       "evidence": [],
       "cves": [],
@@ -738,6 +708,60 @@
       "is_kev": false
     },
     {
+      "id": "aa724a9a8e5d",
+      "title": "Artificial intelligence and cyber intrusion",
+      "url": "https://www.ncsc.gov.uk/report/artificial-intelligence-and-cyber-intrusion",
+      "summary": "An NCSC assessment that examines current AI-enabled threat trends and projections of the threat landscape to 2028.",
+      "source": "UK NCSC Threat Reports",
+      "source_url": "https://www.ncsc.gov.uk/api/1/services/v1/report-rss-feed.xml",
+      "source_kind": "advisory",
+      "published_at": "2026-11-03T12:00:00Z",
+      "age_hours": 2,
+      "category": "threat-intel",
+      "priority": "watch",
+      "priority_score": 39,
+      "tags": [
+        "threat-intel"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
+      "first_checks": [
+        "Extract only indicators and behaviors supported by the source.",
+        "Compare them with recent SIEM, EDR, identity and network alerts.",
+        "Record relevant findings without blocking on unverified indicators alone."
+      ],
+      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
+      "is_kev": false
+    },
+    {
+      "id": "098ee6ddbe90",
+      "title": "The Rise of LLMJacking: How Threat Actors Monetize Compromised Cloud and Model Resources",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/llmjacking-monetizing-compromised-cloud-models/",
+      "summary": "Written by: Christopher Romano, Codi Starks, Garrett Mahoney, John Wolfram, Josh Murchie, K Singh, Mathew Potaczek, Mike Lombardi, Rik Dolfing Introduction Mandiant responded to multiple incidents in 2026 in which threat actors hijacked enterprise access to Large Language Models (LLMs), a tactic known as \"LLMJacking.\" Spanning a variety of cloud and LLM providers, these intrusions impacted organizations in North…",
+      "source": "Google Threat Intelligence",
+      "source_url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
+      "source_kind": "research",
+      "published_at": "2026-11-02T14:00:00Z",
+      "age_hours": 24,
+      "category": "cloud",
+      "priority": "watch",
+      "priority_score": 38,
+      "tags": [
+        "cloud"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "Cloud incidents often cross identity, control-plane and workload logs, so isolated alerts can hide scope.",
+      "first_checks": [
+        "Review control-plane changes, sign-ins and newly created credentials.",
+        "Check public exposure, unusual data access and workload activity.",
+        "Correlate the actor, source IP and time across cloud services."
+      ],
+      "escalate_when": "Escalate on unauthorized configuration change, exposed data, new credential or suspicious workload execution.",
+      "is_kev": false
+    },
+    {
       "id": "9cc4b6c5e4fb",
       "title": "Deploying a Local Ghidra Server for Your Malware Analysis Lab, (Thu, Oct 29th)",
       "url": "https://isc.sans.edu/diary/rss/33470",
@@ -746,7 +770,7 @@
       "source_url": "https://isc.sans.edu/rssfeed_full.xml",
       "source_kind": "operations",
       "published_at": "2026-10-29T06:17:41Z",
-      "age_hours": 105,
+      "age_hours": 128,
       "category": "malware",
       "priority": "watch",
       "priority_score": 38,
@@ -773,7 +797,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-10-21T18:23:55Z",
-      "age_hours": 285,
+      "age_hours": 308,
       "category": "supply-chain",
       "priority": "watch",
       "priority_score": 37,
@@ -800,7 +824,7 @@
       "source_url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
       "source_kind": "research",
       "published_at": "2026-10-15T11:00:00Z",
-      "age_hours": 437,
+      "age_hours": 459,
       "category": "supply-chain",
       "priority": "watch",
       "priority_score": 37,
@@ -820,18 +844,45 @@
       "is_kev": false
     },
     {
+      "id": "1358dd463efa",
+      "title": "Google adds new $250,000 Cloud VRP reward for Root-in-Cloud bugs",
+      "url": "https://www.bleepingcomputer.com/news/google/google-adds-new-250-000-cloud-vrp-reward-for-root-in-cloud-bugs/",
+      "summary": "Google has expanded its Cloud Vulnerability Reward Program (VRP) with a new top-tier reward for high-impact architectural security flaws.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-11-03T12:05:52Z",
+      "age_hours": 2,
+      "category": "cloud",
+      "priority": "context",
+      "priority_score": 32,
+      "tags": [
+        "cloud"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "Cloud incidents often cross identity, control-plane and workload logs, so isolated alerts can hide scope.",
+      "first_checks": [
+        "Review control-plane changes, sign-ins and newly created credentials.",
+        "Check public exposure, unusual data access and workload activity.",
+        "Correlate the actor, source IP and time across cloud services."
+      ],
+      "escalate_when": "Escalate on unauthorized configuration change, exposed data, new credential or suspicious workload execution.",
+      "is_kev": false
+    },
+    {
       "id": "c8647446e5ec",
       "title": "Shutting the Door on the XCPE Botnet",
       "url": "https://cloud.google.com/blog/topics/threat-intelligence/shutting-the-door-on-the-xcpe-botnet/",
-      "summary": "Introduction Last week, Google and industry partners dismantled the XCPE backdoor which enrolled more than 1.3 million set-top boxes into a botnet. We assess with high confidence that the backdoor and botnet were intentionally developed, deployed, and operated for financial gain by Videostrong Technology Co., an Android Original Equipment Manufacturer (OEM) and Original Device Manufacturer (ODM). Videostrong…",
+      "summary": "Introduction Last week, Google and industry partners dismantled the XCPE backdoor which enrolled more than 1.3 million set-top boxes into a botnet. We assess with high confidence that the backdoor and botnet were intentionally developed, deployed, and operated for financial gain by Videostrong Technology Co., an Android Original Equipment Manufacturer (OEM) and Original Design Manufacturer (ODM). Videostrong…",
       "source": "Google Threat Intelligence",
       "source_url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
       "source_kind": "research",
       "published_at": "2026-11-02T14:00:00Z",
-      "age_hours": 2,
+      "age_hours": 24,
       "category": "malware",
-      "priority": "watch",
-      "priority_score": 36,
+      "priority": "context",
+      "priority_score": 32,
       "tags": [
         "malware"
       ],
@@ -855,10 +906,10 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-11-02T11:28:42Z",
-      "age_hours": 4,
+      "age_hours": 27,
       "category": "ransomware",
-      "priority": "watch",
-      "priority_score": 35,
+      "priority": "context",
+      "priority_score": 31,
       "tags": [
         "ransomware",
         "patch"
@@ -875,6 +926,33 @@
       "is_kev": false
     },
     {
+      "id": "dd7879ab65bf",
+      "title": "OneNote File Extraction, (Sun, Nov 1st)",
+      "url": "https://isc.sans.edu/diary/rss/33478",
+      "summary": "Recently, I had to extract embedded files from a set of OneNote files (extension .one).",
+      "source": "SANS Internet Storm Center",
+      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
+      "source_kind": "operations",
+      "published_at": "2026-11-01T09:12:23Z",
+      "age_hours": 53,
+      "category": "threat-intel",
+      "priority": "context",
+      "priority_score": 30,
+      "tags": [
+        "threat-intel"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
+      "first_checks": [
+        "Extract only indicators and behaviors supported by the source.",
+        "Compare them with recent SIEM, EDR, identity and network alerts.",
+        "Record relevant findings without blocking on unverified indicators alone."
+      ],
+      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
+      "is_kev": false
+    },
+    {
       "id": "9ad81aaa3b17",
       "title": "Microsoft fixes Smart App Control broken by October Windows update",
       "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-smart-app-control-broken-by-october-windows-update/",
@@ -883,10 +961,10 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-11-02T13:57:29Z",
-      "age_hours": 2,
+      "age_hours": 24,
       "category": "vulnerability",
       "priority": "context",
-      "priority_score": 32,
+      "priority_score": 28,
       "tags": [
         "vulnerability",
         "patch",
@@ -912,10 +990,10 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-10-31T01:02:57Z",
-      "age_hours": 63,
+      "age_hours": 85,
       "category": "malware",
       "priority": "context",
-      "priority_score": 32,
+      "priority_score": 28,
       "tags": [
         "malware"
       ],
@@ -939,194 +1017,22 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-10-30T16:11:44Z",
-      "age_hours": 71,
+      "age_hours": 94,
       "category": "threat-intel",
-      "priority": "context",
-      "priority_score": 32,
-      "tags": [
-        "threat-intel"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
-      "first_checks": [
-        "Extract only indicators and behaviors supported by the source.",
-        "Compare them with recent SIEM, EDR, identity and network alerts.",
-        "Record relevant findings without blocking on unverified indicators alone."
-      ],
-      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
-      "is_kev": false
-    },
-    {
-      "id": "dd7879ab65bf",
-      "title": "OneNote File Extraction, (Sun, Nov 1st)",
-      "url": "https://isc.sans.edu/diary/rss/33478",
-      "summary": "Recently, I had to extract embedded files from a set of OneNote files (extension .one).",
-      "source": "SANS Internet Storm Center",
-      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
-      "source_kind": "operations",
-      "published_at": "2026-11-01T09:12:23Z",
-      "age_hours": 30,
-      "category": "threat-intel",
-      "priority": "context",
-      "priority_score": 30,
-      "tags": [
-        "threat-intel"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
-      "first_checks": [
-        "Extract only indicators and behaviors supported by the source.",
-        "Compare them with recent SIEM, EDR, identity and network alerts.",
-        "Record relevant findings without blocking on unverified indicators alone."
-      ],
-      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
-      "is_kev": false
-    },
-    {
-      "id": "72aec30d1863",
-      "title": "New Android SMS of Death exploit can remotely crash unpatched phones",
-      "url": "https://www.bleepingcomputer.com/news/security/new-android-sms-of-death-exploit-can-remotely-crash-unpatched-phones/",
-      "summary": "A security researcher has released a proof-of-concept exploit for a recently patched Android vulnerability, dubbed \"SMS of Death\" and tracked as CVE-2026-58882, that lets attackers remotely disrupt cellular service or crash phones by sending a specially crafted text message.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-10-31T15:35:11Z",
-      "age_hours": 48,
-      "category": "vulnerability",
-      "priority": "context",
-      "priority_score": 30,
-      "tags": [
-        "vulnerability",
-        "patch"
-      ],
-      "evidence": [],
-      "cves": [
-        "CVE-2026-58882"
-      ],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": false
-    },
-    {
-      "id": "1ee24f3ddee5",
-      "title": "Wireshark 5.0.0rc1 Release, (Sat, Oct 31st)",
-      "url": "https://isc.sans.edu/diary/rss/33476",
-      "summary": "Wireshark Release Candidate 5.0.0 was published : soon we can expect a new major version of Wireshark.",
-      "source": "SANS Internet Storm Center",
-      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
-      "source_kind": "operations",
-      "published_at": "2026-10-31T10:52:53Z",
-      "age_hours": 53,
-      "category": "threat-intel",
-      "priority": "context",
-      "priority_score": 30,
-      "tags": [
-        "threat-intel"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
-      "first_checks": [
-        "Extract only indicators and behaviors supported by the source.",
-        "Compare them with recent SIEM, EDR, identity and network alerts.",
-        "Record relevant findings without blocking on unverified indicators alone."
-      ],
-      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
-      "is_kev": false
-    },
-    {
-      "id": "00cf2808d9fb",
-      "title": "YARA-X 1.22.1 Release, (Sat, Oct 31st)",
-      "url": "https://isc.sans.edu/diary/rss/33474",
-      "summary": "YARA-X&#;x26;#;39;s 1.22.1 is a bugfix version, it brings 2 bugfixes.",
-      "source": "SANS Internet Storm Center",
-      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
-      "source_kind": "operations",
-      "published_at": "2026-10-31T10:48:17Z",
-      "age_hours": 53,
-      "category": "threat-intel",
-      "priority": "context",
-      "priority_score": 30,
-      "tags": [
-        "threat-intel",
-        "detect-hunt"
-      ],
-      "evidence": [
-        "detection-guidance"
-      ],
-      "cves": [],
-      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
-      "first_checks": [
-        "Extract only indicators and behaviors supported by the source.",
-        "Compare them with recent SIEM, EDR, identity and network alerts.",
-        "Record relevant findings without blocking on unverified indicators alone."
-      ],
-      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
-      "is_kev": false
-    },
-    {
-      "id": "cbc6b5f311de",
-      "title": "YARA-X 1.22.0 Release, (Sun, Oct 25th)",
-      "url": "https://isc.sans.edu/diary/rss/33454",
-      "summary": "YARA-X&#x26;#39&#x26;#x3b;s 1.22.0 release brings 11 improvements and 9 bugfixes.",
-      "source": "SANS Internet Storm Center",
-      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
-      "source_kind": "operations",
-      "published_at": "2026-10-31T10:45:40Z",
-      "age_hours": 53,
-      "category": "threat-intel",
-      "priority": "context",
-      "priority_score": 30,
-      "tags": [
-        "threat-intel",
-        "detect-hunt"
-      ],
-      "evidence": [
-        "detection-guidance"
-      ],
-      "cves": [],
-      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
-      "first_checks": [
-        "Extract only indicators and behaviors supported by the source.",
-        "Compare them with recent SIEM, EDR, identity and network alerts.",
-        "Record relevant findings without blocking on unverified indicators alone."
-      ],
-      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
-      "is_kev": false
-    },
-    {
-      "id": "a4df36c045ad",
-      "title": "Northflank security breach leads to abuse of customers' AI API keys",
-      "url": "https://www.bleepingcomputer.com/news/security/northflank-security-breach-leads-to-abuse-of-customers-ai-api-keys/",
-      "summary": "Cloud application hosting platform Northflank is warning customers to rotate all credentials and secrets stored on its platform after a security breach led to unauthorized use of customers' AI API keys.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-10-31T18:01:12Z",
-      "age_hours": 46,
-      "category": "identity",
       "priority": "context",
       "priority_score": 28,
       "tags": [
-        "identity",
-        "cloud"
+        "threat-intel"
       ],
       "evidence": [],
       "cves": [],
-      "why_l1_cares": "Identity activity often becomes the first visible signal before mailbox, cloud or endpoint impact.",
+      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
       "first_checks": [
-        "Review risky sign-ins, impossible travel and unfamiliar devices.",
-        "Check MFA, password and app-consent changes around the event.",
-        "Correlate the account with mailbox, endpoint and token activity."
+        "Extract only indicators and behaviors supported by the source.",
+        "Compare them with recent SIEM, EDR, identity and network alerts.",
+        "Record relevant findings without blocking on unverified indicators alone."
       ],
-      "escalate_when": "Escalate on successful anomalous sign-in, MFA reset, suspicious consent or token reuse.",
+      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
       "is_kev": false
     },
     {
@@ -1138,7 +1044,7 @@
       "source_url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
       "source_kind": "research",
       "published_at": "2026-10-30T14:00:00Z",
-      "age_hours": 74,
+      "age_hours": 96,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 28,
@@ -1165,7 +1071,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-10-29T16:00:00Z",
-      "age_hours": 96,
+      "age_hours": 118,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 28,
@@ -1192,7 +1098,7 @@
       "source_url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
       "source_kind": "research",
       "published_at": "2026-10-15T14:00:00Z",
-      "age_hours": 434,
+      "age_hours": 456,
       "category": "vulnerability",
       "priority": "context",
       "priority_score": 28,
@@ -1221,7 +1127,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-10-14T13:00:00Z",
-      "age_hours": 459,
+      "age_hours": 481,
       "category": "phishing",
       "priority": "context",
       "priority_score": 28,
@@ -1240,15 +1146,150 @@
       "is_kev": false
     },
     {
+      "id": "89f0cc016347",
+      "title": "Police seizes over 100 servers in investment scam crackdown",
+      "url": "https://www.bleepingcomputer.com/news/security/police-seizes-over-100-servers-in-investment-scam-crackdown/",
+      "summary": "European law enforcement authorities arrested seven suspects and seized more than 100 servers in a joint action targeting an unnamed company suspected of providing fraudulent trading websites to criminal gangs.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-11-03T13:33:49Z",
+      "age_hours": 0,
+      "category": "threat-intel",
+      "priority": "context",
+      "priority_score": 26,
+      "tags": [
+        "threat-intel"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
+      "first_checks": [
+        "Extract only indicators and behaviors supported by the source.",
+        "Compare them with recent SIEM, EDR, identity and network alerts.",
+        "Record relevant findings without blocking on unverified indicators alone."
+      ],
+      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
+      "is_kev": false
+    },
+    {
+      "id": "790f1db371db",
+      "title": "Harvard University data breach exposed info of 851,000 accounts",
+      "url": "https://www.bleepingcomputer.com/news/security/harvard-university-data-breach-exposed-info-of-851-000-accounts/",
+      "summary": "Hackers who breached Harvard University's Alumni Affairs and Development systems in November 2025 stole data linked to more than 850,000 unique email addresses, according to breach notification service Have I Been Pwned.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-11-03T10:53:25Z",
+      "age_hours": 3,
+      "category": "data-breach",
+      "priority": "context",
+      "priority_score": 26,
+      "tags": [
+        "data-breach"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "Breach reporting can reveal exposed credentials, third-party risk or activity relevant to current alerts.",
+      "first_checks": [
+        "Confirm whether your organization, supplier or technology stack is affected.",
+        "Monitor for related credential abuse, phishing and data access.",
+        "Capture confirmed scope and primary-source statements before escalating."
+      ],
+      "escalate_when": "Escalate on organizational exposure, credential compromise or matching suspicious activity.",
+      "is_kev": false
+    },
+    {
+      "id": "6c6aea21f91d",
+      "title": "Chinese hackers use ARTEX AI in automated attacks against 200 orgs",
+      "url": "https://www.bleepingcomputer.com/news/security/chinese-hackers-use-artex-ai-in-automated-attacks-against-200-orgs/",
+      "summary": "Chinese hackers used ARTEX, an open-source, multi-agent AI penetration-testing framework, in attacks against more than 200 organizations across 14 countries.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-11-02T21:40:14Z",
+      "age_hours": 16,
+      "category": "threat-intel",
+      "priority": "context",
+      "priority_score": 26,
+      "tags": [
+        "threat-intel"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
+      "first_checks": [
+        "Extract only indicators and behaviors supported by the source.",
+        "Compare them with recent SIEM, EDR, identity and network alerts.",
+        "Record relevant findings without blocking on unverified indicators alone."
+      ],
+      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
+      "is_kev": false
+    },
+    {
+      "id": "b728804dc951",
+      "title": "Fintech platform Sageworks taken offline after suspected cyberattack",
+      "url": "https://www.bleepingcomputer.com/news/security/fintech-platform-sageworks-taken-offline-after-suspected-cyberattack/",
+      "summary": "Financial technology company Abrigo has restored its Sageworks risk management application, except for borrower-facing capabilities, following an outage triggered by \"irregular activity\" in its environment.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-11-02T19:00:45Z",
+      "age_hours": 19,
+      "category": "threat-intel",
+      "priority": "context",
+      "priority_score": 26,
+      "tags": [
+        "threat-intel"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
+      "first_checks": [
+        "Extract only indicators and behaviors supported by the source.",
+        "Compare them with recent SIEM, EDR, identity and network alerts.",
+        "Record relevant findings without blocking on unverified indicators alone."
+      ],
+      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
+      "is_kev": false
+    },
+    {
+      "id": "540fcda80525",
+      "title": "Google disrupts million-device XCPE Android malware botnet, bans TV box maker",
+      "url": "https://www.bleepingcomputer.com/news/security/google-disrupts-million-device-xcpe-android-malware-botnet-bans-tv-box-maker/",
+      "summary": "Google and industry partners have dismantled the XCPE malware botnet consisting of more than 1.3 million Android TV streaming TV boxes that Google says its manufacturer intentionally infected with malware to generate revenue through cybercrime activities.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-11-02T18:16:34Z",
+      "age_hours": 20,
+      "category": "malware",
+      "priority": "context",
+      "priority_score": 26,
+      "tags": [
+        "malware"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "Named malware gives you a starting point for validating endpoint, network and identity telemetry.",
+      "first_checks": [
+        "Validate detections against process, file, persistence and network context.",
+        "Search for the same behavior or indicators across other hosts.",
+        "Identify the likely entry point and affected user account."
+      ],
+      "escalate_when": "Escalate on execution, persistence, credential access, command-and-control or spread to another host.",
+      "is_kev": false
+    },
+    {
       "id": "8c4edece9bdb",
-      "title": "BTCPay Server warns of hot wallet thefts targeting outdated instances",
+      "title": "BTCPay Server warns of hot wallet crypto thefts on outdated instances",
       "url": "https://www.bleepingcomputer.com/news/security/btcpay-server-warns-of-hot-wallet-thefts-targeting-outdated-instances/",
       "summary": "The maintainer of BTCPay Server, an open-source cryptocurrency payment processor, has urged users to install the latest version as hackers have been draining \"hot wallets\" on instances running older versions.…",
       "source": "BleepingComputer",
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-11-02T15:03:07Z",
-      "age_hours": 1,
+      "age_hours": 23,
       "category": "identity",
       "priority": "context",
       "priority_score": 26,
@@ -1275,7 +1316,7 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-11-02T15:01:11Z",
-      "age_hours": 1,
+      "age_hours": 23,
       "category": "data-breach",
       "priority": "context",
       "priority_score": 26,
@@ -1302,7 +1343,7 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-11-02T14:28:39Z",
-      "age_hours": 1,
+      "age_hours": 24,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 26,
@@ -1321,42 +1362,15 @@
       "is_kev": false
     },
     {
-      "id": "5d7adb06ae58",
-      "title": "FBI links $6.3 billion Binance crypto heist to North Korean hackers",
-      "url": "https://www.bleepingcomputer.com/news/security/fbi-links-63-billion-binance-crypto-heist-to-north-korean-hackers/",
-      "summary": "The FBI has confirmed that North Korean state-sponsored hackers known as TraderTraitor were behind the $6.3 billion crypto-theft attack on Binance, making it the largest cryptocurrency heist on record.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-11-01T19:57:53Z",
-      "age_hours": 20,
-      "category": "threat-intel",
-      "priority": "context",
-      "priority_score": 26,
-      "tags": [
-        "threat-intel"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
-      "first_checks": [
-        "Extract only indicators and behaviors supported by the source.",
-        "Compare them with recent SIEM, EDR, identity and network alerts.",
-        "Record relevant findings without blocking on unverified indicators alone."
-      ],
-      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
-      "is_kev": false
-    },
-    {
-      "id": "241b0a1b5675",
-      "title": "Yet Another ClickFix Campaign, (Wed, Oct 28th)",
-      "url": "https://isc.sans.edu/diary/rss/33466",
-      "summary": "Introduction",
+      "id": "1ee24f3ddee5",
+      "title": "Wireshark 5.0.0rc1 Release, (Sat, Oct 31st)",
+      "url": "https://isc.sans.edu/diary/rss/33476",
+      "summary": "Wireshark Release Candidate 5.0.0 was published : soon we can expect a new major version of Wireshark.",
       "source": "SANS Internet Storm Center",
       "source_url": "https://isc.sans.edu/rssfeed_full.xml",
       "source_kind": "operations",
-      "published_at": "2026-10-29T00:42:15Z",
-      "age_hours": 111,
+      "published_at": "2026-10-31T10:52:53Z",
+      "age_hours": 75,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 26,
@@ -1375,22 +1389,55 @@
       "is_kev": false
     },
     {
-      "id": "a45c5035f5e7",
-      "title": "OpenAI says it's doubling Pro usage limits and bringing Work features to Chat",
-      "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-says-its-doubling-pro-usage-limits-and-bringing-work-features-to-chat/",
-      "summary": "OpenAI has just confirmed that it's rolling out ChatGPT Work capabilities directly into regular Chat, while also combining usage allowances across ChatGPT and Codex.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-11-01T13:53:11Z",
-      "age_hours": 26,
+      "id": "00cf2808d9fb",
+      "title": "YARA-X 1.22.1 Release, (Sat, Oct 31st)",
+      "url": "https://isc.sans.edu/diary/rss/33474",
+      "summary": "YARA-X&#;x26;#;39;s 1.22.1 is a bugfix version, it brings 2 bugfixes.",
+      "source": "SANS Internet Storm Center",
+      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
+      "source_kind": "operations",
+      "published_at": "2026-10-31T10:48:17Z",
+      "age_hours": 75,
       "category": "threat-intel",
       "priority": "context",
-      "priority_score": 22,
+      "priority_score": 26,
       "tags": [
-        "threat-intel"
+        "threat-intel",
+        "detect-hunt"
       ],
-      "evidence": [],
+      "evidence": [
+        "detection-guidance"
+      ],
+      "cves": [],
+      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
+      "first_checks": [
+        "Extract only indicators and behaviors supported by the source.",
+        "Compare them with recent SIEM, EDR, identity and network alerts.",
+        "Record relevant findings without blocking on unverified indicators alone."
+      ],
+      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
+      "is_kev": false
+    },
+    {
+      "id": "cbc6b5f311de",
+      "title": "YARA-X 1.22.0 Release, (Sun, Oct 25th)",
+      "url": "https://isc.sans.edu/diary/rss/33454",
+      "summary": "YARA-X&#x26;#39&#x26;#x3b;s 1.22.0 release brings 11 improvements and 9 bugfixes.",
+      "source": "SANS Internet Storm Center",
+      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
+      "source_kind": "operations",
+      "published_at": "2026-10-31T10:45:40Z",
+      "age_hours": 75,
+      "category": "threat-intel",
+      "priority": "context",
+      "priority_score": 26,
+      "tags": [
+        "threat-intel",
+        "detect-hunt"
+      ],
+      "evidence": [
+        "detection-guidance"
+      ],
       "cves": [],
       "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
       "first_checks": [

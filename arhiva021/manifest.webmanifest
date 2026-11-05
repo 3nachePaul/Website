@@ -1,0 +1,19 @@
+{
+  "name": "ARHIVA 021 - Inima orașului",
+  "short_name": "ARHIVA 021",
+  "description": "Jocul urban OSCeB din București",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#071a2b",
+  "theme_color": "#071a2b",
+  "lang": "ro",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

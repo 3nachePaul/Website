@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071a2b">
+  <meta name="description" content="ARHIVA 021 - jocul urban OSCeB din București">
+  <meta name="robots" content="noindex,nofollow">
+  <title>ARHIVA 021 | OSCeB</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="game.css?v=20261105-1">
+</head>
+<body>
+  <div class="city-grid" aria-hidden="true"></div>
+
+  <header class="game-header">
+    <a class="wordmark" href="./" aria-label="ARHIVA 021 - început">
+      <span>ARHIVA</span><strong>021</strong>
+    </a>
+    <div class="header-status">
+      <div class="signal" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div>
+        <span class="header-status__label" id="timer-label">Până la închidere</span>
+        <strong class="header-status__time" id="timer">--:--:--</strong>
+      </div>
+    </div>
+    <button class="header-help" id="help-button" type="button">Ajutor</button>
+  </header>
+
+  <div class="test-ribbon" id="test-ribbon" hidden>
+    Mod de test activ. Timerul și ferestrele live sunt deblocate.
+  </div>
+
+  <main>
+    <section class="landing" id="landing-screen">
+      <div class="landing-copy">
+        <div class="landing-route" aria-hidden="true">
+          <svg viewBox="0 0 250 520" role="img" aria-label="Traseu cu șase checkpoint-uri">
+            <path class="landing-route__shadow" d="M73 14 C215 77 52 142 167 221 C250 278 70 337 174 407 C213 434 164 480 116 506" />
+            <path class="landing-route__line" d="M73 14 C215 77 52 142 167 221 C250 278 70 337 174 407 C213 434 164 480 116 506" />
+            <g class="landing-route__nodes">
+              <circle cx="73" cy="14" r="10" />
+              <circle cx="162" cy="95" r="10" />
+              <circle cx="124" cy="176" r="10" />
+              <circle cx="190" cy="272" r="10" />
+              <circle cx="121" cy="375" r="10" />
+              <circle cx="116" cy="506" r="10" />
+            </g>
+          </svg>
+        </div>
+
+        <p class="date-line">Sâmbătă, 7 noiembrie / București</p>
+        <h1>Inima<br>orașului</h1>
+        <p class="landing-lead">
+          Șase fragmente au fost ascunse în memoria Bucureștiului. Aveți 170 de minute să le recuperați.
+        </p>
+        <div class="landing-facts" aria-label="Detalii joc">
+          <span><strong>6</strong> fragmente</span>
+          <span><strong>3</strong> rute</span>
+          <span><strong>1.000</strong> puncte</span>
+          <span><strong>0</strong> lei</span>
+        </div>
+      </div>
+
+      <div class="entry-panel">
+        <div id="resume-panel" class="resume-panel" hidden>
+          <p>Acest telefon are deja o misiune activă.</p>
+          <strong id="resume-team">Echipa</strong>
+          <div class="button-row">
+            <button class="button button--signal" id="resume-button" type="button">Continuă jocul</button>
+            <button class="button button--quiet" id="new-game-button" type="button">Joc nou</button>
+          </div>
+        </div>
+
+        <form id="team-form" class="team-form">
+          <div class="form-heading">
+            <span class="step-index">01</span>
+            <div>
+              <h2>Activează echipa</h2>
+              <p>Progresul rămâne salvat numai pe acest telefon.</p>
+            </div>
+          </div>
+
+          <label class="field">
+            <span>Numele echipei</span>
+            <input id="team-name" name="teamName" type="text" maxlength="28" autocomplete="off" placeholder="Ex: Porumbeii tactici" required>
+          </label>
+
+          <label class="field">
+            <span>Codul primit de la organizator <small>(opțional la test)</small></span>
+            <input id="team-code" name="teamCode" type="text" maxlength="14" autocomplete="off" placeholder="Ex: PT-021">
+          </label>
+
+          <fieldset class="route-picker">
+            <legend>Ruta repartizată</legend>
+            <label class="route-option route-option--red">
+              <input type="radio" name="route" value="red" required>
+              <span class="route-option__swatch"></span>
+              <span><strong>Roșie</strong><small>TNB prima oprire</small></span>
+            </label>
+            <label class="route-option route-option--blue">
+              <input type="radio" name="route" value="blue" required>
+              <span class="route-option__swatch"></span>
+              <span><strong>Albastră</strong><small>Macca prima oprire</small></span>
+            </label>
+            <label class="route-option route-option--gold">
+              <input type="radio" name="route" value="gold" required>
+              <span class="route-option__swatch"></span>
+              <span><strong>Aurie</strong><small>Ateneul prima oprire</small></span>
+            </label>
+          </fieldset>
+
+          <label class="rules-check">
+            <input id="rules-accepted" type="checkbox" required>
+            <span>Am citit regulile: rămânem împreună, nu alergăm, nu ne urcăm pe monumente și nu filmăm persoane fără acord.</span>
+          </label>
+
+          <button class="button button--signal button--wide" type="submit">Intră în Arhivă</button>
+          <p class="privacy-note">Fotografiile și clipurile nu sunt încărcate automat pe site.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="game-shell" id="game-screen" hidden>
+      <aside class="route-rail" aria-label="Progresul traseului">
+        <div class="rail-team">
+          <span>Echipă activă</span>
+          <strong id="rail-team-name">-</strong>
+          <small id="rail-team-code">-</small>
+        </div>
+        <ol class="rail-stops" id="route-stops"></ol>
+      </aside>
+
+      <section class="mission-column">
+        <div class="mobile-team-strip" id="mobile-team-strip"></div>
+
+        <nav class="game-tabs" aria-label="Secțiunile jocului">
+          <button class="game-tab is-active" type="button" data-tab="mission">Misiune</button>
+          <button class="game-tab" type="button" data-tab="bonus">Bonus <span id="bonus-badge" hidden></span></button>
+          <button class="game-tab" type="button" data-tab="team">Echipă</button>
+        </nav>
+
+        <div class="tab-panel" id="tab-mission"></div>
+        <div class="tab-panel" id="tab-bonus" hidden></div>
+        <div class="tab-panel" id="tab-team" hidden></div>
+      </section>
+
+      <aside class="status-rail">
+        <div class="score-block">
+          <span>Scor provizoriu</span>
+          <strong id="score-value">0</strong>
+          <small>din 1.000</small>
+        </div>
+        <div class="status-stat"><span>Jokere rămase</span><strong id="jokers-value">2</strong></div>
+        <div class="status-stat"><span>Indicii folosite</span><strong id="hints-value">0</strong></div>
+        <div class="fragment-stack">
+          <span>Mesaj recuperat</span>
+          <ol id="fragment-list"></ol>
+        </div>
+        <p class="provisional-note">Punctajul devine oficial după validarea dovezilor de către organizatori.</p>
+      </aside>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <dialog class="signal-dialog" id="fragment-dialog">
+    <button class="dialog-close" type="button" data-close-dialog aria-label="Închide">×</button>
+    <div class="fragment-reveal">
+      <span id="fragment-number">Fragment 1</span>
+      <strong id="fragment-word">UNDE</strong>
+      <p id="fragment-next">Următorul checkpoint a fost deblocat.</p>
+      <button class="button button--signal" type="button" data-close-dialog>Continuă</button>
+    </div>
+  </dialog>
+
+  <dialog class="signal-dialog help-dialog" id="help-dialog">
+    <button class="dialog-close" type="button" data-close-dialog aria-label="Închide">×</button>
+    <h2>Ai nevoie de ajutor?</h2>
+    <p>Opriți jocul și rămâneți împreună. Numărul coordonatorului va fi comunicat la briefing și va apărea aici înainte de eveniment.</p>
+    <a class="button button--signal" id="organizer-phone" href="#" aria-disabled="true">Număr în curs de confirmare</a>
+  </dialog>
+
+  <noscript>ARHIVA 021 are nevoie de JavaScript pentru a valida misiunile și a salva progresul.</noscript>
+  <script src="game.js?v=20261105-1" defer></script>
+</body>
+</html>

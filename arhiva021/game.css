@@ -1675,16 +1675,39 @@ noscript {
 
 @media (max-width: 620px) {
   .wordmark span {
-    display: none;
+    display: inline;
+    font-size: 12px;
   }
 
   .wordmark strong {
-    font-size: 25px;
+    font-size: 22px;
+  }
+
+  .header-status {
+    min-width: auto;
+    gap: 4px;
+    padding-right: 4px;
+  }
+
+  .header-status__time {
+    font-size: 12px;
+  }
+
+  .header-help {
+    min-height: 34px;
+    padding: 0 8px;
+  }
+
+  .test-ribbon {
+    padding: 7px 12px;
+    font-size: 11.5px;
+    line-height: 1.25;
   }
 
   .landing-copy {
     min-height: 430px;
     padding-top: 28px;
+    overflow: clip;
   }
 
   .date-line {
@@ -1692,8 +1715,9 @@ noscript {
   }
 
   .landing h1 {
-    font-size: clamp(56px, 17vw, 72px);
-    letter-spacing: -0.105em;
+    font-size: clamp(50px, 15vw, 62px);
+    line-height: 0.8;
+    letter-spacing: -0.095em;
   }
 
   .landing-lead {

@@ -1274,6 +1274,7 @@ body[data-route="gold"] {
 }
 
 .live-drop-section {
+  scroll-margin-top: calc(var(--header-height) + 18px);
   margin-bottom: 28px;
   padding: 16px;
   border: 1px solid rgba(244, 98, 83, 0.35);

@@ -4,6 +4,8 @@
   const STORAGE_KEY = "arhiva021-team-v1";
   const TEST_MODE = new URLSearchParams(window.location.search).get("test") === "1";
   const ORGANIZER_PHONE = ""; // Completează înainte de eveniment, în format +40...
+  const EVIDENCE_HUB = "https://arhiva-021-command-center.brainy-lion-7419.chatgpt.site";
+  const MAX_EVIDENCE_BYTES = 20 * 1024 * 1024;
 
   const TUTORIAL_OPEN = new Date("2026-11-07T13:20:00+02:00");
   const GAME_START = new Date("2026-11-07T13:30:00+02:00");
@@ -197,6 +199,7 @@
       hints: [],
       attempts: {},
       cooldowns: {},
+      uploads: {},
       finalCompletedAt: null,
       selectedMission: null
     };
@@ -215,6 +218,7 @@
       parsed.hints ||= [];
       parsed.attempts ||= {};
       parsed.cooldowns ||= {};
+      parsed.uploads ||= {};
       return parsed;
     } catch {
       return null;
@@ -233,6 +237,19 @@
       .replaceAll(">", "&gt;")
       .replaceAll('"', "&quot;")
       .replaceAll("'", "&#039;");
+  }
+
+  function renderEvidenceTools(code, inputId = `evidence-${code}`) {
+    const sent = Boolean(state?.uploads?.[code]);
+    return `
+      <details class="evidence-tools ${sent ? "is-sent" : ""}">
+        <summary>${sent ? "Dovadă trimisă organizatorului ✓" : "Trimite dovada organizatorului"}</summary>
+        <div class="evidence-tools__inner">
+          <input class="file-input" id="${inputId}" type="file" accept="image/*,video/*" capture="environment">
+          <button class="small-button" type="button" data-share-evidence="${code}">${sent ? "Trimite din nou" : "Trimite acum"}</button>
+          <small class="upload-note">Poza sau clipul ajunge direct în Command Center. Maximum 20 MB.</small>
+        </div>
+      </details>`;
   }
 
   function normalizeAnswer(value) {
@@ -468,6 +485,7 @@
           ${hintUsed ? `<div class="hint-box"><strong>Indiciu folosit:</strong> ${escapeHtml(mission.hint)}</div>` : ""}
           ${isHistorical ? `
             <button class="small-button" type="button" data-return-current>Înapoi la misiunea curentă</button>
+            ${renderEvidenceTools(missionCode, "mission-evidence")}
           ` : `
             <form class="mission-form" id="mission-answer-form" data-mission="${missionCode}">
               <label class="proof-check">
@@ -482,13 +500,7 @@
             </form>
             <div class="mission-actions">
               <button class="small-button small-button--hint" type="button" data-use-hint="${missionCode}">${hintUsed ? "Arată din nou indiciul" : "Folosește indiciu -15"}</button>
-              <details class="evidence-tools">
-                <summary>Fotografiază sau partajează dovada</summary>
-                <div class="evidence-tools__inner">
-                  <input class="file-input" id="mission-evidence" type="file" accept="image/*,video/*" capture="environment">
-                  <button class="small-button" type="button" data-share-evidence="${missionCode}">Partajează</button>
-                </div>
-              </details>
+              ${renderEvidenceTools(missionCode, "mission-evidence")}
             </div>
           `}
         </div>
@@ -642,6 +654,7 @@
           <label class="side-proof"><input type="checkbox" data-flash-proof="${flash.code}"> Dovada este pregătită</label>
           <button class="small-button" type="button" data-complete-flash="${flash.code}">Finalizează +40</button>
         ` : ""}
+        ${status === "open" || complete ? renderEvidenceTools(flash.code) : ""}
       </article>`;
   }
 
@@ -660,18 +673,12 @@
           <span class="score-chip ${jokerActive ? "is-joker" : ""}">${jokerActive ? "100 pct" : "50 pct"}</span>
           ${complete ? "<strong>Finalizat</strong>" : ""}
         </div>
-        ${complete ? "" : `
+        ${complete ? `<div class="side-actions">${renderEvidenceTools(quest.code)}</div>` : `
           <div class="side-actions">
             <label class="side-proof"><input type="checkbox" data-side-proof="${quest.code}" ${maxReached ? "disabled" : ""}> Dovada este pregătită</label>
             <button class="small-button joker-button ${jokerActive ? "is-active" : ""}" type="button" data-toggle-joker="${quest.code}" ${maxReached ? "disabled" : ""}>${jokerActive ? "Joker activ" : "Activează Joker x2"}</button>
             <button class="small-button" type="button" data-complete-side="${quest.code}" ${maxReached ? "disabled" : ""}>Finalizează</button>
-            <details class="evidence-tools">
-              <summary>Partajează dovada</summary>
-              <div class="evidence-tools__inner">
-                <input class="file-input" id="evidence-${quest.code}" type="file" accept="image/*,video/*" capture="environment">
-                <button class="small-button" type="button" data-share-evidence="${quest.code}">Partajează</button>
-              </div>
-            </details>
+            ${renderEvidenceTools(quest.code)}
           </div>`}
       </article>`;
   }
@@ -809,21 +816,50 @@
     showToast("Raport copiat. Trimite-l organizatorului.");
   }
 
-  async function shareEvidence(code) {
+  async function shareEvidence(code, button) {
     const input = code.startsWith("M") ? document.getElementById("mission-evidence") : document.getElementById(`evidence-${code}`);
     const file = input?.files?.[0];
-    const caption = `ARHIVA 021 / ${state.teamCode} / ${code} / ${state.teamName}`;
-    if (file && navigator.share && navigator.canShare?.({ files: [file] })) {
-      try {
-        await navigator.share({ title: caption, text: caption, files: [file] });
-        showToast("Dovada a fost pregătită în aplicația aleasă.");
-        return;
-      } catch (error) {
-        if (error.name === "AbortError") return;
-      }
+    if (!file) {
+      showToast("Alege mai întâi fotografia sau clipul.", true);
+      input?.click();
+      return;
     }
-    await copyText(caption);
-    showToast(file ? "Telefonul nu poate partaja acest fișier direct. Legenda a fost copiată." : "Legenda dovezii a fost copiată. Atașează fotografia sau clipul din galerie.");
+    if (file.size > MAX_EVIDENCE_BYTES) {
+      showToast("Fișierul depășește limita de 20 MB. Alege un clip mai scurt sau o fotografie.", true);
+      return;
+    }
+    if (!navigator.onLine) {
+      showToast("Nu ai conexiune. Progresul rămâne salvat; trimite dovada când revii online.", true);
+      return;
+    }
+
+    const originalLabel = button?.textContent || "Trimite acum";
+    if (button) {
+      button.disabled = true;
+      button.textContent = "Se trimite…";
+    }
+
+    const form = new FormData();
+    form.append("teamName", state.teamName);
+    form.append("teamCode", state.teamCode);
+    form.append("challengeCode", code);
+    form.append("file", file, file.name);
+
+    try {
+      const response = await fetch(`${EVIDENCE_HUB}/api/upload`, { method: "POST", body: form });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(payload.error || "Dovada nu a putut fi trimisă.");
+      state.uploads ||= {};
+      state.uploads[code] = { id: payload.id, sentAt: Date.now() };
+      saveState();
+      if (button) button.textContent = "Trimis ✓";
+      showToast(`${code}: dovada a ajuns la organizator.`);
+    } catch (error) {
+      if (button) button.textContent = originalLabel;
+      showToast(error instanceof Error ? error.message : "Dovada nu a putut fi trimisă. Reîncearcă.", true);
+    } finally {
+      if (button) button.disabled = false;
+    }
   }
 
   async function copyText(text) {
@@ -889,7 +925,7 @@
     if (target.dataset.toggleJoker) toggleJoker(target.dataset.toggleJoker);
     if (target.dataset.completeSide) completeSideQuest(target.dataset.completeSide);
     if (target.dataset.completeFlash) completeFlash(target.dataset.completeFlash);
-    if (target.dataset.shareEvidence) shareEvidence(target.dataset.shareEvidence);
+    if (target.dataset.shareEvidence) shareEvidence(target.dataset.shareEvidence, target);
     if (target.hasAttribute("data-share-report")) shareReport();
     if (target.hasAttribute("data-reset-game")) resetGame();
     if (target.hasAttribute("data-open-current") || target.hasAttribute("data-return-current")) {

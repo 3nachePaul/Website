@@ -1008,6 +1008,11 @@ body[data-route="gold"] {
   background: rgba(36, 183, 164, 0.07);
 }
 
+.evidence-tools.is-sent {
+  border-left-color: var(--gold);
+  background: rgba(244, 185, 65, 0.08);
+}
+
 .evidence-tools summary {
   cursor: pointer;
   color: var(--paper-soft);
@@ -1021,6 +1026,13 @@ body[data-route="gold"] {
   gap: 8px;
   align-items: center;
   margin-top: 13px;
+}
+
+.upload-note {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.5;
 }
 
 .file-input {

@@ -5,6 +5,8 @@
   const TEST_MODE = new URLSearchParams(window.location.search).get("test") === "1";
   const ORGANIZER_PHONE = ""; // Completează înainte de eveniment, în format +40...
   const EVIDENCE_HUB = "https://arhiva-021-command-center.brainy-lion-7419.chatgpt.site";
+  const TEAM_SYNC_API = `${EVIDENCE_HUB}/api/team`;
+  const LIVE_MISSIONS_API = `${EVIDENCE_HUB}/api/live`;
   const MAX_EVIDENCE_BYTES = 20 * 1024 * 1024;
 
   const TUTORIAL_OPEN = new Date("2026-11-07T13:20:00+02:00");
@@ -33,7 +35,7 @@
       points: 20,
       prompt: "Dinspre Calea Victoriei spre Pasajul Universitate, introduceți inițialele prenumelor celor patru oameni reprezentați de statui.",
       proof: "Echipa se aliniază în aceeași ordine și reproduce pozițiile; al treilea membru mimează un cal imaginar. Fără urcat pe socluri.",
-      hint: "Primul este Spiru, iar al treilea este singurul călare.",
+      hint: "Citiți plăcuțele de la stânga la dreapta și folosiți numai inițiala prenumelui fiecăruia.",
       answerHashes: ["47fb1642c650ce9c334dbffe5c18b5abbd81f369c0be034a43299fa064c00d2c"],
       placeholder: "Patru inițiale",
       fragment: { number: 1, word: "UNDE" }
@@ -46,20 +48,20 @@
       points: 80,
       prompt: "Câte sculpturi sunt în întregul ansamblu dedicat lui I.L. Caragiale, incluzându-l pe dramaturg?",
       proof: "Film mut de 8-12 secunde inspirat de personaje. Toți membrii trebuie să fie vizibili; fără atingerea sculpturilor.",
-      hint: "Sunt 15 personaje, plus autorul lor.",
+      hint: "Numărați separat dramaturgul și fiecare personaj din grup; nu includeți elementele decorative.",
       answerHashes: ["b17ef6d19c7a5b1ee83b907c595526dcb1eb06db8227d650d5dda0a9f4ce8cd9"],
       placeholder: "Număr",
       fragment: { number: 2, word: "ESTE" }
     },
     M2: {
       code: "M2",
-      title: "Pasajul cu două nume",
-      shortLocation: "Macca",
-      location: "Pasajul Macca-Villacrosse",
+      title: "Cele două brațe",
+      shortLocation: "Pasaj",
+      location: "Pasajul acoperit dintre Calea Victoriei și Lipscani",
       points: 80,
-      prompt: "Găsiți punctul de întâlnire al celor două brațe. Introduceți cele două nume în ordine alfabetică, separate prin semnul +.",
+      prompt: "Găsiți punctul de întâlnire al celor două brațe. Descoperiți denumirile lor istorice și introduceți-le în ordine alfabetică, separate prin semnul +.",
       proof: "Fotografie de echipă în formă de V, cu acoperișul pasajului vizibil. Nu blocați circulația ori mesele localurilor.",
-      hint: "Unul începe cu M, celălalt cu V. Numele sunt chiar în denumirea pasajului.",
+      hint: "Priviți inscripțiile de la intrări și comparați denumirile celor două ramuri înainte să le ordonați alfabetic.",
       answerHashes: [
         "e982cae48da03cde10471f1707649dfc25abb249aa1f5b66acc6b11fd14ac452",
         "1991e18b335058699024d0a6f7ac8814416e30b9bac7e154489715ed007852a5"
@@ -75,7 +77,7 @@
       points: 80,
       prompt: "Ce an completează numele monumentului: «Revoluția Română din Decembrie ____»?",
       proof: "Video de maximum 12 secunde. Fiecare membru spune un singur cuvânt care descrie libertatea. Păstrați respectul locului.",
-      hint: "Este anul căderii regimului comunist în România.",
+      hint: "Răspunsul se află pe inscripția monumentului; nu este nevoie de căutare online.",
       answerHashes: ["9113b98df80f877c7a2ee5d865a04c9514b4e9bf25a49d315b0b15f115d2f0d2"],
       placeholder: "Anul",
       fragment: { number: 4, word: "VOASTRĂ" }
@@ -86,9 +88,9 @@
       shortLocation: "Ateneul",
       location: "Ateneul Român",
       points: 80,
-      prompt: "Numărați cele șase coloane frontale și medalioanele de mozaic de deasupra intrării. Înmulțiți cele două numere.",
+      prompt: "Numărați coloanele frontale și medalioanele de mozaic de deasupra intrării. Înmulțiți cele două numere observate.",
       proof: "Video mut de 8-12 secunde: un dirijor și instrumente diferite. Ateneul trebuie să fie recognoscibil.",
-      hint: "Sunt cinci medalioane. Numărați numai coloanele din față, nu și cele laterale.",
+      hint: "Faceți două numărători separate. La coloane luați în calcul numai fațada principală, nu elementele laterale.",
       answerHashes: ["624b60c58c9d8bfb6ff1886c2fd605d2adeb6ea4da576068201b6c6958ce93f4"],
       placeholder: "Rezultatul",
       fragment: { number: 5, word: "ACOLO" }
@@ -101,7 +103,7 @@
       points: 80,
       prompt: "Doi scriitori s-au născut în ani consecutivi: 1818 și 1819. Introduceți numele lor de familie în ordine cronologică, separate prin +.",
       proof: "Doi membri reproduc expresiile busturilor, iar ceilalți formează o ramă. Fără atingerea monumentelor.",
-      hint: "Primul este Vasile, al doilea Nicolae.",
+      hint: "Citiți anii de pe toate soclurile și căutați singura pereche de ani consecutivi, apoi notați numele de familie.",
       answerHashes: ["87f5c6f8e606bedea0bc216c939ff42bdee73ab8334f94506e6f7ab9c6a8cee8"],
       placeholder: "NUME+NUME",
       fragment: { number: 6, word: "VA FI ȘI INIMA VOASTRĂ" }
@@ -177,13 +179,18 @@
     fragmentNext: document.getElementById("fragment-next"),
     helpButton: document.getElementById("help-button"),
     helpDialog: document.getElementById("help-dialog"),
-    organizerPhone: document.getElementById("organizer-phone")
+    organizerPhone: document.getElementById("organizer-phone"),
+    liveSignal: document.getElementById("live-signal")
   };
 
   let state = loadState();
   let activeTab = "mission";
   let toastTimer = null;
   let lastOpenFlashCodes = "";
+  let liveMissions = [];
+  let lastLiveCodes = "";
+  let syncTimer = null;
+  let liveServicesStarted = false;
 
   function defaultState(teamName, teamCode, route) {
     return {
@@ -200,6 +207,7 @@
       attempts: {},
       cooldowns: {},
       uploads: {},
+      liveBonuses: {},
       finalCompletedAt: null,
       selectedMission: null
     };
@@ -219,6 +227,7 @@
       parsed.attempts ||= {};
       parsed.cooldowns ||= {};
       parsed.uploads ||= {};
+      parsed.liveBonuses ||= {};
       return parsed;
     } catch {
       return null;
@@ -228,6 +237,7 @@
   function saveState() {
     if (!state) return;
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    queueTeamSync();
   }
 
   function escapeHtml(value) {
@@ -309,6 +319,9 @@
       score += entry.joker ? 100 : 50;
     });
     score += Object.keys(state.flashes).length * 40;
+    Object.values(state.liveBonuses || {}).forEach((entry) => {
+      score += Number(entry.points) || 0;
+    });
     if (state.finalCompletedAt) score += 150;
     score -= state.hints.length * 15;
 
@@ -317,6 +330,97 @@
       score -= Math.min(lateMinutes, 10) * 10;
     }
     return Math.max(0, score);
+  }
+
+  function teamSyncPayload() {
+    return {
+      teamName: state.teamName,
+      teamCode: state.teamCode,
+      route: state.route,
+      score: calculateScore(),
+      currentMission: state.finalCompletedAt ? "FINAL" : (currentMissionCode() || "FINAL"),
+      missionCodes: Object.keys(state.completedMissions),
+      sideCodes: Object.keys(state.sideQuests),
+      flashCodes: Object.keys(state.flashes),
+      liveCodes: Object.keys(state.liveBonuses || {}),
+      hintCount: state.hints.length
+    };
+  }
+
+  async function syncTeam() {
+    if (!state || !navigator.onLine) return;
+    window.clearTimeout(syncTimer);
+    syncTimer = null;
+    try {
+      await fetch(TEAM_SYNC_API, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(teamSyncPayload()),
+        keepalive: true
+      });
+    } catch {
+      // Progresul local rămâne sursa de siguranță când conexiunea este slabă.
+    }
+  }
+
+  function queueTeamSync(immediate = false) {
+    if (!state) return;
+    window.clearTimeout(syncTimer);
+    syncTimer = window.setTimeout(() => void syncTeam(), immediate ? 0 : 450);
+  }
+
+  async function fetchLiveMissions() {
+    if (!state || !navigator.onLine) return;
+    try {
+      const response = await fetch(LIVE_MISSIONS_API, { cache: "no-store" });
+      if (!response.ok) return;
+      const payload = await response.json();
+      const next = Array.isArray(payload.missions) ? payload.missions : [];
+      const nextCodes = next.map((mission) => mission.code).join(",");
+      const unseen = next.find((mission) => !state.liveBonuses?.[mission.code] && !liveMissions.some((current) => current.code === mission.code));
+      liveMissions = next;
+      if (unseen && nextCodes !== lastLiveCodes) showToast(`MISIUNE LIVE: ${unseen.title}. Timpul a pornit!`);
+      lastLiveCodes = nextCodes;
+      renderLiveSignal();
+      updateBonusBadge();
+      if (activeTab === "bonus") renderBonusTab();
+    } catch {
+      // Următorul polling reîncearcă automat.
+    }
+  }
+
+  function renderLiveSignal() {
+    if (!els.liveSignal) return;
+    const mission = liveMissions.find((entry) => !state?.liveBonuses?.[entry.code]);
+    if (!state || !mission) {
+      els.liveSignal.hidden = true;
+      return;
+    }
+    els.liveSignal.hidden = false;
+    els.liveSignal.innerHTML = `
+      <div><span>TRANSMISIE LIVE / ${escapeHtml(mission.code)}</span><strong>${escapeHtml(mission.title)}</strong></div>
+      <b data-live-countdown data-end="${new Date(mission.endsAt).getTime()}">--:--</b>
+      <button type="button" data-open-live>Deschide</button>`;
+    updateLiveCountdowns();
+  }
+
+  function updateLiveCountdowns() {
+    document.querySelectorAll("[data-live-countdown]").forEach((element) => {
+      const remaining = Math.max(0, Number(element.dataset.end) - Date.now());
+      const seconds = Math.ceil(remaining / 1000);
+      const minutes = Math.floor(seconds / 60);
+      element.textContent = `${String(minutes).padStart(2, "0")}:${String(seconds % 60).padStart(2, "0")}`;
+    });
+  }
+
+  function startLiveServices() {
+    if (liveServicesStarted || !state) return;
+    liveServicesStarted = true;
+    queueTeamSync(true);
+    void fetchLiveMissions();
+    window.setInterval(() => void syncTeam(), 20_000);
+    window.setInterval(() => void fetchLiveMissions(), 10_000);
+    window.setInterval(updateLiveCountdowns, 1000);
   }
 
   function formatDuration(milliseconds) {
@@ -386,6 +490,7 @@
     els.testRibbon.hidden = !TEST_MODE;
     document.body.dataset.route = state.route;
     renderGame();
+    startLiveServices();
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
@@ -629,6 +734,11 @@
         <div><h1>Misiuni bonus</h1><p>Alegeți maximum cinci side quest-uri. Punctajul rămâne provizoriu până când organizatorii văd dovezile.</p></div>
         <div class="joker-counter">${remainingJokers} Jokere</div>
       </div>
+      ${liveMissions.length ? `
+        <section class="live-drop-section">
+          <div class="section-heading"><h2>Transmisie live</h2><span>misiuni-surpriză cu timp limitat</span></div>
+          <div class="live-drop-grid">${liveMissions.map(renderLiveMissionCard).join("")}</div>
+        </section>` : ""}
       <section class="flash-section">
         <div class="section-heading"><h2>Live</h2><span>Disponibile numai în fereastra indicată</span></div>
         <div class="flash-grid">
@@ -639,6 +749,20 @@
         <div class="section-heading"><h2>Side quests</h2><span>${completedCount}/5 finalizate</span></div>
         <div class="side-list">${SIDE_QUESTS.map(renderSideQuest).join("")}</div>
       </section>`;
+    updateLiveCountdowns();
+  }
+
+  function renderLiveMissionCard(mission) {
+    const complete = state.liveBonuses?.[mission.code];
+    const end = new Date(mission.endsAt).getTime();
+    return `
+      <article class="live-drop-card ${complete ? "is-complete" : ""}">
+        <header><span>LIVE / ${escapeHtml(mission.code)}</span><strong data-live-countdown data-end="${end}">--:--</strong></header>
+        <h3>${escapeHtml(mission.title)}</h3>
+        <p>${escapeHtml(mission.instructions)}</p>
+        <div class="live-drop-meta"><span>+${Number(mission.points) || 0} pct</span><span>Dovadă obligatorie</span></div>
+        ${complete ? `<div class="live-complete-mark">Dovadă trimisă / punctaj provizoriu ✓</div>` : renderEvidenceTools(mission.code)}
+      </article>`;
   }
 
   function renderFlashCard(flash) {
@@ -688,7 +812,7 @@
     const coreCount = Object.keys(state.completedMissions).length;
     els.teamTab.innerHTML = `
       <div class="team-intro">
-        <div><h1>${escapeHtml(state.teamName)}</h1><p>Raportul acestui telefon. Arată-l organizatorului la final.</p></div>
+        <div><h1>${escapeHtml(state.teamName)}</h1><p>Progresul este salvat pe telefon și sincronizat live cu organizatorii.</p></div>
       </div>
       <div class="team-grid">
         <div class="team-card"><span>Cod echipă</span><strong>${escapeHtml(state.teamCode)}</strong><small>Pentru Întâlnirea 021</small></div>
@@ -715,7 +839,9 @@
 
   function updateBonusBadge() {
     if (!state) return;
-    const count = FLASHES.filter((flash) => flashStatus(flash) === "open" && !state.flashes[flash.code]).length;
+    const flashCount = FLASHES.filter((flash) => flashStatus(flash) === "open" && !state.flashes[flash.code]).length;
+    const liveCount = liveMissions.filter((mission) => !state.liveBonuses?.[mission.code]).length;
+    const count = flashCount + liveCount;
     els.bonusBadge.hidden = count === 0;
     els.bonusBadge.textContent = count || "";
   }
@@ -797,6 +923,7 @@
       `Checkpoint-uri: ${Object.keys(state.completedMissions).length}/6`,
       `Side quest-uri: ${completedSideCount()}/5`,
       `Flash missions: ${Object.keys(state.flashes).length}/2`,
+      `Misiuni live: ${Object.keys(state.liveBonuses || {}).length}`,
       `Indicii: ${state.hints.length}`,
       `Cod raport: ${reportCode()}`
     ].join("\n");
@@ -851,9 +978,23 @@
       if (!response.ok) throw new Error(payload.error || "Dovada nu a putut fi trimisă.");
       state.uploads ||= {};
       state.uploads[code] = { id: payload.id, sentAt: Date.now() };
+      const liveMission = liveMissions.find((mission) => mission.code === code);
+      if (liveMission) {
+        state.liveBonuses ||= {};
+        state.liveBonuses[code] = {
+          title: liveMission.title,
+          points: Number(liveMission.points) || 0,
+          completedAt: Date.now()
+        };
+      }
       saveState();
       if (button) button.textContent = "Trimis ✓";
       showToast(`${code}: dovada a ajuns la organizator.`);
+      if (liveMission) {
+        renderStatus();
+        renderBonusTab();
+        renderLiveSignal();
+      }
     } catch (error) {
       if (button) button.textContent = originalLabel;
       showToast(error instanceof Error ? error.message : "Dovada nu a putut fi trimisă. Reîncearcă.", true);
@@ -928,6 +1069,10 @@
     if (target.dataset.shareEvidence) shareEvidence(target.dataset.shareEvidence, target);
     if (target.hasAttribute("data-share-report")) shareReport();
     if (target.hasAttribute("data-reset-game")) resetGame();
+    if (target.hasAttribute("data-open-live")) {
+      setActiveTab("bonus");
+      document.querySelector(".live-drop-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
     if (target.hasAttribute("data-open-current") || target.hasAttribute("data-return-current")) {
       state.selectedMission = null;
       saveState();
@@ -956,7 +1101,11 @@
   }
 
   window.addEventListener("offline", () => showToast("Ești offline. Misiunile și progresul local continuă să funcționeze."));
-  window.addEventListener("online", () => showToast("Conexiunea a revenit."));
+  window.addEventListener("online", () => {
+    showToast("Conexiunea a revenit. Progresul se sincronizează.");
+    queueTeamSync(true);
+    void fetchLiveMissions();
+  });
 
   if ("serviceWorker" in navigator && !TEST_MODE) {
     window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {}));

@@ -1,7 +1,7 @@
 {
   "name": "ARHIVA 021 - Inima orașului",
   "short_name": "ARHIVA 021",
-  "description": "Jocul urban OSCeB din București",
+  "description": "Jocul urban OSCEB din București",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

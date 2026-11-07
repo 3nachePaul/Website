@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#071a2b">
-  <meta name="description" content="ARHIVA 021 - jocul urban OSCeB din București">
+  <meta name="description" content="ARHIVA 021 - jocul urban OSCEB din București">
   <meta name="robots" content="noindex,nofollow">
-  <title>ARHIVA 021 | OSCeB</title>
+  <title>ARHIVA 021 | OSCEB</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="game.css?v=20261106-3">
+  <link rel="stylesheet" href="game.css?v=20261107-2">
 </head>
-<body data-build="2026-11-06-3">
+<body data-build="2026-11-07-2">
   <div class="city-grid" aria-hidden="true"></div>
 
   <header class="game-header">
@@ -90,7 +90,7 @@
           </label>
 
           <label class="field">
-            <span>Codul primit de la organizator <small>(opțional la test)</small></span>
+            <span>Cod echipă <small>(opțional — dacă îl lași gol, se generează automat)</small></span>
             <input id="team-code" name="teamCode" type="text" maxlength="14" autocomplete="off" placeholder="Ex: PT-021">
           </label>
 
@@ -118,8 +118,13 @@
             <span>Am citit regulile: rămânem împreună, nu alergăm, nu ne urcăm pe monumente și nu filmăm persoane fără acord.</span>
           </label>
 
+          <label class="location-consent">
+            <input id="location-consent" name="locationConsent" type="checkbox">
+            <span><strong>Partajează locația live cu organizatorii</strong><small>Opțional. Cât timp jocul este deschis, poziția echipei apare pe harta protejată din Command Center. O poți opri oricând din secțiunea Echipă.</small></span>
+          </label>
+
           <button class="button button--signal button--wide" type="submit">Intră în Arhivă</button>
-          <p class="privacy-note">Progresul se sincronizează automat. Pozele și clipurile pleacă numai când apeși „Trimite acum”.</p>
+          <p class="privacy-note">Browserul va cere acordul pentru GPS numai dacă bifezi opțiunea. Pozele și clipurile pleacă doar când apeși „Trimite acum”.</p>
         </form>
       </div>
     </section>
@@ -180,11 +185,11 @@
   <dialog class="signal-dialog help-dialog" id="help-dialog">
     <button class="dialog-close" type="button" data-close-dialog aria-label="Închide">×</button>
     <h2>Ai nevoie de ajutor?</h2>
-    <p>Opriți jocul și rămâneți împreună. Numărul coordonatorului va fi comunicat la briefing și va apărea aici înainte de eveniment.</p>
+    <p>Opriți jocul și rămâneți împreună. Numărul coordonatorului va fi comunicat la briefing și va apărea aici înainte de eveniment. Partajarea GPS poate fi oprită oricând din secțiunea Echipă.</p>
     <a class="button button--signal" id="organizer-phone" href="#" aria-disabled="true">Număr în curs de confirmare</a>
   </dialog>
 
   <noscript>ARHIVA 021 are nevoie de JavaScript pentru a valida misiunile și a salva progresul.</noscript>
-  <script src="game.js?v=20261106-2" defer></script>
+  <script src="game.js?v=20261107-2" defer></script>
 </body>
 </html>

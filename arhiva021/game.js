@@ -3,16 +3,16 @@
 
   const STORAGE_KEY = "arhiva021-team-v1";
   const TEST_MODE = new URLSearchParams(window.location.search).get("test") === "1";
-  const ORGANIZER_PHONE = ""; // Completează înainte de eveniment, în format +40...
+  const ORGANIZER_PHONE = "+40 784 149 450";
   const EVIDENCE_HUB = "https://arhiva-021-command-center.brainy-lion-7419.chatgpt.site";
   const TEAM_SYNC_API = `${EVIDENCE_HUB}/api/team`;
   const LIVE_MISSIONS_API = `${EVIDENCE_HUB}/api/live`;
   const MAX_EVIDENCE_BYTES = 20 * 1024 * 1024;
 
-  const TUTORIAL_OPEN = new Date("2026-11-07T13:20:00+02:00");
-  const GAME_START = new Date("2026-11-07T13:30:00+02:00");
-  const DEADLINE = new Date("2026-11-07T16:20:00+02:00");
-  const HARD_CLOSE = new Date("2026-11-07T16:30:00+02:00");
+  const TUTORIAL_OPEN = new Date("2026-11-07T11:20:00+02:00");
+  const GAME_START = new Date("2026-11-07T11:30:00+02:00");
+  const DEADLINE = new Date("2026-11-07T14:20:00+02:00");
+  const HARD_CLOSE = new Date("2026-11-07T14:30:00+02:00");
 
   const ROUTES = {
     red: ["M0", "M1", "M2", "M3", "M4", "M5"],
@@ -116,7 +116,7 @@
   ];
 
   const SIDE_QUESTS = [
-    { code: "S1", title: "OSCeB ascuns în oraș", text: "Colaj cu O, S, C, E și B găsite în forme arhitecturale sau naturale. Nu sunt acceptate litere tipărite." },
+    { code: "S1", title: "OSCEB ascuns în oraș", text: "Colaj cu O, S, C, E și B găsite în forme arhitecturale sau naturale. Nu sunt acceptate litere tipărite." },
     { code: "S2", title: "Albumul trupei", text: "O fotografie cu toată echipa, cel puțin o reflexie și un titlu de maximum patru cuvinte." },
     { code: "S3", title: "Știrile din 2126", text: "Video de 12-20 secunde: un obiect banal devine invenția care va schimba orașul. Minimum trei membri vorbesc." },
     { code: "S4", title: "Forța perspectivei", text: "Un coechipier pare să țină ori să echilibreze un monument. Toți ceilalți apar în cadru." },
@@ -129,20 +129,20 @@
   const FLASHES = [
     {
       code: "F1",
-      time: "14:15",
+      time: "12:15",
       title: "Nordul comun",
       text: "Formați o busolă din încălțămintea tuturor. În cadru: câte o mână de la fiecare și ora vizibilă pe telefon.",
-      start: new Date("2026-11-07T14:15:00+02:00"),
-      end: new Date("2026-11-07T14:23:00+02:00"),
+      start: new Date("2026-11-07T12:15:00+02:00"),
+      end: new Date("2026-11-07T12:23:00+02:00"),
       color: "var(--signal)"
     },
     {
       code: "F2",
-      time: "15:10",
+      time: "13:10",
       title: "Glitch de emoji",
       text: "Recreați într-o singură fotografie secvența afișată: crab / coroană / rachetă.",
-      start: new Date("2026-11-07T15:10:00+02:00"),
-      end: new Date("2026-11-07T15:20:00+02:00"),
+      start: new Date("2026-11-07T13:10:00+02:00"),
+      end: new Date("2026-11-07T13:20:00+02:00"),
       color: "var(--coral)"
     }
   ];
@@ -191,6 +191,9 @@
   let lastLiveCodes = "";
   let syncTimer = null;
   let liveServicesStarted = false;
+  let currentLocation = null;
+  let locationWatchId = null;
+  let lastLocationSentAt = 0;
 
   function defaultState(teamName, teamCode, route) {
     return {
@@ -208,6 +211,8 @@
       cooldowns: {},
       uploads: {},
       liveBonuses: {},
+      locationConsent: false,
+      locationStatus: "disabled",
       finalCompletedAt: null,
       selectedMission: null
     };
@@ -228,6 +233,8 @@
       parsed.cooldowns ||= {};
       parsed.uploads ||= {};
       parsed.liveBonuses ||= {};
+      parsed.locationConsent = Boolean(parsed.locationConsent);
+      parsed.locationStatus ||= parsed.locationConsent ? "requesting" : "disabled";
       return parsed;
     } catch {
       return null;
@@ -287,8 +294,11 @@
 
   function generateTeamCode(teamName) {
     const initials = normalizeAnswer(teamName).replaceAll("+", "").slice(0, 3) || "ECH";
-    const digits = String(hashNumber(teamName) % 1000).padStart(3, "0");
-    return `${initials}-${digits}`;
+    const randomValue = globalThis.crypto?.getRandomValues
+      ? globalThis.crypto.getRandomValues(new Uint32Array(1))[0]
+      : hashNumber(`${teamName}:${Date.now()}`);
+    const suffix = randomValue.toString(36).toUpperCase().padStart(4, "0").slice(-4);
+    return `${initials}-${suffix}`;
   }
 
   function teamGesture() {
@@ -333,7 +343,7 @@
   }
 
   function teamSyncPayload() {
-    return {
+    const payload = {
       teamName: state.teamName,
       teamCode: state.teamCode,
       route: state.route,
@@ -343,8 +353,15 @@
       sideCodes: Object.keys(state.sideQuests),
       flashCodes: Object.keys(state.flashes),
       liveCodes: Object.keys(state.liveBonuses || {}),
-      hintCount: state.hints.length
+      hintCount: state.hints.length,
+      locationStatus: state.locationStatus || "unknown"
     };
+    if (currentLocation) {
+      payload.latitude = currentLocation.latitude;
+      payload.longitude = currentLocation.longitude;
+      payload.locationAccuracy = currentLocation.accuracy;
+    }
+    return payload;
   }
 
   async function syncTeam() {
@@ -352,12 +369,13 @@
     window.clearTimeout(syncTimer);
     syncTimer = null;
     try {
-      await fetch(TEAM_SYNC_API, {
+      const response = await fetch(TEAM_SYNC_API, {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(teamSyncPayload()),
         keepalive: true
       });
+      if (response.ok && currentLocation) lastLocationSentAt = Date.now();
     } catch {
       // Progresul local rămâne sursa de siguranță când conexiunea este slabă.
     }
@@ -367,6 +385,84 @@
     if (!state) return;
     window.clearTimeout(syncTimer);
     syncTimer = window.setTimeout(() => void syncTeam(), immediate ? 0 : 450);
+  }
+
+  function storeLocationState() {
+    if (!state) return;
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }
+
+  function stopLocationTracking(sync = true) {
+    if (locationWatchId !== null && navigator.geolocation) navigator.geolocation.clearWatch(locationWatchId);
+    locationWatchId = null;
+    currentLocation = null;
+    if (!state) return;
+    state.locationConsent = false;
+    state.locationStatus = "disabled";
+    storeLocationState();
+    if (sync) queueTeamSync(true);
+    if (activeTab === "team") renderTeamTab();
+  }
+
+  function startLocationTracking() {
+    if (!state?.locationConsent || locationWatchId !== null) return;
+    if (!("geolocation" in navigator)) {
+      state.locationConsent = false;
+      state.locationStatus = "unavailable";
+      storeLocationState();
+      queueTeamSync(true);
+      if (activeTab === "team") renderTeamTab();
+      return;
+    }
+
+    state.locationStatus = "requesting";
+    storeLocationState();
+    queueTeamSync(true);
+    if (activeTab === "team") renderTeamTab();
+
+    locationWatchId = navigator.geolocation.watchPosition((position) => {
+      const firstFix = !currentLocation;
+      currentLocation = {
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude,
+        accuracy: Math.round(position.coords.accuracy || 0)
+      };
+      state.locationStatus = "active";
+      storeLocationState();
+      if (firstFix || Date.now() - lastLocationSentAt >= 15_000) queueTeamSync(true);
+      if (activeTab === "team") renderTeamTab();
+    }, (error) => {
+      currentLocation = null;
+      if (error.code === error.PERMISSION_DENIED) {
+        if (locationWatchId !== null) navigator.geolocation.clearWatch(locationWatchId);
+        locationWatchId = null;
+        state.locationConsent = false;
+        state.locationStatus = "denied";
+        showToast("Locația a fost refuzată. O poți activa mai târziu din secțiunea Echipă.", true);
+      } else {
+        state.locationStatus = "unavailable";
+      }
+      storeLocationState();
+      queueTeamSync(true);
+      if (activeTab === "team") renderTeamTab();
+    }, {
+      enableHighAccuracy: true,
+      maximumAge: 15_000,
+      timeout: 20_000
+    });
+  }
+
+  function toggleLocationTracking() {
+    if (!state) return;
+    if (state.locationConsent || locationWatchId !== null) {
+      stopLocationTracking();
+      showToast("Partajarea locației a fost oprită.");
+      return;
+    }
+    state.locationConsent = true;
+    state.locationStatus = "requesting";
+    storeLocationState();
+    startLocationTracking();
   }
 
   async function fetchLiveMissions() {
@@ -417,6 +513,7 @@
     if (liveServicesStarted || !state) return;
     liveServicesStarted = true;
     queueTeamSync(true);
+    if (state.locationConsent) startLocationTracking();
     void fetchLiveMissions();
     window.setInterval(() => void syncTeam(), 20_000);
     window.setInterval(() => void fetchLiveMissions(), 10_000);
@@ -564,7 +661,7 @@
         <section class="locked-panel">
           <div class="locked-panel__icon" aria-hidden="true"></div>
           <h1>${closed ? "Arhiva s-a închis" : "Semnal blocat"}</h1>
-          <p>${closed ? "Nu mai pot fi începute misiuni noi. Deschide secțiunea Echipă pentru raportul provizoriu." : isBeforeMainStart ? "Tutorialul este complet. Următoarele misiuni se deschid la 13:30." : "Prima misiune se deschide sâmbătă la 13:20."}</p>
+          <p>${closed ? "Nu mai pot fi începute misiuni noi. Deschide secțiunea Echipă pentru raportul provizoriu." : isBeforeMainStart ? "Tutorialul este complet. Următoarele misiuni se deschid la 11:30." : "Prima misiune se deschide sâmbătă la 11:20."}</p>
         </section>`;
       bindMissionEvents();
       return;
@@ -681,7 +778,7 @@
   async function submitFinalAnswer(event) {
     event.preventDefault();
     if (!TEST_MODE && Date.now() > HARD_CLOSE.getTime()) {
-      document.getElementById("final-error").textContent = "Arhiva s-a închis la 16:30.";
+      document.getElementById("final-error").textContent = "Arhiva s-a închis la 14:30.";
       return;
     }
     const input = document.getElementById("final-answer");
@@ -810,6 +907,8 @@
   function renderTeamTab() {
     if (!state) return;
     const coreCount = Object.keys(state.completedMissions).length;
+    const locationActive = state.locationConsent && state.locationStatus === "active";
+    const locationLabel = locationActive ? "GPS activ" : state.locationStatus === "requesting" ? "Se conectează" : state.locationStatus === "denied" ? "Permisiune refuzată" : state.locationStatus === "unavailable" ? "Semnal indisponibil" : "GPS oprit";
     els.teamTab.innerHTML = `
       <div class="team-intro">
         <div><h1>${escapeHtml(state.teamName)}</h1><p>Progresul este salvat pe telefon și sincronizat live cu organizatorii.</p></div>
@@ -819,6 +918,7 @@
         <div class="team-card"><span>Ruta</span><strong>${ROUTE_NAMES[state.route]}</strong><small>${ROUTES[state.route].map((code) => MISSIONS[code].shortLocation).join(" → ")}</small></div>
         <div class="team-card"><span>Gest secret</span><strong>${teamGesture()}</strong><small>Folosiți-l în fotografia cu altă echipă</small></div>
         <div class="team-card"><span>Progres</span><strong>${coreCount}/6</strong><small>${completedSideCount()} side quest-uri / ${state.hints.length} indicii</small></div>
+        <div class="team-card team-card--location"><span>Locație pentru organizatori</span><strong>${locationLabel}</strong><small>${locationActive ? `Precizie curentă ±${currentLocation?.accuracy || "?"} m. Se trimite doar cât pagina este deschisă.` : "Opțională. Poți activa sau opri partajarea în orice moment."}</small><button class="small-button" type="button" data-toggle-location>${state.locationConsent ? "Oprește locația" : "Activează locația"}</button></div>
       </div>
       <div class="team-actions">
         <button class="button button--signal" type="button" data-share-report>Partajează raportul</button>
@@ -1028,6 +1128,7 @@
 
   function resetGame() {
     if (!window.confirm("Ștergi progresul ARHIVA 021 de pe acest telefon? Acțiunea nu poate fi anulată.")) return;
+    stopLocationTracking(false);
     localStorage.removeItem(STORAGE_KEY);
     state = null;
     activeTab = "mission";
@@ -1043,6 +1144,8 @@
     const suppliedCode = String(data.get("teamCode") || "").trim().toUpperCase();
     if (!teamName || !ROUTES[route]) return;
     state = defaultState(teamName, suppliedCode, route);
+    state.locationConsent = data.get("locationConsent") === "on";
+    state.locationStatus = state.locationConsent ? "requesting" : "disabled";
     saveState();
     showGame();
   });
@@ -1069,6 +1172,7 @@
     if (target.dataset.shareEvidence) shareEvidence(target.dataset.shareEvidence, target);
     if (target.hasAttribute("data-share-report")) shareReport();
     if (target.hasAttribute("data-reset-game")) resetGame();
+    if (target.hasAttribute("data-toggle-location")) toggleLocationTracking();
     if (target.hasAttribute("data-open-live")) {
       setActiveTab("bonus");
       document.querySelector(".live-drop-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -1105,6 +1209,9 @@
     showToast("Conexiunea a revenit. Progresul se sincronizează.");
     queueTeamSync(true);
     void fetchLiveMissions();
+  });
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden" && state) void syncTeam();
   });
 
   if ("serviceWorker" in navigator && !TEST_MODE) {

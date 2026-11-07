@@ -530,6 +530,30 @@ main {
   accent-color: var(--signal);
 }
 
+.location-consent {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 12px;
+  align-items: start;
+  margin: -6px 0 24px;
+  padding: 14px;
+  border: 1px solid rgba(36, 183, 164, 0.32);
+  background: rgba(36, 183, 164, 0.07);
+  cursor: pointer;
+}
+
+.location-consent input {
+  width: 20px;
+  height: 20px;
+  margin: 1px 0 0;
+  accent-color: var(--signal);
+}
+
+.location-consent strong,
+.location-consent small { display: block; }
+.location-consent strong { color: var(--paper); font-size: 12px; }
+.location-consent small { margin-top: 5px; color: var(--muted); font-size: 10px; line-height: 1.45; }
+
 .button-row {
   display: flex;
   flex-wrap: wrap;
@@ -1507,6 +1531,14 @@ body[data-route="gold"] {
 .team-card small {
   color: var(--paper-soft);
 }
+
+.team-card--location {
+  grid-column: 1 / -1;
+  min-height: 0;
+  border-top-color: var(--signal);
+}
+
+.team-card--location .small-button { margin-top: 15px; }
 
 .team-actions {
   display: flex;

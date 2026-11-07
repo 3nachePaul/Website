@@ -1,5 +1,5 @@
-const CACHE = "arhiva021-v6";
-const CORE = ["./", "./index.html", "./game.css?v=20261107-2", "./game.js?v=20261107-2", "./manifest.webmanifest", "./icon.svg"];
+const CACHE = "arhiva021-v7";
+const CORE = ["./", "./index.html", "./game.css?v=20261107-3", "./game.js?v=20261107-3", "./manifest.webmanifest", "./icon.svg"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(CORE)));

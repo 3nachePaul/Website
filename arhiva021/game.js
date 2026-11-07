@@ -256,15 +256,30 @@
       .replaceAll("'", "&#039;");
   }
 
+  function evidenceUploadCount(code) {
+    const upload = state?.uploads?.[code];
+    if (!upload) return 0;
+    if (typeof upload === "number") return Math.max(0, upload);
+    if (Array.isArray(upload)) return upload.length;
+    if (typeof upload === "object") return Math.max(0, Number(upload.count) || (upload.id ? 1 : 0));
+    return upload === true ? 1 : 0;
+  }
+
+  function evidenceSummary(count) {
+    if (count === 1) return "1 dovadă trimisă organizatorului ✓";
+    return `${count} dovezi trimise organizatorului ✓`;
+  }
+
   function renderEvidenceTools(code, inputId = `evidence-${code}`) {
-    const sent = Boolean(state?.uploads?.[code]);
+    const sentCount = evidenceUploadCount(code);
+    const sent = sentCount > 0;
     return `
       <details class="evidence-tools ${sent ? "is-sent" : ""}">
-        <summary>${sent ? "Dovadă trimisă organizatorului ✓" : "Trimite dovada organizatorului"}</summary>
+        <summary>${sent ? evidenceSummary(sentCount) : "Trimite dovezile organizatorului"}</summary>
         <div class="evidence-tools__inner">
-          <input class="file-input" id="${inputId}" type="file" accept="image/*,video/*" capture="environment">
-          <button class="small-button" type="button" data-share-evidence="${code}">${sent ? "Trimite din nou" : "Trimite acum"}</button>
-          <small class="upload-note">Poza sau clipul ajunge direct în Command Center. Maximum 20 MB.</small>
+          <input class="file-input" id="${inputId}" type="file" accept="image/*,video/*" multiple>
+          <button class="small-button" type="button" data-share-evidence="${code}">${sent ? "Mai adaugă dovezi" : "Trimite acum"}</button>
+          <small class="upload-note">Selectează una sau mai multe poze/clipuri. Maximum 20 MB fiecare și 10 dovezi per misiune.</small>
         </div>
       </details>`;
   }
@@ -858,7 +873,8 @@
         <h3>${escapeHtml(mission.title)}</h3>
         <p>${escapeHtml(mission.instructions)}</p>
         <div class="live-drop-meta"><span>+${Number(mission.points) || 0} pct</span><span>Dovadă obligatorie</span></div>
-        ${complete ? `<div class="live-complete-mark">Dovadă trimisă / punctaj provizoriu ✓</div>` : renderEvidenceTools(mission.code)}
+        ${complete ? `<div class="live-complete-mark">Dovadă trimisă / punctaj provizoriu ✓</div>` : ""}
+        ${renderEvidenceTools(mission.code)}
       </article>`;
   }
 
@@ -1045,14 +1061,20 @@
 
   async function shareEvidence(code, button) {
     const input = code.startsWith("M") ? document.getElementById("mission-evidence") : document.getElementById(`evidence-${code}`);
-    const file = input?.files?.[0];
-    if (!file) {
-      showToast("Alege mai întâi fotografia sau clipul.", true);
+    const files = Array.from(input?.files || []);
+    if (!files.length) {
+      showToast("Alege mai întâi una sau mai multe poze/clipuri.", true);
       input?.click();
       return;
     }
-    if (file.size > MAX_EVIDENCE_BYTES) {
-      showToast("Fișierul depășește limita de 20 MB. Alege un clip mai scurt sau o fotografie.", true);
+    const unsupported = files.find((file) => !(file.type.startsWith("image/") || file.type.startsWith("video/")));
+    if (unsupported) {
+      showToast(`${unsupported.name} nu este o fotografie sau un clip video.`, true);
+      return;
+    }
+    const oversized = files.find((file) => file.size > MAX_EVIDENCE_BYTES);
+    if (oversized) {
+      showToast(`${oversized.name} depășește limita de 20 MB.`, true);
       return;
     }
     if (!navigator.onLine) {
@@ -1066,18 +1088,30 @@
       button.textContent = "Se trimite…";
     }
 
-    const form = new FormData();
-    form.append("teamName", state.teamName);
-    form.append("teamCode", state.teamCode);
-    form.append("challengeCode", code);
-    form.append("file", file, file.name);
-
+    let uploaded = 0;
+    let lastSubmissionId = "";
+    let failure = null;
     try {
-      const response = await fetch(`${EVIDENCE_HUB}/api/upload`, { method: "POST", body: form });
-      const payload = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(payload.error || "Dovada nu a putut fi trimisă.");
+      for (const [index, file] of files.entries()) {
+        if (button) button.textContent = `Se trimite ${index + 1}/${files.length}…`;
+        const form = new FormData();
+        form.append("teamName", state.teamName);
+        form.append("teamCode", state.teamCode);
+        form.append("challengeCode", code);
+        form.append("file", file, file.name);
+        const response = await fetch(`${EVIDENCE_HUB}/api/upload`, { method: "POST", body: form });
+        const payload = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          failure = new Error(payload.error || "Dovada nu a putut fi trimisă.");
+          break;
+        }
+        uploaded += 1;
+        lastSubmissionId = payload.id || lastSubmissionId;
+      }
+      if (!uploaded) throw failure || new Error("Dovezile nu au putut fi trimise.");
       state.uploads ||= {};
-      state.uploads[code] = { id: payload.id, sentAt: Date.now() };
+      const totalCount = evidenceUploadCount(code) + uploaded;
+      state.uploads[code] = { count: totalCount, id: lastSubmissionId, sentAt: Date.now() };
       const liveMission = liveMissions.find((mission) => mission.code === code);
       if (liveMission) {
         state.liveBonuses ||= {};
@@ -1088,8 +1122,17 @@
         };
       }
       saveState();
-      if (button) button.textContent = "Trimis ✓";
-      showToast(`${code}: dovada a ajuns la organizator.`);
+      if (input) input.value = "";
+      const details = button?.closest(".evidence-tools");
+      details?.classList.add("is-sent");
+      const summary = details?.querySelector("summary");
+      if (summary) summary.textContent = evidenceSummary(totalCount);
+      if (button) button.textContent = `${totalCount} trimise · mai adaugă`;
+      if (failure) {
+        showToast(`${uploaded} ${uploaded === 1 ? "fișier a ajuns" : "fișiere au ajuns"}; restul nu. ${failure.message}`, true);
+      } else {
+        showToast(uploaded === 1 ? `${code}: dovada a ajuns la organizator.` : `${code}: toate cele ${uploaded} dovezi au ajuns la organizator.`);
+      }
       if (liveMission) {
         renderStatus();
         renderBonusTab();
@@ -1097,7 +1140,7 @@
       }
     } catch (error) {
       if (button) button.textContent = originalLabel;
-      showToast(error instanceof Error ? error.message : "Dovada nu a putut fi trimisă. Reîncearcă.", true);
+      showToast(error instanceof Error ? error.message : "Dovezile nu au putut fi trimise. Reîncearcă.", true);
     } finally {
       if (button) button.disabled = false;
     }

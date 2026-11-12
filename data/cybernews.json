@@ -1,23 +1,23 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-11T14:06:39.887816Z",
-  "generated_at_local": "2026-11-11T16:06+02:00",
+  "generated_at": "2026-11-12T15:03:11.354475Z",
+  "generated_at_local": "2026-11-12T17:03+02:00",
   "timezone": "Europe/Bucharest",
   "schedule": "Daily at 08:00 Europe/Bucharest",
   "stats": {
     "total": 54,
     "critical": 12,
-    "high": 6,
-    "watch": 13,
-    "context": 23,
+    "high": 3,
+    "watch": 15,
+    "context": 24,
     "categories": {
-      "vulnerability": 31,
-      "threat-intel": 8,
-      "identity": 7,
-      "malware": 4,
+      "vulnerability": 28,
+      "threat-intel": 9,
+      "malware": 6,
+      "identity": 4,
+      "data-breach": 3,
       "phishing": 2,
-      "supply-chain": 1,
-      "cloud": 1
+      "cloud": 2
     },
     "sources_ok": 9,
     "sources_total": 9
@@ -88,7 +88,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-11-10T00:00:00Z",
-      "age_hours": 38,
+      "age_hours": 63,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -126,7 +126,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-11-10T00:00:00Z",
-      "age_hours": 38,
+      "age_hours": 63,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -163,7 +163,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-11-10T00:00:00Z",
-      "age_hours": 38,
+      "age_hours": 63,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -201,7 +201,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-11-10T00:00:00Z",
-      "age_hours": 38,
+      "age_hours": 63,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -238,7 +238,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-11-10T00:00:00Z",
-      "age_hours": 38,
+      "age_hours": 63,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -275,7 +275,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-11-10T00:00:00Z",
-      "age_hours": 38,
+      "age_hours": 63,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -312,10 +312,10 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-11-09T00:00:00Z",
-      "age_hours": 62,
+      "age_hours": 87,
       "category": "vulnerability",
       "priority": "critical",
-      "priority_score": 100,
+      "priority_score": 96,
       "tags": [
         "vulnerability",
         "active-exploitation",
@@ -349,10 +349,10 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-11-09T00:00:00Z",
-      "age_hours": 62,
+      "age_hours": 87,
       "category": "vulnerability",
       "priority": "critical",
-      "priority_score": 100,
+      "priority_score": 96,
       "tags": [
         "vulnerability",
         "active-exploitation",
@@ -386,10 +386,10 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-11-09T00:00:00Z",
-      "age_hours": 62,
+      "age_hours": 87,
       "category": "vulnerability",
       "priority": "critical",
-      "priority_score": 100,
+      "priority_score": 96,
       "tags": [
         "vulnerability",
         "active-exploitation",
@@ -423,10 +423,10 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-11-09T00:00:00Z",
-      "age_hours": 62,
+      "age_hours": 87,
       "category": "vulnerability",
       "priority": "critical",
-      "priority_score": 100,
+      "priority_score": 96,
       "tags": [
         "vulnerability",
         "active-exploitation",
@@ -460,7 +460,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-11-06T00:00:00Z",
-      "age_hours": 134,
+      "age_hours": 159,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -497,7 +497,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-11-04T00:00:00Z",
-      "age_hours": 182,
+      "age_hours": 207,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 96,
@@ -526,38 +526,6 @@
       "known_ransomware_use": "Unknown"
     },
     {
-      "id": "70a133457da5",
-      "title": "Microsoft November 2026 Patch Tuesday fixes 1,235 flaws, Outlook zero-day",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-november-2026-patch-tuesday-fixes-1-235-flaws-outlook-zero-day/",
-      "summary": "Today is Microsoft's November 2026 Patch Tuesday, with security updates addressing a record-breaking 1,235 flaws, including one actively exploited Microsoft Outlook zero-day vulnerability.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-11-10T19:07:36Z",
-      "age_hours": 19,
-      "category": "vulnerability",
-      "priority": "high",
-      "priority_score": 64,
-      "tags": [
-        "vulnerability",
-        "active-exploitation",
-        "patch",
-        "m365-entra"
-      ],
-      "evidence": [
-        "observed-in-wild"
-      ],
-      "cves": [],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": false
-    },
-    {
       "id": "f635e51b4699",
       "title": "CISA Adds Two Known Exploited Vulnerabilities to Catalog",
       "url": "https://www.cisa.gov/news-events/alerts/2026/10/30/cisa-adds-two-known-exploited-vulnerabilities-catalog",
@@ -566,7 +534,7 @@
       "source_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
       "source_kind": "advisory",
       "published_at": "2026-10-30T12:00:00Z",
-      "age_hours": 290,
+      "age_hours": 315,
       "category": "vulnerability",
       "priority": "high",
       "priority_score": 64,
@@ -600,7 +568,7 @@
       "source_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
       "source_kind": "advisory",
       "published_at": "2026-11-06T12:00:00Z",
-      "age_hours": 122,
+      "age_hours": 147,
       "category": "vulnerability",
       "priority": "high",
       "priority_score": 58,
@@ -624,36 +592,6 @@
       "is_kev": false
     },
     {
-      "id": "f71a910c08b1",
-      "title": "Critical Xen Orchestra auth bypass flaw exploited to hijack VM servers",
-      "url": "https://www.bleepingcomputer.com/news/security/critical-xen-orchestra-auth-bypass-flaw-exploited-to-hijack-vm-servers/",
-      "summary": "A critical authentication bypass vulnerability in Xen Orchestra is being actively exploited in attacks that could grant administrator privileges and allow takeover of XCP-ng virtualization hosts.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-11-10T16:17:16Z",
-      "age_hours": 22,
-      "category": "vulnerability",
-      "priority": "high",
-      "priority_score": 56,
-      "tags": [
-        "vulnerability",
-        "active-exploitation"
-      ],
-      "evidence": [
-        "observed-in-wild"
-      ],
-      "cves": [],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": false
-    },
-    {
       "id": "f4b34728a6f8",
       "title": "CISA Adds Six Known Exploited Vulnerabilities to Catalog",
       "url": "https://www.cisa.gov/news-events/alerts/2026/11/10/cisa-adds-six-known-exploited-vulnerabilities-catalog",
@@ -662,7 +600,7 @@
       "source_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
       "source_kind": "advisory",
       "published_at": "2026-11-10T12:00:00Z",
-      "age_hours": 26,
+      "age_hours": 51,
       "category": "vulnerability",
       "priority": "high",
       "priority_score": 56,
@@ -689,50 +627,15 @@
       "is_kev": false
     },
     {
-      "id": "b13d0e78edd1",
-      "title": "CISA Adds Four Known Exploited Vulnerabilities to Catalog",
-      "url": "https://www.cisa.gov/news-events/alerts/2026/11/09/cisa-adds-four-known-exploited-vulnerabilities-catalog",
-      "summary": "CISA has added four new vulnerabilities to its Known Exploited Vulnerabilities (KEV) Catalog , based on evidence of active exploitation. CVE-2026-102895 GPUStack Improper Authentication Vulnerability CVE-2026-116779 SignalWire FreeSwitch Code Injection Vulnerability CVE-2026-123158 OpenBSD OpenSSH Unexpected Status Code or Return Value Vulnerability CVE-2026-123218 IBM Aspera Faspex Incorrect Authorization…",
-      "source": "CISA Advisories",
-      "source_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
-      "source_kind": "advisory",
-      "published_at": "2026-11-09T12:00:00Z",
-      "age_hours": 50,
-      "category": "vulnerability",
-      "priority": "high",
-      "priority_score": 56,
-      "tags": [
-        "vulnerability",
-        "active-exploitation"
-      ],
-      "evidence": [
-        "observed-in-wild"
-      ],
-      "cves": [
-        "CVE-2026-102895",
-        "CVE-2026-116779",
-        "CVE-2026-123158",
-        "CVE-2026-123218"
-      ],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": false
-    },
-    {
       "id": "f802327bf7c7",
-      "title": "Microsoft Patch Tuesday November 2027 , (Tue, Nov 10th)",
+      "title": "Microsoft Patch Tuesday November 2026, (Tue, Nov 10th)",
       "url": "https://isc.sans.edu/diary/rss/33508",
       "summary": "Microsoft continues its AI-induced patch surge, addressing 1,260 different vulnerabilities this month. 68 of these vulnerabilities are considered critical. 167 of the vulnerabilities are Chromium issues affecting Microsoft Edge.",
       "source": "SANS Internet Storm Center",
       "source_url": "https://isc.sans.edu/rssfeed_full.xml",
       "source_kind": "operations",
-      "published_at": "2026-11-10T19:09:32Z",
-      "age_hours": 19,
+      "published_at": "2026-11-11T18:28:43Z",
+      "age_hours": 21,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 54,
@@ -761,7 +664,7 @@
       "source_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
       "source_kind": "advisory",
       "published_at": "2026-10-29T12:00:00Z",
-      "age_hours": 314,
+      "age_hours": 339,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 54,
@@ -781,6 +684,99 @@
       "is_kev": false
     },
     {
+      "id": "b13d0e78edd1",
+      "title": "CISA Adds Four Known Exploited Vulnerabilities to Catalog",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/11/09/cisa-adds-four-known-exploited-vulnerabilities-catalog",
+      "summary": "CISA has added four new vulnerabilities to its Known Exploited Vulnerabilities (KEV) Catalog , based on evidence of active exploitation. CVE-2026-102895 GPUStack Improper Authentication Vulnerability CVE-2026-116779 SignalWire FreeSwitch Code Injection Vulnerability CVE-2026-123158 OpenBSD OpenSSH Unexpected Status Code or Return Value Vulnerability CVE-2026-123218 IBM Aspera Faspex Incorrect Authorization…",
+      "source": "CISA Advisories",
+      "source_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "source_kind": "advisory",
+      "published_at": "2026-11-09T12:00:00Z",
+      "age_hours": 75,
+      "category": "vulnerability",
+      "priority": "watch",
+      "priority_score": 52,
+      "tags": [
+        "vulnerability",
+        "active-exploitation"
+      ],
+      "evidence": [
+        "observed-in-wild"
+      ],
+      "cves": [
+        "CVE-2026-102895",
+        "CVE-2026-116779",
+        "CVE-2026-123158",
+        "CVE-2026-123218"
+      ],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": false
+    },
+    {
+      "id": "f3f53ef63df3",
+      "title": "The global socket: how threat actors are weaponizing GSocket for stealthy C2",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/11/global-socket-how-threat-actors-weaponizing-gsocket-stealthy-c2/",
+      "summary": "Threat actors are deploying GSocket on compromised Linux servers to keep encrypted remote access after the original vulnerability is patched. Learn how to detect, investigate, and remediate this activity.",
+      "source": "Microsoft Threat Intelligence",
+      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
+      "source_kind": "research",
+      "published_at": "2026-11-11T19:49:57Z",
+      "age_hours": 19,
+      "category": "vulnerability",
+      "priority": "watch",
+      "priority_score": 50,
+      "tags": [
+        "vulnerability",
+        "patch",
+        "linux"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": false
+    },
+    {
+      "id": "f929241d5017",
+      "title": "Exploit Attempts for GPUStack Authentication Bypass (CVE-2026-102895), (Thu, Nov 12th)",
+      "url": "https://isc.sans.edu/diary/rss/33514",
+      "summary": "CVE-2026-102895 is a trivial authentication-bypass vulnerability. GPUStack is also an attractive target. It is open-source software that manages clusters of GPUs, which are typically used to run AI workloads. All versions of GPUStack prior to 2.2.0, which was released at the end of June. This vulnerability was not made public until the end of July, and the CVE was assigned on November 4th.",
+      "source": "SANS Internet Storm Center",
+      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
+      "source_kind": "operations",
+      "published_at": "2026-11-12T11:56:24Z",
+      "age_hours": 3,
+      "category": "vulnerability",
+      "priority": "watch",
+      "priority_score": 46,
+      "tags": [
+        "vulnerability"
+      ],
+      "evidence": [],
+      "cves": [
+        "CVE-2026-102895"
+      ],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": false
+    },
+    {
       "id": "c0138fec6138",
       "title": "Siemens Mendix SAML Module",
       "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-302-01",
@@ -789,7 +785,7 @@
       "source_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
       "source_kind": "advisory",
       "published_at": "2026-10-29T12:00:00Z",
-      "age_hours": 314,
+      "age_hours": 339,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 46,
@@ -817,7 +813,7 @@
       "source_url": "https://cert.europa.eu/publications/security-advisories-rss",
       "source_kind": "advisory",
       "published_at": "2026-10-23T16:36:26Z",
-      "age_hours": 454,
+      "age_hours": 478,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 45,
@@ -836,21 +832,51 @@
       "is_kev": false
     },
     {
-      "id": "63f327cd92a6",
-      "title": "2026-019: Critical Vulnerability in GitLab Community and Enterprise Editions",
-      "url": "https://cert.europa.eu/publications/security-advisories/2026-019/",
-      "summary": "On 21 October 2026, GitLab published a security advisory addressing several vulnerabilities among which a critical flaw that could allow an unauthenticated user to execute arbitrary code on a GitLab server. CERT-EU recommends organisations to update affected assets as soon as possible, prioritising internet facing assets, and to run an assessment to identify compromised assets.",
-      "source": "CERT-EU",
-      "source_url": "https://cert.europa.eu/publications/security-advisories-rss",
-      "source_kind": "advisory",
-      "published_at": "2026-10-22T11:14:22Z",
-      "age_hours": 483,
+      "id": "52b2d8e10bad",
+      "title": "Microsoft: Recent Windows updates cause SQL Server performance issues",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-recent-windows-updates-cause-sql-server-performance-issues/",
+      "summary": "Microsoft has confirmed that Windows updates released since the October 2026 Patch Tuesday are causing SQL Server performance and stability issues.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-11-12T12:11:11Z",
+      "age_hours": 3,
       "category": "vulnerability",
       "priority": "watch",
-      "priority_score": 45,
+      "priority_score": 40,
       "tags": [
         "vulnerability",
-        "patch"
+        "patch",
+        "windows"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": false
+    },
+    {
+      "id": "5af37a8a0588",
+      "title": "Hackers plant GSocket on Linux servers for persistent access",
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-plant-gsocket-on-linux-servers-for-persistent-access/",
+      "summary": "Multiple threat actors are abusing GSocket, a legitimate open-source remote access tool, to maintain access to Linux servers even after patching the vulnerabilities exploited to gain initial access.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-11-12T09:38:00Z",
+      "age_hours": 5,
+      "category": "vulnerability",
+      "priority": "watch",
+      "priority_score": 40,
+      "tags": [
+        "vulnerability",
+        "patch",
+        "linux"
       ],
       "evidence": [],
       "cves": [],
@@ -872,10 +898,10 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-11-11T12:32:27Z",
-      "age_hours": 2,
+      "age_hours": 27,
       "category": "identity",
       "priority": "watch",
-      "priority_score": 44,
+      "priority_score": 40,
       "tags": [
         "identity"
       ],
@@ -891,92 +917,30 @@
       "is_kev": false
     },
     {
-      "id": "22463fa6921d",
-      "title": "CISA flags Cisco BroadWorks flaw as actively exploited in attacks",
-      "url": "https://www.bleepingcomputer.com/news/security/cisa-flags-cisco-broadworks-flaw-as-actively-exploited-in-attacks/",
-      "summary": "The US Cybersecurity and Infrastructure Security Agency (CISA) warned on Tuesday that hackers are now exploiting a high-severity Cisco BroadWorks vulnerability in attacks.…",
+      "id": "92e20603fc66",
+      "title": "Apify rotates API tokens, prompts 2FA resets after breach",
+      "url": "https://www.bleepingcomputer.com/news/security/apify-rotates-api-tokens-prompts-2fa-resets-after-breach/",
+      "summary": "Apify has rotated critical internal secrets and revoked some third-party OAuth connections after detecting unauthorized access to its internal systems.…",
       "source": "BleepingComputer",
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
-      "published_at": "2026-11-11T10:12:08Z",
-      "age_hours": 4,
-      "category": "vulnerability",
+      "published_at": "2026-11-12T14:36:47Z",
+      "age_hours": 0,
+      "category": "identity",
       "priority": "watch",
-      "priority_score": 44,
+      "priority_score": 38,
       "tags": [
-        "vulnerability",
-        "active-exploitation",
-        "network-appliance"
-      ],
-      "evidence": [
-        "observed-in-wild"
-      ],
-      "cves": [],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": false
-    },
-    {
-      "id": "1aa57ef5b4c0",
-      "title": "Microsoft releases Windows 10 KB5131096 extended security update",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-releases-windows-10-kb5131096-extended-security-update/",
-      "summary": "Microsoft released the Windows 10 KB5131096 extended security update, which includes this month's November 2026 Patch Tuesday fixes and a few bug fixes and changes.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-11-10T20:04:36Z",
-      "age_hours": 18,
-      "category": "vulnerability",
-      "priority": "watch",
-      "priority_score": 40,
-      "tags": [
-        "vulnerability",
-        "patch",
-        "windows"
+        "identity"
       ],
       "evidence": [],
       "cves": [],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "why_l1_cares": "Identity activity often becomes the first visible signal before mailbox, cloud or endpoint impact.",
       "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
+        "Review risky sign-ins, impossible travel and unfamiliar devices.",
+        "Check MFA, password and app-consent changes around the event.",
+        "Correlate the account with mailbox, endpoint and token activity."
       ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": false
-    },
-    {
-      "id": "e84e0783f52d",
-      "title": "Windows 11 KB5132061 & KB5131087 cumulative updates released",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/windows-11-kb5132061-and-kb5131087-cumulative-updates-released/",
-      "summary": "Microsoft has released the Patch Tuesday Windows 11 and cumulative updates for versions 26H2/25H2/24H2 and 23H2 to fix security vulnerabilities and bugs, and add new features.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-11-10T18:33:26Z",
-      "age_hours": 20,
-      "category": "vulnerability",
-      "priority": "watch",
-      "priority_score": 40,
-      "tags": [
-        "vulnerability",
-        "patch",
-        "windows"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "escalate_when": "Escalate on successful anomalous sign-in, MFA reset, suspicious consent or token reuse.",
       "is_kev": false
     },
     {
@@ -988,7 +952,7 @@
       "source_url": "https://isc.sans.edu/rssfeed_full.xml",
       "source_kind": "operations",
       "published_at": "2026-11-10T12:48:55Z",
-      "age_hours": 25,
+      "age_hours": 50,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 38,
@@ -1008,57 +972,34 @@
       "is_kev": false
     },
     {
-      "id": "f111d392dd54",
-      "title": "AI-driven, large-scale nation-state campaign using ARTEX enables supply chain compromise",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/",
-      "summary": "Storm-0940 used ARTEX agentic AI to accelerate a ConnectWise supply chain compromise, enabling application credential abuse across Microsoft 365 environments.",
-      "source": "Microsoft Threat Intelligence",
-      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
-      "source_kind": "research",
-      "published_at": "2026-10-21T18:23:55Z",
-      "age_hours": 500,
-      "category": "supply-chain",
-      "priority": "watch",
-      "priority_score": 37,
-      "tags": [
-        "supply-chain"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "A compromised package or update can create alerts across developer endpoints, build systems and production workloads.",
-      "first_checks": [
-        "Confirm whether the named package, extension or version exists internally.",
-        "Review install time, parent process, outbound traffic and exposed credentials.",
-        "Search build logs and peer systems for the same dependency or behavior."
-      ],
-      "escalate_when": "Escalate on confirmed installation, suspicious execution, credential access or a tainted production build.",
-      "is_kev": false
-    },
-    {
-      "id": "0b54be28cd7d",
-      "title": "Detecting sleeper agents hiding in AI model neurons",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/10/detecting-sleeper-agents-hiding-in-ai-model-neurons/",
-      "summary": "Microsoft Research has released new threat research detailing how a capable agent model could be turned into a sleeper agent by editing fewer than ten neurons to inject a short payload; Microsoft Research has also found that this threat is detectable by frontier agents, which can identify anomalous weight edits.",
-      "source": "Microsoft Threat Intelligence",
-      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
-      "source_kind": "research",
-      "published_at": "2026-11-10T23:00:00Z",
-      "age_hours": 15,
-      "category": "threat-intel",
+      "id": "acc7a2d0e979",
+      "title": "eBPF Rootkits: Why Underground Actors Are Taking Notice",
+      "url": "https://www.bleepingcomputer.com/news/security/ebpf-rootkits-why-underground-actors-are-taking-notice/",
+      "summary": "Linux eBPF rootkits can hide malicious activity and evade traditional detection methods without loading kernel modules. Flare reveals how these techniques are spreading through underground forums, where threat actors are sharing rootkit source code, tutorials, and exploits targeting Linux systems.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-11-11T15:01:11Z",
+      "age_hours": 24,
+      "category": "malware",
       "priority": "watch",
       "priority_score": 36,
       "tags": [
-        "threat-intel"
+        "malware",
+        "detect-hunt",
+        "linux"
       ],
-      "evidence": [],
+      "evidence": [
+        "detection-guidance"
+      ],
       "cves": [],
-      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
+      "why_l1_cares": "Named malware gives you a starting point for validating endpoint, network and identity telemetry.",
       "first_checks": [
-        "Extract only indicators and behaviors supported by the source.",
-        "Compare them with recent SIEM, EDR, identity and network alerts.",
-        "Record relevant findings without blocking on unverified indicators alone."
+        "Validate detections against process, file, persistence and network context.",
+        "Search for the same behavior or indicators across other hosts.",
+        "Identify the likely entry point and affected user account."
       ],
-      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
+      "escalate_when": "Escalate on execution, persistence, credential access, command-and-control or spread to another host.",
       "is_kev": false
     },
     {
@@ -1070,7 +1011,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-11-03T17:32:47Z",
-      "age_hours": 189,
+      "age_hours": 214,
       "category": "malware",
       "priority": "watch",
       "priority_score": 36,
@@ -1092,6 +1033,33 @@
       "is_kev": false
     },
     {
+      "id": "9d0e65808ab5",
+      "title": "Maersk confirms data breach as WhiteArmor ransomware demands $5 million",
+      "url": "https://www.bleepingcomputer.com/news/security/maersk-confirms-data-breach-as-whitearmor-ransomware-demands-5-million/",
+      "summary": "Maersk announced that a threat actor gained unauthorized access to a local legacy system inherited through an earlier acquisition and extracted data from it.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-11-11T16:24:18Z",
+      "age_hours": 23,
+      "category": "data-breach",
+      "priority": "watch",
+      "priority_score": 35,
+      "tags": [
+        "data-breach"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "Breach reporting can reveal exposed credentials, third-party risk or activity relevant to current alerts.",
+      "first_checks": [
+        "Confirm whether your organization, supplier or technology stack is affected.",
+        "Monitor for related credential abuse, phishing and data access.",
+        "Capture confirmed scope and primary-source statements before escalating."
+      ],
+      "escalate_when": "Escalate on organizational exposure, credential compromise or matching suspicious activity.",
+      "is_kev": false
+    },
+    {
       "id": "384cea25d0e9",
       "title": "Post-Quantum Questions to Ask Your Vendors",
       "url": "https://www.cisa.gov/resources-tools/resources/post-quantum-questions-ask-your-vendors",
@@ -1100,7 +1068,7 @@
       "source_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
       "source_kind": "advisory",
       "published_at": "2026-11-05T12:00:00Z",
-      "age_hours": 146,
+      "age_hours": 171,
       "category": "phishing",
       "priority": "context",
       "priority_score": 34,
@@ -1127,7 +1095,7 @@
       "source_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
       "source_kind": "advisory",
       "published_at": "2026-11-05T12:00:00Z",
-      "age_hours": 146,
+      "age_hours": 171,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 34,
@@ -1154,7 +1122,7 @@
       "source_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
       "source_kind": "advisory",
       "published_at": "2026-11-03T12:00:00Z",
-      "age_hours": 194,
+      "age_hours": 219,
       "category": "vulnerability",
       "priority": "context",
       "priority_score": 34,
@@ -1184,7 +1152,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-11-02T20:20:59Z",
-      "age_hours": 210,
+      "age_hours": 235,
       "category": "identity",
       "priority": "context",
       "priority_score": 34,
@@ -1211,7 +1179,7 @@
       "source_url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
       "source_kind": "research",
       "published_at": "2026-11-02T14:00:00Z",
-      "age_hours": 216,
+      "age_hours": 241,
       "category": "cloud",
       "priority": "context",
       "priority_score": 34,
@@ -1230,15 +1198,15 @@
       "is_kev": false
     },
     {
-      "id": "eef0141eb800",
-      "title": "Microsoft fixes audio issues caused by September security updates",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-usb-audio-issues-caused-by-september-security-updates/",
-      "summary": "Microsoft says the November 2026 cumulative updates resolve USB audio issues plaguing Windows users who have installed security updates released since September.…",
+      "id": "56bf5f6cdef5",
+      "title": "Microsoft confirms Windows security updates installation issues",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-confirms-kb5132061-installation-issues-0x80070306-0x800f0989-0x800f0993-errors/",
+      "summary": "Microsoft has confirmed reports that the November 2026 security updates are failing to install on Windows 11 systems with the October preview update.…",
       "source": "BleepingComputer",
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
-      "published_at": "2026-11-11T11:18:36Z",
-      "age_hours": 3,
+      "published_at": "2026-11-12T10:24:07Z",
+      "age_hours": 5,
       "category": "vulnerability",
       "priority": "context",
       "priority_score": 32,
@@ -1259,89 +1227,57 @@
       "is_kev": false
     },
     {
-      "id": "84fe717a7ff1",
-      "title": "Microsoft fixes Exchange sign-ins broken by Windows Server updates",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-exchange-sign-ins-broken-by-october-windows-server-updates/",
-      "summary": "Microsoft has fixed Outlook sign-in and mail delivery issues on Exchange Server systems after installing the October 2026 Windows Server security updates.…",
+      "id": "f7bee101ee02",
+      "title": "Hackers use AntiFox AI agents in AWS credential-theft attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-use-antifox-ai-agents-in-aws-credential-theft-attacks/",
+      "summary": "Attackers are using Alibaba Cloud to host self-managed instances of AntiFox, an open-source agentic penetration testing platform, to target web services and AWS environments.…",
       "source": "BleepingComputer",
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
-      "published_at": "2026-11-11T09:07:27Z",
-      "age_hours": 5,
-      "category": "vulnerability",
+      "published_at": "2026-11-11T15:12:59Z",
+      "age_hours": 24,
+      "category": "cloud",
       "priority": "context",
       "priority_score": 32,
       "tags": [
-        "vulnerability",
-        "patch",
-        "windows",
-        "m365-entra"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": false
-    },
-    {
-      "id": "43b50136d94d",
-      "title": "Railway breach leads to $740,000 in fraudulent AI charges",
-      "url": "https://www.bleepingcomputer.com/news/apple/railway-breach-leads-to-740-000-in-fraudulent-ai-charges/",
-      "summary": "Cloud hosting provider Railway says hackers exploited vulnerabilities in its infrastructure to steal customer authentication secrets and generate approximately $740,000 in fraudulent AI usage, potentially exposing credentials for up to 100,000 workspaces.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-11-10T22:20:19Z",
-      "age_hours": 16,
-      "category": "identity",
-      "priority": "context",
-      "priority_score": 32,
-      "tags": [
-        "identity",
         "cloud"
       ],
       "evidence": [],
       "cves": [],
-      "why_l1_cares": "Identity activity often becomes the first visible signal before mailbox, cloud or endpoint impact.",
+      "why_l1_cares": "Cloud incidents often cross identity, control-plane and workload logs, so isolated alerts can hide scope.",
       "first_checks": [
-        "Review risky sign-ins, impossible travel and unfamiliar devices.",
-        "Check MFA, password and app-consent changes around the event.",
-        "Correlate the account with mailbox, endpoint and token activity."
+        "Review control-plane changes, sign-ins and newly created credentials.",
+        "Check public exposure, unusual data access and workload activity.",
+        "Correlate the actor, source IP and time across cloud services."
       ],
-      "escalate_when": "Escalate on successful anomalous sign-in, MFA reset, suspicious consent or token reuse.",
+      "escalate_when": "Escalate on unauthorized configuration change, exposed data, new credential or suspicious workload execution.",
       "is_kev": false
     },
     {
-      "id": "ddf41e717f52",
-      "title": "Hackers exploit trusted AWS access to breach multiple cloud environments",
-      "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-trusted-aws-access-to-breach-multiple-cloud-environments/",
-      "summary": "A threat actor used compromised identity and access management (IAM) credentials for a Qubole big data platform's AWS account to access and exfiltrate data from multiple customers' AWS environments.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-11-10T19:31:11Z",
-      "age_hours": 19,
-      "category": "identity",
+      "id": "0b54be28cd7d",
+      "title": "Detecting sleeper agents hiding in AI model neurons",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/10/detecting-sleeper-agents-hiding-in-ai-model-neurons/",
+      "summary": "Microsoft Research has released new threat research detailing how a capable agent model could be turned into a sleeper agent by editing fewer than ten neurons to inject a short payload; Microsoft Research has also found that this threat is detectable by frontier agents, which can identify anomalous weight edits.",
+      "source": "Microsoft Threat Intelligence",
+      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
+      "source_kind": "research",
+      "published_at": "2026-11-10T23:00:00Z",
+      "age_hours": 40,
+      "category": "threat-intel",
       "priority": "context",
       "priority_score": 32,
       "tags": [
-        "identity",
-        "cloud"
+        "threat-intel"
       ],
       "evidence": [],
       "cves": [],
-      "why_l1_cares": "Identity activity often becomes the first visible signal before mailbox, cloud or endpoint impact.",
+      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
       "first_checks": [
-        "Review risky sign-ins, impossible travel and unfamiliar devices.",
-        "Check MFA, password and app-consent changes around the event.",
-        "Correlate the account with mailbox, endpoint and token activity."
+        "Extract only indicators and behaviors supported by the source.",
+        "Compare them with recent SIEM, EDR, identity and network alerts.",
+        "Record relevant findings without blocking on unverified indicators alone."
       ],
-      "escalate_when": "Escalate on successful anomalous sign-in, MFA reset, suspicious consent or token reuse.",
+      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
       "is_kev": false
     },
     {
@@ -1353,7 +1289,7 @@
       "source_url": "https://www.ncsc.gov.uk/api/1/services/v1/report-rss-feed.xml",
       "source_kind": "advisory",
       "published_at": "2026-11-03T12:00:00Z",
-      "age_hours": 194,
+      "age_hours": 219,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 31,
@@ -1380,7 +1316,7 @@
       "source_url": "https://isc.sans.edu/rssfeed_full.xml",
       "source_kind": "operations",
       "published_at": "2026-11-09T18:18:15Z",
-      "age_hours": 44,
+      "age_hours": 69,
       "category": "malware",
       "priority": "context",
       "priority_score": 30,
@@ -1399,35 +1335,6 @@
       "is_kev": false
     },
     {
-      "id": "4b7df559b706",
-      "title": "Scans for Sshole Vulnerability (CVE-2026-123158), (Sun, Nov 8th)",
-      "url": "https://isc.sans.edu/diary/rss/33498",
-      "summary": "Our honeypots use \"Cowrie\" to collect SSH data. With the emergence of the \"sshole\" vulnerability last week, we are now seeing an increase in attempts to exploit the vulnerability. Our data is a bit limited in this respect. Our honeypots collect only the first 255 characters of SSH passwords. Longer passwords are highly unusual and not used for the usual password brute-forcing we observe.",
-      "source": "SANS Internet Storm Center",
-      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
-      "source_kind": "operations",
-      "published_at": "2026-11-08T15:44:33Z",
-      "age_hours": 70,
-      "category": "vulnerability",
-      "priority": "context",
-      "priority_score": 30,
-      "tags": [
-        "vulnerability"
-      ],
-      "evidence": [],
-      "cves": [
-        "CVE-2026-123158"
-      ],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": false
-    },
-    {
       "id": "631279c95e34",
       "title": "ARTEX abuse expands as cybercriminals target financial sector",
       "url": "https://www.microsoft.com/en-us/security/blog/2026/11/06/artex-abuse-expands-as-cybercriminals-target-financial-sector/",
@@ -1436,7 +1343,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-11-07T02:44:34Z",
-      "age_hours": 107,
+      "age_hours": 132,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 28,
@@ -1463,7 +1370,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-11-05T23:46:50Z",
-      "age_hours": 134,
+      "age_hours": 159,
       "category": "identity",
       "priority": "context",
       "priority_score": 28,
@@ -1490,7 +1397,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/security-operations/feed/",
       "source_kind": "research",
       "published_at": "2026-11-05T17:00:00Z",
-      "age_hours": 141,
+      "age_hours": 166,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 28,
@@ -1518,7 +1425,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-11-05T16:00:00Z",
-      "age_hours": 142,
+      "age_hours": 167,
       "category": "phishing",
       "priority": "context",
       "priority_score": 28,
@@ -1545,7 +1452,7 @@
       "source_url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
       "source_kind": "research",
       "published_at": "2026-11-02T14:00:00Z",
-      "age_hours": 216,
+      "age_hours": 241,
       "category": "malware",
       "priority": "context",
       "priority_score": 28,
@@ -1572,7 +1479,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-10-31T01:02:57Z",
-      "age_hours": 277,
+      "age_hours": 302,
       "category": "malware",
       "priority": "context",
       "priority_score": 28,
@@ -1599,7 +1506,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-10-30T16:11:44Z",
-      "age_hours": 286,
+      "age_hours": 311,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 28,
@@ -1626,7 +1533,7 @@
       "source_url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
       "source_kind": "research",
       "published_at": "2026-10-30T14:00:00Z",
-      "age_hours": 288,
+      "age_hours": 313,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 28,
@@ -1653,7 +1560,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-10-29T16:00:00Z",
-      "age_hours": 310,
+      "age_hours": 335,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 28,
@@ -1672,57 +1579,140 @@
       "is_kev": false
     },
     {
-      "id": "e01c8b6f2f4a",
-      "title": "Japanese furniture giant Nitori says hackers stole 37.6M customer records",
-      "url": "https://www.bleepingcomputer.com/news/security/japanese-furniture-giant-nitori-says-hackers-stole-376m-customer-records/",
-      "summary": "Nitori, a major Japanese furniture and home accessories retailer, discovered that an attacker accessed a system on its network and may have stolen 37.62 million customer records.…",
+      "id": "2fa347656b16",
+      "title": "Baker Tilly notifies clients of data breach at third-party provider",
+      "url": "https://www.bleepingcomputer.com/news/security/baker-tilly-notifies-clients-of-data-breach-at-third-party-provider/",
+      "summary": "The Baker Tilly Advisory Group is notifying clients that a data breach has compromised certain personal information about them and their dependents.…",
       "source": "BleepingComputer",
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
-      "published_at": "2026-11-10T20:54:55Z",
-      "age_hours": 17,
-      "category": "identity",
+      "published_at": "2026-11-11T23:01:31Z",
+      "age_hours": 16,
+      "category": "data-breach",
       "priority": "context",
       "priority_score": 26,
       "tags": [
-        "identity"
+        "data-breach"
       ],
       "evidence": [],
       "cves": [],
-      "why_l1_cares": "Identity activity often becomes the first visible signal before mailbox, cloud or endpoint impact.",
+      "why_l1_cares": "Breach reporting can reveal exposed credentials, third-party risk or activity relevant to current alerts.",
       "first_checks": [
-        "Review risky sign-ins, impossible travel and unfamiliar devices.",
-        "Check MFA, password and app-consent changes around the event.",
-        "Correlate the account with mailbox, endpoint and token activity."
+        "Confirm whether your organization, supplier or technology stack is affected.",
+        "Monitor for related credential abuse, phishing and data access.",
+        "Capture confirmed scope and primary-source statements before escalating."
       ],
-      "escalate_when": "Escalate on successful anomalous sign-in, MFA reset, suspicious consent or token reuse.",
+      "escalate_when": "Escalate on organizational exposure, credential compromise or matching suspicious activity.",
       "is_kev": false
     },
     {
-      "id": "9d3024bd726a",
-      "title": "Binance warns of iOS flaw that could leak crypto wallet secrets",
-      "url": "https://www.bleepingcomputer.com/news/security/binance-warns-of-ios-flaw-that-could-leak-crypto-wallet-secrets/",
-      "summary": "Binance is warning about a vulnerability in Apple's iOS 26.7.1, 27.0.1, and 27.2 that could allow third-party apps to read private files stored by other apps, including cryptocurrency seed phrases, secret keys, and login credentials.…",
+      "id": "8ecf3ded8f74",
+      "title": "Active ScreenConnect attacks breach MSPs, impact dozens of organizations",
+      "url": "https://www.bleepingcomputer.com/news/security/active-screenconnect-attacks-breach-msps-impact-dozens-of-organizations/",
+      "summary": "ConnectWise is investigating an active malware campaign targeting managed service providers (MSPs) that uses compromised ScreenConnect environments to deploy rogue remote-access clients to customer devices.…",
       "source": "BleepingComputer",
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
-      "published_at": "2026-11-10T15:59:19Z",
-      "age_hours": 22,
-      "category": "identity",
+      "published_at": "2026-11-11T22:56:21Z",
+      "age_hours": 16,
+      "category": "malware",
       "priority": "context",
       "priority_score": 26,
       "tags": [
-        "identity"
+        "malware"
       ],
       "evidence": [],
       "cves": [],
-      "why_l1_cares": "Identity activity often becomes the first visible signal before mailbox, cloud or endpoint impact.",
+      "why_l1_cares": "Named malware gives you a starting point for validating endpoint, network and identity telemetry.",
       "first_checks": [
-        "Review risky sign-ins, impossible travel and unfamiliar devices.",
-        "Check MFA, password and app-consent changes around the event.",
-        "Correlate the account with mailbox, endpoint and token activity."
+        "Validate detections against process, file, persistence and network context.",
+        "Search for the same behavior or indicators across other hosts.",
+        "Identify the likely entry point and affected user account."
       ],
-      "escalate_when": "Escalate on successful anomalous sign-in, MFA reset, suspicious consent or token reuse.",
+      "escalate_when": "Escalate on execution, persistence, credential access, command-and-control or spread to another host.",
+      "is_kev": false
+    },
+    {
+      "id": "c13c660071cb",
+      "title": "eMudhra revokes 8 more CA certificates after private key mishap",
+      "url": "https://www.bleepingcomputer.com/news/security/emudhra-revokes-8-more-ca-certificates-after-private-key-mishap/",
+      "summary": "Certificate authority eMudhra has revoked eight additional intermediate CA certificates after an investigation into its recent certificate security incident found improper handling of private keys during the certificate-generation process.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-11-11T21:27:40Z",
+      "age_hours": 18,
+      "category": "threat-intel",
+      "priority": "context",
+      "priority_score": 26,
+      "tags": [
+        "threat-intel"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
+      "first_checks": [
+        "Extract only indicators and behaviors supported by the source.",
+        "Compare them with recent SIEM, EDR, identity and network alerts.",
+        "Record relevant findings without blocking on unverified indicators alone."
+      ],
+      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
+      "is_kev": false
+    },
+    {
+      "id": "3c445f121301",
+      "title": "Notion says Fireworks breach exposed customer AI chat transcripts",
+      "url": "https://www.bleepingcomputer.com/news/security/notion-says-fireworks-breach-exposed-customer-ai-chat-transcripts/",
+      "summary": "Notion, the digital workspace platform, disclosed that a security breach at its AI infrastructure provider, Fireworks AI, exposed Notion AI chat transcripts in a small number of workspaces.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-11-11T20:54:20Z",
+      "age_hours": 18,
+      "category": "data-breach",
+      "priority": "context",
+      "priority_score": 26,
+      "tags": [
+        "data-breach"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "Breach reporting can reveal exposed credentials, third-party risk or activity relevant to current alerts.",
+      "first_checks": [
+        "Confirm whether your organization, supplier or technology stack is affected.",
+        "Monitor for related credential abuse, phishing and data access.",
+        "Capture confirmed scope and primary-source statements before escalating."
+      ],
+      "escalate_when": "Escalate on organizational exposure, credential compromise or matching suspicious activity.",
+      "is_kev": false
+    },
+    {
+      "id": "4b7df559b706",
+      "title": "Scans for Sshole Vulnerability (CVE-2026-123158), (Sun, Nov 8th)",
+      "url": "https://isc.sans.edu/diary/rss/33498",
+      "summary": "Our honeypots use \"Cowrie\" to collect SSH data. With the emergence of the \"sshole\" vulnerability last week, we are now seeing an increase in attempts to exploit the vulnerability. Our data is a bit limited in this respect. Our honeypots collect only the first 255 characters of SSH passwords. Longer passwords are highly unusual and not used for the usual password brute-forcing we observe.",
+      "source": "SANS Internet Storm Center",
+      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
+      "source_kind": "operations",
+      "published_at": "2026-11-08T15:44:33Z",
+      "age_hours": 95,
+      "category": "vulnerability",
+      "priority": "context",
+      "priority_score": 26,
+      "tags": [
+        "vulnerability"
+      ],
+      "evidence": [],
+      "cves": [
+        "CVE-2026-123158"
+      ],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
       "is_kev": false
     }
   ]

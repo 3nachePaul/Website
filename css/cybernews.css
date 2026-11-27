@@ -204,7 +204,7 @@
 }
 
 .sync-card__label,
-.sync-card span:last-child {
+#source-status {
     display: block;
     color: var(--cyber-muted);
     font-family: var(--cyber-mono);
@@ -212,6 +212,13 @@
     line-height: 1.45;
     text-transform: uppercase;
     letter-spacing: 0.08em;
+}
+
+.sync-card__warning:not(:empty) {
+    margin-top: 0.45rem;
+    color: var(--cyber-coral);
+    font-family: var(--cyber-mono);
+    font-size: 0.72rem;
 }
 
 .sync-card strong {

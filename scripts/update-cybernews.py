@@ -14,6 +14,8 @@ import html
 import json
 import re
 import sys
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -32,7 +34,9 @@ USER_AGENT = "pol-center-cybernews/1.0 (+https://pol-center.com/cybernews/)"
 MAX_RESPONSE_BYTES = 4_000_000
 MAX_ARTICLES = 54
 MAX_PER_SOURCE = 12
+MIN_ARTICLES = 8
 ARTICLE_MAX_AGE_DAYS = 21
+CVE_PATTERN = re.compile(r"\bCVE-\d{4}-\d{4,19}\b", re.I)
 
 
 FEEDS = [
@@ -67,6 +71,22 @@ FEEDS = [
         "article_hosts": ["microsoft.com"],
         "kind": "research",
         "authority": 18,
+    },
+    {
+        "name": "Microsoft Cloud Security",
+        "url": "https://www.microsoft.com/en-us/security/blog/topic/cloud-security/feed/",
+        "fetch_hosts": ["microsoft.com"],
+        "article_hosts": ["microsoft.com"],
+        "kind": "research",
+        "authority": 18,
+    },
+    {
+        "name": "Splunk Security Advisories",
+        "url": "https://advisory.splunk.com/feed.xml",
+        "fetch_hosts": ["advisory.splunk.com"],
+        "article_hosts": ["advisory.splunk.com"],
+        "kind": "advisory",
+        "authority": 24,
     },
     {
         "name": "Google Threat Intelligence",
@@ -109,6 +129,8 @@ KEV_SOURCE = {
     "article_hosts": ["cisa.gov"],
     "kind": "kev",
 }
+KEV_MIRROR = "https://raw.githubusercontent.com/cisagov/kev-data/refs/heads/develop/known_exploited_vulnerabilities.json"
+SOURCES = {source["name"]: source for source in [*FEEDS, KEV_SOURCE]}
 
 
 CATEGORY_RULES = [
@@ -145,6 +167,7 @@ CATEGORY_RULES = [
         [
             "cve-",
             "vulnerability",
+            "vulnerabilities",
             "zero-day",
             "0-day",
             "remote code execution",
@@ -176,6 +199,9 @@ CATEGORY_RULES = [
 ]
 
 PLATFORM_RULES = [
+    ("azure", ["azure", "microsoft entra"]),
+    ("microsoft-defender", ["microsoft defender", "defender xdr", "defender for endpoint", "defender for cloud"]),
+    ("splunk", ["splunk"]),
     ("windows", ["windows", "active directory", "powershell", "microsoft defender"]),
     ("m365-entra", ["m365", "office 365", "entra", "azure ad", "outlook", "exchange online"]),
     ("linux", ["linux", "ubuntu", "debian", "red hat", "rhel"]),
@@ -317,7 +343,7 @@ class RestrictedRedirectHandler(urllib.request.HTTPRedirectHandler):
         return super().redirect_request(request, file_pointer, code, message, headers, resolved_url)
 
 
-def fetch_bytes(url: str, allowed_hosts: list[str]) -> bytes:
+def download(url: str, allowed_hosts: list[str]) -> bytes:
     if not url_host_allowed(url, allowed_hosts):
         raise ValueError(f"source URL uses a disallowed host: {url}")
     request = urllib.request.Request(
@@ -328,7 +354,7 @@ def fetch_bytes(url: str, allowed_hosts: list[str]) -> bytes:
         },
     )
     opener = urllib.request.build_opener(RestrictedRedirectHandler(allowed_hosts))
-    with opener.open(request, timeout=25) as response:
+    with opener.open(request, timeout=15) as response:
         if not url_host_allowed(response.geturl(), allowed_hosts):
             raise ValueError(f"response came from a disallowed host: {response.geturl()}")
         content_length = response.headers.get("Content-Length")
@@ -338,6 +364,18 @@ def fetch_bytes(url: str, allowed_hosts: list[str]) -> bytes:
     if len(payload) > MAX_RESPONSE_BYTES:
         raise ValueError("response exceeded size limit")
     return payload
+
+
+def fetch_bytes(url: str, allowed_hosts: list[str]) -> bytes:
+    try:
+        return download(url, allowed_hosts)
+    except urllib.error.HTTPError as error:
+        if error.code not in {408, 429, 500, 502, 503, 504}:
+            raise
+    except (urllib.error.URLError, TimeoutError, ConnectionError):
+        pass
+    time.sleep(2)
+    return download(url, allowed_hosts)
 
 
 def clean_text(value: str | None, limit: int = 420) -> str:
@@ -358,16 +396,18 @@ def clean_text(value: str | None, limit: int = 420) -> str:
 
 
 def child_text(node: ET.Element, names: list[str]) -> str:
-    for child in node.iter():
-        local_name = child.tag.rsplit("}", 1)[-1].lower()
-        if local_name in names and child.text:
-            return child.text.strip()
+    for name in names:
+        for child in node:
+            if child.tag.rsplit("}", 1)[-1].lower() == name:
+                value = " ".join(child.itertext()).strip()
+                if value:
+                    return value
     return ""
 
 
-def parse_datetime(value: str | None) -> datetime:
+def parse_datetime(value: str | None) -> datetime | None:
     if not value:
-        return datetime.now(timezone.utc)
+        return None
     value = value.strip()
     try:
         parsed = parsedate_to_datetime(value)
@@ -381,8 +421,8 @@ def parse_datetime(value: str | None) -> datetime:
         if parsed.tzinfo is None:
             parsed = parsed.replace(tzinfo=timezone.utc)
         return parsed.astimezone(timezone.utc)
-    except ValueError:
-        return datetime.now(timezone.utc)
+    except (ValueError, OverflowError):
+        return None
 
 
 def safe_url(value: str | None, allowed_hosts: list[str] | None = None) -> str:
@@ -406,17 +446,21 @@ def safe_url(value: str | None, allowed_hosts: list[str] | None = None) -> str:
     )
 
 
-def entry_link(node: ET.Element, allowed_hosts: list[str]) -> str:
-    direct = child_text(node, ["link"])
-    if direct:
-        return safe_url(direct, allowed_hosts)
-    for child in node.iter():
+def entry_link(node: ET.Element, source: dict[str, Any]) -> str:
+    base_key = "{http://www.w3.org/XML/1998/namespace}base"
+    base = urllib.parse.urljoin(source["url"], node.get(base_key, ""))
+    for child in node:
         if child.tag.rsplit("}", 1)[-1].lower() != "link":
             continue
-        href = child.attrib.get("href")
-        rel = child.attrib.get("rel", "alternate")
-        if href and rel in {"alternate", ""}:
-            return safe_url(href, allowed_hosts)
+        href = (child.get("href") or child.text or "").strip()
+        if href and child.get("rel", "alternate") in {"alternate", ""}:
+            link_base = urllib.parse.urljoin(base, child.get(base_key, ""))
+            try:
+                url = safe_url(urllib.parse.urljoin(link_base, href), source["article_hosts"])
+            except ValueError:
+                continue
+            if url:
+                return url
     return ""
 
 
@@ -430,13 +474,16 @@ def parse_feed(source: dict[str, Any]) -> tuple[list[dict[str, Any]], dict[str, 
     articles = []
     for node in nodes[: MAX_PER_SOURCE * 2]:
         title = clean_text(child_text(node, ["title"]), 220)
-        url = entry_link(node, source["article_hosts"])
+        url = entry_link(node, source)
         if not title or not url:
             continue
         if title.lower().startswith("isc stormcast"):
             continue
-        summary = clean_text(child_text(node, ["description", "summary", "content", "encoded"]), 420)
-        published = parse_datetime(child_text(node, ["pubdate", "published", "updated", "date"]))
+        summary_text = child_text(node, ["description", "summary", "encoded", "content"])
+        summary = clean_text(summary_text, 420)
+        published = parse_datetime(child_text(node, ["pubdate", "published", "date", "updated"]))
+        if published is None:
+            continue
         articles.append(
             {
                 "title": title,
@@ -448,8 +495,12 @@ def parse_feed(source: dict[str, Any]) -> tuple[list[dict[str, Any]], dict[str, 
                 "source_kind": source["kind"],
                 "authority": source["authority"],
                 "is_kev": False,
+                "cves": find_cves(f"{title} {clean_text(summary_text, 2500)}"),
             }
         )
+    if not articles:
+        raise ValueError("feed contains no usable dated articles")
+    articles.sort(key=lambda item: item["published_at"], reverse=True)
     return articles[:MAX_PER_SOURCE], {
         "name": source["name"],
         "url": source["url"],
@@ -458,10 +509,24 @@ def parse_feed(source: dict[str, Any]) -> tuple[list[dict[str, Any]], dict[str, 
     }
 
 
+def read_kev(url: str, hosts: list[str]) -> list[dict[str, Any]]:
+    catalog = json.loads(fetch_bytes(url, hosts))
+    vulnerabilities = catalog.get("vulnerabilities") if isinstance(catalog, dict) else None
+    if not isinstance(vulnerabilities, list) or not vulnerabilities:
+        raise ValueError("KEV feed contains no vulnerability records")
+    return sorted(
+        (item for item in vulnerabilities if isinstance(item, dict)),
+        key=lambda item: item.get("dateAdded", ""),
+        reverse=True,
+    )
+
+
 def parse_kev() -> tuple[list[dict[str, Any]], dict[str, Any]]:
-    catalog = json.loads(fetch_bytes(KEV_SOURCE["url"], KEV_SOURCE["fetch_hosts"]).decode("utf-8"))
-    vulnerabilities = catalog.get("vulnerabilities", [])
-    vulnerabilities.sort(key=lambda item: item.get("dateAdded", ""), reverse=True)
+    try:
+        vulnerabilities = read_kev(KEV_SOURCE["url"], KEV_SOURCE["fetch_hosts"])
+    except (OSError, ValueError) as error:
+        print(f"Primary CISA KEV feed unavailable ({error}); trying the official mirror.", file=sys.stderr)
+        vulnerabilities = read_kev(KEV_MIRROR, ["raw.githubusercontent.com"])
     articles = []
     for item in vulnerabilities[:MAX_PER_SOURCE]:
         cve = clean_text(item.get("cveID"), 40)
@@ -470,10 +535,9 @@ def parse_kev() -> tuple[list[dict[str, Any]], dict[str, Any]]:
         name = clean_text(item.get("vulnerabilityName"), 180)
         action = clean_text(item.get("requiredAction"), 300)
         date_added = item.get("dateAdded", "")
-        try:
-            published = datetime.fromisoformat(date_added).replace(tzinfo=timezone.utc)
-        except ValueError:
-            published = datetime.now(timezone.utc)
+        published = parse_datetime(date_added)
+        if published is None or not CVE_PATTERN.fullmatch(cve):
+            continue
         details_url = f"https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext={urllib.parse.quote(cve)}"
         articles.append(
             {
@@ -492,6 +556,8 @@ def parse_kev() -> tuple[list[dict[str, Any]], dict[str, Any]]:
                 "classification_text": f"{cve} {name} {vendor} {product}",
             }
         )
+    if not articles:
+        raise ValueError("KEV feed contains no usable dated CVE records")
     return articles, {
         "name": KEV_SOURCE["name"],
         "url": KEV_SOURCE["url"],
@@ -500,11 +566,31 @@ def parse_kev() -> tuple[list[dict[str, Any]], dict[str, Any]]:
     }
 
 
+def find_cves(text: str) -> list[str]:
+    return sorted({match.upper() for match in CVE_PATTERN.findall(text)})[:5]
+
+
+def contains_term(text: str, term: str) -> bool:
+    return re.search(rf"\b{re.escape(term)}\b", text) is not None
+
+
+def reports_exploitation(text: str) -> bool:
+    positive = any(contains_term(text, term) for term in (
+        "actively exploited", "active exploitation", "exploited in the wild",
+    ))
+    uncertain = re.search(
+        r"\b(?:not|no|never|potential(?:ly)?|could|may|might|whether|unconfirmed)\b"
+        r"[^.!?;]{0,55}\b(?:actively exploited|active exploitation|exploited in the wild)\b",
+        text,
+    )
+    return positive and not uncertain
+
+
 def classify(text: str) -> str:
     lowered = text.lower()
     best = (0, "threat-intel")
     for category, keywords in CATEGORY_RULES:
-        score = sum(1 for keyword in keywords if keyword in lowered)
+        score = sum(1 for keyword in keywords if contains_term(lowered, keyword.rstrip("-")))
         if score > best[0]:
             best = (score, category)
     return best[1]
@@ -517,10 +603,8 @@ def extract_tags(text: str, category: str, is_kev: bool) -> tuple[list[str], lis
     if is_kev:
         tags.extend(["active-exploitation", "patch"])
         evidence.extend(["kev", "observed-in-wild"])
-    if any(term in lowered for term in ["actively exploited", "active exploitation", "exploited in the wild"]):
-        if "active-exploitation" not in tags:
-            tags.append("active-exploitation")
-        evidence.append("observed-in-wild")
+    elif reports_exploitation(lowered):
+        tags.append("reported-exploitation")
     if any(term in lowered for term in ["detection", "hunt", "indicator", "ioc", "sigma", "yara"]):
         tags.append("detect-hunt")
         evidence.append("detection-guidance")
@@ -528,20 +612,17 @@ def extract_tags(text: str, category: str, is_kev: bool) -> tuple[list[str], lis
         tags.append("patch")
     platforms = []
     for platform, keywords in PLATFORM_RULES:
-        if any(
-            re.search(rf"(?<![a-z0-9]){re.escape(keyword)}(?![a-z0-9])", lowered)
-            for keyword in keywords
-        ):
+        if any(contains_term(lowered, keyword) for keyword in keywords):
             platforms.append(platform)
     return list(dict.fromkeys(tags + platforms))[:7], list(dict.fromkeys(evidence))[:4]
 
 
-def score_article(article: dict[str, Any], now: datetime) -> tuple[int, str]:
+def score_article(article: dict[str, Any], age: timedelta, tags: list[str]) -> tuple[int, str]:
     text = f"{article['title']} {article.get('summary', '')}".lower()
     score = 10 + int(article.get("authority", 0))
     if article.get("is_kev"):
         score += 30
-    if any(term in text for term in ["actively exploited", "active exploitation", "exploited in the wild"]):
+    if "reported-exploitation" in tags:
         score += 18
     if any(term in text for term in ["critical", "zero-day", "0-day", "remote code execution", "authentication bypass"]):
         score += 12
@@ -552,8 +633,8 @@ def score_article(article: dict[str, Any], now: datetime) -> tuple[int, str]:
     if any(term in text for term in ["windows", "m365", "entra", "vpn", "firewall", "linux", "browser", "cloud"]):
         score += 6
 
-    published = parse_datetime(article.get("published_at"))
-    age = now - published
+    if {"azure", "microsoft-defender", "splunk"}.intersection(tags):
+        score += 6
     if age <= timedelta(hours=24):
         score += 8
     elif age <= timedelta(hours=72):
@@ -571,18 +652,17 @@ def score_article(article: dict[str, Any], now: datetime) -> tuple[int, str]:
     return score, band
 
 
-def enrich(article: dict[str, Any], now: datetime) -> dict[str, Any]:
+def enrich(article: dict[str, Any], now: datetime, published: datetime) -> dict[str, Any]:
     combined = f"{article['title']} {article.get('summary', '')}"
     classification_text = article.get("classification_text") or combined
     category = classify(classification_text)
     tags, evidence = extract_tags(classification_text, category, bool(article.get("is_kev")))
-    cves = sorted(set(re.findall(r"\bCVE-\d{4}-\d{4,7}\b", combined, flags=re.I)))[:5]
-    cves = [cve.upper() for cve in cves]
-    score, priority = score_article(article, now)
+    cves = article.get("cves") or find_cves(combined)
+    age = now - published
+    score, priority = score_article(article, age, tags)
     triage = TRIAGE[category]
     story_id = hashlib.sha256(article["url"].encode("utf-8")).hexdigest()[:12]
-    published = parse_datetime(article["published_at"])
-    age_hours = max(0, round((now - published).total_seconds() / 3600))
+    age_hours = max(0, round(age.total_seconds() / 3600))
 
     return {
         "id": story_id,
@@ -622,34 +702,53 @@ def deduplicate(articles: list[dict[str, Any]]) -> list[dict[str, Any]]:
     unique = []
     seen_urls = set()
     seen_titles = set()
+    seen_advisories = set()
     for article in articles:
         url_key = article["url"].rstrip("/")
         title_key = normalize_title(article["title"])
-        if url_key in seen_urls or title_key in seen_titles:
+        # Keep KEV entries and research separate from overlapping single-CVE advisories.
+        cves = article["cves"]
+        advisory_key = cves[0] if article["source_kind"] == "advisory" and len(cves) == 1 else None
+        if url_key in seen_urls or title_key in seen_titles or advisory_key in seen_advisories:
             continue
         seen_urls.add(url_key)
         seen_titles.add(title_key)
+        if advisory_key:
+            seen_advisories.add(advisory_key)
         unique.append(article)
     return unique
+
+
+def select_briefing_articles(articles: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    def priority(article):
+        return article["priority_score"], article["published_at"], article["url"]
+
+    by_priority = deduplicate(sorted(articles, key=priority, reverse=True))
+    by_date = sorted(by_priority, key=lambda article: article["published_at"], reverse=True)
+    newest_per_source = {}
+    for article in by_date:
+        newest_per_source.setdefault(article["source"], article)
+    recent = [*newest_per_source.values(), *by_date[: MAX_ARTICLES // 3]]
+    selected = {article["id"]: article for article in [*recent, *by_priority]}
+    return sorted(list(selected.values())[:MAX_ARTICLES], key=priority, reverse=True)
 
 
 def load_previous() -> dict[str, Any]:
     if not OUTPUT.exists():
         return {}
     try:
-        return json.loads(OUTPUT.read_text(encoding="utf-8"))
+        data = json.loads(OUTPUT.read_text(encoding="utf-8"))
+        return data if isinstance(data, dict) else {}
     except (json.JSONDecodeError, OSError):
         return {}
 
 
 def should_skip_scheduled(previous: dict[str, Any], now_local: datetime) -> str | None:
-    if now_local.hour < 8:
-        return f"local time is {now_local:%H:%M}; waiting for the 08:00 run"
-    generated_at = previous.get("generated_at")
-    if generated_at:
-        previous_date = parse_datetime(generated_at).astimezone(BUCHAREST).date()
-        if previous_date == now_local.date():
-            return "today's briefing has already been generated"
+    if (now_local.hour, now_local.minute) < (8, 7):
+        return f"local time is {now_local:%H:%M}; waiting for the 08:07 run"
+    generated_at = parse_datetime(previous.get("generated_at"))
+    if generated_at and generated_at.astimezone(BUCHAREST).date() == now_local.date():
+        return "today's briefing has already been saved"
     return None
 
 
@@ -686,14 +785,7 @@ def build(scheduled: bool = False) -> int:
                 source_status.append(
                     {
                         "name": source_name,
-                        "url": next(
-                            (
-                                source["url"]
-                                for source in FEEDS + [KEV_SOURCE]
-                                if source["name"] == source_name
-                            ),
-                            "",
-                        ),
+                        "url": SOURCES[source_name]["url"],
                         "status": "error",
                         "items": 0,
                         "error": clean_text(str(error), 140),
@@ -701,38 +793,27 @@ def build(scheduled: bool = False) -> int:
                 )
                 print(f"{source_name}: failed ({error})", file=sys.stderr)
 
-    if not raw_articles:
-        print("All sources failed; preserving the last valid data file.", file=sys.stderr)
+    cutoff = now - timedelta(days=ARTICLE_MAX_AGE_DAYS)
+    latest_allowed = now + timedelta(hours=2)
+    enriched = []
+    for article in raw_articles:
+        published = parse_datetime(article["published_at"])
+        if published and cutoff <= published <= latest_allowed:
+            enriched.append(enrich(article, now, published))
+    if not enriched:
+        print("No recent live articles; preserving the last valid data file.", file=sys.stderr)
         return 1
 
-    cutoff = now - timedelta(days=ARTICLE_MAX_AGE_DAYS)
     if failed_sources:
         for article in previous.get("articles", []):
             if article.get("source") not in failed_sources:
                 continue
-            if parse_datetime(article.get("published_at")) < cutoff:
-                continue
-            raw_articles.append(
-                {
-                    **article,
-                    "authority": 0,
-                    "is_kev": article.get("is_kev", False),
-                }
-            )
-
-    enriched = [
-        enrich(article, now)
-        for article in raw_articles
-        if parse_datetime(article.get("published_at")) >= cutoff
-    ]
-    enriched.sort(
-        key=lambda article: (article["priority_score"], article["published_at"]),
-        reverse=True,
-    )
-    enriched = deduplicate(enriched)[:MAX_ARTICLES]
-
-    if not enriched:
-        print("No recent articles were produced; preserving the last valid data file.", file=sys.stderr)
+            published = parse_datetime(article.get("published_at"))
+            if published and cutoff <= published <= latest_allowed:
+                enriched.append({**article, "age_hours": max(0, round((now - published).total_seconds() / 3600))})
+    enriched = select_briefing_articles(enriched)
+    if len(enriched) < MIN_ARTICLES:
+        print("Too few recent articles; preserving the last valid data file.", file=sys.stderr)
         return 1
 
     counts = {band: 0 for band in ["critical", "high", "watch", "context"]}
@@ -747,7 +828,7 @@ def build(scheduled: bool = False) -> int:
         "generated_at": now.isoformat().replace("+00:00", "Z"),
         "generated_at_local": now_local.isoformat(timespec="minutes"),
         "timezone": "Europe/Bucharest",
-        "schedule": "Daily at 08:00 Europe/Bucharest",
+        "schedule": "Daily at 08:07 Europe/Bucharest",
         "stats": {
             "total": len(enriched),
             **counts,
@@ -774,7 +855,7 @@ def validate() -> int:
         print("cybernews.json is missing or invalid", file=sys.stderr)
         return 1
     articles = data.get("articles")
-    if not isinstance(articles, list) or len(articles) < 8:
+    if not isinstance(articles, list) or len(articles) < MIN_ARTICLES:
         print("cybernews.json contains too few articles", file=sys.stderr)
         return 1
     required = {
@@ -810,7 +891,7 @@ def main() -> int:
     parser.add_argument(
         "--scheduled",
         action="store_true",
-        help="Run only once per Bucharest day, at or shortly after 08:00.",
+        help="Run after 08:07 Bucharest time if today's briefing has not been saved.",
     )
     parser.add_argument(
         "--validate",

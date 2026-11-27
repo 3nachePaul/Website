@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         empty: document.getElementById('empty-state'),
         resultCount: document.getElementById('result-count'),
         lastUpdated: document.getElementById('last-updated'),
+        freshnessStatus: document.getElementById('freshness-status'),
         sourceStatus: document.getElementById('source-status'),
         sourceSummary: document.getElementById('source-health-summary'),
         sourceList: document.getElementById('source-health-list'),
@@ -306,7 +307,22 @@ document.addEventListener('DOMContentLoaded', () => {
         elements.criticalCount.textContent = stats.critical ?? 0;
         elements.storyCount.textContent = stats.total ?? state.articles.length;
         elements.healthySources.textContent = `${stats.sources_ok ?? 0}/${stats.sources_total ?? 0}`;
-        elements.lastUpdated.textContent = formatUpdated(state.data.generated_at);
+        const updatedAt = Date.parse(state.data.generated_at);
+        elements.lastUpdated.textContent = Number.isFinite(updatedAt)
+            ? formatUpdated(updatedAt)
+            : 'Refresh time unknown';
+        renderFreshness();
+        window.setInterval(renderFreshness, 60_000);
+    }
+
+    function renderFreshness() {
+        const updatedAt = Date.parse(state.data.generated_at);
+        const warning = Number.isFinite(updatedAt) && Date.now() - updatedAt > 86_400_000
+            ? 'Showing the last briefing. It is more than 24 hours old.'
+            : '';
+        if (elements.freshnessStatus.textContent !== warning) {
+            elements.freshnessStatus.textContent = warning;
+        }
     }
 
     function resetVisible() {

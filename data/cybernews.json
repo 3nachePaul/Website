@@ -1,28 +1,27 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-26T16:45:57.868568Z",
-  "generated_at_local": "2026-11-26T18:45+02:00",
+  "generated_at": "2026-11-27T06:24:14.048271Z",
+  "generated_at_local": "2026-11-27T08:24+02:00",
   "timezone": "Europe/Bucharest",
-  "schedule": "Daily at 08:00 Europe/Bucharest",
+  "schedule": "Daily at 08:07 Europe/Bucharest",
   "stats": {
     "total": 54,
     "critical": 12,
     "high": 4,
-    "watch": 20,
-    "context": 18,
+    "watch": 25,
+    "context": 13,
     "categories": {
-      "vulnerability": 32,
-      "threat-intel": 9,
-      "identity": 3,
-      "cloud": 2,
+      "vulnerability": 39,
+      "threat-intel": 7,
       "supply-chain": 2,
       "malware": 2,
-      "phishing": 2,
       "network": 1,
+      "identity": 1,
+      "phishing": 1,
       "data-breach": 1
     },
-    "sources_ok": 9,
-    "sources_total": 9
+    "sources_ok": 11,
+    "sources_total": 11
   },
   "sources": [
     {
@@ -56,6 +55,12 @@
       "items": 12
     },
     {
+      "name": "Microsoft Cloud Security",
+      "url": "https://www.microsoft.com/en-us/security/blog/topic/cloud-security/feed/",
+      "status": "ok",
+      "items": 10
+    },
+    {
       "name": "Microsoft Security Operations",
       "url": "https://www.microsoft.com/en-us/security/blog/topic/security-operations/feed/",
       "status": "ok",
@@ -74,6 +79,12 @@
       "items": 4
     },
     {
+      "name": "Splunk Security Advisories",
+      "url": "https://advisory.splunk.com/feed.xml",
+      "status": "ok",
+      "items": 12
+    },
+    {
       "name": "UK NCSC Threat Reports",
       "url": "https://www.ncsc.gov.uk/api/1/services/v1/report-rss-feed.xml",
       "status": "ok",
@@ -81,44 +92,6 @@
     }
   ],
   "articles": [
-    {
-      "id": "d6065f79822e",
-      "title": "CVE-2026-103406: Hewlett Packard Enterprise (HPE) Juniper Session Smart Conductor and Session Smart Router OS Command Injection Vulnerability",
-      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-103406",
-      "summary": "Hewlett Packard Enterprise (HPE) Juniper Session Smart Conductor and Session Smart Router. CISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or…",
-      "source": "CISA Known Exploited Vulnerabilities",
-      "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
-      "source_kind": "kev",
-      "published_at": "2026-11-25T00:00:00Z",
-      "age_hours": 41,
-      "category": "vulnerability",
-      "priority": "critical",
-      "priority_score": 100,
-      "tags": [
-        "vulnerability",
-        "active-exploitation",
-        "patch",
-        "network-appliance"
-      ],
-      "evidence": [
-        "kev",
-        "observed-in-wild"
-      ],
-      "cves": [
-        "CVE-2026-103406"
-      ],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": true,
-      "product": "Hewlett Packard Enterprise (HPE) Juniper Session Smart Conductor and Session Smart Router",
-      "due_date": "2026-11-28",
-      "known_ransomware_use": "Unknown"
-    },
     {
       "id": "630661221288",
       "title": "CVE-2026-133469: Vates Xen Orchestra Improper Validation of Specified Type of Input Vulnerability",
@@ -128,7 +101,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-11-25T00:00:00Z",
-      "age_hours": 41,
+      "age_hours": 54,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -157,117 +130,6 @@
       "known_ransomware_use": "Unknown"
     },
     {
-      "id": "18c9e31e1d5c",
-      "title": "CVE-2025-41450: Danfoss AK-SM 800A Series Improper Authentication Vulnerability",
-      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2025-41450",
-      "summary": "Danfoss AK-SM 800A Series. CISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or…",
-      "source": "CISA Known Exploited Vulnerabilities",
-      "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
-      "source_kind": "kev",
-      "published_at": "2026-11-25T00:00:00Z",
-      "age_hours": 41,
-      "category": "vulnerability",
-      "priority": "critical",
-      "priority_score": 100,
-      "tags": [
-        "vulnerability",
-        "active-exploitation",
-        "patch"
-      ],
-      "evidence": [
-        "kev",
-        "observed-in-wild"
-      ],
-      "cves": [
-        "CVE-2025-41450"
-      ],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": true,
-      "product": "Danfoss AK-SM 800A Series",
-      "due_date": "2026-12-09",
-      "known_ransomware_use": "Unknown"
-    },
-    {
-      "id": "06c4619640d0",
-      "title": "CVE-2023-25914: Danfoss AK-SM 800A Series Path Traversal Vulnerability",
-      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2023-25914",
-      "summary": "Danfoss AK-SM 800A Series. CISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or…",
-      "source": "CISA Known Exploited Vulnerabilities",
-      "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
-      "source_kind": "kev",
-      "published_at": "2026-11-25T00:00:00Z",
-      "age_hours": 41,
-      "category": "vulnerability",
-      "priority": "critical",
-      "priority_score": 100,
-      "tags": [
-        "vulnerability",
-        "active-exploitation",
-        "patch"
-      ],
-      "evidence": [
-        "kev",
-        "observed-in-wild"
-      ],
-      "cves": [
-        "CVE-2023-25914"
-      ],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": true,
-      "product": "Danfoss AK-SM 800A Series",
-      "due_date": "2026-11-28",
-      "known_ransomware_use": "Unknown"
-    },
-    {
-      "id": "d2d320d79859",
-      "title": "CVE-2023-25915: Danfoss AK-SM 800A Series Improper Input Validation Vulnerability",
-      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2023-25915",
-      "summary": "Danfoss AK-SM 800A Series. CISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or…",
-      "source": "CISA Known Exploited Vulnerabilities",
-      "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
-      "source_kind": "kev",
-      "published_at": "2026-11-25T00:00:00Z",
-      "age_hours": 41,
-      "category": "vulnerability",
-      "priority": "critical",
-      "priority_score": 100,
-      "tags": [
-        "vulnerability",
-        "active-exploitation",
-        "patch"
-      ],
-      "evidence": [
-        "kev",
-        "observed-in-wild"
-      ],
-      "cves": [
-        "CVE-2023-25915"
-      ],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": true,
-      "product": "Danfoss AK-SM 800A Series",
-      "due_date": "2026-11-28",
-      "known_ransomware_use": "Unknown"
-    },
-    {
       "id": "ca1a5c825201",
       "title": "CVE-2026-133324: Mitel MiCollab Not Failing Securely Vulnerability",
       "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-133324",
@@ -276,7 +138,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-11-25T00:00:00Z",
-      "age_hours": 41,
+      "age_hours": 54,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -305,15 +167,15 @@
       "known_ransomware_use": "Unknown"
     },
     {
-      "id": "d6011fa89244",
-      "title": "CVE-2026-133275: Mitel MiCollab Unrestricted Upload of File with Dangerous Type Vulnerability",
-      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-133275",
+      "id": "1d152fd70ad6",
+      "title": "CVE-2026-133323: Mitel MiCollab OS Command Injection Vulnerability",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-133323",
       "summary": "Mitel MiCollab. CISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or…",
       "source": "CISA Known Exploited Vulnerabilities",
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-11-25T00:00:00Z",
-      "age_hours": 41,
+      "age_hours": 54,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -327,7 +189,7 @@
         "observed-in-wild"
       ],
       "cves": [
-        "CVE-2026-133275"
+        "CVE-2026-133323"
       ],
       "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
       "first_checks": [
@@ -350,7 +212,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-11-25T00:00:00Z",
-      "age_hours": 41,
+      "age_hours": 54,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -387,7 +249,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-11-25T00:00:00Z",
-      "age_hours": 41,
+      "age_hours": 54,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -416,15 +278,15 @@
       "known_ransomware_use": "Unknown"
     },
     {
-      "id": "1d152fd70ad6",
-      "title": "CVE-2026-133323: Mitel MiCollab OS Command Injection Vulnerability",
-      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-133323",
+      "id": "d6011fa89244",
+      "title": "CVE-2026-133275: Mitel MiCollab Unrestricted Upload of File with Dangerous Type Vulnerability",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-133275",
       "summary": "Mitel MiCollab. CISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or…",
       "source": "CISA Known Exploited Vulnerabilities",
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-11-25T00:00:00Z",
-      "age_hours": 41,
+      "age_hours": 54,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -438,7 +300,7 @@
         "observed-in-wild"
       ],
       "cves": [
-        "CVE-2026-133323"
+        "CVE-2026-133275"
       ],
       "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
       "first_checks": [
@@ -453,6 +315,155 @@
       "known_ransomware_use": "Unknown"
     },
     {
+      "id": "d6065f79822e",
+      "title": "CVE-2026-103406: Hewlett Packard Enterprise (HPE) Juniper Session Smart Conductor and Session Smart Router OS Command Injection Vulnerability",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-103406",
+      "summary": "Hewlett Packard Enterprise (HPE) Juniper Session Smart Conductor and Session Smart Router. CISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or…",
+      "source": "CISA Known Exploited Vulnerabilities",
+      "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "source_kind": "kev",
+      "published_at": "2026-11-25T00:00:00Z",
+      "age_hours": 54,
+      "category": "vulnerability",
+      "priority": "critical",
+      "priority_score": 100,
+      "tags": [
+        "vulnerability",
+        "active-exploitation",
+        "patch",
+        "network-appliance"
+      ],
+      "evidence": [
+        "kev",
+        "observed-in-wild"
+      ],
+      "cves": [
+        "CVE-2026-103406"
+      ],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": true,
+      "product": "Hewlett Packard Enterprise (HPE) Juniper Session Smart Conductor and Session Smart Router",
+      "due_date": "2026-11-28",
+      "known_ransomware_use": "Unknown"
+    },
+    {
+      "id": "18c9e31e1d5c",
+      "title": "CVE-2025-41450: Danfoss AK-SM 800A Series Improper Authentication Vulnerability",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2025-41450",
+      "summary": "Danfoss AK-SM 800A Series. CISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or…",
+      "source": "CISA Known Exploited Vulnerabilities",
+      "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "source_kind": "kev",
+      "published_at": "2026-11-25T00:00:00Z",
+      "age_hours": 54,
+      "category": "vulnerability",
+      "priority": "critical",
+      "priority_score": 100,
+      "tags": [
+        "vulnerability",
+        "active-exploitation",
+        "patch"
+      ],
+      "evidence": [
+        "kev",
+        "observed-in-wild"
+      ],
+      "cves": [
+        "CVE-2025-41450"
+      ],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": true,
+      "product": "Danfoss AK-SM 800A Series",
+      "due_date": "2026-12-09",
+      "known_ransomware_use": "Unknown"
+    },
+    {
+      "id": "d2d320d79859",
+      "title": "CVE-2023-25915: Danfoss AK-SM 800A Series Improper Input Validation Vulnerability",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2023-25915",
+      "summary": "Danfoss AK-SM 800A Series. CISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or…",
+      "source": "CISA Known Exploited Vulnerabilities",
+      "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "source_kind": "kev",
+      "published_at": "2026-11-25T00:00:00Z",
+      "age_hours": 54,
+      "category": "vulnerability",
+      "priority": "critical",
+      "priority_score": 100,
+      "tags": [
+        "vulnerability",
+        "active-exploitation",
+        "patch"
+      ],
+      "evidence": [
+        "kev",
+        "observed-in-wild"
+      ],
+      "cves": [
+        "CVE-2023-25915"
+      ],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": true,
+      "product": "Danfoss AK-SM 800A Series",
+      "due_date": "2026-11-28",
+      "known_ransomware_use": "Unknown"
+    },
+    {
+      "id": "06c4619640d0",
+      "title": "CVE-2023-25914: Danfoss AK-SM 800A Series Path Traversal Vulnerability",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2023-25914",
+      "summary": "Danfoss AK-SM 800A Series. CISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or…",
+      "source": "CISA Known Exploited Vulnerabilities",
+      "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "source_kind": "kev",
+      "published_at": "2026-11-25T00:00:00Z",
+      "age_hours": 54,
+      "category": "vulnerability",
+      "priority": "critical",
+      "priority_score": 100,
+      "tags": [
+        "vulnerability",
+        "active-exploitation",
+        "patch"
+      ],
+      "evidence": [
+        "kev",
+        "observed-in-wild"
+      ],
+      "cves": [
+        "CVE-2023-25914"
+      ],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": true,
+      "product": "Danfoss AK-SM 800A Series",
+      "due_date": "2026-11-28",
+      "known_ransomware_use": "Unknown"
+    },
+    {
       "id": "54c0dce37adc",
       "title": "CVE-2026-132224: Optimizely Web Experimentation External Control of Critical State Data Vulnerability",
       "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-132224",
@@ -461,7 +472,7 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-11-24T00:00:00Z",
-      "age_hours": 65,
+      "age_hours": 78,
       "category": "vulnerability",
       "priority": "critical",
       "priority_score": 100,
@@ -498,10 +509,10 @@
       "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
       "source_kind": "kev",
       "published_at": "2026-11-24T00:00:00Z",
-      "age_hours": 65,
+      "age_hours": 78,
       "category": "vulnerability",
       "priority": "critical",
-      "priority_score": 100,
+      "priority_score": 96,
       "tags": [
         "vulnerability",
         "active-exploitation",
@@ -535,17 +546,15 @@
       "source_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
       "source_kind": "advisory",
       "published_at": "2026-11-24T12:00:00Z",
-      "age_hours": 53,
+      "age_hours": 66,
       "category": "vulnerability",
       "priority": "high",
       "priority_score": 68,
       "tags": [
         "vulnerability",
-        "active-exploitation"
+        "reported-exploitation"
       ],
-      "evidence": [
-        "observed-in-wild"
-      ],
+      "evidence": [],
       "cves": [
         "CVE-2026-131914",
         "CVE-2026-132165",
@@ -569,54 +578,22 @@
       "source_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
       "source_kind": "advisory",
       "published_at": "2026-11-20T12:00:00Z",
-      "age_hours": 149,
+      "age_hours": 162,
       "category": "vulnerability",
       "priority": "high",
       "priority_score": 64,
       "tags": [
         "vulnerability",
-        "active-exploitation",
+        "reported-exploitation",
         "network-appliance"
       ],
-      "evidence": [
-        "observed-in-wild"
-      ],
+      "evidence": [],
       "cves": [
         "CVE-2025-42884",
         "CVE-2026-123890",
+        "CVE-2026-129448",
         "CVE-2026-76466"
       ],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": false
-    },
-    {
-      "id": "2a09216dda16",
-      "title": "Hackers now exploit critical Drupal RCE flaw to hijack sites",
-      "url": "https://www.bleepingcomputer.com/news/security/hackers-now-exploit-critical-drupal-rce-flaw-to-hijack-sites/",
-      "summary": "The Drupal security team has confirmed that a critical vulnerability that lets attackers hijack unpatched sites has been actively exploited since at least Thursday.…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-11-25T10:10:20Z",
-      "age_hours": 31,
-      "category": "vulnerability",
-      "priority": "high",
-      "priority_score": 60,
-      "tags": [
-        "vulnerability",
-        "active-exploitation",
-        "patch"
-      ],
-      "evidence": [
-        "observed-in-wild"
-      ],
-      "cves": [],
       "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
       "first_checks": [
         "Confirm whether the affected product and version exist in your environment.",
@@ -635,22 +612,21 @@
       "source_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
       "source_kind": "advisory",
       "published_at": "2026-11-25T12:00:00Z",
-      "age_hours": 29,
+      "age_hours": 42,
       "category": "vulnerability",
       "priority": "high",
       "priority_score": 56,
       "tags": [
         "vulnerability",
-        "active-exploitation"
+        "reported-exploitation"
       ],
-      "evidence": [
-        "observed-in-wild"
-      ],
+      "evidence": [],
       "cves": [
         "CVE-2023-25914",
         "CVE-2023-25915",
         "CVE-2025-41450",
-        "CVE-2026-103406"
+        "CVE-2026-103406",
+        "CVE-2026-133275"
       ],
       "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
       "first_checks": [
@@ -662,6 +638,35 @@
       "is_kev": false
     },
     {
+      "id": "f426b022768c",
+      "title": "Trained to betray: How post-training supply chain attacks hijack coding agents",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/12/trained-to-betray-how-post-training-supply-chain-attacks-hijack-coding-agents/",
+      "summary": "Microsoft Defender Research and the AI Red Team discuss how poisoned datasets and poisoned model checkpoints can trigger remote code execution and other malicious activities.",
+      "source": "Microsoft Threat Intelligence",
+      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
+      "source_kind": "research",
+      "published_at": "2026-11-12T17:00:00Z",
+      "age_hours": 349,
+      "category": "supply-chain",
+      "priority": "high",
+      "priority_score": 55,
+      "tags": [
+        "supply-chain",
+        "microsoft-defender",
+        "windows"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "A compromised package or update can create alerts across developer endpoints, build systems and production workloads.",
+      "first_checks": [
+        "Confirm whether the named package, extension or version exists internally.",
+        "Review install time, parent process, outbound traffic and exposed credentials.",
+        "Search build logs and peer systems for the same dependency or behavior."
+      ],
+      "escalate_when": "Escalate on confirmed installation, suspicious execution, credential access or a tainted production build.",
+      "is_kev": false
+    },
+    {
       "id": "75ea09ea3e75",
       "title": "CISA Adds Two Known Exploited Vulnerabilities to Catalog",
       "url": "https://www.cisa.gov/news-events/alerts/2026/11/23/cisa-adds-two-known-exploited-vulnerabilities-catalog",
@@ -670,17 +675,15 @@
       "source_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
       "source_kind": "advisory",
       "published_at": "2026-11-23T12:00:00Z",
-      "age_hours": 77,
+      "age_hours": 90,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 52,
       "tags": [
         "vulnerability",
-        "active-exploitation"
+        "reported-exploitation"
       ],
-      "evidence": [
-        "observed-in-wild"
-      ],
+      "evidence": [],
       "cves": [
         "CVE-2026-133968",
         "CVE-2026-134624"
@@ -703,24 +706,25 @@
       "source_url": "https://cert.europa.eu/publications/security-advisories-rss",
       "source_kind": "advisory",
       "published_at": "2026-11-12T18:20:53Z",
-      "age_hours": 334,
-      "category": "cloud",
+      "age_hours": 348,
+      "category": "vulnerability",
       "priority": "watch",
       "priority_score": 51,
       "tags": [
+        "vulnerability",
         "cloud"
       ],
       "evidence": [],
       "cves": [
         "CVE-2026-120868"
       ],
-      "why_l1_cares": "Cloud incidents often cross identity, control-plane and workload logs, so isolated alerts can hide scope.",
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
       "first_checks": [
-        "Review control-plane changes, sign-ins and newly created credentials.",
-        "Check public exposure, unusual data access and workload activity.",
-        "Correlate the actor, source IP and time across cloud services."
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
       ],
-      "escalate_when": "Escalate on unauthorized configuration change, exposed data, new credential or suspicious workload execution.",
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
       "is_kev": false
     },
     {
@@ -732,7 +736,7 @@
       "source_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
       "source_kind": "advisory",
       "published_at": "2026-11-24T12:00:00Z",
-      "age_hours": 53,
+      "age_hours": 66,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 50,
@@ -753,31 +757,32 @@
       "is_kev": false
     },
     {
-      "id": "f426b022768c",
-      "title": "Trained to betray: How post-training supply chain attacks hijack coding agents",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/12/trained-to-betray-how-post-training-supply-chain-attacks-hijack-coding-agents/",
-      "summary": "Microsoft Defender Research and the AI Red Team discuss how poisoned datasets and poisoned model checkpoints can trigger remote code execution and other malicious activities.",
-      "source": "Microsoft Threat Intelligence",
-      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
-      "source_kind": "research",
-      "published_at": "2026-11-12T17:00:00Z",
-      "age_hours": 336,
-      "category": "supply-chain",
+      "id": "bf2611689a6f",
+      "title": "libumqtt",
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-323-03",
+      "summary": "View CSAF Summary Successful exploitation of this vulnerability could allow a remote attacker to cause a denial of service, memory corruption, or information disclosure. The following versions of libumqtt are affected: libumqtt <=1.1.1 (CVE-2026-125132) CVSS Vendor Equipment v3 8.6 libumqtt libumqtt 1 Vulnerability Integer Underflow (Wrap or Wraparound) Background Critical Infrastructure Sectors: Critical…",
+      "source": "CISA Advisories",
+      "source_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "source_kind": "advisory",
+      "published_at": "2026-11-19T12:00:00Z",
+      "age_hours": 186,
+      "category": "vulnerability",
       "priority": "watch",
-      "priority_score": 49,
+      "priority_score": 46,
       "tags": [
-        "supply-chain",
-        "windows"
+        "vulnerability"
       ],
       "evidence": [],
-      "cves": [],
-      "why_l1_cares": "A compromised package or update can create alerts across developer endpoints, build systems and production workloads.",
-      "first_checks": [
-        "Confirm whether the named package, extension or version exists internally.",
-        "Review install time, parent process, outbound traffic and exposed credentials.",
-        "Search build logs and peer systems for the same dependency or behavior."
+      "cves": [
+        "CVE-2026-125132"
       ],
-      "escalate_when": "Escalate on confirmed installation, suspicious execution, credential access or a tainted production build.",
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
       "is_kev": false
     },
     {
@@ -789,7 +794,7 @@
       "source_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
       "source_kind": "advisory",
       "published_at": "2026-11-19T12:00:00Z",
-      "age_hours": 173,
+      "age_hours": 186,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 46,
@@ -812,35 +817,6 @@
       "is_kev": false
     },
     {
-      "id": "bf2611689a6f",
-      "title": "libumqtt",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-323-03",
-      "summary": "View CSAF Summary Successful exploitation of this vulnerability could allow a remote attacker to cause a denial of service, memory corruption, or information disclosure. The following versions of libumqtt are affected: libumqtt <=1.1.1 (CVE-2026-125132) CVSS Vendor Equipment v3 8.6 libumqtt libumqtt 1 Vulnerability Integer Underflow (Wrap or Wraparound) Background Critical Infrastructure Sectors: Critical…",
-      "source": "CISA Advisories",
-      "source_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
-      "source_kind": "advisory",
-      "published_at": "2026-11-19T12:00:00Z",
-      "age_hours": 173,
-      "category": "vulnerability",
-      "priority": "watch",
-      "priority_score": 46,
-      "tags": [
-        "vulnerability"
-      ],
-      "evidence": [],
-      "cves": [
-        "CVE-2026-125132"
-      ],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": false
-    },
-    {
       "id": "91475641f52f",
       "title": "Siemens Industrial Software Products",
       "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-04",
@@ -849,7 +825,7 @@
       "source_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
       "source_kind": "advisory",
       "published_at": "2026-11-17T12:00:00Z",
-      "age_hours": 221,
+      "age_hours": 234,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 46,
@@ -879,7 +855,7 @@
       "source_url": "https://cert.europa.eu/publications/security-advisories-rss",
       "source_kind": "advisory",
       "published_at": "2026-11-18T18:30:42Z",
-      "age_hours": 190,
+      "age_hours": 204,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 45,
@@ -909,7 +885,7 @@
       "source_url": "https://cert.europa.eu/publications/security-advisories-rss",
       "source_kind": "advisory",
       "published_at": "2026-11-18T10:11:05Z",
-      "age_hours": 199,
+      "age_hours": 212,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 45,
@@ -938,7 +914,7 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-11-25T16:13:40Z",
-      "age_hours": 25,
+      "age_hours": 38,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 42,
@@ -958,6 +934,39 @@
       "is_kev": false
     },
     {
+      "id": "36ece2aa7566",
+      "title": "SCKit abuses ScreenConnect to deploy remote access and target technician sessions",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/13/sckit-abuses-screenconnect-deploy-remote-access-target-technician-sessions/",
+      "summary": "SCKit abuses ScreenConnect to deploy unauthorized remote access and target technicians. Explore the attack chain, mitigations, and Microsoft Defender XDR hunting.",
+      "source": "Microsoft Threat Intelligence",
+      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
+      "source_kind": "research",
+      "published_at": "2026-11-13T21:31:44Z",
+      "age_hours": 321,
+      "category": "threat-intel",
+      "priority": "watch",
+      "priority_score": 42,
+      "tags": [
+        "threat-intel",
+        "detect-hunt",
+        "patch",
+        "microsoft-defender",
+        "windows"
+      ],
+      "evidence": [
+        "detection-guidance"
+      ],
+      "cves": [],
+      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
+      "first_checks": [
+        "Extract only indicators and behaviors supported by the source.",
+        "Compare them with recent SIEM, EDR, identity and network alerts.",
+        "Record relevant findings without blocking on unverified indicators alone."
+      ],
+      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
+      "is_kev": false
+    },
+    {
       "id": "f3f53ef63df3",
       "title": "The global socket: how threat actors are weaponizing GSocket for stealthy C2",
       "url": "https://www.microsoft.com/en-us/security/blog/2026/11/11/global-socket-how-threat-actors-weaponizing-gsocket-stealthy-c2/",
@@ -966,7 +975,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "source_kind": "research",
       "published_at": "2026-11-11T19:49:57Z",
-      "age_hours": 357,
+      "age_hours": 371,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 42,
@@ -974,6 +983,34 @@
         "vulnerability",
         "patch",
         "linux"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": false
+    },
+    {
+      "id": "e6f5c7168240",
+      "title": "SVD-2026-1113: Vulnerabilities in PHP affecting Splunk Products - November 2026",
+      "url": "https://advisory.splunk.com/advisories/SVD-2026-1113",
+      "summary": "Splunk investigated to determine which products are affected by recent PHP CVEs.",
+      "source": "Splunk Security Advisories",
+      "source_url": "https://advisory.splunk.com/feed.xml",
+      "source_kind": "advisory",
+      "published_at": "2026-11-20T00:00:00Z",
+      "age_hours": 174,
+      "category": "vulnerability",
+      "priority": "watch",
+      "priority_score": 40,
+      "tags": [
+        "vulnerability",
+        "splunk"
       ],
       "evidence": [],
       "cves": [],
@@ -995,7 +1032,7 @@
       "source_url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
       "source_kind": "research",
       "published_at": "2026-11-19T14:00:00Z",
-      "age_hours": 171,
+      "age_hours": 184,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 40,
@@ -1004,8 +1041,293 @@
       ],
       "evidence": [],
       "cves": [
-        "CVE-2026-102764"
+        "CVE-2026-102764",
+        "CVE-2026-123890"
       ],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": false
+    },
+    {
+      "id": "b56c978e10db",
+      "title": "SVD-2026-1112: Vulnerabilities in NGINX affecting Splunk Products - November 2026",
+      "url": "https://advisory.splunk.com/advisories/SVD-2026-1112",
+      "summary": "Splunk is investigating to determine which products are affected by recent nginx CVEs.",
+      "source": "Splunk Security Advisories",
+      "source_url": "https://advisory.splunk.com/feed.xml",
+      "source_kind": "advisory",
+      "published_at": "2026-11-19T00:00:00Z",
+      "age_hours": 198,
+      "category": "vulnerability",
+      "priority": "watch",
+      "priority_score": 40,
+      "tags": [
+        "vulnerability",
+        "splunk"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": false
+    },
+    {
+      "id": "cee57234d906",
+      "title": "SVD-2026-1111: Security Vulnerabilities in Splunk AI Assistant - November 2026",
+      "url": "https://advisory.splunk.com/advisories/SVD-2026-1111",
+      "summary": "Splunk addressed multiple vulnerabilities in Splunk AI Assistant. See CVE Details for vulnerability-specific and product-specific information.",
+      "source": "Splunk Security Advisories",
+      "source_url": "https://advisory.splunk.com/feed.xml",
+      "source_kind": "advisory",
+      "published_at": "2026-11-18T00:00:00Z",
+      "age_hours": 222,
+      "category": "vulnerability",
+      "priority": "watch",
+      "priority_score": 40,
+      "tags": [
+        "vulnerability",
+        "splunk"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": false
+    },
+    {
+      "id": "d30ae34b4e30",
+      "title": "SVD-2026-1110: Security Vulnerabilities in Splunk App for Stream - November 2026",
+      "url": "https://advisory.splunk.com/advisories/SVD-2026-1110",
+      "summary": "Splunk addressed multiple vulnerabilities in Splunk App for Stream. See CVE Details for vulnerability-specific and product-specific information.",
+      "source": "Splunk Security Advisories",
+      "source_url": "https://advisory.splunk.com/feed.xml",
+      "source_kind": "advisory",
+      "published_at": "2026-11-18T00:00:00Z",
+      "age_hours": 222,
+      "category": "vulnerability",
+      "priority": "watch",
+      "priority_score": 40,
+      "tags": [
+        "vulnerability",
+        "splunk"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": false
+    },
+    {
+      "id": "6b1285679d12",
+      "title": "SVD-2026-1109: Third-Party Package Updates in Splunk SOAR - November 2026",
+      "url": "https://advisory.splunk.com/advisories/SVD-2026-1109",
+      "summary": "Splunk remedied common vulnerabilities and exposures (CVEs) in Third Party Packages in Splunk SOAR version 8.8.0, and higher.",
+      "source": "Splunk Security Advisories",
+      "source_url": "https://advisory.splunk.com/feed.xml",
+      "source_kind": "advisory",
+      "published_at": "2026-11-18T00:00:00Z",
+      "age_hours": 222,
+      "category": "vulnerability",
+      "priority": "watch",
+      "priority_score": 40,
+      "tags": [
+        "vulnerability",
+        "patch",
+        "splunk"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": false
+    },
+    {
+      "id": "94e75a0b85ef",
+      "title": "SVD-2026-1108: Security Vulnerabilities in Splunk SOAR - November 2026",
+      "url": "https://advisory.splunk.com/advisories/SVD-2026-1108",
+      "summary": "Splunk addressed multiple vulnerabilities in Splunk SOAR. See CVE Details for vulnerability-specific and product-specific information.",
+      "source": "Splunk Security Advisories",
+      "source_url": "https://advisory.splunk.com/feed.xml",
+      "source_kind": "advisory",
+      "published_at": "2026-11-18T00:00:00Z",
+      "age_hours": 222,
+      "category": "vulnerability",
+      "priority": "watch",
+      "priority_score": 40,
+      "tags": [
+        "vulnerability",
+        "splunk"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": false
+    },
+    {
+      "id": "8d0d616e5028",
+      "title": "SVD-2026-1107: Third-Party Package Updates in Splunk Enterprise Security - November 2026",
+      "url": "https://advisory.splunk.com/advisories/SVD-2026-1107",
+      "summary": "Splunk remedied common vulnerabilities and exposures (CVEs) in third-party packages in Splunk Enterprise Security version 8.7.0 and higher.",
+      "source": "Splunk Security Advisories",
+      "source_url": "https://advisory.splunk.com/feed.xml",
+      "source_kind": "advisory",
+      "published_at": "2026-11-18T00:00:00Z",
+      "age_hours": 222,
+      "category": "vulnerability",
+      "priority": "watch",
+      "priority_score": 40,
+      "tags": [
+        "vulnerability",
+        "patch",
+        "splunk"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": false
+    },
+    {
+      "id": "c656e697456b",
+      "title": "SVD-2026-1106: Security Vulnerabilities in Splunk Enterprise Security - November 2026",
+      "url": "https://advisory.splunk.com/advisories/SVD-2026-1106",
+      "summary": "Splunk addressed multiple vulnerabilities in Splunk Enterprise Security. See CVE Details for vulnerability-specific and product-specific information.",
+      "source": "Splunk Security Advisories",
+      "source_url": "https://advisory.splunk.com/feed.xml",
+      "source_kind": "advisory",
+      "published_at": "2026-11-18T00:00:00Z",
+      "age_hours": 222,
+      "category": "vulnerability",
+      "priority": "watch",
+      "priority_score": 40,
+      "tags": [
+        "vulnerability",
+        "splunk"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": false
+    },
+    {
+      "id": "47a200336070",
+      "title": "SVD-2026-1105: Third-Party Package Updates in Splunk Universal Forwarder - November 2026",
+      "url": "https://advisory.splunk.com/advisories/SVD-2026-1105",
+      "summary": "Splunk remedied common vulnerabilities and exposures (CVEs) in third-party packages in Splunk Universal Forwarder versions 10.6.1, 10.4.5, 10.2.9, 10.0.12, and 9.4.17 or higher.",
+      "source": "Splunk Security Advisories",
+      "source_url": "https://advisory.splunk.com/feed.xml",
+      "source_kind": "advisory",
+      "published_at": "2026-11-18T00:00:00Z",
+      "age_hours": 222,
+      "category": "vulnerability",
+      "priority": "watch",
+      "priority_score": 40,
+      "tags": [
+        "vulnerability",
+        "patch",
+        "splunk"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": false
+    },
+    {
+      "id": "1b25dca1f220",
+      "title": "SVD-2026-1104: Third-Party Package Updates in Splunk Enterprise - November 2026",
+      "url": "https://advisory.splunk.com/advisories/SVD-2026-1104",
+      "summary": "Splunk remedied common vulnerabilities and exposures (CVEs) in third-party packages in Splunk Enterprise versions 10.6.1, 10.4.5, 10.2.9, 10.0.12, and 9.4.17 or higher.",
+      "source": "Splunk Security Advisories",
+      "source_url": "https://advisory.splunk.com/feed.xml",
+      "source_kind": "advisory",
+      "published_at": "2026-11-18T00:00:00Z",
+      "age_hours": 222,
+      "category": "vulnerability",
+      "priority": "watch",
+      "priority_score": 40,
+      "tags": [
+        "vulnerability",
+        "patch",
+        "splunk"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "first_checks": [
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
+      ],
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
+      "is_kev": false
+    },
+    {
+      "id": "40cde7f9c9b7",
+      "title": "SVD-2026-1103: Security Vulnerabilities in Splunk Enterprise - November 2026",
+      "url": "https://advisory.splunk.com/advisories/SVD-2026-1103",
+      "summary": "Splunk addressed multiple vulnerabilities in Splunk Enterprise. See CVE Details for vulnerability-specific and product-specific information.",
+      "source": "Splunk Security Advisories",
+      "source_url": "https://advisory.splunk.com/feed.xml",
+      "source_kind": "advisory",
+      "published_at": "2026-11-18T00:00:00Z",
+      "age_hours": 222,
+      "category": "vulnerability",
+      "priority": "watch",
+      "priority_score": 40,
+      "tags": [
+        "vulnerability",
+        "splunk"
+      ],
+      "evidence": [],
+      "cves": [],
       "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
       "first_checks": [
         "Confirm whether the affected product and version exist in your environment.",
@@ -1024,7 +1346,7 @@
       "source_url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
       "source_kind": "research",
       "published_at": "2026-11-16T14:00:00Z",
-      "age_hours": 243,
+      "age_hours": 256,
       "category": "vulnerability",
       "priority": "watch",
       "priority_score": 40,
@@ -1052,7 +1374,7 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-11-26T15:23:28Z",
-      "age_hours": 1,
+      "age_hours": 15,
       "category": "malware",
       "priority": "watch",
       "priority_score": 38,
@@ -1080,10 +1402,10 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-11-25T19:39:31Z",
-      "age_hours": 21,
+      "age_hours": 35,
       "category": "threat-intel",
-      "priority": "watch",
-      "priority_score": 38,
+      "priority": "context",
+      "priority_score": 34,
       "tags": [
         "threat-intel"
       ],
@@ -1099,229 +1421,31 @@
       "is_kev": false
     },
     {
-      "id": "3ed1970e7431",
-      "title": "AutomationDirect C-More EA9 Programming Software",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-328-01",
-      "summary": "View CSAF Summary Successful exploitation of this vulnerability could allow attackers to corrupt application memory and cause instability or a crash, potentially leading to arbitrary code execution, if a user is convinced to open a malicious file. The following versions of AutomationDirect C-More EA9 Programming Software are affected: C-More EA9 Programming Software <=V6.80 (CVE-2026-127280) CVSS Vendor Equipment v3…",
-      "source": "CISA Advisories",
-      "source_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
-      "source_kind": "advisory",
-      "published_at": "2026-11-24T12:00:00Z",
-      "age_hours": 53,
-      "category": "vulnerability",
-      "priority": "watch",
-      "priority_score": 38,
-      "tags": [
-        "vulnerability"
-      ],
-      "evidence": [],
-      "cves": [
-        "CVE-2026-127280"
-      ],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": false
-    },
-    {
-      "id": "7b6115f8e21f",
-      "title": "Schneider Electric EcoStruxure Power Build Rapsody software",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-328-02",
-      "summary": "View CSAF Summary Schneider Electric is aware of a vulnerability in its EcoStruxure™ Power Build Rapsody product. The EcoStruxure™ Power Build Rapsody is used to enter or import the single line diagram, to get the extensive bill of material of your switchboard, including all devices, connection items, and mounting components. Failure to apply the remediations provided below may risk memory corruption, heap-based…",
-      "source": "CISA Advisories",
-      "source_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
-      "source_kind": "advisory",
-      "published_at": "2026-11-24T12:00:00Z",
-      "age_hours": 53,
-      "category": "vulnerability",
-      "priority": "watch",
-      "priority_score": 38,
-      "tags": [
-        "vulnerability"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": false
-    },
-    {
-      "id": "fb98039a3f6f",
-      "title": "Java4Shell, NGINX2Shell and more: Why we are not at \"Yellow\", (Wed, Nov 18th)",
-      "url": "https://isc.sans.edu/diary/rss/33532",
-      "summary": "About a month ago, we went to Infocon Yellow for the first time in a few years. We decided to address the php2shell vulnerability and alert our readers to its significant impact. Following php2shell, we had a number of vulnerabilities and events that may also have scored high enough to trigger an Infocon \"Yellow\" [infocon]. In the last few days, we had a major Microsoft 365 outage, a critical vulnerability in Java…",
-      "source": "SANS Internet Storm Center",
-      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
-      "source_kind": "operations",
-      "published_at": "2026-11-18T19:54:50Z",
-      "age_hours": 189,
-      "category": "vulnerability",
-      "priority": "watch",
-      "priority_score": 38,
-      "tags": [
-        "vulnerability"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": false
-    },
-    {
-      "id": "318243fd3323",
-      "title": "What defenders need to know about ARTEX, the agentic AI framework threat actors abuse",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/",
-      "summary": "The AI-powered penetration testing framework ARTEX has been abused by threat actors like Storm-0940, Storm-3358, Onyx Sleet, Pearl Sleet, Crystal Typhoon, and Salt Typhoon to accelerate their existing workflows related to network reconnaissance, credential attacks, and web application exploitation.",
-      "source": "Microsoft Threat Intelligence",
-      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
-      "source_kind": "research",
-      "published_at": "2026-11-25T18:09:06Z",
-      "age_hours": 23,
-      "category": "identity",
-      "priority": "watch",
-      "priority_score": 36,
-      "tags": [
-        "identity"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "Identity activity often becomes the first visible signal before mailbox, cloud or endpoint impact.",
-      "first_checks": [
-        "Review risky sign-ins, impossible travel and unfamiliar devices.",
-        "Check MFA, password and app-consent changes around the event.",
-        "Correlate the account with mailbox, endpoint and token activity."
-      ],
-      "escalate_when": "Escalate on successful anomalous sign-in, MFA reset, suspicious consent or token reuse.",
-      "is_kev": false
-    },
-    {
-      "id": "36ece2aa7566",
-      "title": "SCKit abuses ScreenConnect to deploy remote access and target technician sessions",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/13/sckit-abuses-screenconnect-deploy-remote-access-target-technician-sessions/",
-      "summary": "SCKit abuses ScreenConnect to deploy unauthorized remote access and target technicians. Explore the attack chain, mitigations, and Microsoft Defender XDR hunting.",
-      "source": "Microsoft Threat Intelligence",
-      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
-      "source_kind": "research",
-      "published_at": "2026-11-13T21:31:44Z",
-      "age_hours": 307,
-      "category": "threat-intel",
-      "priority": "watch",
-      "priority_score": 36,
-      "tags": [
-        "threat-intel",
-        "detect-hunt",
-        "patch",
-        "windows"
-      ],
-      "evidence": [
-        "detection-guidance"
-      ],
-      "cves": [],
-      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
-      "first_checks": [
-        "Extract only indicators and behaviors supported by the source.",
-        "Compare them with recent SIEM, EDR, identity and network alerts.",
-        "Record relevant findings without blocking on unverified indicators alone."
-      ],
-      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
-      "is_kev": false
-    },
-    {
-      "id": "29df4a0d48be",
-      "title": "Microsoft confirms authentication issues after November updates",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-confirms-authentication-issues-after-november-updates/",
-      "summary": "Microsoft has confirmed that customers may experience authentication issues after installing November security updates that address a high-severity remote code execution vulnerability.…",
+      "id": "0bd18f3d2e78",
+      "title": "NordVPN Black Friday Deal: Get 78% off VPN plans in 2026",
+      "url": "https://www.bleepingcomputer.com/news/security/nordvpn-black-friday-deal-get-78-percent-off-vpn-plans-in-2026/",
+      "summary": "NordVPN's 2026 Black Friday and Cyber Monday deal is now live, offering savings of up to 78% on VPN subscriptions, plus three extra months of protection.…",
       "source": "BleepingComputer",
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
-      "published_at": "2026-11-25T09:02:57Z",
-      "age_hours": 32,
-      "category": "vulnerability",
+      "published_at": "2026-11-26T17:58:42Z",
+      "age_hours": 12,
+      "category": "network",
       "priority": "context",
-      "priority_score": 34,
+      "priority_score": 32,
       "tags": [
-        "vulnerability",
-        "patch"
+        "network",
+        "network-appliance"
       ],
       "evidence": [],
       "cves": [],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
+      "why_l1_cares": "Edge devices are frequently internet-exposed and may provide the first evidence of scanning or access.",
       "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
+        "Identify affected models, versions and internet-facing assets.",
+        "Review authentication, configuration and traffic anomalies.",
+        "Search for source IPs and paths cited by the advisory."
       ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": false
-    },
-    {
-      "id": "ad267eaa2b11",
-      "title": "Autonomy Logic OpenPLC Runtime",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-323-01",
-      "summary": "View CSAF Summary Successful exploitation of this vulnerability could allow several unauthenticated admin accounts to be created. The following versions of Autonomy Logic OpenPLC Runtime are affected: OpenPLC Runtime <=4.2.4 (CVE-2026-126088) CVSS Vendor Equipment v3 8.1 Autonomy Logic OpenPLC Runtime 1 Vulnerability Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')…",
-      "source": "CISA Advisories",
-      "source_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
-      "source_kind": "advisory",
-      "published_at": "2026-11-19T12:00:00Z",
-      "age_hours": 173,
-      "category": "vulnerability",
-      "priority": "context",
-      "priority_score": 34,
-      "tags": [
-        "vulnerability"
-      ],
-      "evidence": [],
-      "cves": [
-        "CVE-2026-126088"
-      ],
-      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
-      "first_checks": [
-        "Confirm whether the affected product and version exist in your environment.",
-        "Check patch or mitigation status with the asset owner.",
-        "Hunt for exploitation indicators named by the primary source."
-      ],
-      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
-      "is_kev": false
-    },
-    {
-      "id": "0ca7f638e6a0",
-      "title": "COLD RELIC: A Case Study in Impersonation and Compromise",
-      "url": "https://cloud.google.com/blog/topics/threat-intelligence/cold-relic-a-case-study-in-impersonation-and-compromise/",
-      "summary": "Written by: Josh Murchie, John Wolfram, Joseph Spero, Peter Ukhanov, Fernando Tomlinson, Jr., Wesley Shields Introduction Over the past year, Mandiant has responded to a series of linked intrusions demonstrating how Russian cyber espionage group COLD RELIC (formerly tracked as COLDRIVER and UNC4057; also known as Star Blizzard, Callisto, and Gossamer Bear) turns a single cloud compromise into a springboard for…",
-      "source": "Google Threat Intelligence",
-      "source_url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
-      "source_kind": "research",
-      "published_at": "2026-11-17T14:00:00Z",
-      "age_hours": 219,
-      "category": "cloud",
-      "priority": "context",
-      "priority_score": 34,
-      "tags": [
-        "cloud"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "Cloud incidents often cross identity, control-plane and workload logs, so isolated alerts can hide scope.",
-      "first_checks": [
-        "Review control-plane changes, sign-ins and newly created credentials.",
-        "Check public exposure, unusual data access and workload activity.",
-        "Correlate the actor, source IP and time across cloud services."
-      ],
-      "escalate_when": "Escalate on unauthorized configuration change, exposed data, new credential or suspicious workload execution.",
+      "escalate_when": "Escalate on successful access, configuration change, persistence or an exposed unmitigated device.",
       "is_kev": false
     },
     {
@@ -1333,7 +1457,7 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-11-26T11:50:17Z",
-      "age_hours": 5,
+      "age_hours": 19,
       "category": "malware",
       "priority": "context",
       "priority_score": 32,
@@ -1354,6 +1478,33 @@
       "is_kev": false
     },
     {
+      "id": "318243fd3323",
+      "title": "What defenders need to know about ARTEX, the agentic AI framework threat actors abuse",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/",
+      "summary": "The AI-powered penetration testing framework ARTEX has been abused by threat actors like Storm-0940, Storm-3358, Onyx Sleet, Pearl Sleet, Crystal Typhoon, and Salt Typhoon to accelerate their existing workflows related to network reconnaissance, credential attacks, and web application exploitation.",
+      "source": "Microsoft Threat Intelligence",
+      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
+      "source_kind": "research",
+      "published_at": "2026-11-25T18:09:06Z",
+      "age_hours": 36,
+      "category": "identity",
+      "priority": "context",
+      "priority_score": 32,
+      "tags": [
+        "identity"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "Identity activity often becomes the first visible signal before mailbox, cloud or endpoint impact.",
+      "first_checks": [
+        "Review risky sign-ins, impossible travel and unfamiliar devices.",
+        "Check MFA, password and app-consent changes around the event.",
+        "Correlate the account with mailbox, endpoint and token activity."
+      ],
+      "escalate_when": "Escalate on successful anomalous sign-in, MFA reset, suspicious consent or token reuse.",
+      "is_kev": false
+    },
+    {
       "id": "918f8236c2b6",
       "title": "InfraTrust warns of exploited supply chain flaws in network appliances",
       "url": "https://www.bleepingcomputer.com/news/security/infratrust-warns-of-exploited-supply-chain-flaws-in-network-appliances/",
@@ -1362,7 +1513,7 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-11-25T15:00:00Z",
-      "age_hours": 26,
+      "age_hours": 39,
       "category": "supply-chain",
       "priority": "context",
       "priority_score": 31,
@@ -1381,60 +1532,6 @@
       "is_kev": false
     },
     {
-      "id": "42330c2f515c",
-      "title": "Scanning from Subnet 109.160.32.0/24, (Mon, Nov 23rd)",
-      "url": "https://isc.sans.edu/diary/rss/33550",
-      "summary": "This subnet is assigned to a web hosting and virtual private server (VPS) provider BANATSYNC SRL with AS198364, located in Timisoara, Romania. This graph shows the DShield sensor activity over the past 90 days for this subnet and it is still ongoing as of this writing.",
-      "source": "SANS Internet Storm Center",
-      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
-      "source_kind": "operations",
-      "published_at": "2026-11-24T02:32:00Z",
-      "age_hours": 62,
-      "category": "threat-intel",
-      "priority": "context",
-      "priority_score": 30,
-      "tags": [
-        "threat-intel"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
-      "first_checks": [
-        "Extract only indicators and behaviors supported by the source.",
-        "Compare them with recent SIEM, EDR, identity and network alerts.",
-        "Record relevant findings without blocking on unverified indicators alone."
-      ],
-      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
-      "is_kev": false
-    },
-    {
-      "id": "0fe0d4f016d0",
-      "title": "Hackers reportedly breached CIA intelligence analysis system",
-      "url": "https://www.bleepingcomputer.com/news/security/hackers-reportedly-breached-cia-intelligence-analysis-system/",
-      "summary": "Unknown attackers have reportedly breached an open-source intelligence analysis system at the US Central Intelligence Agency (CIA)…",
-      "source": "BleepingComputer",
-      "source_url": "https://www.bleepingcomputer.com/feed/",
-      "source_kind": "news",
-      "published_at": "2026-11-25T07:45:03Z",
-      "age_hours": 33,
-      "category": "identity",
-      "priority": "context",
-      "priority_score": 28,
-      "tags": [
-        "identity"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "Identity activity often becomes the first visible signal before mailbox, cloud or endpoint impact.",
-      "first_checks": [
-        "Review risky sign-ins, impossible travel and unfamiliar devices.",
-        "Check MFA, password and app-consent changes around the event.",
-        "Correlate the account with mailbox, endpoint and token activity."
-      ],
-      "escalate_when": "Escalate on successful anomalous sign-in, MFA reset, suspicious consent or token reuse.",
-      "is_kev": false
-    },
-    {
       "id": "a9a4f49583a1",
       "title": "Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for SIEM",
       "url": "https://www.microsoft.com/en-us/security/blog/2026/11/20/microsoft-named-a-leader-in-the-2026-gartner-magic-quadrant-for-siem/",
@@ -1443,7 +1540,7 @@
       "source_url": "https://www.microsoft.com/en-us/security/blog/topic/security-operations/feed/",
       "source_kind": "research",
       "published_at": "2026-11-20T17:00:00Z",
-      "age_hours": 144,
+      "age_hours": 157,
       "category": "threat-intel",
       "priority": "context",
       "priority_score": 28,
@@ -1462,21 +1559,20 @@
       "is_kev": false
     },
     {
-      "id": "c8fc0392b9ea",
-      "title": "Security for the agentic era, powered by Microsoft Perception",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/17/security-for-the-agentic-era-powered-by-microsoft-perception/",
-      "summary": "Read about updates to Microsoft Perception and the new Microsoft Security cyber stack to defend against threats, secure agents, and protect your digital estate.",
-      "source": "Microsoft Security Operations",
-      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/security-operations/feed/",
-      "source_kind": "research",
-      "published_at": "2026-11-17T18:14:00Z",
-      "age_hours": 215,
+      "id": "ac6c22bfffe5",
+      "title": "OpenAI warns GPT-6.2 Astra will hit usage limits 40% faster because it fixed a bug",
+      "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-warns-gpt-62-astra-will-hit-usage-limits-40-percent-faster-because-it-fixed-a-bug/",
+      "summary": "OpenAI confirmed that it fixed a 'bug' that incorrectly discounted GPT-6.2 usage, which means you'll now hit GPT usage limits 40% faster than before.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-11-26T21:06:22Z",
+      "age_hours": 9,
       "category": "threat-intel",
       "priority": "context",
-      "priority_score": 28,
+      "priority_score": 26,
       "tags": [
-        "threat-intel",
-        "patch"
+        "threat-intel"
       ],
       "evidence": [],
       "cves": [],
@@ -1490,18 +1586,18 @@
       "is_kev": false
     },
     {
-      "id": "636abb4fba14",
-      "title": "The risks of device code authentication for AI coding agents",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/17/the-risks-of-device-code-authentication-for-ai-coding-agents/",
-      "summary": "Lab research shows how device code phishing, a technique that applies to any device-flow client, can extend to AI coding agents, using GitHub Copilot CLI as an illustrative example.",
-      "source": "Microsoft Threat Intelligence",
-      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
-      "source_kind": "research",
-      "published_at": "2026-11-17T15:00:00Z",
-      "age_hours": 218,
+      "id": "deebe28bb42d",
+      "title": "Fake paid expert interviews impersonate brands to steal Google logins",
+      "url": "https://www.bleepingcomputer.com/news/apple/fake-paid-expert-interviews-impersonate-brands-to-steal-google-logins/",
+      "summary": "An ongoing phishing campaign dubbed \"GoodGuys\" impersonates major brands, including Google, Nvidia, Accenture, and SpaceX, to steal corporate Google and Okta credentials using fake invitations to paid expert interviews and webinars.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-11-26T17:15:27Z",
+      "age_hours": 13,
       "category": "phishing",
       "priority": "context",
-      "priority_score": 28,
+      "priority_score": 26,
       "tags": [
         "phishing"
       ],
@@ -1517,129 +1613,20 @@
       "is_kev": false
     },
     {
-      "id": "a08614c0debc",
-      "title": "High volume phishing campaign uses Microsoft 365 outage lures to target multiple industry sectors",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/16/high-volume-phishing-campaign-uses-microsoft-365-outage-lures-target-multiple-industry-sectors-2/",
-      "summary": "Microsoft Threat Intelligence observed a high-volume phishing campaign using Microsoft 365 outage-themed lures to target organizations across multiple sectors worldwide.",
-      "source": "Microsoft Threat Intelligence",
-      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
-      "source_kind": "research",
-      "published_at": "2026-11-17T00:08:41Z",
-      "age_hours": 233,
-      "category": "phishing",
-      "priority": "context",
-      "priority_score": 28,
-      "tags": [
-        "phishing"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "This may surface first as a mail alert, user report, malicious click or suspicious sign-in.",
-      "first_checks": [
-        "Inspect sender, reply-to, URLs, attachments and authentication results.",
-        "Search for other recipients and confirm whether anyone clicked.",
-        "Correlate clicks with sign-ins, downloads and endpoint events."
-      ],
-      "escalate_when": "Escalate when a user clicked, entered credentials, opened a payload or similar mail reached others.",
-      "is_kev": false
-    },
-    {
-      "id": "0b54be28cd7d",
-      "title": "Detecting sleeper agents hiding in AI model neurons",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/10/detecting-sleeper-agents-hiding-in-ai-model-neurons/",
-      "summary": "Microsoft Research has released new threat research detailing how a capable agent model could be turned into a sleeper agent by editing fewer than ten neurons to inject a short payload; Microsoft Research has also found that this threat is detectable by frontier agents, which can identify anomalous weight edits.",
-      "source": "Microsoft Threat Intelligence",
-      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
-      "source_kind": "research",
-      "published_at": "2026-11-10T23:00:00Z",
-      "age_hours": 378,
+      "id": "42330c2f515c",
+      "title": "Scanning from Subnet 109.160.32.0/24, (Mon, Nov 23rd)",
+      "url": "https://isc.sans.edu/diary/rss/33550",
+      "summary": "This subnet is assigned to a web hosting and virtual private server (VPS) provider BANATSYNC SRL with AS198364, located in Timisoara, Romania. This graph shows the DShield sensor activity over the past 90 days for this subnet and it is still ongoing as of this writing.",
+      "source": "SANS Internet Storm Center",
+      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
+      "source_kind": "operations",
+      "published_at": "2026-11-24T02:32:00Z",
+      "age_hours": 76,
       "category": "threat-intel",
       "priority": "context",
-      "priority_score": 28,
+      "priority_score": 26,
       "tags": [
         "threat-intel"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
-      "first_checks": [
-        "Extract only indicators and behaviors supported by the source.",
-        "Compare them with recent SIEM, EDR, identity and network alerts.",
-        "Record relevant findings without blocking on unverified indicators alone."
-      ],
-      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
-      "is_kev": false
-    },
-    {
-      "id": "631279c95e34",
-      "title": "ARTEX abuse expands as cybercriminals target financial sector",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/06/artex-abuse-expands-as-cybercriminals-target-financial-sector/",
-      "summary": "In October 2026, the financially motivated threat actor Storm-3358 began targeting organizations in the financial sector using the agentic AI offensive framework ARTEX.",
-      "source": "Microsoft Threat Intelligence",
-      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
-      "source_kind": "research",
-      "published_at": "2026-11-07T02:44:34Z",
-      "age_hours": 470,
-      "category": "threat-intel",
-      "priority": "context",
-      "priority_score": 28,
-      "tags": [
-        "threat-intel"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
-      "first_checks": [
-        "Extract only indicators and behaviors supported by the source.",
-        "Compare them with recent SIEM, EDR, identity and network alerts.",
-        "Record relevant findings without blocking on unverified indicators alone."
-      ],
-      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
-      "is_kev": false
-    },
-    {
-      "id": "4b6abbdbb703",
-      "title": "Threat actors use agentic AI tooling to find and abuse exposed secrets",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/05/threat-actors-use-agentic-ai-tooling-to-find-and-abuse-exposed-secrets/",
-      "summary": "Microsoft Threat Intelligence has observed threat actors using the agentic offensive security framework ARTEX to search GitHub for OAuth application secrets, which can be used to compromise the associated OAuth application and perform authenticated actions in the application’s tenant. Agents operating on behalf of threat actors then used the compromised OAuth applications to perform a variety of subsequent actions…",
-      "source": "Microsoft Threat Intelligence",
-      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
-      "source_kind": "research",
-      "published_at": "2026-11-05T23:46:50Z",
-      "age_hours": 497,
-      "category": "identity",
-      "priority": "context",
-      "priority_score": 28,
-      "tags": [
-        "identity"
-      ],
-      "evidence": [],
-      "cves": [],
-      "why_l1_cares": "Identity activity often becomes the first visible signal before mailbox, cloud or endpoint impact.",
-      "first_checks": [
-        "Review risky sign-ins, impossible travel and unfamiliar devices.",
-        "Check MFA, password and app-consent changes around the event.",
-        "Correlate the account with mailbox, endpoint and token activity."
-      ],
-      "escalate_when": "Escalate on successful anomalous sign-in, MFA reset, suspicious consent or token reuse.",
-      "is_kev": false
-    },
-    {
-      "id": "d97887a156f7",
-      "title": "​​​​What’s new in Microsoft Security: November 2026",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/05/whats-new-in-microsoft-security-november-2026/",
-      "summary": "Microsoft Security’s November 2026 updates strengthen AI agent security, least privilege, threat protection, and exposure management.",
-      "source": "Microsoft Security Operations",
-      "source_url": "https://www.microsoft.com/en-us/security/blog/topic/security-operations/feed/",
-      "source_kind": "research",
-      "published_at": "2026-11-05T17:00:00Z",
-      "age_hours": 504,
-      "category": "threat-intel",
-      "priority": "context",
-      "priority_score": 28,
-      "tags": [
-        "threat-intel",
-        "patch"
       ],
       "evidence": [],
       "cves": [],
@@ -1661,23 +1648,23 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-11-25T22:05:09Z",
-      "age_hours": 19,
-      "category": "network",
+      "age_hours": 32,
+      "category": "vulnerability",
       "priority": "context",
-      "priority_score": 26,
+      "priority_score": 22,
       "tags": [
-        "network",
+        "vulnerability",
         "network-appliance"
       ],
       "evidence": [],
       "cves": [],
-      "why_l1_cares": "Edge devices are frequently internet-exposed and may provide the first evidence of scanning or access.",
+      "why_l1_cares": "A newly disclosed or exploited flaw can quickly turn into scanning, intrusion and noisy endpoint alerts.",
       "first_checks": [
-        "Identify affected models, versions and internet-facing assets.",
-        "Review authentication, configuration and traffic anomalies.",
-        "Search for source IPs and paths cited by the advisory."
+        "Confirm whether the affected product and version exist in your environment.",
+        "Check patch or mitigation status with the asset owner.",
+        "Hunt for exploitation indicators named by the primary source."
       ],
-      "escalate_when": "Escalate on successful access, configuration change, persistence or an exposed unmitigated device.",
+      "escalate_when": "Escalate when an exposed affected asset, exploitation evidence or missing urgent mitigation is found.",
       "is_kev": false
     },
     {
@@ -1689,10 +1676,10 @@
       "source_url": "https://www.bleepingcomputer.com/feed/",
       "source_kind": "news",
       "published_at": "2026-11-25T21:33:33Z",
-      "age_hours": 19,
+      "age_hours": 33,
       "category": "data-breach",
       "priority": "context",
-      "priority_score": 26,
+      "priority_score": 22,
       "tags": [
         "data-breach"
       ],
@@ -1708,21 +1695,47 @@
       "is_kev": false
     },
     {
-      "id": "a1fea56d8f1e",
-      "title": "A brief history of syslog timestamps, (Sun, Nov 22nd)",
-      "url": "https://isc.sans.edu/diary/rss/33530",
-      "summary": "BLUF: Debian and Ubuntu dropped a config directive in the rsyslogd package in early 2023.",
-      "source": "SANS Internet Storm Center",
-      "source_url": "https://isc.sans.edu/rssfeed_full.xml",
-      "source_kind": "operations",
-      "published_at": "2026-11-22T18:40:18Z",
-      "age_hours": 94,
+      "id": "571e665497ad",
+      "title": "More Pentests Without More Pentesters: Where AI Safely Helps",
+      "url": "https://www.bleepingcomputer.com/news/security/more-pentests-without-more-pentesters-where-ai-safely-helps/",
+      "summary": "Penetration testers spend a significant portion of their engagements on documentation, reporting, and other tasks outside of testing. PentestPad explains how AI can reduce this workload, help teams handle more engagements, and keep sensitive client data within their own infrastructure.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-11-25T15:00:10Z",
+      "age_hours": 39,
       "category": "threat-intel",
       "priority": "context",
-      "priority_score": 26,
+      "priority_score": 22,
       "tags": [
-        "threat-intel",
-        "linux"
+        "threat-intel"
+      ],
+      "evidence": [],
+      "cves": [],
+      "why_l1_cares": "The report can provide context for alerts already in the queue and ideas for targeted hunting.",
+      "first_checks": [
+        "Extract only indicators and behaviors supported by the source.",
+        "Compare them with recent SIEM, EDR, identity and network alerts.",
+        "Record relevant findings without blocking on unverified indicators alone."
+      ],
+      "escalate_when": "Escalate when supported indicators match internal telemetry or the reported behavior appears in your environment.",
+      "is_kev": false
+    },
+    {
+      "id": "b5ac7b882982",
+      "title": "Microsoft fixes Microsoft 365 bug blocking access to Office apps",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-blank-dialog-that-made-microsoft-365-office-apps-unusable/",
+      "summary": "Earlier this week, Microsoft resolved a known issue that was preventing some Microsoft 365 customers from accessing Office applications.…",
+      "source": "BleepingComputer",
+      "source_url": "https://www.bleepingcomputer.com/feed/",
+      "source_kind": "news",
+      "published_at": "2026-11-25T11:16:32Z",
+      "age_hours": 43,
+      "category": "threat-intel",
+      "priority": "context",
+      "priority_score": 22,
+      "tags": [
+        "threat-intel"
       ],
       "evidence": [],
       "cves": [],

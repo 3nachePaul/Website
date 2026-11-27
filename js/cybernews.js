@@ -63,10 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
         context: 'Context'
     };
 
-    function safeHttpUrl(value) {
+    function safeHttpsUrl(value) {
         try {
             const url = new URL(value);
-            return ['http:', 'https:'].includes(url.protocol) ? url.href : '#';
+            return url.protocol === 'https:' && !url.username && !url.password && !url.port
+                ? url.href
+                : '#';
         } catch {
             return '#';
         }
@@ -167,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
         card.querySelector('.news-card__source').textContent = article.source;
 
         const link = card.querySelector('.news-card__link');
-        link.href = safeHttpUrl(article.url);
+        link.href = safeHttpsUrl(article.url);
         link.setAttribute('aria-label', `Read ${article.title} at ${article.source}`);
 
         return fragment;

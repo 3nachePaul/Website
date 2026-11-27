@@ -2,6 +2,9 @@
 <html lang="ro">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self'; connect-src 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <meta http-equiv="refresh" content="0; url=../?test=1">
@@ -42,9 +45,6 @@
       text-decoration: none;
     }
   </style>
-  <script>
-    window.location.replace("../?test=1");
-  </script>
 </head>
 <body>
   <main>

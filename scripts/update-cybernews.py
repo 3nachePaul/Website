@@ -314,14 +314,27 @@ TRIAGE = {
 }
 
 
+def https_url_parts(url: str) -> urllib.parse.SplitResult | None:
+    if "\\" in url or any(ord(char) < 33 or ord(char) == 127 for char in url):
+        return None
+    try:
+        parsed = urllib.parse.urlsplit(url)
+        if (
+            parsed.scheme == "https" and parsed.hostname and parsed.username is None
+            and parsed.password is None and parsed.port in (None, 443)
+        ):
+            return parsed
+    except ValueError:
+        pass
+    return None
+
+
 def url_host_allowed(url: str, allowed_hosts: list[str]) -> bool:
-    parsed = urllib.parse.urlsplit(url)
+    parsed = https_url_parts(url)
+    if parsed is None:
+        return False
     hostname = (parsed.hostname or "").lower().rstrip(".")
-    return (
-        parsed.scheme.lower() in {"http", "https"}
-        and bool(hostname)
-        and any(hostname == allowed or hostname.endswith(f".{allowed}") for allowed in allowed_hosts)
-    )
+    return any(hostname == allowed or hostname.endswith(f".{allowed}") for allowed in allowed_hosts)
 
 
 class RestrictedRedirectHandler(urllib.request.HTTPRedirectHandler):
@@ -426,11 +439,11 @@ def parse_datetime(value: str | None) -> datetime | None:
 
 
 def safe_url(value: str | None, allowed_hosts: list[str] | None = None) -> str:
-    if not value:
+    if not isinstance(value, str) or not value:
         return ""
     value = html.unescape(value).strip()
-    parsed = urllib.parse.urlsplit(value)
-    if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+    parsed = https_url_parts(value)
+    if parsed is None:
         return ""
     if allowed_hosts and not url_host_allowed(value, allowed_hosts):
         return ""
@@ -464,12 +477,14 @@ def entry_link(node: ET.Element, source: dict[str, Any]) -> str:
     return ""
 
 
+class FeedTreeBuilder(ET.TreeBuilder):
+    def doctype(self, name: str, pubid: str | None, system: str | None) -> None:
+        raise ValueError("feed contains a forbidden XML document type declaration")
+
+
 def parse_feed(source: dict[str, Any]) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     payload = fetch_bytes(source["url"], source["fetch_hosts"])
-    upper_payload = payload.upper()
-    if b"<!DOCTYPE" in upper_payload or b"<!ENTITY" in upper_payload:
-        raise ValueError("feed contains a forbidden XML document type or entity declaration")
-    root = ET.fromstring(payload)
+    root = ET.fromstring(payload, parser=ET.XMLParser(target=FeedTreeBuilder()))
     nodes = [node for node in root.iter() if node.tag.rsplit("}", 1)[-1].lower() in {"item", "entry"}]
     articles = []
     for node in nodes[: MAX_PER_SOURCE * 2]:
@@ -872,11 +887,15 @@ def validate() -> int:
         "escalate_when",
     }
     for index, article in enumerate(articles):
+        if not isinstance(article, dict):
+            print(f"article {index} is not an object", file=sys.stderr)
+            return 1
         missing = required.difference(article)
         if missing:
             print(f"article {index} is missing: {', '.join(sorted(missing))}", file=sys.stderr)
             return 1
-        if not safe_url(article.get("url")):
+        source = SOURCES.get(article["source"]) if isinstance(article["source"], str) else None
+        if not source or not safe_url(article.get("url"), source["article_hosts"]):
             print(f"article {index} has an unsafe URL", file=sys.stderr)
             return 1
         if not isinstance(article.get("first_checks"), list) or len(article["first_checks"]) != 3:

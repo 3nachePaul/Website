@@ -3,6 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+      content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'none'; form-action 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Get in touch with Pol">
     <title>Pol | Contact</title>
@@ -72,7 +75,7 @@
                                     </svg>
                                     <span>Based in Europe</span>
                                 </a>
-                                <a href="https://github.com/3nachePaul" target="_blank" rel="noopener"
+                                <a href="https://github.com/3nachePaul" target="_blank" rel="noopener noreferrer"
                                     class="contact__link">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                         <path
@@ -80,7 +83,7 @@
                                     </svg>
                                     <span>GitHub</span>
                                 </a>
-                                <a href="https://www.linkedin.com/in/paul-enache-/" target="_blank" rel="noopener"
+                                <a href="https://www.linkedin.com/in/paul-enache-/" target="_blank" rel="noopener noreferrer"
                                     class="contact__link">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                         <path
@@ -92,26 +95,11 @@
                         </div>
 
                         <div class="contact__form reveal reveal-delay-1">
-                            <h3>Send a Message</h3>
-                            <form id="contact-form">
-                                <div class="form-group">
-                                    <label class="form-label" for="name">Name</label>
-                                    <input type="text" id="name" name="name" class="form-input" placeholder="Your name"
-                                        required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label" for="email">Email</label>
-                                    <input type="email" id="email" name="email" class="form-input"
-                                        placeholder="your@email.com" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label" for="message">Message</label>
-                                    <textarea id="message" name="message" class="form-textarea"
-                                        placeholder="Your message..." required></textarea>
-                                </div>
-                                <button type="submit" class="btn btn--primary btn--large btn-shine"
-                                    style="width: 100%;">Send Message</button>
-                            </form>
+                            <h3>Email Me</h3>
+                            <p>Open your email app to send a message.</p>
+                            <a href="mailto:3nache.paul@gmail.com" class="btn btn--primary btn--large btn-shine">
+                                Open Email App
+                            </a>
                         </div>
                     </div>
                 </div>

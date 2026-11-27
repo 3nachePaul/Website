@@ -277,8 +277,8 @@
       <details class="evidence-tools ${sent ? "is-sent" : ""}">
         <summary>${sent ? evidenceSummary(sentCount) : "Trimite dovezile organizatorului"}</summary>
         <div class="evidence-tools__inner">
-          <input class="file-input" id="${inputId}" type="file" accept="image/*,video/*" multiple>
-          <button class="small-button" type="button" data-share-evidence="${code}">${sent ? "Mai adaugă dovezi" : "Trimite acum"}</button>
+          <input class="file-input" id="${escapeHtml(inputId)}" type="file" accept="image/*,video/*" multiple>
+          <button class="small-button" type="button" data-share-evidence="${escapeHtml(code)}">${sent ? "Mai adaugă dovezi" : "Trimite acum"}</button>
           <small class="upload-note">Selectează una sau mai multe poze/clipuri. Maximum 20 MB fiecare și 10 dovezi per misiune.</small>
         </div>
       </details>`;

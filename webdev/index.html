@@ -3,6 +3,9 @@
 
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.12.0/highlight.min.js; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fragmente web — CSS, JavaScript, Express, EJS</title>
   <meta name="description"
@@ -58,7 +61,8 @@
     </main>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.12.0/highlight.min.js"
+    integrity="sha384-wjfDDhOPPdjtva8vWBhWeVprSpmxisEu5aYT3q1JyACqXpdKpo3PWZTMVq24MBix" crossorigin="anonymous"></script>
   <script src="snippets.js"></script>
   <script src="exercitii.js"></script>
   <script src="templates.js"></script>

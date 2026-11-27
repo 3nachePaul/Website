@@ -23,22 +23,23 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  publish:
+  build:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 12
     permissions:
-      contents: write
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      contents: read
+    outputs:
+      deploy: ${{ steps.site.outputs.deploy }}
+      refreshed: ${{ steps.site.outputs.refreshed }}
+      revision: ${{ steps.site.outputs.revision }}
 
     steps:
       - name: Check out the site
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           ref: main
+          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
@@ -62,29 +63,27 @@ jobs:
         id: site
         shell: bash
         run: |
-          if [[ "$GITHUB_EVENT_NAME" != schedule ]] || ! git diff --quiet -- data/cybernews.json; then
+          if ! git diff --quiet -- data/cybernews.json; then
+            echo "refreshed=true" >> "$GITHUB_OUTPUT"
+            echo "deploy=true" >> "$GITHUB_OUTPUT"
+          elif [[ "$GITHUB_EVENT_NAME" != schedule ]]; then
             echo "deploy=true" >> "$GITHUB_OUTPUT"
           fi
+          echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Validate the briefing snapshot
         if: steps.site.outputs.deploy == 'true'
         run: python scripts/update-cybernews.py --validate
 
-      - name: Configure GitHub Pages
-        if: steps.site.outputs.deploy == 'true'
-        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
-
       - name: Assemble the static site
         if: steps.site.outputs.deploy == 'true'
         shell: bash
         run: |
+          set -o pipefail
           mkdir _site
-          rsync -a \
-            --exclude='.git/' \
-            --exclude='.github/' \
-            --exclude='scripts/' \
-            --exclude='_site/' \
-            ./ _site/
+          git archive HEAD -- .nojekyll CNAME ':(top,glob)*.html' CV_Paul_Enache.pdf \
+            css js images cybernews webdev arhiva021 data/cybernews.json | tar -xf - -C _site
+          cp data/cybernews.json _site/data/cybernews.json
 
       - name: Upload the Pages artifact
         if: steps.site.outputs.deploy == 'true'
@@ -92,15 +91,54 @@ jobs:
         with:
           path: _site
 
+      - name: Save the validated briefing as a workflow artifact
+        if: steps.site.outputs.refreshed == 'true'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: cybernews-snapshot
+          path: data/cybernews.json
+          if-no-files-found: error
+          retention-days: 1
+
+  deploy:
+    needs: build
+    if: needs.build.outputs.deploy == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        if: steps.site.outputs.deploy == 'true'
         uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
 
+  record:
+    needs: [build, deploy]
+    if: needs.build.outputs.refreshed == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - name: Check out the published revision
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ needs.build.outputs.revision }}
+
+      - name: Get the validated briefing
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          name: cybernews-snapshot
+          path: ${{ runner.temp }}/cybernews-snapshot
+
       - name: Record the published briefing
-        if: steps.site.outputs.deploy == 'true'
         shell: bash
         run: |
+          cp "$RUNNER_TEMP/cybernews-snapshot/cybernews.json" data/cybernews.json
           git add -- data/cybernews.json
           if ! git diff --cached --quiet; then
             git config user.name "github-actions[bot]"
